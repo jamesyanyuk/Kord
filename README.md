@@ -1,2 +1,2 @@
-team-cord.io
+team-kord.io
 ============
