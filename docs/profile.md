@@ -1,7 +1,5 @@
 ![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/800x600/d651751286f337e6041565743cbb53bc/kordio.jpg "Where your ideas connect to our system.")
 
-A company invested in communication and collaboration platforms.
-
 <pre><code>System.in.idea</code></pre>
 
 Version: 1.0
@@ -18,7 +16,8 @@ Version: 1.0
 
 <h2 id="concept">Project Concept:</h2>
 
-	A platform for collaboration:
+	kord.io is a company invested in communication and collaboration platforms.
+
 Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
 our platform in its simplest form. The goal is to create a central hub for
 any sort of communication or collaboration, whether that means students doing
