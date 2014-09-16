@@ -1,8 +1,9 @@
-kord.io: System.in.idea
-========
+kord.io
+=======
+System.in.idea
 	A company invested in communication and collaboration platforms.
 
-	![Connect your idea to our system.](http://tinyurl.com/ns62xq5)
+	![alt text](http://tinyurl.com/ns62xq5 "Connect your idea to our system.")
 
 Version: .9
 
@@ -16,7 +17,7 @@ Version: .9
 
 * * *
 
-<h1 id="concept">Project Concept:</h1>
+<h2 id="concept">Project Concept:</h2>
 
 	A platform for collaboration:
 Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
@@ -58,7 +59,7 @@ can come and go as they please, while their information stays similar to Trello.
 
 <h2 id="members">Members:</h2>
 
-<h3 id="james">James Yanyuk:</h3>
+<h4 id="james">James Yanyuk:</h4>
 	* CMPSCI: 121, 187
 	* Calculus II, Introduction to Philosophy
 
@@ -76,7 +77,7 @@ He's a part-time gamer, part-time musician, occasional math nerd, and a snowboar
 He has a particular interest in education and game design and the intersection between the two -
 using games as a medium in both formal and informal settings and for academic and social education.
 
-<h5 id="matthaus">Matthaus Wolff:</h5>
+<h4 id="matthaus">Matthaus Wolff:</h4>
 
 	* CMPSCI: 187, 220, 230, 320
 	* Introduction to Microeconomics, Introduction to Macroeconomics,
@@ -88,7 +89,7 @@ and gathering information about the world. His dream job will always be in game 
 recently he's come to like technical consulting and system management. He loves to play video games,
 perform martial arts, and above all meet new people.
 
-<h6 id="nam">Nam Phan:</h6>
+<h4 id="nam">Nam Phan:</h4>
 
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 377
 	* Introduction to Microeconomics, Intro Legal Studies
@@ -96,7 +97,7 @@ perform martial arts, and above all meet new people.
 Nam is a senior CS major from East Longmeadow. He is currently interested in learning about
 computer networks and android apps. He loves playing ultimate frisbee, and swimming. 
 
-<h7 id="sara">Sara da Silva:</h7>
+<h4 id="sara">Sara da Silva:</h4>
 
 	* CMPSCI: 187, 230, 240, 250, 311
 	* Critical Thinking, Introductory Psychology
@@ -104,6 +105,6 @@ Sara is a transfer student from MassBay Community College and is currently a sen
 her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence.
 She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and
 also works in web management for a non-profit organization that provides assistance to
-the immigrant community and most specifically women. She is particularly interested in
+the immigrant community and more specifically women. She is particularly interested in
 applying her education and knowledge in environments that can be beneficial to others and
 hopes to do so upon graduation.
