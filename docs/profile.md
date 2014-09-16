@@ -1,6 +1,4 @@
-![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/800x600/d651751286f337e6041565743cbb53bc/kordio.jpg "Where your ideas connect to our system.")
-
-<pre><code>System.in.idea</code></pre>
+![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg "Where your ideas connect to our system.")
 
 Version: 1.0
 
