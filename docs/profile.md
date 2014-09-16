@@ -1,10 +1,8 @@
 ![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/800x600/d651751286f337e6041565743cbb53bc/kordio.jpg "Where your ideas connect to our system.")
-
-	System.in.idea
-
-kord.io: A company invested in communication and collaboration platforms.
-
-Version: .9
+> A company invested in communication and collaboration platforms.
+> 
+> System.in.idea
+Version: 1.0
 
 *	[Project Concept] (#concept)
 *	[Members] (#members)
