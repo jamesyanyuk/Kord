@@ -1,9 +1,10 @@
 kord.io
 =======
-System.in.idea
+--> System.in.idea
+
 	A company invested in communication and collaboration platforms.
 
-	![alt text](http://tinyurl.com/ns62xq5 "Connect your idea to our system.")
+![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/800x600/d651751286f337e6041565743cbb53bc/kordio.jpg "Where your ideas connect to our system.")
 
 Version: .9
 
