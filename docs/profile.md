@@ -66,7 +66,7 @@ James is a sophomore CS major from Granby, MA. He has a great interest in
 bleeding-edge technology, mobile application development, and innovative tech startups.
 He enjoys playing soccer and is quite the avid gamer.
 
-<h4 id="julian">Julian Kuk:</h3>
+<h4 id="julian">Julian Kuk:</h4>
 
 	* CMPSCI: 230, 240, 250
 	* Calculus I, Human Values and Personal Freedom
@@ -99,3 +99,11 @@ computer networks and android apps. He loves playing ultimate frisbee, and swimm
 <h7 id="sara">Sara da Silva:</h7>
 
 	* CMPSCI: 187, 230, 240, 250, 311
+	* Critical Thinking, Introductory Psychology
+Sara is a transfer student from MassBay Community College and is currently a senior pursuing
+her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence.
+She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and
+also works in web management for a non-profit organization that provides assistance to
+the immigrant community and most specifically women. She is particularly interested in
+applying her education and knowledge in environments that can be beneficial to others and
+hopes to do so upon graduation.
