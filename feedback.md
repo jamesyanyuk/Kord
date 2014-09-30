@@ -7,3 +7,6 @@ It's apparent from trello that you're communicating with each other regularly an
 Also, remember to meet weekly (in person or online is fine) and post meeting notes in the notes/ directory of your repo.
 
 Keep up the good work!
+
+THUMBS UP!
+==========
