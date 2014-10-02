@@ -106,7 +106,7 @@ Initial Expenses
 	</tr>
 </table>
 
-^ Variable Expenses (Yearly)
+> Variable Expenses (Yearly)
 <table>
 	<tr>
 		<th>Component</th>
