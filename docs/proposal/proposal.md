@@ -104,54 +104,17 @@ physical meetings and promote an environment for unhindered collaboration and co
 | Workstations | Custom desktops (x5) | WIP |
 | - | - | - |
 
-<table>
-	<h6>Fixed Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Domain</td>
-		<td>"kord.io" Domain - Gandi Rates</td>
-		<td>40.00</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Fixed Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Domain Registration | "kord.io" Domain - Gandi Rates | 40.00 |
+| - | - | - |
 
-
-<table>
-	<h6>Variable Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Dedicated Server</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Variable Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Dedicated Server Rent | - | - |
+| - | - | - |
 
 //Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
 
