@@ -9,14 +9,14 @@
 Julian is a transfer student from MassBay Community College and currently a junior. He's a part-time gamer, part-time musician, occasional math nerd, and a snowboarder. He has a particular interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings and for academic and social education.
 
 <h4>James Yanyuk</h4>
-<h6><em>Project Manager</em></h6>
+<h6><em>Front-End Developer</em></h6>
 	* CMPSCI: 121, 187
 	* Calculus II, Introduction to Philosophy
 
 James is a sophomore computer science major from Granby, MA. His interests lie in mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
 
 <h4>Matthaus Wolff</h4>
-<h2><em>Software Engineer</em></h2>
+<h6><em>Back-End Developer</em></h6>
 	* CMPSCI: 187, 220, 230, 320
 	* Introduction to Microeconomics, Introduction to Macroeconomics,
 	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
@@ -25,14 +25,14 @@ James is a sophomore computer science major from Granby, MA. His interests lie i
 Matthaus is a junior who’s lived most of his life in Germany. He's very interested in data analysis and gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and system management. He loves to play video games, perform martial arts, and above all meet new people.
 
 <h4>Nam Phan</h4>
-<h2><em>Software Engineer</em></h2>
+<h6><em>Back-End Developer</em></h6>
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 377
 	* Introduction to Microeconomics, Intro Legal Studies
 
 Nam is a senior CS major from East Longmeadow. He is currently interested in learning about computer networks and android apps. He loves playing ultimate frisbee, and swimming.
 
 <h4>Sara da Silva</h4>
-<h2><em>Software Engineer</em></h2>
+<h6><em>Front-End Developer</em></h6>
 	* CMPSCI: 187, 230, 240, 250, 311
 	* Critical Thinking, Introductory Psychology
 
