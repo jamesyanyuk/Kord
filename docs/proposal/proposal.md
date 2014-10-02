@@ -4,8 +4,8 @@
 > [Written by James Yanyuk on 10/01/2014]
 
 <h4>Julian Kuk <em>&gt;&gt; Team Coordinator</em></h4>
-> * CMPSCI: 230, 240, 250
-> * Calculus I, Human Values and Personal Freedom
+<code>* CMPSCI: 230, 240, 250<br>
+* Calculus I, Human Values and Personal Freedom</code>
 
 Julian is a transfer student from MassBay Community College and currently a junior. He's a part-time gamer, part-time musician, occasional math nerd, and a snowboarder. He has a particular interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings and for academic and social education.
 
@@ -18,8 +18,8 @@ James is a sophomore computer science major from Granby, MA. His interests lie i
 <h4>Matthaus Wolff <em>&gt;&gt; Role</em></h4>
 > * CMPSCI: 187, 220, 230, 320
 > * Introduction to Microeconomics, Introduction to Macroeconomics,
-> > * Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
-> > * Calculus I, Calculus II, Multivariate Calculus, Statistics I
+> * Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
+> * Calculus I, Calculus II, Multivariate Calculus, Statistics I
 
 Matthaus is a junior who’s lived most of his life in Germany. He's very interested in data analysis and gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and system management. He loves to play video games, perform martial arts, and above all meet new people.
 
