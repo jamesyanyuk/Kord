@@ -97,6 +97,7 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 	</tr>
 </table>
 
+
 <table>
 	<h6>Fixed Expenses - Yearly</h6>
 	<tr>
@@ -120,6 +121,7 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 		<td>-</td>
 	</tr>
 </table>
+
 
 <table>
 	<h6>Variable Expenses - Yearly</h6>
