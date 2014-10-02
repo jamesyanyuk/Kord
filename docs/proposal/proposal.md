@@ -53,4 +53,49 @@ Work in progress.
 <h2>Projected Expenses</h2>
 > [Written by James Yanyuk on 09/31/2014]
 
-Need to finish markup..
+<h4>Initial Expenses</h4>
+<table>
+	<tr>
+		<th>Component</th>
+		<th style="width:100%">Details</th>
+		<th>Expenditure (USD)</th>
+	</tr>
+	<tr>
+		<th>Office Equipment</th>
+		<th>Desks, peripherals, software, etc.</th>
+		<th>N/A</th>
+	</tr>
+	<tr>
+		<th>Workstations</th>
+		<th>Custom workstations (x3)</th>
+		<th>N/A</th>
+	</tr>
+</table>
+
+<h4>Fixed Expenses (Yearly)</h4>
+<table>
+	<tr>
+		<th>Component</th>
+		<th style="width:100%">Details</th>
+		<th>Expenditure (USD)</th>
+	</tr>
+	<tr>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+	</tr>
+</table>
+
+<h4>Variable Expenses (Yearly)</h4>
+<table>
+	<tr>
+		<th>Component</th>
+		<th style="width:100%">Details</th>
+		<th>Expenditure (USD)</th>
+	</tr>
+	<tr>
+		<th>-</th>
+		<th>-</th>
+		<th>-</th>
+	</tr>
+</table>
