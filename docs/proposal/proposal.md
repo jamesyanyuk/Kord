@@ -1,7 +1,6 @@
 <p align="center"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></p>
 
 <h2>Team Members</h2>
-> [Written by James Yanyuk on 10/01/2014]
 
 <h4>Julian Kuk &nbsp;&nbsp;<em>&gt;&gt;&nbsp;&nbsp; Team Coordinator</em></h4>
 	* CMPSCI: 230, 240, 250
@@ -34,6 +33,8 @@ Nam is a senior CS major from East Longmeadow. He is currently interested in lea
 	* Critical Thinking, Introductory Psychology
 
 Sara is a transfer student from MassBay Community College and is currently a senior pursuing her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence. She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and also works in web management for a non-profit organization that provides assistance to the immigrant community and more specifically women. She is particularly interested in applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation.
+
+<p align = "right">[Written by James Yanyuk on 10/01/2014]</p>
 
 <h2>Problem Statement</h2>
 	
