@@ -34,7 +34,7 @@ Nam is a senior CS major from East Longmeadow. He is currently interested in lea
 
 Sara is a transfer student from MassBay Community College and is currently a senior pursuing her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence. She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and also works in web management for a non-profit organization that provides assistance to the immigrant community and more specifically women. She is particularly interested in applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation.
 
-<p align = "right">[Written by James Yanyuk on 10/01/2014]</p>
+<i align = "right">[Written by James Yanyuk on 10/01/2014]</i>
 
 <h2>Problem Statement</h2>
 	
