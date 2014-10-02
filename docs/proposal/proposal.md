@@ -53,7 +53,7 @@ Work in progress.
 <h2>Projected Expenses</h2>
 > [Written by James Yanyuk on 09/31/2014]
 
-Fixed Expenses
+Initial Expenses
 <table>
 	<tr>
 		<th>Component</th>
@@ -67,7 +67,7 @@ Fixed Expenses
 	</tr>
 	<tr>
 		<td>Workstations</td>
-		<td>Custom workstations (x3)</td>
+		<td>Custom workstations (x5)</td>
 		<td>N/A</td>
 	</tr>
 </table>
