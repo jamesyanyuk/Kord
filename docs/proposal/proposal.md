@@ -147,10 +147,6 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 	</tr>
 </table>
 
-//Work in progress
-//Needs: 
-// - the cost of the project, 
-// - the amount requested to the venture capitalist firm, 
-// - and how funds will be applied and distributed.
+//Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
 
 <p align = "right"><i > [Written by James Yanyuk - 09/31/2014]</em></p>
