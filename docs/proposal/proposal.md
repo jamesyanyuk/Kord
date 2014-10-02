@@ -15,7 +15,7 @@ and for academic and social education.
 <h4>James Yanyuk</h4>
 <h6><em>Lead Developer</em></h6>
 	* CMPSCI: 121, 187, 220, 250, 326
-	* Calculus III, Introduction to Philosophy
+	* Multivariate Calculus, Introduction to Philosophy
 
 James is a sophomore pursuing his Bachelor of Science in Computer Science with a concentration in Software Engineering. His interests lie in
 mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
@@ -133,84 +133,24 @@ product.
 
 <h2>Budget Estimate</h2>
 
-<table>
-	<h6> Initial Expenses </h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Office Equipment</td>
-		<td>Desks, peripherals, software, etc.</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>Workstations</td>
-		<td>Custom workstations (x5)</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6> Initial Expenses </h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Office Equipment | Desks, peripherals, software licensing, etc. | WIP |
+| Workstations | Custom desktops (x5) | WIP |
+| - | - | - |
 
+<h6>Fixed Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Domain Registration | "kord.io" Domain - Gandi Rates | 40.00 |
+| - | - | - |
 
-<table>
-	<h6>Fixed Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Domain</td>
-		<td>"kord.io" Domain - Gandi Rates</td>
-		<td>40.00</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
-
-
-<table>
-	<h6>Variable Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Dedicated Server</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Variable Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Dedicated Server Rent | - | - |
+| - | - | - |
 
 //Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
 
