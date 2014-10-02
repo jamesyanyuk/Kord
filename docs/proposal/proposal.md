@@ -1,4 +1,4 @@
-<p align="center"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="200px" alt="Where your ideas connect to our system."></p>
 
 <h2>Team Members</h2>
 
@@ -10,20 +10,18 @@
 Julian is a transfer student from MassBay Community College and is currently a junior pursuing his Bachelor of Science in Computer Science with a concentration in Artificial Design. He's a part-time gamer, part-time musician, occasional math nerd, and a snowboarder. He has a particular interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings and for academic and social education.
 
 <h4>James Yanyuk</h4>
-<h6><em>Front-End Developer</em></h6>
-	* CMPSCI: 121, 187, 220, 326
-	* Calculus II, Introduction to Philosophy
+<h6><em>Lead Developer</em></h6>
+	* CMPSCI: 121, 187, 220, 250, 326
+	* Calculus III, Introduction to Philosophy
 
-James is a sophomore pursuing his Bachelor of Science in Computer Science. His interests lie in mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games. James is from Granby, MA.
+James is a sophomore pursuing his Bachelor of Science in Computer Science with a concentration in Software Engineering. His interests lie in mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games. James is from Granby, MA.
 
 <h4>Matthaus Wolff</h4>
-<h6><em>Back-End Developer</em></h6>
+<h6><em>Back-End Developer and Marketing Manager</em></h6>
 	* CMPSCI: 187, 220, 230, 320, 326
-	* Introduction to Microeconomics, Introduction to Macroeconomics,
-	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
-	* Calculus I, Calculus II, Multivariate Calculus, Statistics I
+	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory
 
-Matthaus is a junior pursuing his Bachelor of Science in Computer Science. He's very interested in data analysis and gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
+Matthaus is a junior pursuing his Bachelor of Arts in Computer Science with a concentration in Economics. He's very interested in data analysis and gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
 <h4>Nam Phan</h4>
 <h6><em>Back-End Developer</em></h6>
@@ -33,7 +31,7 @@ Matthaus is a junior pursuing his Bachelor of Science in Computer Science. He's 
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
 <h4>Sara da Silva</h4>
-<h6><em>Front-End Developer</em></h6>
+<h6><em>Front-End Developer and Graphic Designer</em></h6>
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 

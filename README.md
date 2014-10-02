@@ -1,4 +1,4 @@
-<p align="center"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="220px" alt="Where your ideas connect to our system."></p>
 
 <h2 id="members">Project Overview</h2>
 
