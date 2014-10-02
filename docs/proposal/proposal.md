@@ -50,18 +50,18 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 
 <p align = "right"><i >[Written by Nam Phan on 10/02/2014]</i></p>
 
-<h2>Our Vision</h2>
+<h2>Product Description</h2>
 //Work in progress.
 
 <p align = "right"><i >[Written by -member- on mm/dd/yyyy]</i></p>
 
-<h2>Project Timeline</h2>
+<h2>Timeline</h2>
 //Work in progress.
 
 <p align = "right"><i > [Written by -member- on mm/dd/yyyy]</i></p>
 
 
-<h2>Projected Expenses</h2>
+<h2>Budget Estimate</h2>
 
 <code>println( Initial Expenses );</code>
 <table>
