@@ -53,7 +53,7 @@ Work in progress.
 <h2>Projected Expenses</h2>
 > [Written by James Yanyuk on 09/31/2014]
 
-Initial Expenses
+<code>println( Initial Expenses );</code>
 <table>
 	<tr>
 		<th>Component</th>
@@ -82,7 +82,7 @@ Initial Expenses
 	</tr>
 </table>
 
-<code>Fixed Expenses (Yearly)</code>
+<code>println( Fixed Expenses - Yearly );</code>
 <table>
 	<tr>
 		<th>Component</th>
@@ -106,8 +106,7 @@ Initial Expenses
 	</tr>
 </table>
 
-> Variable Expenses (Yearly)
-
+<code>println( Variable Expenses - Yearly );</code>
 <table>
 	<tr>
 		<th>Component</th>
