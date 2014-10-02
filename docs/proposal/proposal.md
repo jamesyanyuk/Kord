@@ -34,7 +34,7 @@ Nam is a senior CS major from East Longmeadow. He is currently interested in lea
 
 Sara is a transfer student from MassBay Community College and is currently a senior pursuing her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence. She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and also works in web management for a non-profit organization that provides assistance to the immigrant community and more specifically women. She is particularly interested in applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation.
 
-<i align = "right">[Written by James Yanyuk on 10/01/2014]</i>
+<p align = "right"><i >[Written by James Yanyuk on 10/01/2014]</i></p>
 
 <h2>Problem Statement</h2>
 	
@@ -46,22 +46,22 @@ Skype is a great application for video chatting, calling, and messaging, but it 
 
 kord.io is focused on communication and collaboration, we want to help facilitate the dividing line that separates the physical from the digital. The team at kord.io introduces our web application platform that will incorporate the video and text messaging of Skype, the board of Trello, the real-time collaboration of Google docs, and a collaborative "table" all into one easy to use platform. Being able to remove the hassle of micromanaging different programs for different functions will greatly streamline a meeting, announcement, group project, or just a friendly hangout.
 
-> [Written by Nam Phan on 10/02/2014]
+//Work in progress.
 
-Work in progress.
+<p align = "right"><i >[Written by Nam Phan on 10/02/2014]</i></p>
 
 <h2>Our Vision</h2>
-> [Written by -member- on mm/dd/yyyy]
+//Work in progress.
 
-Work in progress.
+<p align = "right"><i >[Written by -member- on mm/dd/yyyy]</i></p>
 
 <h2>Project Timeline</h2>
-> [Written by -member- on mm/dd/yyyy]
+//Work in progress.
 
-Work in progress.
+<p align = "right"><i > [Written by -member- on mm/dd/yyyy]</i></p>
+
 
 <h2>Projected Expenses</h2>
-> [Written by James Yanyuk on 09/31/2014]
 
 <code>println( Initial Expenses );</code>
 <table>
@@ -139,3 +139,5 @@ Work in progress.
 		<td>-</td>
 	</tr>
 </table>
+
+<p align = "right"><i >  [Written by James Yanyuk on 09/31/2014]</i></p>
