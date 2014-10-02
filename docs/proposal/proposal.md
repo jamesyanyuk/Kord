@@ -3,14 +3,14 @@
 <h2>Team Members</h2>
 
 <h4>Julian Kuk</h4>
-<h6><em>Project Manager</em></h6>
+</br><em><strong>Project Manager</strong></em>
 	* CMPSCI: 230, 240, 250
 	* Calculus I, Human Values and Personal Freedom
 
 Julian is a transfer student from MassBay Community College and currently a junior. He's a part-time gamer, part-time musician, occasional math nerd, and a snowboarder. He has a particular interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings and for academic and social education.
 
 <h4>James Yanyuk</h4>
-<h2><em>Software Engineer</em></h2>
+<h6><em>Project Manager</em></h6>
 	* CMPSCI: 121, 187
 	* Calculus II, Introduction to Philosophy
 
