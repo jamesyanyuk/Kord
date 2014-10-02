@@ -12,14 +12,14 @@ Julian is a transfer student from MassBay Community College and currently a juni
 <h4>James Yanyuk <em>&gt;&gt; Software Engineer</em></h4>
 > * CMPSCI: 121, 187
 > * Calculus II, Introduction to Philosophy
-</code>
+
 James is a sophomore computer science major from Granby, MA. His interests lie in mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
 
 <h4>Matthaus Wolff <em>&gt;&gt; Role</em></h4>
 > * CMPSCI: 187, 220, 230, 320
 > * Introduction to Microeconomics, Introduction to Macroeconomics,
-> > * Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
-> > * Calculus I, Calculus II, Multivariate Calculus, Statistics I
+> 	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
+> 	* Calculus I, Calculus II, Multivariate Calculus, Statistics I
 
 Matthaus is a junior who’s lived most of his life in Germany. He's very interested in data analysis and gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and system management. He loves to play video games, perform martial arts, and above all meet new people.
 
