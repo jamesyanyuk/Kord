@@ -80,11 +80,6 @@ Initial Expenses
 		<td>-</td>
 		<td>-</td>
 	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
 </table>
 
 Fixed Expenses (Yearly)
@@ -109,16 +104,6 @@ Fixed Expenses (Yearly)
 		<td>-</td>
 		<td>-</td>
 	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
 </table>
 
 Variable Expenses (Yearly)
@@ -130,16 +115,6 @@ Variable Expenses (Yearly)
 	</tr>
 	<tr>
 		<td>Dedicated Server</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
 		<td>-</td>
 		<td>-</td>
 	</tr>
