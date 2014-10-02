@@ -53,8 +53,8 @@ Work in progress.
 <h2>Projected Expenses</h2>
 > [Written by James Yanyuk on 09/31/2014]
 
-<b>Fixed Expenses</b>
-<table style="width:100%">
+Fixed Expenses
+<table>
 	<tr>
 		<th>Component</th>
 		<th>Details</th>
@@ -72,9 +72,9 @@ Work in progress.
 	</tr>
 </table>
 
-<b>Fixed Expenses (Yearly)</b>
-<table style="width:100%">
-	<tr style="width:100%">
+Fixed Expenses (Yearly)
+<table>
+	<tr>
 		<th>Component</th>
 		<th>Details</th>
 		<th>Expenditure (USD)</th>
@@ -86,8 +86,8 @@ Work in progress.
 	</tr>
 </table>
 
-<b>Variable Expenses (Yearly)</b>
-<table style="width:100%">
+Variable Expenses (Yearly)
+<table>
 	<tr>
 		<th>Component</th>
 		<th>Details</th>
