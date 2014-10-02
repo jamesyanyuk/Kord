@@ -1,4 +1,4 @@
-<p align="center"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></p>
 
 <h2>Team Members</h2>
 
@@ -10,7 +10,7 @@
 Julian is a transfer student from MassBay Community College and is currently a junior pursuing his Bachelor of Science in Computer Science with a concentration in Artificial Design. He's a part-time gamer, part-time musician, occasional math nerd, and a snowboarder. He has a particular interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings and for academic and social education.
 
 <h4>James Yanyuk</h4>
-<h6><em>Front-End Developer</em></h6>
+<h6><em>Lead Developer</em></h6>
 	* CMPSCI: 121, 187, 220, 326
 	* Calculus II, Introduction to Philosophy
 
