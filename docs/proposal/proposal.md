@@ -57,7 +57,7 @@ Fixed Expenses
 <table>
 	<tr>
 		<th>Component</th>
-		<th><p style="width:100%">Details</p></th>
+		<th>Details</th>
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
