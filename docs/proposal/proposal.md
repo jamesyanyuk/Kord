@@ -70,6 +70,21 @@ Initial Expenses
 		<td>Custom workstations (x5)</td>
 		<td>N/A</td>
 	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
 </table>
 
 Fixed Expenses (Yearly)
@@ -84,6 +99,26 @@ Fixed Expenses (Yearly)
 		<td>-</td>
 		<td>-</td>
 	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
 </table>
 
 Variable Expenses (Yearly)
@@ -92,6 +127,26 @@ Variable Expenses (Yearly)
 		<th>Component</th>
 		<th>Details</th>
 		<th>Expenditure (USD)</th>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 	<tr>
 		<td>-</td>
