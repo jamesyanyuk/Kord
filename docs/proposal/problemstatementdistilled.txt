@@ -1,0 +1,4 @@
+People want an environment that promotes the sharing of ideas, interaction with one another, ease of access, and flexibility.
+Current solutions such as Google Docs, Trello, and Skype do not address all of these issues simultaneously.
+A combination of productivity, organization, and communication software is required to host a digital meeting as comfortably and intuitively
+as a physical meeting is.
