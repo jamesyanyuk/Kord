@@ -101,6 +101,6 @@ Users can also allow for the information to persist between sessions so groups
 can come and go as they please, while their information stays similar to Trello.
 
 <h3 id="concept">Documents to be Reviewed:</h3>
-
+//To be included
 
 * * *
