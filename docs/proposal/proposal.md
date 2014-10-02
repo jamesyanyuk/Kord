@@ -95,9 +95,9 @@ Fixed Expenses (Yearly)
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
+		<td>Domain</td>
+		<td>"kord.io" Domain - Gandi Rates</td>
+		<td>40.00</td>
 	</tr>
 	<tr>
 		<td>-</td>
@@ -129,7 +129,7 @@ Variable Expenses (Yearly)
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
-		<td>-</td>
+		<td>Dedicated Server</td>
 		<td>-</td>
 		<td>-</td>
 	</tr>
