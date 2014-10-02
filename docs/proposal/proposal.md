@@ -38,7 +38,7 @@ Nam is a senior CS major from East Longmeadow. He is currently interested in lea
 
 Sara is a transfer student from MassBay Community College and is currently a senior pursuing her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence. She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and also works in web management for a non-profit organization that provides assistance to the immigrant community and more specifically women. She is particularly interested in applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation.
 
-<p align = "right"><i >[Written by Sara da Silva on 10/02/2014]</em></p>
+<p align = "right"><i >[Written by Sara da Silva - 10/02/2014]</em></p>
 
 <h2>Problem Statement</h2>
 	
@@ -52,17 +52,17 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 
 //Work in progress.
 
-<p align = "right"><i >[Written by Nam Phan on 10/02/2014]</em></p>
+<p align = "right"><i >[Written by Nam Phan - 10/02/2014]</em></p>
 
 <h2>Product Description</h2>
 //Work in progress.
 
-<p align = "right"><i >[Written by -member- on mm/dd/yyyy]</em></p>
+<p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
 <h2>Timeline</h2>
 //Work in progress.
 
-<p align = "right"><i > [Written by -member- on mm/dd/yyyy]</em></p>
+<p align = "right"><i > [Written by Matthaus Wolff - 10/02/2014]</em></p>
 
 
 <h2>Budget Estimate</h2>
@@ -144,4 +144,4 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 	</tr>
 </table>
 
-<p align = "right"><i > [Written by James Yanyuk on 09/31/2014]</em></p>
+<p align = "right"><i > [Written by James Yanyuk - 09/31/2014]</em></p>
