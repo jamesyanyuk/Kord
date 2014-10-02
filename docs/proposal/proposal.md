@@ -45,7 +45,7 @@ Skype is a great application for video chatting, calling, and messaging, but it 
 
 kord.io is focused on communication and collaboration, we want to help facilitate the dividing line that separates the physical from the digital. The team at kord.io introduces our web application platform that will incorporate the video and text messaging of Skype, the board of Trello, the real-time collaboration of Google docs, and a collaborative "table" all into one easy to use platform. Being able to remove the hassle of micromanaging different programs for different functions will greatly streamline a meeting, announcement, group project, or just a friendly hangout.
 
-> [Written by -Nam Phan- on 10/02/2014]
+> [Written by Nam Phan on 10/02/2014]
 
 Work in progress.
 
