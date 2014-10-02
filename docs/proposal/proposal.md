@@ -3,7 +3,7 @@
 <h2>Team Members</h2>
 
 <h4>Julian Kuk</h4>
-<h2><em>Project Manager</em></h2>
+<h6><em>Project Manager</em></h6>
 	* CMPSCI: 230, 240, 250
 	* Calculus I, Human Values and Personal Freedom
 
