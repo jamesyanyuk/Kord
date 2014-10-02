@@ -53,11 +53,12 @@ Work in progress.
 <h2>Projected Expenses</h2>
 > [Written by James Yanyuk on 09/31/2014]
 
-<h4>Initial Expenses</h4>
-<table>
+Initial Expenses
+
+<table style="width:100%">
 	<tr>
 		<th>Component</th>
-		<th style="width:100%">Details</th>
+		<th>Details</th>
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
@@ -72,11 +73,12 @@ Work in progress.
 	</tr>
 </table>
 
-<h4>Fixed Expenses (Yearly)</h4>
-<table>
+Fixed Expenses (Yearly)
+
+<table style="width:100%">
 	<tr>
 		<th>Component</th>
-		<th style="width:100%">Details</th>
+		<th>Details</th>
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
@@ -86,11 +88,12 @@ Work in progress.
 	</tr>
 </table>
 
-<h4>Variable Expenses (Yearly)</h4>
-<table>
+Variable Expenses (Yearly)
+
+<table style="width:100%">
 	<tr>
 		<th>Component</th>
-		<th style="width:100%">Details</th>
+		<th>Details</th>
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
