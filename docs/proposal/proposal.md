@@ -53,9 +53,6 @@ Then generally, all classes provide the option for office hours with TAs or the 
 
 People want an environment that promotes sharing of ideas, interaction with one another, ease of access, and flexibility. Previous courses, if not all, have shown a need for such a platform. A platform that will incorporate the video and text messaging of Skype, the board of Trello, the real-time collaboration of Google docs, and a collaborative "table" all into one easy to use platform. Being able to remove the hassle of micromanaging different programs for different functions will greatly streamline a meeting, announcement, group project, or just a friendly hangout. The team at kord.io will introduce a web application platform that will take the big step in tearing down the dividing line between digital and physical meetings and promote an environment for unhindered collaboration and communication. 
 
-
-//Work in progress.
-
 <p align = "right"><i >[Written by Nam Phan - 10/02/2014]</em></p>
 
 <h2>Product Description</h2>
