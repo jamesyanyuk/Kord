@@ -82,7 +82,7 @@ Initial Expenses
 	</tr>
 </table>
 
-Fixed Expenses (Yearly)
+<code>Fixed Expenses (Yearly)</code>
 <table>
 	<tr>
 		<th>Component</th>
@@ -106,7 +106,7 @@ Fixed Expenses (Yearly)
 	</tr>
 </table>
 
-Variable Expenses (Yearly)
+^ Variable Expenses (Yearly)
 <table>
 	<tr>
 		<th>Component</th>
