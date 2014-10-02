@@ -1,4 +1,4 @@
-<div id="headerimage"><img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" width="400px" alt="Where your ideas connect to our system."></div>
+<img src="https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg" align="middle" width="400px" alt="Where your ideas connect to our system.">
 
 <h2>Team Members</h2>
 > [Written by James Yanyuk on 10/01/2014]
