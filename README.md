@@ -1,6 +1,6 @@
 ![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg "Where your ideas connect to our system.")
 
-<h2 id="concept">Project Overview:</h2>
+//Project Summary to be included.
 
 <h3 id="members">Project Summary:</h3>
 
@@ -58,7 +58,9 @@ hopes to do so upon graduation.
 
 * * *
 
-<h2 id="concept">Original Proposal:</h2>
+<h2 id="concept">Original Proposal</h2>
+
+<h3 id="concept">Description:</h3>
 
 	kord.io is a company invested in communication and collaboration platforms.
 
@@ -96,5 +98,8 @@ Not only that, but the system would be dynamic - users would be able
 to pause the video, and interact with the pieces on the table at any time.
 Users can also allow for the information to persist between sessions so groups
 can come and go as they please, while their information stays similar to Trello.
+
+<h3 id="concept">Documents to be Reviewed:</h3>
+
 
 * * *
