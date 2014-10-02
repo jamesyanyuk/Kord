@@ -70,6 +70,7 @@ kord.io is focused on communication and collaboration, we want to help facilitat
 
 <code>println( Initial Expenses );</code>
 <table>
+	<p> Initial Expenses </p>
 	<tr>
 		<th>Component</th>
 		<th>Details</th>
