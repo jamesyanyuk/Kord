@@ -61,14 +61,14 @@ Work in progress.
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
-		<th>Office Equipment</th>
-		<th>Desks, peripherals, software, etc.</th>
-		<th>N/A</th>
+		<td>Office Equipment</td>
+		<td>Desks, peripherals, software, etc.</td>
+		<td>N/A</td>
 	</tr>
 	<tr>
-		<th>Workstations</th>
-		<th>Custom workstations (x3)</th>
-		<th>N/A</th>
+		<td>Workstations</td>
+		<td>Custom workstations (x3)</td>
+		<td>N/A</td>
 	</tr>
 </table>
 
@@ -80,9 +80,9 @@ Work in progress.
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
-		<th>-</th>
-		<th>-</th>
-		<th>-</th>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 </table>
 
@@ -94,8 +94,8 @@ Work in progress.
 		<th>Expenditure (USD)</th>
 	</tr>
 	<tr>
-		<th>-</th>
-		<th>-</th>
-		<th>-</th>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 </table>
