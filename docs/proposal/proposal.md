@@ -90,7 +90,43 @@ physical meetings and promote an environment for unhindered collaboration and co
 <p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
 <h2>Timeline</h2>
-//Work in progress.
+**Research**   
+*Oct 1 - Oct 15*
+
+This step will mostly consist of figuring out what is possible in low and high level design as far as the idea for our project goes. We plan on implementing web sockets to handle most of the interaction between server and client and as we learn more about other tools we will be able to finalize design in the document.
+
+**Requirement Specifications**			                  	           	      
+*Oct 16 - Oct 23*
+
+Here we will define exactly what scope for the project will be. This includes specific use cases for extraneous situations that can could cause the project to fail. This document offers to describe what we are doing, not how it will be done. 
+
+**Basic Interface**							      
+*Oct 24 - Oct 31*
+
+	By this step we plan to have all design completed and have basic groundwork
+	completed for a server capable of receiving and sending requests. Here we will handle
+	all interaction between client with respect to account management and tracking users.
+
+**Full Functionality**	
+*Nov 1 - Nov 15*
+
+	All upload and download utilities should be working properly with a very basic way to
+	view these changes. This step focuses on managing data on the server, keeping
+	things dynamic and sustainable.
+
+**Graphic Design**
+*Nov 16 - Nov 30*
+
+	After the functionality of the project are complete we will work on the visual appeal and
+	the usability of the project. This step is very important since social media interfaces
+	need to be appealing and easy to use to be useful for a large demographic of users.
+
+**Testing and Refinement**
+ *Dec 1 - Dec 4*
+
+Here we will finalize our project and sort out any residual bugs and unexpected
+crashing that is still occurring. We will also create a presentation to show our finalized
+product.
 
 <p align = "right"><i > [Written by Matthaus Wolff - 10/02/2014]</em></p>
 
