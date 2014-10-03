@@ -128,27 +128,37 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 <h6>Initial Expenses - Single</h6>
 | Component | Details | Expenditure (USD) |
 | --------- | ------- | ----------------- |
-| Office Equipment | Desks, Peripherals, Software Licensing, etc. | WIP |
-| Workstations | Custom Desktops (x5) | WIP |
-| Intell. Protection | Copyrights & Trademarks | WIP |
-| Launch | Promotional and Launch Event Expenses | WIP |
+| Office Equipment | Desks, Peripherals, Software Licensing, etc. | 7,000.00 |
+| Workstations | Custom Desktops (x5) | 6,000.00 |
+| Intell. Protection | Copyrights & Trademarks | 1,500.00 |
+| Launch | Promotional and Launch Event Expenses | 6,500.00 |
 
-<h6>Fixed Expenses - Yearly</h6>
+Initial expenses total 21,000 USD.
+
+<h6>Fixed Expenses - Yearly Projection</h6>
 | Component | Details | Expenditure (USD) |
 | --------- | ------- | ----------------- |
 | Domain | "kord.io" Domain Registration & Renewal | 40.00 |
-| Incorporation | S-Corporation Filing Fees | WIP |
-| Office Lease | Boston, MA Area Office | WIP |
+| Incorporation | S-Corporation Filing Fees (Massachusetts) | 275.00 |
+| Office Lease | Boston, MA Office Location | 18,000.00 |
 
-<h6>Variable Expenses - Yearly</h6>
+Fixed expenses per year total 18,315 USD.
+
+<h6>Variable Expenses - First Year Projection</h6>
 | Component | Details | Expenditure (USD) |
 | --------- | ------- | ----------------- |
-| Dedicated Server Rent | Cost based on first year's anticipated traffic volume | WIP |
-| Developer Salaries | Web Developers (x3) | WIP |
-| Designer Salaries | Web/Graphic Designers (x2) | WIP |
-| Accountant | Managing first-year expenses and revenue | WIP |
-| Advertising/Marketing | Google Ad-Words & Search Engine Optimization | WIP |
+| Dedicated Server Rent | Cost based on first year's anticipated traffic volume | 7,500.00 |
+| Developer Salaries | Web Developers (x3) | 210,000.00 |
+| Designer Salaries | Web/Graphic Designers (x2) | 165,000.00 |
+| Accountant | Managing first-year expenses and revenue | 3,000.00 |
+| Advertising/Marketing | Google Ad-Words & Search Engine Optimization | 25,000.00 |
 
-//Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
+Variable expenses for the first year total 410,500 USD.
+
+<h6>Summary</h6>
+<code>
+Expense Total: 435,315 USD
+Funding Requested: 435, 315 USD
+</code>
 
 <p align = "right"><i > [Written by James Yanyuk - 09/31/2014]</em></p>
