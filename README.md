@@ -1,9 +1,9 @@
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="200px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
-<h2>Team Members</h2>
+##Team Members
 
-<h4>Julian Kuk</h4>
-<h6><em>Project Lead</em></h6>
+####Julian Kuk
+######*Project Lead*
 	* CMPSCI: 220, 230, 240, 250, 311, 326, 383 
 	* Calculus I, Human Values and Personal Freedom
 
@@ -12,8 +12,8 @@ a concentration in Artificial Intelligence. He's a part-time gamer, part-time mu
 interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings
 and for academic and social education.
 
-<h4>James Yanyuk</h4>
-<h6><em>Lead Developer</em></h6>
+####James Yanyuk
+######*Lead Developer*
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Philosophy
 
@@ -21,8 +21,8 @@ James is a sophomore pursuing his Bachelor of Science in Computer Science with a
 mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
 James is from Granby, MA.
 
-<h4>Matthaus Wolff</h4>
-<h6><em>Back-End Developer and Marketing Manager</em></h6>
+####Matthaus Wolff
+######*Back-End Developer and Marketing Manager*
 	* CMPSCI: 187, 220, 230, 320, 326
 	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory
 
@@ -30,16 +30,16 @@ Matthaus is a junior pursuing his Bachelor of Arts in Computer Science with a co
 gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and
 system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
-<h4>Nam Phan</h4>
-<h6><em>Back-End Developer</em></h6>
+####Nam Phan
+######*Back-End Developer*
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 326, 377, 383
 	* Introduction to Microeconomics, Intro Legal Studies
 
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
-<h4>Sara da Silva</h4>
-<h6><em>Front-End Developer and Graphic Designer</em></h6>
+####Sara da Silva
+######*Front-End Developer and Graphic Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 
@@ -51,7 +51,7 @@ and raised in Cambridge, MA.
 
 * * *
 
-<h2 id="concept">Original Proposal</h2>
+##Original Proposal
 
 Lacking an environment that facilitates robust, real-time discussion and collaboration.
 Current solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
@@ -61,7 +61,7 @@ Streamlines the digital meeting by offering communication, productivity, and org
 A digital work space that the group can see and interact with in real time.
 Drag and drop resources onto the work space like you would physical resources at a meeting.
 
-<h3 id="concept">Description:</h3>
+###Description:
 
 Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
 our platform in its simplest form. The goal is to create a central hub for
@@ -98,7 +98,7 @@ to pause the video, and interact with the pieces on the table at any time.
 Users can also allow for the information to persist between sessions so groups
 can come and go as they please, while their information stays similar to Trello.
 
-<h3 id="concept">Documents to be Reviewed:</h3>
+###Documents to be Reviewed:
 
 README.md
 /docs/proposal/proposal.md
