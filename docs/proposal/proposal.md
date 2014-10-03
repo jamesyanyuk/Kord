@@ -1,4 +1,4 @@
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="200px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
 <h2>Team Members</h2>
 
