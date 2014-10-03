@@ -3,7 +3,7 @@
 <h2>Team Members</h2>
 
 ####Julian Kuk
-***Project Lead***  
+######*Project Lead*
 	* CMPSCI: 220, 230, 240, 250, 311, 326, 383 
 	* Calculus I, Human Values and Personal Freedom
 
@@ -12,7 +12,8 @@ a concentration in Artificial Intelligence. He's a part-time gamer, part-time mu
 interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings
 and for academic and social education.
 
-####James Yanyuk   ######*Lead Developer
+####James Yanyuk
+######*Lead Developer*
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Philosophy
 
@@ -20,8 +21,8 @@ James is a sophomore pursuing his Bachelor of Science in Computer Science with a
 mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
 James is from Granby, MA.
 
-####Matthaus Wolff  
-***Back-End Developer and Marketing Manager***
+####Matthaus Wolff
+######*Back-End Developer and Marketing Manager*
 	* CMPSCI: 187, 220, 230, 320, 326
 	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory
 
@@ -29,16 +30,16 @@ Matthaus is a junior pursuing his Bachelor of Arts in Computer Science with a co
 gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and
 system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
-####Nam Phan  
-***Back-End Developer***
+####Nam Phan
+######*Back-End Developer***
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 326, 377, 383
 	* Introduction to Microeconomics, Intro Legal Studies
 
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
-####Sara da Silva  
-***Front-End Developer and Graphic Designer***
+####Sara da Silva
+######*Front-End Developer and Graphic Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 
