@@ -164,7 +164,7 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 #####Fixed Expenses - Yearly Projection
 |        Component        |        Details        |        Expenditure (USD)        |
 | ------------------------------ | ---------------------- | ------------------------------------------ |
-| Domain | "kord.io" Domain Registration & Renewal | 40.00 |
+| Domain                        | "kord.io" Domain Registration & Renewal | 40.00 |
 | Incorporation | S-Corporation Filing Fees (Massachusetts) | 275.00 |
 | Office Lease | Boston, MA Office Location | 18,000.00 |
 
