@@ -85,7 +85,33 @@ physical meetings and promote an environment for unhindered collaboration and co
 <p align = "right"><i >[Written by Nam Phan - 10/02/2014]</em></p>
 
 ##Product Description
-//Work in progress.
+
+In order to offer productivity, communication, and organization in a single package,
+our product will be composed of two major components. The first and most basic is its chat functionality.
+Users will be able to chat through text, audio, or video calls. The revolutionary portion of the project is the 'board'.
+
+Basically, the board is a digital whiteboard. Users can draw on it and other members of the group
+will be able to see what was drawn in real time. But more than that, users can drag and drop resources onto it,
+such as videos, pdfs, text files, etc. Users can then watch videos, annotate a pdf, edit a text file together, and more.
+
+One major feature would be the dynamic logging system. The platform would save not just a history of the chat, but also
+of the board. Users who were unable to attend a meeting, could get caught up by watching the history of the board,
+as if someone had recorded a video of it. But even more, users would be able to interact with the pieces of board as it played out, as if
+they were present for the actual meeting.
+
+This is perfect for students who often have issues with scheduling meetings and thus inevitably meet digitally.
+Imagine the frustration of students working on math homework disappearing as they just write their equations
+down as if they were next to each other, working on the same white board. Imagine two students reviewing each other's essays before submission,
+and more than that, marking up the documents and discussing ideas and comments in real time. Then suppose a day later, neither one of
+them had written down their thoughts. They can come back to this web app and find all of their
+notes where they had left them, as if they had left their notes in a physical room.
+
+Or imagine a college professor preparing,
+instead of a screen cast because he was temporarily out of commission due to illness,
+his lecture through this web app. He can record a screen cast, while streaming video from his web cam. He can present a pdf,
+while making annotations on it in real time. Students can watch the lecture as if they were actually in the room, watching the lecture.
+
+It offers people an environment to share ideas - to interact in an intuitive and flexible way.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
