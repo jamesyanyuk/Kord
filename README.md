@@ -94,8 +94,8 @@ and raised in Cambridge, MA.
 
 ##Documents to be Reviewed
 
-README.md  
-/docs/proposal/proposal.md  
-/docs/proposal/proposal.pdf  
-/docs/images/kordio.jpg  
-/notes/10-04-2014.md  
+[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
+[/docs/proposal/proposal.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.md)  
+[/docs/proposal/proposal.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.pdf)  
+[/docs/images/kordio.jpg](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg)  
+[/notes/10-04-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-04-2014.md)  
