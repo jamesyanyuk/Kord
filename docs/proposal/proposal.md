@@ -49,7 +49,7 @@ works in web management for a non-profit organization that provides assistance t
 applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation. Sara was born in Brazil
 and raised in Cambridge, MA.
 
-<p align = "right"><i >[Edited by Sara da Silva - 10/02/2014]</em></p>
+<p align = "right"><i >[Written by Sara da Silva - 10/02/2014]</em></p>
 
 ##Problem Statement
 
