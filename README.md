@@ -99,7 +99,7 @@ It removes the need for micromanaging multiple windows. It let's people interact
 
 ###Documents to be Reviewed
 
-README.md
+README.md  
 /docs/proposal/proposal.md  
 /docs/proposal/proposal.pdf  
 /docs/images/kordio.jpg  
