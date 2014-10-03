@@ -15,7 +15,7 @@ and for academic and social education.
 ####James Yanyuk
 ######*Lead Developer*
 	* CMPSCI: 121, 187, 220, 250, 326
-	* Calculus III, Introduction to Philosophy
+	* Calculus III, Introduction to Microeconomics
 
 James is a sophomore pursuing his Bachelor of Science in Computer Science with a concentration in Software Engineering. His interests lie in
 mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
