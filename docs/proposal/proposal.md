@@ -31,7 +31,7 @@ gathering information about the world. His dream job will always be in game desi
 system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
 ####Nam Phan
-######*Back-End Developer***
+######*Back-End Developer*
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 326, 377, 383
 	* Introduction to Microeconomics, Intro Legal Studies
 
