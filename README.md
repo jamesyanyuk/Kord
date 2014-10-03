@@ -38,8 +38,9 @@ system management. He loves to play video games, perform martial arts, and above
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
+
 ####Sara da Silva
-######*Front-End Developer and Graphic Designer*
+######*Front-End Developer and Graphics Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 
@@ -53,57 +54,53 @@ and raised in Cambridge, MA.
 
 ##Original Proposal
 
-Lacking an environment that facilitates robust, real-time discussion and collaboration.
-Current solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
-A combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
+There is currently no platform that facilitates robust, real-time discussion and collaboration.
+Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
+Thus a combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
 
-Streamlines the digital meeting by offering communication, productivity, and organizational tools in one app.
-A digital work space that the group can see and interact with in real time.
-Drag and drop resources onto the work space like you would physical resources at a meeting.
+Our product streamlines the digital meeting by offering communication, productivity, and organizational tools in one app.
+It is a digital work space that a group can see and interact with in real time.
+Users can drag and drop resources onto the work space like they would physical resources at a meeting.
 
-###Description:
+More information regarding our original proposal can be found in the /docs/proposal directory. The proposal document contains
+member biographies and roles, the problem statement, a product description, a time line, and estimated costs
 
-Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
-our platform in its simplest form. The goal is to create a central hub for
-any sort of communication or collaboration, whether that means students doing
-homework, professors giving lectures, businesses holding meetings,
-gamers organizing groups, programmers debugging code, etc.
+###Product Description
 
-At its core, there would be two major pieces: the actual chat window,
-and then what will temporarily be referred to as the ‘table’.
+In order to offer productivity, communication, and organization in a single package,
+our product will be composed of two major components. The first and most basic is its chat functionality.
+Users will be able to chat through text, audio, or video calls. The revolutionary portion of the project is the 'board'.
 
-In its most basic usage, the platform would serve as a glorified chat room.
-Users can come and go as they please. There would be voice chat and
-webcam support in the same way Skype or Google Hangouts already offers.
+Basically, the board is a digital whiteboard. Users can draw on it and other members of the group
+will be able to see what was drawn in real time. But more than that, users can drag and drop resources onto it,
+such as videos, pdfs, text files, etc. Users can then watch videos, annotate a pdf, edit a text file together, and more.
 
-However, the unique part is the table. The table is a synchronized workspace
-that specific or all members of the room have access to. It can hold and
-display resources such as text, pictures, audio, or videos
-(whether embedded or in the form of URL). Not only will it serve as
-a bulletin board for various media, users can draw on it as if it is a whiteboard.
-This allows for a truly dynamic and robust communication experience.
-Two friends can post a picture of a cross word puzzle and work on it together,
-filling in the words as they go. Users can watch videos together,
-making annotations as they see fit, etc.
+One major feature would be the dynamic logging system. The platform would save not just a history of the chat, but also
+of the board. Users who were unable to attend a meeting, could get caught up by watching the history of the board,
+as if someone had recorded a video of it. But even more, users would be able to interact with the pieces of board as it played out, as if
+they were present for the actual meeting.
 
-Another key feature would be the logging system. Not only
-would the platform save a history of the chat on the cloud, it would also
-save a history of the table. This allows users to get caught up on a meeting
-by simply watching the meeting over again as if someone had recorded a video of it.
-The benefit of this is the user can watch all the pieces come together in real time,
-rather than only seeing the final product.
+This is perfect for students who often have issues with scheduling meetings and thus inevitably meet digitally.
+Imagine the frustration of students working on math homework disappearing as they just write their equations
+down as if they were next to each other, working on the same white board. Imagine two students reviewing each other's essays before submission,
+and more than that, marking up the documents and discussing ideas and comments in real time. Then suppose a day later, neither one of
+them had written down their thoughts. They can come back to this web app and find all of their
+notes where they had left them, as if they had left their notes in a physical room.
 
-Not only that, but the system would be dynamic - users would be able
-to pause the video, and interact with the pieces on the table at any time.
-Users can also allow for the information to persist between sessions so groups
-can come and go as they please, while their information stays similar to Trello.
+Or imagine a college professor preparing,
+instead of a screen cast because he was temporarily out of commission due to illness,
+his lecture through this web app. He can record a screen cast, while streaming video from his web cam. He can present a pdf,
+while making annotations on it in real time. Students can watch the lecture as if they were actually in the room, watching the lecture.
 
-###Documents to be Reviewed:
+That is the power of this project. It offers people an environment to share ideas - to interact in an intuitive and flexible way.
+It removes the need for micromanaging multiple windows. It let's people interact as they normally would.
 
-README.md
-/docs/proposal/proposal.md
-/docs/proposal/proposal.pdf
-/docs/images/kordio.jpg
-/notes/10-04-2014.md
+###Documents to be Reviewed
+
+README.md  
+/docs/proposal/proposal.md  
+/docs/proposal/proposal.pdf  
+/docs/images/kordio.jpg  
+/notes/10-04-2014.md  
 
 * * *

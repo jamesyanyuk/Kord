@@ -1,6 +1,6 @@
 <p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
-<h2>Team Members</h2>
+##Team Members
 
 ####Julian Kuk
 ######*Project Lead*
@@ -51,7 +51,7 @@ and raised in Cambridge, MA.
 
 <p align = "right"><i >[Edited by Sara da Silva - 10/02/2014]</em></p>
 
-<h2>Problem Statement</h2>
+##Problem Statement
 
 After having pooled our team's classes inside and outside the major, we have come to realize that many of these classes involve some kind of
 collaboration and/or communication need, but more importantly an environment that promotes it. Classes that demands to be recognized includes
@@ -84,12 +84,12 @@ physical meetings and promote an environment for unhindered collaboration and co
 
 <p align = "right"><i >[Written by Nam Phan - 10/02/2014]</em></p>
 
-<h2>Product Description</h2>
+##Product Description
 //Work in progress.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
-<h2>Timeline</h2>
+##Timeline
 **Research**  
 ***Oct 1 - Oct 15***
 
@@ -123,7 +123,7 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 <p align = "right"><i > [Written by Matthaus Wolff - 10/02/2014]</em></p>
 
 
-<h2>Budget Estimate</h2>
+##Budget Estimate
 
 <h6>Initial Expenses - Single</h6>
 | Component | Details | Expenditure (USD) |
