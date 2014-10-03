@@ -30,8 +30,6 @@ while making annotations on it in real time. Students can watch the lecture as i
 That is the power of this project. It offers people an environment to share ideas - to interact in an intuitive and flexible way.
 It removes the need for micromanaging multiple windows. It let's people interact as they normally would.
 
-* * *
-
 ##Original Proposal
 
 There is currently no platform that facilitates robust, real-time discussion and collaboration.
@@ -44,8 +42,6 @@ Users can drag and drop resources onto the work space like they would physical r
 
 More information regarding our original proposal can be found in the /docs/proposal directory. The proposal document contains
 member biographies and roles, the problem statement, a product description, a time line, and estimated costs
-
-* * *
 
 ##Team Members
 
@@ -85,7 +81,6 @@ system management. He loves to play video games, perform martial arts, and above
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
-
 ####Sara da Silva
 ######*Front-End Developer and Graphics Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
@@ -97,8 +92,6 @@ works in web management for a non-profit organization that provides assistance t
 applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation. Sara was born in Brazil
 and raised in Cambridge, MA.
 
-* * *
-
 ##Documents to be Reviewed
 
 README.md  
@@ -106,5 +99,3 @@ README.md
 /docs/proposal/proposal.pdf  
 /docs/images/kordio.jpg  
 /notes/10-04-2014.md  
-
-* * *
