@@ -1,6 +1,6 @@
-![alt text](https://trello-attachments.s3.amazonaws.com/540c6e8258f3b06826ac54ed/54149b93e8d3f86b7acb851f/750x317/dc13b374aa93a55f51bc7444c36f483d/kordio.jpg "Where your ideas connect to our system.")
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
-Version: 1.0
+Version: 1.1
 
 *	[Project Concept] (#concept)
 *	[Members] (#members)
@@ -56,12 +56,13 @@ can come and go as they please, while their information stays similar to Trello.
 <h2 id="members">Members:</h2>
 
 <h4 id="james">James Yanyuk:</h4>
+
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Microeconomics
 
-James is a sophomore CS major from Granby, MA. He has a great interest in
-bleeding-edge technology, mobile application development, and innovative tech startups.
-He enjoys playing soccer and is quite the avid gamer.
+James is a sophomore pursuing his Bachelor of Science in Computer Science with a concentration in Software Engineering. His interests lie in
+mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
+James is from Granby, MA.
 
 <h4 id="julian">Julian Kuk:</h4>
 
@@ -75,32 +76,28 @@ using games as a medium in both formal and informal settings and for academic an
 
 <h4 id="matthaus">Matthaus Wolff:</h4>
 
-	* CMPSCI: 187, 220, 230, 320
-	* Introduction to Microeconomics, Introduction to Macroeconomics,
-		* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory, 
-		* Calculus I, Calculus II, Multivariate Calculus, Statistics I
+	* CMPSCI: 187, 220, 230, 320, 326
+	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory
 
-Matthaus is a junior who’s lived most of his life in Germany. He's very interested in data analysis
-and gathering information about the world. His dream job will always be in game design, but more
-recently he's come to like technical consulting and system management. He loves to play video games,
-perform martial arts, and above all meet new people.
+Matthaus is a junior pursuing his Bachelor of Arts in Computer Science with a concentration in Economics. He's very interested in data analysis and
+gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and
+system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
 <h4 id="nam">Nam Phan:</h4>
 
-	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 377
+	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 326, 377, 383
 	* Introduction to Microeconomics, Intro Legal Studies
 
-Nam is a senior CS major from East Longmeadow. He is currently interested in learning about
-computer networks and android apps. He loves playing ultimate frisbee, and swimming. 
+Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
+android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
 <h4 id="sara">Sara da Silva:</h4>
 
-	* CMPSCI: 187, 230, 240, 250, 311
+	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
-Sara is a transfer student from MassBay Community College and is currently a senior pursuing
-her Bachelor of Science in Computer Science with a concentration in Artificial Intelligence.
-She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and
-also works in web management for a non-profit organization that provides assistance to
-the immigrant community and more specifically women. She is particularly interested in
-applying her education and knowledge in environments that can be beneficial to others and
-hopes to do so upon graduation.
+
+Sara is a transfer student from MassBay Community College and is currently a senior pursuing her Bachelor of Science in Computer Science with a
+concentration in Artificial Intelligence. She is a Student Ambassador at UMass’ Computer Science Recruiting and Outreach Committee and also
+works in web management for a non-profit organization that provides assistance to the immigrant community. She is particularly interested in
+applying her education and knowledge in environments that can be beneficial to others and hopes to do so upon graduation. Sara was born in Brazil
+and raised in Cambridge, MA.
