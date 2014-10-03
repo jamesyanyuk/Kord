@@ -1,9 +1,9 @@
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="200px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
 <h2>Team Members</h2>
 
-<h4>Julian Kuk</h4>
-<h6><em>Project Lead</em></h6>
+####Julian Kuk
+######*Project Lead*
 	* CMPSCI: 220, 230, 240, 250, 311, 326, 383 
 	* Calculus I, Human Values and Personal Freedom
 
@@ -12,8 +12,8 @@ a concentration in Artificial Intelligence. He's a part-time gamer, part-time mu
 interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings
 and for academic and social education.
 
-<h4>James Yanyuk</h4>
-<h6><em>Lead Developer</em></h6>
+####James Yanyuk
+######*Lead Developer*
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Philosophy
 
@@ -21,8 +21,8 @@ James is a sophomore pursuing his Bachelor of Science in Computer Science with a
 mobile application development, machine learning, and algorithmic trading. He enjoys playing soccer, and occasionally plays computer games.
 James is from Granby, MA.
 
-<h4>Matthaus Wolff</h4>
-<h6><em>Back-End Developer and Marketing Manager</em></h6>
+####Matthaus Wolff
+######*Back-End Developer and Marketing Manager*
 	* CMPSCI: 187, 220, 230, 320, 326
 	* Intermediate Microeconomic Theory, Intermediate Macroeconomic Theory
 
@@ -30,16 +30,16 @@ Matthaus is a junior pursuing his Bachelor of Arts in Computer Science with a co
 gathering information about the world. His dream job will always be in game design, but more recently he's come to like technical consulting and
 system management. He loves to play video games, perform martial arts, and above all meet new people. Matthaus has lived most of his life in Germany. 
 
-<h4>Nam Phan</h4>
-<h6><em>Back-End Developer</em></h6>
+####Nam Phan
+######*Back-End Developer*
 	* CMPSCI: 187, 220, 230, 240, 250, 305, 320, 326, 377, 383
 	* Introduction to Microeconomics, Intro Legal Studies
 
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
-<h4>Sara da Silva</h4>
-<h6><em>Front-End Developer and Graphic Designer</em></h6>
+####Sara da Silva
+######*Front-End Developer and Graphic Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 
@@ -90,91 +90,64 @@ physical meetings and promote an environment for unhindered collaboration and co
 <p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
 <h2>Timeline</h2>
-//Work in progress.
+**Research**  
+***Oct 1 - Oct 15***
+
+This step will mostly consist of figuring out what is possible in low and high level design as far as the idea for our project goes. We plan on implementing web sockets to handle most of the interaction between server and client and as we learn more about other tools we will be able to finalize design in the document.
+
+**Requirement Specifications**  
+***Oct 16 - Oct 23***
+
+Here we will define exactly what scope for the project will be. This includes specific use cases for extraneous situations that can could cause the project to fail. This document offers to describe what we are doing, not how it will be done. 
+
+**Basic Interface**  
+***Oct 24 - Oct 31***
+
+By this step we plan to have all design completed and have basic groundwork completed for a server capable of receiving and sending requests. Here we will handle all interaction between client with respect to account management and tracking users.
+
+**Full Functionality**	  
+***Nov 1 - Nov 15***
+
+All upload and download utilities should be working properly with a very basic way to view these changes. This step focuses on managing data on the server, keeping things dynamic and sustainable.
+
+**Graphic Design**  
+***Nov 16 - Nov 30***
+
+After the functionality of the project are complete we will work on the visual appeal and the usability of the project. This step is very important since social media interfaces need to be appealing and easy to use to be useful for a large demographic of users.
+
+**Testing and Refinement**  
+***Dec 1 - Dec 4***
+
+Here we will finalize our project and sort out any residual bugs and unexpected crashing that is still occurring. We will also create a presentation to show our finalized product.
 
 <p align = "right"><i > [Written by Matthaus Wolff - 10/02/2014]</em></p>
 
 
 <h2>Budget Estimate</h2>
 
-<table>
-	<h6> Initial Expenses </h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Office Equipment</td>
-		<td>Desks, peripherals, software, etc.</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>Workstations</td>
-		<td>Custom workstations (x5)</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Initial Expenses - Single</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Office Equipment | Desks, Peripherals, Software Licensing, etc. | WIP |
+| Workstations | Custom Desktops (x5) | WIP |
+| Intell. Protection | Copyrights & Trademarks | WIP |
+| Launch | Promotional and Launch Event Expenses | WIP |
 
+<h6>Fixed Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Domain | "kord.io" Domain Registration & Renewal | 40.00 |
+| Incorporation | S-Corporation Filing Fees | WIP |
+| Office Lease | Boston, MA Area Office | WIP |
 
-<table>
-	<h6>Fixed Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Domain</td>
-		<td>"kord.io" Domain - Gandi Rates</td>
-		<td>40.00</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
-
-
-<table>
-	<h6>Variable Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Dedicated Server</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Variable Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Dedicated Server Rent | Cost based on first year's anticipated traffic volume | WIP |
+| Developer Salaries | Web Developers (x3) | WIP |
+| Designer Salaries | Web/Graphic Designers (x2) | WIP |
+| Accountant | Managing first-year expenses and revenue | WIP |
+| Advertising/Marketing | Google Ad-Words & Search Engine Optimization | WIP |
 
 //Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
 
