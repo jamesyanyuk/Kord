@@ -13,7 +13,7 @@ interest in education and game design and the intersection between the two - usi
 and for academic and social education.
 
 ####James Yanyuk
-***Lead Developer***  
+######*Lead Developer***
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Philosophy
 
