@@ -90,12 +90,12 @@ physical meetings and promote an environment for unhindered collaboration and co
 <p align = "right"><i >[Written by  Julian Kuk - 10/02/2014]</em></p>
 
 <h2>Timeline</h2>
-**Research**  
+###**Research**  
 ***Oct 1 - Oct 15***
 
 This step will mostly consist of figuring out what is possible in low and high level design as far as the idea for our project goes. We plan on implementing web sockets to handle most of the interaction between server and client and as we learn more about other tools we will be able to finalize design in the document.
 
-**Requirement Specifications**  
+####**Requirement Specifications**  
 ***Oct 16 - Oct 23***
 
 Here we will define exactly what scope for the project will be. This includes specific use cases for extraneous situations that can could cause the project to fail. This document offers to describe what we are doing, not how it will be done. 
