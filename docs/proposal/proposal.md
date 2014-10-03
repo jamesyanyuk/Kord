@@ -152,8 +152,8 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 ##Budget Estimate
 
 #####Initial Expenses - Single
-|        Component        |        Details        |        Expenditure (USD)        |
-| ------------------------------ | ---------------------- | ------------------------------------------ |
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
 | Office Equipment | Desks, Peripherals, Software Licensing, etc. | 7,000.00 |
 | Workstations | Custom Desktops (x5) | 6,000.00 |
 | Intell. Protection | Copyrights & Trademarks | 1,500.00 |
@@ -162,17 +162,17 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 ######Total Initial Expenses: $21,000 USD  
 
 #####Fixed Expenses - Yearly Projection
-|        Component        |        Details        |        Expenditure (USD)        |
-| ------------------------------ | ---------------------- | ------------------------------------------ |
-| Domain                        | "kord.io" Domain Registration & Renewal | 40.00 |
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Domain | "kord.io" Domain Registration & Renewal | 40.00 |
 | Incorporation | S-Corporation Filing Fees (Massachusetts) | 275.00 |
 | Office Lease | Boston, MA Office Location | 18,000.00 |
 
 ######Total Fixed Expenses per Year: $18,315 USD    
 
 #####Variable Expenses - First Year Projection
-|        Component        |        Details        |        Expenditure (USD)        |
-| ------------------------------ | ---------------------- | ------------------------------------------ |
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
 | Dedicated Server Rent | Cost based on first year's anticipated traffic volume | 7,500.00 |
 | Developer Salaries | Web Developers (x3) | 210,000.00 |
 | Designer Salaries | Web/Graphic Designers (x2) | 165,000.00 |
