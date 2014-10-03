@@ -1,6 +1,6 @@
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="200px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
-<h2>Team Members</h2>
+##Team Members
 
 ####Julian Kuk
 ######*Project Lead*
@@ -51,7 +51,7 @@ and raised in Cambridge, MA.
 
 * * *
 
-<h2 id="concept">Original Proposal</h2>
+##Original Proposal
 
 Lacking an environment that facilitates robust, real-time discussion and collaboration.
 Current solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
@@ -61,7 +61,7 @@ Streamlines the digital meeting by offering communication, productivity, and org
 A digital work space that the group can see and interact with in real time.
 Drag and drop resources onto the work space like you would physical resources at a meeting.
 
-<h3 id="concept">Description:</h3>
+###Description:
 
 Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
 our platform in its simplest form. The goal is to create a central hub for
@@ -98,7 +98,7 @@ to pause the video, and interact with the pieces on the table at any time.
 Users can also allow for the information to persist between sessions so groups
 can come and go as they please, while their information stays similar to Trello.
 
-<h3 id="concept">Documents to be Reviewed:</h3>
+###Documents to be Reviewed:
 
 README.md
 /docs/proposal/proposal.md
