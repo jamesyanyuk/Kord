@@ -56,8 +56,8 @@ can come and go as they please, while their information stays similar to Trello.
 <h2 id="members">Members:</h2>
 
 <h4 id="james">James Yanyuk:</h4>
-	* CMPSCI: 121, 187
-	* Calculus II, Introduction to Philosophy
+	* CMPSCI: 121, 187, 220, 250, 326
+	* Calculus III, Introduction to Microeconomics
 
 James is a sophomore CS major from Granby, MA. He has a great interest in
 bleeding-edge technology, mobile application development, and innovative tech startups.
