@@ -171,7 +171,7 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 ######Total Fixed Expenses per Year: $18,315 USD    
 
 #####Variable Expenses - First Year Projection
-| Component | Details | Expenditure (USD) |
+|        Component        |        Details        |        Expenditure (USD)        |
 | --------- | ------- | ----------------- |
 | Dedicated Server Rent | Cost based on first year's anticipated traffic volume | 7,500.00 |
 | Developer Salaries | Web Developers (x3) | 210,000.00 |
