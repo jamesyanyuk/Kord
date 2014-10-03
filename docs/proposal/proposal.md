@@ -119,84 +119,29 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 
 <h2>Budget Estimate</h2>
 
-<table>
-	<h6> Initial Expenses </h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Office Equipment</td>
-		<td>Desks, peripherals, software, etc.</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>Workstations</td>
-		<td>Custom workstations (x5)</td>
-		<td>N/A</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Initial Expenses - Single</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Office Equipment | Desks, Peripherals, Software Licensing, etc. | WIP |
+| Workstations | Custom Desktops (x5) | WIP |
+| Intell. Protection | Copyrights & Trademarks | WIP |
+| Launch | Promotional and Launch Event Expenses | WIP |
 
+<h6>Fixed Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Domain | "kord.io" Domain Registration & Renewal | 40.00 |
+| Incorporation | S-Corporation Filing Fees | WIP |
+| Office Lease | Boston, MA Area Office | WIP |
 
-<table>
-	<h6>Fixed Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Domain</td>
-		<td>"kord.io" Domain - Gandi Rates</td>
-		<td>40.00</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
-
-
-<table>
-	<h6>Variable Expenses - Yearly</h6>
-	<tr>
-		<th>Component</th>
-		<th>Details</th>
-		<th>Expenditure (USD)</th>
-	</tr>
-	<tr>
-		<td>Dedicated Server</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-	</tr>
-</table>
+<h6>Variable Expenses - Yearly</h6>
+| Component | Details | Expenditure (USD) |
+| --------- | ------- | ----------------- |
+| Dedicated Server Rent | Cost based on first year's anticipated traffic volume | WIP |
+| Developer Salaries | Web Developers (x3) | WIP |
+| Designer Salaries | Web/Graphic Designers (x2) | WIP |
+| Accountant | Managing first-year expenses and revenue | WIP |
+| Advertising/Marketing | Google Ad-Words & Search Engine Optimization | WIP |
 
 //Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
 
