@@ -158,7 +158,6 @@ Variable expenses for the first year total 410,500 USD.
 <h6>Summary</h6>
 
 > Expense Total: 435,315 USD
-
 > Funding Requested: 435,315 USD
 
 <p align = "right"><i > [Written by James Yanyuk - 09/31/2014]</em></p>
