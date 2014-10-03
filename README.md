@@ -52,7 +52,20 @@ and raised in Cambridge, MA.
 
 * * *
 
-<h3 id="concept">Product Description:</h3>
+##Original Proposal
+
+There is currently no environment that facilitates robust, real-time discussion and collaboration.
+Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
+Thus a combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
+
+Our product streamlines the digital meeting by offering communication, productivity, and organizational tools in one app.
+It is a digital work space that a group can see and interact with in real time.
+Users can drag and drop resources onto the work space like they would physical resources at a meeting.
+
+More information regarding our original proposal can be found in the /docs/proposal directory. The proposal document contains
+member biographies and roles, the problem statement, a product description, a time line, and estimated costs
+
+###Product Description
 
 In order to offer productivity, communication, and organization in a single package,
 our product will be composed of two major components.  
@@ -84,71 +97,9 @@ while making annotations on it in real time. Students can watch the lecture as i
 That is the power of this project. It offers people an environment to share ideas - to interact in an intuitive and flexible way.
 It removes the need for micromanaging multiple windows. It let's people interact as they normally would.
 
-<h3 id="concept">Original Proposal</h3>
+###Documents to be Reviewed
 
-There is currently no environment that facilitates robust, real-time discussion and collaboration.
-Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
-Thus a combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
-
-Our product streamlines the digital meeting by offering communication, productivity, and organizational tools in one app.
-It is a digital work space that a group can see and interact with in real time.
-Users can drag and drop resources onto the work space like they would physical resources at a meeting.
-
-More information regarding our original proposal can be found in the /docs/proposal directory. The proposal document contains
-member biographies and roles, the problem statement, a product description, a time line, and estimated costs
-
-=======
-##Original Proposal
-
-Lacking an environment that facilitates robust, real-time discussion and collaboration.
-Current solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
-A combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
-
-Streamlines the digital meeting by offering communication, productivity, and organizational tools in one app.
-A digital work space that the group can see and interact with in real time.
-Drag and drop resources onto the work space like you would physical resources at a meeting.
-
-###Description:
-
-Take Trello, Google Docs, a whiteboard, and Skype. The union of these would be
-our platform in its simplest form. The goal is to create a central hub for
-any sort of communication or collaboration, whether that means students doing
-homework, professors giving lectures, businesses holding meetings,
-gamers organizing groups, programmers debugging code, etc.
-
-At its core, there would be two major pieces: the actual chat window,
-and then what will temporarily be referred to as the ‘table’.
-
-In its most basic usage, the platform would serve as a glorified chat room.
-Users can come and go as they please. There would be voice chat and
-webcam support in the same way Skype or Google Hangouts already offers.
-
-However, the unique part is the table. The table is a synchronized workspace
-that specific or all members of the room have access to. It can hold and
-display resources such as text, pictures, audio, or videos
-(whether embedded or in the form of URL). Not only will it serve as
-a bulletin board for various media, users can draw on it as if it is a whiteboard.
-This allows for a truly dynamic and robust communication experience.
-Two friends can post a picture of a cross word puzzle and work on it together,
-filling in the words as they go. Users can watch videos together,
-making annotations as they see fit, etc.
-
-Another key feature would be the logging system. Not only
-would the platform save a history of the chat on the cloud, it would also
-save a history of the table. This allows users to get caught up on a meeting
-by simply watching the meeting over again as if someone had recorded a video of it.
-The benefit of this is the user can watch all the pieces come together in real time,
-rather than only seeing the final product.
-
-Not only that, but the system would be dynamic - users would be able
-to pause the video, and interact with the pieces on the table at any time.
-Users can also allow for the information to persist between sessions so groups
-can come and go as they please, while their information stays similar to Trello.
->>>>>>> bb6f06512edfc67de4a0d2e02e2702b39b574f23
-
-###Documents to be Reviewed:
-
-README.md
+README.md  
 /docs/proposal/proposal.md  
 /docs/proposal/proposal.pdf  
 /docs/images/kordio.jpg  
