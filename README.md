@@ -38,13 +38,9 @@ system management. He loves to play video games, perform martial arts, and above
 Nam is a senior pursuing his Bachelor of Science in Computer Science. He is currently interested in learning about computer networks and
 android apps. He loves playing ultimate frisbee, and swimming. Nam is from East Longmeadow.
 
-<<<<<<< HEAD
-<h4>Sara da Silva</h4>
-<h6><em>Front-End Developer and Graphics Designer</em></h6>
-=======
+
 ####Sara da Silva
-######*Front-End Developer and Graphic Designer*
->>>>>>> bb6f06512edfc67de4a0d2e02e2702b39b574f23
+######*Front-End Developer and Graphics Designer*
 	* CMPSCI: 187, 220, 230, 240, 250, 311, 305, 325, 326
 	* Critical Thinking, Introductory Psychology
 
@@ -56,7 +52,6 @@ and raised in Cambridge, MA.
 
 * * *
 
-<<<<<<< HEAD
 <h3 id="concept">Product Description:</h3>
 
 In order to offer productivity, communication, and organization in a single package,
