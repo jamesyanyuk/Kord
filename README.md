@@ -54,7 +54,7 @@ and raised in Cambridge, MA.
 
 ##Original Proposal
 
-There is currently no environment that facilitates robust, real-time discussion and collaboration.
+There is currently no platform that facilitates robust, real-time discussion and collaboration.
 Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
 Thus a combination of productivity, organization, and communication software is required to host a digital meeting comfortably.
 
@@ -68,10 +68,8 @@ member biographies and roles, the problem statement, a product description, a ti
 ###Product Description
 
 In order to offer productivity, communication, and organization in a single package,
-our product will be composed of two major components.  
-
-The first and most basic is its chat functionality. Users will be able to chat through text,
-audio, or video calls. The revolutionary portion of the project is the 'board'.
+our product will be composed of two major components. The first and most basic is its chat functionality.
+Users will be able to chat through text, audio, or video calls. The revolutionary portion of the project is the 'board'.
 
 Basically, the board is a digital whiteboard. Users can draw on it and other members of the group
 will be able to see what was drawn in real time. But more than that, users can drag and drop resources onto it,
