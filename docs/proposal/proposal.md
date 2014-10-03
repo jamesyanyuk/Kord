@@ -149,6 +149,4 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 | Accountant | Managing first-year expenses and revenue | WIP |
 | Advertising/Marketing | Google Ad-Words & Search Engine Optimization | WIP |
 
-//Work in progress. Needs:  - the cost of the project, - the amount requested to the venture capitalist firm, - and how funds will be applied and distributed.
-
 <p align = "right"><i > [Written by James Yanyuk - 09/31/2014]</em></p>
