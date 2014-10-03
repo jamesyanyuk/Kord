@@ -2,8 +2,8 @@
 
 <h2>Team Members</h2>
 
-<h4>Julian Kuk</h4>
-<h6><em>Project Lead</em></h6>
+###Julian Kuk
+***Project Lead***
 	* CMPSCI: 220, 230, 240, 250, 311, 326, 383 
 	* Calculus I, Human Values and Personal Freedom
 
@@ -12,8 +12,8 @@ a concentration in Artificial Intelligence. He's a part-time gamer, part-time mu
 interest in education and game design and the intersection between the two - using games as a medium in both formal and informal settings
 and for academic and social education.
 
-<h4>James Yanyuk</h4>
-<h6><em>Lead Developer</em></h6>
+####James Yanyuk
+***Lead Developer***
 	* CMPSCI: 121, 187, 220, 250, 326
 	* Calculus III, Introduction to Philosophy
 
