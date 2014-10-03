@@ -152,8 +152,8 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 ##Budget Estimate
 
 #####Initial Expenses - Single
-| Component | Details | Expenditure (USD) |
-| --------- | ------- | ----------------- |
+|        Component        |        Details        |        Expenditure (USD)        |
+| ------------------------------ | ---------------------- | ------------------------------------------ |
 | Office Equipment | Desks, Peripherals, Software Licensing, etc. | 7,000.00 |
 | Workstations | Custom Desktops (x5) | 6,000.00 |
 | Intell. Protection | Copyrights & Trademarks | 1,500.00 |
@@ -162,7 +162,7 @@ Here we will finalize our project and sort out any residual bugs and unexpected 
 ######Total Initial Expenses: $21,000 USD  
 
 #####Fixed Expenses - Yearly Projection
-| Component | Details | Expenditure (USD) |
+|        Component        |        Details        |        Expenditure (USD)        |
 | --------- | ------- | ----------------- |
 | Domain | "kord.io" Domain Registration & Renewal | 40.00 |
 | Incorporation | S-Corporation Filing Fees (Massachusetts) | 275.00 |
