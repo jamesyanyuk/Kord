@@ -52,3 +52,16 @@ member biographies and roles, the problem statement, a product description, a ti
 [/docs/proposal/proposal.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.pdf)  
 [/docs/images/kordio.jpg](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg)  
 [/notes/10-04-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-04-2014.md)  
+
+##Note for the TA about Trello:  
+If you're looking at the Trello board, in the Completed section, you'll find the major milestones
+such as, completed Assignment 2, etc. If you go in there, you'll find links
+to other cards that you won't see anywhere else on the board.
+
+In an effort to keep things from getting cluttered, we have a board for the current assignment with
+cards for each individual task required for the assignment. A member will be assigned and
+added to each task/card. Once the assignment has been completed, all of the cards in
+the current assignment will be archived. However, a card for the overall milestone (ie. assignment)
+will be created and added to the Completed list. Links to each individual card will be added as
+comments to the milestone card. That way you can still view who was responsible for what,
+but we won't have to clutter the board with a million cards for one single assignment.
