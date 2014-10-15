@@ -1,0 +1,30 @@
+###Goals:
+	* Collaborative whiteboard
+	* Chat system
+	* .txt embedding and collaborative editing
+	* Session Saving
+	*
+
+###Non-Goals:  
+
+#####Time Permitting:
+	* Youtube video embedding
+	* pdf embedding
+	* Image embedding
+
+#####Features for the Future:
+	* Voice chat
+	* Video conferencing
+	* Screen sharing
+	* Other file format support for embedding
+	* Monetization
+	* Desktop / offline / lan client
+	* Widgets such as calculator
+
+#####Possible considerations:
+	* Large groups
+	* Remote desktop
+
+#####Never:
+	* Social networking
+	* Photoshop - add support for more robust applications via remote desktop
