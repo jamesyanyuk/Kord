@@ -1,5 +1,5 @@
 ###Goals:
-	* Collaborative whiteboard
+	* Collaborative board
 	* Chat system
 	* .txt embedding and collaborative editing
 	* Session Saving
