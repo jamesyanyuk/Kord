@@ -26,6 +26,7 @@
 #####Possible considerations:
 	* Large groups
 	* Remote desktop
+	* Audio Chat
 
 #####Never:
 	* Social networking

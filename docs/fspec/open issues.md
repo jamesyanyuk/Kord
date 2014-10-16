@@ -7,3 +7,4 @@
 	* Layout for users with different resolutions
 	* How much customization of tools and GUI to allow
 	* Layering the board
+	* Exploit prevention
