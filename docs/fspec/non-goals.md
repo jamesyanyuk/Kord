@@ -8,6 +8,7 @@
 ###Non-Goals:  
 
 #####Time Permitting:
+	* accounts
 	* Youtube video embedding
 	* pdf embedding
 	* Image embedding
@@ -18,8 +19,9 @@
 	* Screen sharing
 	* Other file format support for embedding
 	* Monetization
-	* Desktop / offline / lan client
+	* Desktop / offline / lan clientt
 	* Widgets such as calculator
+	* save
 
 #####Possible considerations:
 	* Large groups
