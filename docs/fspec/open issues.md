@@ -1,7 +1,7 @@
 ##Open Issues
 
 
-Open Issues include:
+####Open Issues include:
 	* How many members to limit a session
 	* How handling session saving
 	* Layout for users with different resolutions
