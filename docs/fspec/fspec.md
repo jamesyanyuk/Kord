@@ -52,12 +52,14 @@ Technical details will be discussed in a future document.
 #####Possible considerations:
 	* Large groups
 	* Remote desktop
-	
+
 #####Never:
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
-	
+
 ##Wireframes
+---
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/structure.png"></p>
 ---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg"></p>
 ---
@@ -80,7 +82,7 @@ Technical details will be discussed in a future document.
 ##Use Case Scenarios
 
 <b>A couple of friends want to do commentary of a sports game:</b>
-		
+
 There is a large sports event coming up and a group of friends really want to watch
 and talk about it together. However, they are all across the world in different
 places for their own reasons. They can use kord.io to create their own personal
@@ -147,27 +149,27 @@ board from anywhere without needing a computer.
 Having to think about how much activity each member can perform in a session
 with x other members, finding a balance for limiting the number of members to a
 session will be left to trial and error.
-	
+
 <b>How handling session saving</b>
 
 We want users to be able to save a session in some way, at first we may start
 with saving the board as a pdf then maybe eventually move to saving the board state.
-	
+
 <b>Layout for users with different resolutions</b>
 
 A big issue is figuring out how to handle users running our app on different
 resolutions. Whether we want a static window with scrolling or screen pulling, or a resizable window.
-	
+
 <b>How much customization of tools and GUI to allow</b>
 
 We want to give our users as much freedom as possible while keeping our UI very
 simple to operate, so deciding how much freedom to give to users will be an issure for trial and error.
-	
+
 <b>Layering the board</b>
 
 With multiple users means that we will run into a layering issue when multiple
 people interact with the board, deciding who gets priority and synchronization.
-	
+
 <b>Exploit prevention</b>
 
 Making sure our app is less prone to exploits.
