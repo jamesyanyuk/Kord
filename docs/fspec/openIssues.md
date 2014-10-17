@@ -1,8 +1,5 @@
 ##Open Issues
 
-
-###Open Issues include:
-
 <b>How many members to limit a session</b>
 
 Having to think about how much activity each member can perform in a session with x other members, finding a balance for limiting the number of members to a session will be left to trial and error.
