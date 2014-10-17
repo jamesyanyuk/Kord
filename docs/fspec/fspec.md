@@ -3,17 +3,29 @@
 ####Julian Kuk  
 ######*Project Lead*  
 
+Responsible for managing the flow of the team and the distribution of tasks, with a primary
+focus on front-end development.
+
 ####James Yanyuk  
 ######*Back End Lead*
+
+Primarily focused on back-end development, and general integration of the front-end and database.
+Manages the application's dedicated server.
 
 ####Matthaus Wolff  
 ######*Back-End Developer and Marketing Manager*  
 
+Primarily focused on back-end development and marketing of the application.
+
 ####Nam Phan  
 ######*Back-End Developer*  
 
+Primarily focused on database design and back-end development.
+
 ####Sara da Silva  
 ######*Front End Lead and Graphics Designer*  
+
+Primarily focused on front-end development and graphic design.
 
 ##Overview  
 
