@@ -41,7 +41,7 @@ we will be experimenting with.
 	* Image embedding
 	* Text Editing / Code Interpreter
 
-#####Features for the Future:
+#####Features for the Possibly Distant Future (post 326):
 	* Voice chat
 	* Video conferencing
 	* Screen sharing
@@ -51,13 +51,15 @@ we will be experimenting with.
 	* Widgets such as calculator
 	* Board history saving
 
-#####Possible considerations:
+#####Possible Considerations:
 	* Large groups
 	* Remote desktop
 
 #####Never:
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
+	
+	<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
 ##Wireframes
 ---
