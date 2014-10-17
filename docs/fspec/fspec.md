@@ -68,6 +68,8 @@ Technical details will be discussed in a future document.
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg"></p>
 
+<p align = "right"><i >[Created by Sara da Silva & James Yanyuk - 10/15/2014]</em></p>
+
 ##Flowchart
 
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg"></p>
