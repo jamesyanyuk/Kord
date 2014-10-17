@@ -4,7 +4,7 @@
 ######*Project Lead*  
 
 ####James Yanyuk  
-######*Lead Back-End Developer* - server framework  
+######*Back End Lead*
 
 ####Matthaus Wolff  
 ######*Back-End Developer and Marketing Manager*  
@@ -13,53 +13,31 @@
 ######*Back-End Developer*  
 
 ####Sara da Silva  
-######*Front-End Developer and Graphics Designer*  
-
-<p align = "right"><i >[Written by Julian Kuk - 10/15/2014]</em></p>  
-
-
-
-
-
+######*Front End Lead and Graphics Designer*  
 
 ##Overview  
 
 Kord is a centralized hub for any human interaction over a digital medium.
 Whether that means for friends, businesses, working partners, social groups.
 
-
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
-
-
-
-
 
 ##Disclaimer  
 
-Any designs, features discussed in this document are subject to change. UI designs will evolve
+Any designs and features discussed in this document are subject to change. UI designs will evolve
 as we test and feature lists will change as we run into technical problems and find inspiration.
-Technical details will be discussed in another document.
+Technical details will be discussed in a future document.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
-
-
-###Non-Goals
-
-###Goals:
-	* Collaborative board
-	* Chat system
-	* .txt embedding and collaborative editing
-	* Session Saving
-	*
-
-###Non-Goals:  
+##Non-Goals
 
 #####Time Permitting:
-	* accounts
+	* Accounts
 	* Youtube video embedding
-	* pdf embedding
+	* PDF embedding
 	* Image embedding
+	* Text Editing / Interpreter
 
 #####Features for the Future:
 	* Voice chat
@@ -69,61 +47,84 @@ Technical details will be discussed in another document.
 	* Monetization
 	* Desktop / offline / lan clientt
 	* Widgets such as calculator
-	* save
+	* Board history saving
 
 #####Possible considerations:
 	* Large groups
 	* Remote desktop
-	* Audio Chat
-
+	
 #####Never:
 	* Social networking
-	* Photoshop - add support for more robust applications via remote desktop
+	* Full applications such as Photoshop - Support can be added via remote desktop
 
-
-
-###Flowchart
-
+##Flowchart
 
 <p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg" width="240px" alt="Where your ideas connect to our system."></p>
 
-###Use Case Scenarios
+##Use Case Scenarios
 
 <b>A couple of friends want to do commentary of a sports game:</b>
 		
-There is a large sports event coming up and a group of friends really want to watch and  talk about it together. However, they are all across the world in different places for their own reasons. They can use kord.io to create their own personal board and stream their favorite game. They can use a smooth embedded chat on the website or start a voice chat.
+There is a large sports event coming up and a group of friends really want to watch
+and talk about it together. However, they are all across the world in different
+places for their own reasons. They can use kord.io to create their own personal
+board and stream their favorite game. They can use a smooth embedded chat on the
+website or start a voice chat.
 
 <b>A TA/Professor wants to hold a screencast:</b>
 
-The instructor can invite their students into a private board for a video lecture. This can be a pre-recorded lecture and be uploaded to the board during which the students can discuss the material chatting with each other. It can also be a live lecture, where the instructor organizes a time for the students to meet and then streams the lecture live on one of our boards.
+The instructor can invite their students into a private board for a video lecture.
+This can be a pre-recorded lecture and be uploaded to the board during which the
+students can discuss the material chatting with each other. It can also be a live
+lecture, where the instructor organizes a time for the students to meet and then
+streams the lecture live on one of our boards.
 
 <b>Students doing Peer to Peer Essay editing:</b>
 
-Students can upload their essay and sources to a board and invite their friends to join and comment on their work. Editing will be dynamic and users will be able to make suggestions by commenting directly on files, track changes, and communicate through voice or text.
+Students can upload their essay and sources to a board and invite their friends
+to join and comment on their work. Editing will be dynamic and users will be able
+to make suggestions by commenting directly on files, track changes, and communicate
+through voice or text.
 
 <b>A group of GUI Developers Contributing to a design:</b>
 
-Users will be able to work on images together with kord.io’s dynamic drawing capabilities, as they simultaneously edit and discuss a particular interface or design. They will also be able to code together with context highlighting for hundreds of languages.
+Users will be able to work on images together with kord.io’s dynamic drawing
+capabilities, as they simultaneously edit and discuss a particular interface or
+design. They will also be able to code together with context highlighting for
+hundreds of languages.
 
 <b>A presenter shows his ideas to board of executives:</b>
 
-Users will be able to create presentations on kord.io in formats such as powerpoint or keynote to show off ideas to potential donaters and investors. Much like google presentations this will also be easily shareable and presentable with multiple users.
+Users will be able to create presentations on kord.io in formats such as
+powerpoint or keynote to show off ideas to potential donaters and investors.
+Much like google presentations this will also be easily shareable and presentable
+with multiple users.
 
 <b>Gaming Team Strategizing:</b>
 
-A group of friends are preparing for a large tournament and they want to quickly and easily share spreadsheets and make diagrams for the game. They will be able to have their own board with various types of material as well as voice communicate in the background during the game.
+A group of friends are preparing for a large tournament and they want to quickly
+and easily share spreadsheets and make diagrams for the game. They will be able
+to have their own board with various types of material as well as voice communicate
+in the background during the game.
 
 <b>Large Team Organization:</b>
 
-Project managers can create multiple boards linked to each other and assign members to specific tasks while managing and controlling the communication between them. They will be able to give rights to different members that are responsible for various jobs and documents to make working together in a large team smooth and efficient.
+Project managers can create multiple boards linked to each other and assign members
+to specific tasks while managing and controlling the communication between them.
+They will be able to give rights to different members that are responsible for
+various jobs and documents to make working together in a large team smooth and efficient.
 
 <b>Mobile device Accessibility:</b>
 
-Users will be able to use kord.io on various devices regardless of proccessing power and screen resolution. The web app will detect the system settings of a connection and display in various formats. A developer might unexpectedly run into someone interested in their idea and they want to be able to access their board from anywhere without needing a computer.
+Users will be able to use kord.io on various devices regardless of processing
+power and screen resolution. The web app will detect the system settings of a
+connection and display in various formats. A developer might unexpectedly run
+into someone interested in their idea and they want to be able to access their
+board from anywhere without needing a computer.
 
 <p align = "right"><i >[Written by Matthaus Wolff - 10/15/2014]</em></p>
 
-###Wireframes
+##Wireframes
 
 https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg
 https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg  
@@ -138,23 +139,29 @@ https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetso
 
 <b>How many members to limit a session</b>
 
-Having to think about how much activity each member can perform in a session with x other members, finding a balance for limiting the number of members to a session will be left to trial and error.
+Having to think about how much activity each member can perform in a session
+with x other members, finding a balance for limiting the number of members to a
+session will be left to trial and error.
 	
 <b>How handling session saving</b>
 
-We want users to be able to save a session in some way, at first we may start with saving the board as a pdf then maybe eventually move to saving the board state.
+We want users to be able to save a session in some way, at first we may start
+with saving the board as a pdf then maybe eventually move to saving the board state.
 	
 <b>Layout for users with different resolutions</b>
 
-A big issue is figuring out how to handle users running our app on different resolutions. Whether we want a static window with scrolling or screen pulling, or a resizable window.
+A big issue is figuring out how to handle users running our app on different
+resolutions. Whether we want a static window with scrolling or screen pulling, or a resizable window.
 	
 <b>How much customization of tools and GUI to allow</b>
 
-We want to give our users as much freedom as possible while keeping our UI very simple to operate, so deciding how much freedom to give to users will be an issure for trial and error.
+We want to give our users as much freedom as possible while keeping our UI very
+simple to operate, so deciding how much freedom to give to users will be an issure for trial and error.
 	
 <b>Layering the board</b>
 
-With multiple users means that we will run into a layering issue when multiple people interact with the board, deciding who gets priority and synchronization.
+With multiple users means that we will run into a layering issue when multiple
+people interact with the board, deciding who gets priority and synchronization.
 	
 <b>Exploit prevention</b>
 
@@ -164,5 +171,5 @@ Making sure our app is less prone to exploits.
 
 
 ###Revision History
-	* Version 1.0
-	> Initial version of functional specifications.
+	* Version .1
+	> Unformatted rough draft
