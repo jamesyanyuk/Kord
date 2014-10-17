@@ -66,6 +66,13 @@ will be created and added to the Completed list. Links to each individual card w
 comments to the milestone card. That way you can still view who was responsible for what,
 but we won't have to clutter the board with a million cards for one single assignment.
 
+##Functional Specifications
+
+The fspec.md can be found in /docs/fspec/fspec.md.
+The document has a team overview, project overview, disclaimer, non-goals, wireframes,
+flowchart, use case scenarios, a list of open issues, and the revision history.
+Any links to additional links/ files that need to be reviewed can be found in the actual fspec.md.  
+
 ##Documents to be Reviewed for Assignment 3
 
 [README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
