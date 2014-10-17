@@ -59,7 +59,7 @@ Technical details will be discussed in a future document.
 
 ##Wireframes
 
-<p><img src="../wireframe/structure.png"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/structure.png"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
