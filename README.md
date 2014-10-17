@@ -45,7 +45,7 @@ member biographies and roles, the problem statement, a product description, a ti
 ####Sara da Silva
 ######*Front-End Developer and Graphics Designer*
 
-##Documents to be Reviewed
+##Documents to be Reviewed for Assignment 2
 
 [README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
 [/docs/proposal/proposal.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.md)  
@@ -65,3 +65,11 @@ the current assignment will be archived. However, a card for the overall milesto
 will be created and added to the Completed list. Links to each individual card will be added as
 comments to the milestone card. That way you can still view who was responsible for what,
 but we won't have to clutter the board with a million cards for one single assignment.
+
+##Documents to be Reviewed for Assignment 3
+
+[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
+[/docs/fspec/fspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.md)  
+[/docs/fspec/fspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.pdf)  
+[/notes/10-08-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-08-2014.md)  
+[/notes/10-15-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-15-2014.md)  
