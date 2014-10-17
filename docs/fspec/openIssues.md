@@ -4,7 +4,7 @@
 ###Open Issues include:
 
 How many members to limit a session
-<blockquote>Having to think about how much activity each member can perform in a session with x other members, finding a balance for limiting the number of members to a session will be left to trial and error.</blockquote>
+	<blockquote>Having to think about how much activity each member can perform in a session with x other members, finding a balance for limiting the number of members to a session will be left to trial and error.</blockquote>
 	
 How handling session saving
 	<blockquote>We want users to be able to save a session in some way, at first we may start with saving the board as a pdf then maybe eventually move to saving the board state.</blockquote>
@@ -20,3 +20,4 @@ Layering the board
 	
 Exploit prevention
 	<blockquote>Making sure our app is less prone to exploits.</blockquote>
+
