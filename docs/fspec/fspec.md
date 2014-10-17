@@ -25,14 +25,21 @@ Primarily focused on back-end development and marketing of the application.
 Primarily focused on database design and back-end development.
 
 ####Sara da Silva  
-######*Front End Lead and Graphics Designer*  
+######*Front End Lead and Graphic Designer*  
 
 Primarily focused on front-end development and graphic design.
 
 ##Overview  
 
-Kord is a centralized hub for any human interaction over a digital medium.
-Whether that means for friends, businesses, working partners, social groups.
+Kord is a centralized hub for any human interaction over a digital medium,
+whether that be for friends, businesses, working partners, social groups, etc.
+Users will be able to chat and communicate in a room with an interactive board.
+Resources such as documents, videos, etc. can be placed onto the board.
+It can be drawn on. It can just be used as a space for saving important links,
+brainstorming, making timelines, and more.
+
+It is a space where digital interactions have a sense of continuity and connect
+people to each other, rather than to the ether.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
