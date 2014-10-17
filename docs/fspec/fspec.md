@@ -1,3 +1,5 @@
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg" width="240px" alt="Where your ideas connect to our system."></p>
+
 ##Team Overview
 
 ####Julian Kuk  
