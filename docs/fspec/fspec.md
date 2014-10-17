@@ -31,11 +31,11 @@ Primarily focused on front-end development and graphic design.
 
 ##Overview  
 
-Kord is a centralized hub for any human interaction over a digital medium,
+Kord is a centralized hub for human interaction over a digital medium,
 whether that be for friends, businesses, working partners, social groups, etc.
 Users will be able to chat and communicate in a room with an interactive board.
 Resources such as documents, videos, etc. can be placed onto the board.
-It can be drawn on. It can just be used as a space for saving important links,
+It can be drawn on. It can be used as a space for saving important links,
 brainstorming, making timelines, and more.
 
 It is a space where digital interactions have a sense of continuity and connect
@@ -92,7 +92,6 @@ When users connect to http://kord.io, they will be welcome by this home page whi
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>
 ---
 Clicking “Create a Board” brings users to this simple page where the functionalities of the board are displayed. Here they will encounter the ability to not only draw on the actual white board, but to also add widgets to it such as a widget where users collaborate to work on a code, share a video, add an image, include a .PDF  and also any text file where they wish to work together on. In addition, they will encounter a chat where they will be able to communicate to all of the other users collaborating on the board.
----
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
 ---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
