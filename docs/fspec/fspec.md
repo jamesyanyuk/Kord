@@ -64,6 +64,7 @@ Technical details will be discussed in a future document.
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg"></p>
+When users connect to http://kord.io, they will be welcome by this home page which in its simplest form describes our application and compares it to its competitors. In addition, it will have one button which will take the user to create a new board. Since, for the time being, there will be no user accounts, everyone is a guest and can therefore create a board without logging in. In the future, however, this home page would include the functionality to login and sign-up for an account.
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg"></p>
