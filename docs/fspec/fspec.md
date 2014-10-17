@@ -56,10 +56,20 @@ Technical details will be discussed in a future document.
 #####Never:
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
+	
+##Wireframes
+
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg"></p>
 
 ##Flowchart
 
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg" width="240px" alt="Where your ideas connect to our system."></p>
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg"></p>
 
 ##Use Case Scenarios
 
@@ -124,17 +134,6 @@ board from anywhere without needing a computer.
 
 <p align = "right"><i >[Written by Matthaus Wolff - 10/15/2014]</em></p>
 
-##Wireframes
-
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg  
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg 
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg 
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg 
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg 
-https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg 
-
-
 ##Open Issues
 
 <b>How many members to limit a session</b>
@@ -169,7 +168,6 @@ Making sure our app is less prone to exploits.
 
 <p align = "right"><i >[Written by Nam Phan - 10/15/2014]</em></p>
 
-
 ###Revision History
 	* Version .1
-	> Unformatted rough draft
+		> Unformatted rough draft
