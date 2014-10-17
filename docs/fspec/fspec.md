@@ -130,7 +130,7 @@ Finally, but not least important, we see the option to switch among boards. Some
   
 ##Flowchart  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/flow%20chart/flowchart_v1_3.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/flowchart/flowchart_v1_3.jpg"></p>  
   
 ---  
   
