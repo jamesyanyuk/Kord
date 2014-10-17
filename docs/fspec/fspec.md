@@ -82,7 +82,7 @@ we will be experimenting with.
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
 
-	<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
 ##Wireframes
 ---
