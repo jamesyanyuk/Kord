@@ -26,7 +26,9 @@ Whether that means for friends, businesses, working partners, social groups.
 
 Any designs and features discussed in this document are subject to change. UI designs will evolve
 as we test and feature lists will change as we run into technical problems and find inspiration.
-Technical details will be discussed in a future document.
+Technical details will be discussed in a future document. Note that also, there are two
+wireframe versions of the UI. This is to illustrate the different layouts and set ups
+we will be experimenting with.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
@@ -181,5 +183,7 @@ Making sure our app is less prone to exploits.
 <p align = "right"><i >[Written by Nam Phan - 10/15/2014]</em></p>
 
 ###Revision History
+	* Version .2
+		> Pictures have been formatted
 	* Version .1
 		> Unformatted rough draft
