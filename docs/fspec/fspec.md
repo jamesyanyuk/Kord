@@ -12,7 +12,7 @@ focus on front-end development.
 ######*Back End Lead*
 
 Primarily focused on back-end development, and general integration of the front-end and database.
-Manages the application's dedicated server.
+Manages the application's dedicated server (currently running at http://kord.io).
 
 ####Matthaus Wolff  
 ######*Back-End Developer and Marketing Manager*  
