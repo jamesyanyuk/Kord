@@ -86,42 +86,42 @@ we will be experimenting with.
 
 ##Wireframes  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/structure.png"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/structure.png"></p>  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/login.jpg"></p>  
 When users connect to http://kord.io, they will be welcome by this home page which in its simplest form describes our application and compares it to its competitors. In addition, it will have one button which will take the user to create a new board. Since, for the time being, there will be no user accounts, everyone is a guest and can therefore create a board without logging in. In the future, however, this home page would include the functionality to login and sign-up for an account.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/main.jpg"></p>  
 Clicking “Create a Board” brings users to this simple page where the functionalities of the board are displayed. Here they will encounter the ability to not only draw on the actual white board, but to also add widgets to it such as a widget where users collaborate to work on a code, share a video, add an image, include a .PDF  and also any text file where they wish to work together on. In addition, they will encounter a chat where they will be able to communicate to all of the other users collaborating on
 the board.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/maincompact.jpg"></p>  
 Given that we expect users to use the board to its fullest potential and possibly make usage of any widgets they would like to, the menu will be displayed in a minimalistic form (using only the logos), as to not get in the way of what is really important: the work on the boards.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/chatopen.jpg"></p>  
 Collaborating with other users would not be possible without the possibility to actually chat about what you are doing. kord.io is very aware of this, and includes the feature of chatting with users currently on the board. The chat itself will not only support text, but the ability to include media in it, which ideally will be automatically added to the user’s board.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/chatclosed.jpg"></p>  
 The chat will remain open as long as the user wishes to have it open. In the case that the chat is closed, users will receive message notifications on the bottom right of their screen which will allow them to quickly glimpse at the message and decide whether to open the message or ignore it. This allows users to stay in the loop about what is going on in the chat but to not be disturbed by it by keeping it open in the board.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/widgetsopened.jpg"></p>  
 Here we see an example of a board being used to some of its full potential where a user is engaging with various widgets and collaborating with various users on a board. We can also see three different colored mouse pointers on the screen which belong to three different users currently interacting on the board. This feature allows all users to know what the other users are currently focusing on in the board.  
   
 ---  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/wireframe/changeboard.jpg"></p>  
 Finally, but not least important, we see the option to switch among boards. Sometimes one board is not enough! By clicking the plus icon on the top right corner, users will be able to add new boards to work on or delete any boards not being used. Needless to say, the tools icon on the bottom left allows users to control the settings of the boards, such as whether a board is public or private, and also to create a link to share their board with other users.  
   
 ---  
@@ -130,7 +130,7 @@ Finally, but not least important, we see the option to switch among boards. Some
   
 ##Flowchart  
   
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg"></p>  
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/flow%20chart/flowchart_v1_3.jpg"></p>  
   
 ---  
   
