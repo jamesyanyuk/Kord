@@ -38,7 +38,9 @@ Whether that means for friends, businesses, working partners, social groups.
 
 Any designs and features discussed in this document are subject to change. UI designs will evolve
 as we test and feature lists will change as we run into technical problems and find inspiration.
-Technical details will be discussed in a future document.
+Technical details will be discussed in a future document. Note that also, there are two
+wireframe versions of the UI. This is to illustrate the different layouts and set ups
+we will be experimenting with.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
@@ -51,7 +53,7 @@ Technical details will be discussed in a future document.
 	* Image embedding
 	* Text Editing / Code Interpreter
 
-#####Features for the Future:
+#####Features for the Possibly Distant Future (post 326):
 	* Voice chat
 	* Video conferencing
 	* Screen sharing
@@ -61,13 +63,15 @@ Technical details will be discussed in a future document.
 	* Widgets such as calculator
 	* Board history saving
 
-#####Possible considerations:
+#####Possible Considerations:
 	* Large groups
 	* Remote desktop
 
 #####Never:
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
+	
+	<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
 ##Wireframes
 ---
@@ -77,6 +81,8 @@ Technical details will be discussed in a future document.
 ---
 When users connect to http://kord.io, they will be welcome by this home page which in its simplest form describes our application and compares it to its competitors. In addition, it will have one button which will take the user to create a new board. Since, for the time being, there will be no user accounts, everyone is a guest and can therefore create a board without logging in. In the future, however, this home page would include the functionality to login and sign-up for an account.
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>
+---
+Clicking “Create a Board” brings users to this simple page where the functionalities of the board are displayed. Here they will encounter the ability to not only draw on the actual white board, but to also add widgets to it such as a widget where users collaborate to work on a code, share a video, add an image, include a .PDF  and also any text file where they wish to work together on. In addition, they will encounter a chat where they will be able to communicate to all of the other users collaborating on the board.
 ---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
 ---
@@ -193,5 +199,7 @@ Making sure our app is less prone to exploits.
 <p align = "right"><i >[Written by Nam Phan - 10/15/2014]</em></p>
 
 ###Revision History
+	* Version .2
+		> Pictures have been formatted
 	* Version .1
 		> Unformatted rough draft
