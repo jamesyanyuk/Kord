@@ -37,7 +37,7 @@ Technical details will be discussed in a future document.
 	* Youtube video embedding
 	* PDF embedding
 	* Image embedding
-	* Text Editing / Interpreter
+	* Text Editing / Code Interpreter
 
 #####Features for the Future:
 	* Voice chat
@@ -58,19 +58,25 @@ Technical details will be discussed in a future document.
 	* Full applications such as Photoshop - Support can be added via remote desktop
 	
 ##Wireframes
-
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg"></p>
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>
-<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
+---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/login.jpg"></p>
+---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/main.jpg"></p>
+---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/maincompact.jpg"></p>
+---
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatopen.jpg"></p>
+---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/widgetsopened.jpg"></p>
-
+---
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/chatclosed.jpg"></p>
+---
+<p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/changeboard.jpg"></p>
+---
 ##Flowchart
-
+---
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg"></p>
-
+---
 ##Use Case Scenarios
 
 <b>A couple of friends want to do commentary of a sports game:</b>
