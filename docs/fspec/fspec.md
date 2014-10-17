@@ -84,6 +84,7 @@ we will be experimenting with.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
+<<<<<<< HEAD
 ##Wireframes  
   
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/wireframe/structure.png"></p>  
