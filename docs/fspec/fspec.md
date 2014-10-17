@@ -82,7 +82,7 @@ we will be experimenting with.
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
 
-	<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
 ##Wireframes  
   
@@ -124,6 +124,8 @@ Finally, but not least important, we see the option to switch among boards. Some
   
 <p><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/flow%20chart/flowchart_v1_3.jpg"></p>  
 ---  
+  
+<p align = "right"><i >[Created by Nam Phan - 10/15/2014]</em></p>  
   
 ##Use Case Scenarios
 
