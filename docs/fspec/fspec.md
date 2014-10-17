@@ -29,6 +29,8 @@ Primarily focused on database design and back-end development.
 
 Primarily focused on front-end development and graphic design.
 
+<p align = "right"><i >[Written by James Yanyuk - 10/15/2014]</em></p>
+
 ##Overview  
 
 Kord is a centralized hub for any human interaction over a digital medium,
@@ -79,7 +81,7 @@ we will be experimenting with.
 #####Never:
 	* Social networking
 	* Full applications such as Photoshop - Support can be added via remote desktop
-	
+
 	<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
 
 ##Wireframes
