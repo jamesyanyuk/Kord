@@ -29,7 +29,7 @@ Primarily focused on database design and back-end development.
 
 Primarily focused on front-end development and graphic design.
 
-<p align = "right"><i >[Written by James Yanyuk - 10/15/2014]</em></p>
+<p align = "right"><i >[Written by James Yanyuk - 10/16/2014]</em></p>
 
 ##Overview  
 
@@ -43,7 +43,7 @@ brainstorming, making timelines, and more.
 It is a space where digital interactions have a sense of continuity and connect
 people to each other, rather than to the ether.
 
-<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 10/16/2014]</em></p>  
 
 ##Disclaimer  
 
@@ -53,7 +53,7 @@ Technical details will be discussed in a future document. Note that also, there 
 wireframe versions of the UI. This is to illustrate the different layouts and set ups
 we will be experimenting with.
 
-<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 10/16/2014]</em></p>  
 
 ##Non-Goals
 
@@ -82,7 +82,7 @@ we will be experimenting with.
 	* Social networking
 	* Full embedded applications akin to Photoshop - Support can be added via remote desktop
 
-<p align = "right"><i >[Written by  Julian Kuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 10/16/2014]</em></p>  
 
 ##Wireframes  
   
@@ -126,7 +126,7 @@ Finally, but not least important, we see the option to switch among boards. Some
   
 ---  
   
-<p align = "right"><i >[Created by Sara da Silva & James Yanyuk - 10/15/2014]</em></p>  
+<p align = "right"><i >[Created by Sara da Silva & James Yanyuk - 10/16/2014]</em></p>  
   
 ##Flowchart  
   
@@ -134,7 +134,7 @@ Finally, but not least important, we see the option to switch among boards. Some
   
 ---  
   
-<p align = "right"><i >[Created by Nam Phan - 10/15/2014]</em></p>  
+<p align = "right"><i >[Created by Nam Phan - 10/16/2014]</em></p>  
   
 ##Use Case Scenarios
 
@@ -197,7 +197,7 @@ connection and display in various formats. A developer might unexpectedly run
 into someone interested in their idea and they want to be able to access their
 board from anywhere without needing a computer.
 
-<p align = "right"><i >[Written by Matthaus Wolff - 10/15/2014]</em></p>
+<p align = "right"><i >[Written by Matthaus Wolff - 10/16/2014]</em></p>
 
 ##Open Issues
 
@@ -231,7 +231,7 @@ people interact with the board, deciding who gets priority and synchronization.
 
 Making sure our app is less prone to exploits.
 
-<p align = "right"><i >[Written by Nam Phan - 10/15/2014]</em></p>
+<p align = "right"><i >[Written by Nam Phan - 10/16/2014]</em></p>
 
 ###Revision History
 	* Version 1.0
