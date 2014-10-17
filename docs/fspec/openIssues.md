@@ -17,7 +17,7 @@ A big issue is figuring out how to handle users running our app on different res
 	
 <b>How much customization of tools and GUI to allow</b>
 
-<We want to give our users as much freedom as possible while keeping our UI very simple to operate, so deciding how much freedom to give to users will be an issure for trial and error.
+We want to give our users as much freedom as possible while keeping our UI very simple to operate, so deciding how much freedom to give to users will be an issure for trial and error.
 	
 <b>Layering the board</b>
 
