@@ -3,7 +3,7 @@
 var http = require('http');
 var pg = require('pg');
 
-var conString = "postgres://postgres:1234@localhost/postgres";
+var conString = "postgres://cordio:password@localhost/postgres";
 
 var server = http.createServer(function(req, res) {
 

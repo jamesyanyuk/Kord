@@ -1,0 +1,1 @@
+//Only has access to temp resources and gets deleted after a session ends.
