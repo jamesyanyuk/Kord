@@ -4,26 +4,27 @@
 -- only drop if testing or something similar
 
 CREATE TABLE rooms (
-	roomID int UNIQUE SERIAL,													-- room id as an integer // used as chat id
-	url varchar(50) UNIQUE,														-- url as a string -- must be unique
-	password varchar(50),														-- password as a string
-	boards integer[],															-- boards as an array of integers (board ids)
-	admins integer[],															-- admins as an array of integers (admin ids)
-	members integer[],															-- members as an array of integers (member ids)
+	roomID integer UNIQUE SERIAL,												-- unique and serial room id // used as chat id
+	url varchar(50) UNIQUE,														-- unique url
+	password varchar(50),														-- password
+	-- has a chat object
+	boards integer[],															-- list of board ids
+	admins integer[],															-- list of admin (user) ids
+	members integer[],															-- list of member (user) ids
 	
 	PRIMARY KEY (roomID)
 );
 
 CREATE TABLE chats (
-	roomID int REFERENCES rooms,												-- uses roomID as its id
-	log text,																	-- chat as a string -- figure out a better way
+	roomID integer REFERENCES rooms,											-- uses roomID as its id
+	log text,																	-- chat log will be stored as a massive string for now
 	
 	PRIMARY KEY (roomID)
 );
 
 CREATE TABLE boards (
-	boardID integer UNIQUE SERIAL,												-- board id as an integer // used as canvas id
-	canvas integer REFERENCES canvases,
+	boardID integer UNIQUE SERIAL,												-- unique and serial board id // used as canvas id
+	-- has a canvas object
 	-- freeResources
 	-- lockedResources
 	
@@ -37,9 +38,8 @@ CREATE TABLE canvases (
 	PRIMARY KEY (boardID)
 );
 
-
+-- will figure out how to implement a table for resources
 -- CREATE TABLE resources (
--- 	
 -- 	
 -- );
 
@@ -52,8 +52,8 @@ CREATE TABLE canvases (
 -- // make members reference users
 
 -- CREATE TABLE rooms_boards (
--- 	roomID int REFERENCES rooms,
--- 	"boardID" int REFERENCES boards("boardID"),
+-- 	roomID integer REFERENCES rooms,
+-- 	"boardID" integer REFERENCES boards("boardID"),
 -- 	
 -- 	PRIMARY KEY (roomID, "boardID")
 -- )
