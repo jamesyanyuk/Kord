@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var session = require('express-session');
 var flash = require('connect-flash');
+var passport = require('passport');
 
 // Routes
 var index = require('./routes/index');
@@ -27,10 +28,11 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({ secret : 'awesomesauce',
-                  resave : true,
-                  saveUninitialized : true }));
-
+app.use(session({ secret: 'awesomesauce',
+                  resave: true,
+                  saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 app.use('/', index);
