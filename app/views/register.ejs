@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Register</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Register</h1>
+    <p><%= message %></p>
+    <p>Create a Kord account below</p>
+
+    <form method="post" action="/user/login">
+        Email: <input type="text" name="email"> <br>
+        Password:  <input type="password" name="password"> <br>
+        <button>Login</button>
+    </form>
   </body>
 </html>

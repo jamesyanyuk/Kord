@@ -9,7 +9,7 @@ var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
 
-// Routes
+// route locations
 var index = require('./routes/index');
 var user = require('./routes/user');
 var board = require('./routes/board');
@@ -35,6 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+// routes
 app.use('/', index);
 app.use('/user', user);
 app.use('/b', board);
