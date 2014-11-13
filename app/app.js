@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 
 // route locations
 var index = require('./routes/index');
@@ -36,29 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-        done(err, user);
-    });
-});
-
-// passport local strategy
-passport.use('local-signin', new LocalStrategy({
-        usernameField: 'email',
-        passwordField: 'password'
-    },
-    function(username, password, done) {
-        User.findOne({ username: username }, function(err, user) {
-            if(err) { return done(err); }
-            if(!user) { return done(null, false, { message: 'Incorrect username.' }); }
-            if(!user.validPassword()) { return done(null, false, { message: })}
-        });
-    }
-));
+user.initialize(passport);
 
 // routes
 app.use('/', index);

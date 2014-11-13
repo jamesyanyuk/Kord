@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:bid', function(req, res) {
-    res.redirect('/');
+    res.send(req.params.bid);
 });
 
 module.exports = router;
