@@ -16,6 +16,8 @@ people to each other, rather than to the ether.
 
 ## Bird's Eye View
 
+<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordoverview.png"></p>
+
 ## Component-by-Component Breakdown
 
 ### Client
@@ -27,6 +29,8 @@ people to each other, rather than to the ether.
 ### Database - Users
 
 ### Database - Rooms
+
+<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>
 
 ## External Libraries
 
