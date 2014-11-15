@@ -60,6 +60,10 @@ This is the interaction between the rooms and the server. All data will be ultim
 
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/chatandserver.png"></p>
+
+This shows the interaction between the chat and server. The data base ultimately stores all resoureses and only interacts with the server. The server broadcasts or emits messages recieved from chat to all chats in a room with the room ID passed by the chat call.
+
+
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
