@@ -75,10 +75,10 @@ This shows the interaction between the chat and server. The data base ultimately
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
-### Database - Users  
+### Users Database  
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdatabase.png"></p>  
 
-The User Database serves to simplify the amount of traffic that handled with the user base. 
+The User Database serves to simplify the amount of traffic that handled with the user base.
 The Server will pull information from the database for maintaining connections and keeping track of resources and who they are assigned to.
 The authenticator will frequently reference the database to check for passwords and banned connections.
 We plan to implement this in postgreSQL.
@@ -90,7 +90,7 @@ The Database stores current and past connections with four types of Users.
 
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
-### Database - Rooms  
+### Rooms Database  
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
 
