@@ -50,8 +50,6 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 ### Server - Connection Management / User Authentication
 
-
-
 ### Server - Board / Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 <p align = "right"><i >[Written by  Nam Phan- 11/14/2014]</em></p>
@@ -61,17 +59,21 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 <p align = "right"><i >[Written by  Nam Phan- 11/14/2014]</em></p>
 
 
+### Database - Users  
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
+<p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
-### Database - Users
-<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>
-<p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>
-
-### Database - Rooms
+### Database - Rooms  
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
 
 The room is the locus of interaction for users. Here they can chat,
-draw on the board, or upload resources.
+draw on the board, or upload resources. The data structures depicted above
+will be how data is stored. The database will have tables for each data structure,
+and store the relevant and necessary fields.
+However, Resources will be stored as serialized objects, because the different 
+resources don't necessarily have the same structure (such as a text file versus
+an audio file).  
 <p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
 
 ## External Libraries
@@ -110,4 +112,7 @@ Sweet and simple Node.js authenticator. It supports persistent sessions, and has
 <p align = "right"><i >[Written by  Matthaus Wolff, Sara da Silva - 11/14/2014]</em></p>  
 
 ### Revision History
-	* 0.1 Date: Desc
+	* 0.4 11/14/2014: Design Specification  
+	* 0.3 10/16/2014: Functional Specification  
+	* 0.2 10/02/2014: Proposal  
+	* 0.1 09/15/2014: Profile  
