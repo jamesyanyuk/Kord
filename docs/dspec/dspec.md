@@ -81,15 +81,19 @@ an audio file).
 ## External Libraries
 
 Node.js  
+Serverside JavaScript environment.
 
 Express  
-Web framework for Node.js
+Web framework for Node.js.
 
 EJS  
 Javascript template library to seamlessly integrate the Javascript and HTML of our web application.
 
 jQuery
 JavaScript library to simplify the client-side scripting of HTML.
+
+Bootstrap  
+Our web application will use the tools provided by Bootstrap in order to create the front-end design of kord.io.
 
 Socket.io  
 Main engine for the boards. Socket.io simplifies the usage of WebSockets while ensuring compatibility on the users end. This will be the development base for the chat system and routing between rooms.
