@@ -26,6 +26,8 @@ people to each other, rather than to the ether.
 
 ### Server - Connection Management / User Authentication
 
+
+
 ### Server - Board / Chat Management
 
 ### Database - Users
@@ -46,7 +48,7 @@ draw on the board, or upload resources.
 	This will be the development base for the chat system and routing between rooms.
 
 * Bonsai.js
-	
+
 >Lightweight graphics library for drawing/animating dynamically on a board.
 >Capable of fairly complicated development and preformances while not consuming too many server resources.
 >We prefer svg over canvas because our app is more likely to have data overflow than it is to require complicated grahpics.
@@ -54,7 +56,7 @@ draw on the board, or upload resources.
  PostgreSQL
 
 >Database infastructure. We chose this to handle wide-scale development with large amounts of data being handled.
->Very reliable and stable while being compatible with most platforms. 
+>Very reliable and stable while being compatible with most platforms.
 
 *Sunlight.js
 
@@ -73,7 +75,4 @@ draw on the board, or upload resources.
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/12/2014]</em></p>  
 
 ### Revision History
-	* 0.1 11/14/2014: Added External Libraries - Matthaus
-	* 0.2 11/14/2014: Added Overview - Julian
-	* 0.3 11/14/2014: Added Bird's Eye View - Julian
-	* 0.4 11/14/2014: Added Database - Rooms - Julian
+	* 0.1 Date: Desc
