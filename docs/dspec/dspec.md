@@ -48,7 +48,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 <p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>  
 
-### Server - Connection Management & User Authentication
+### Server: Connection Management & User Authentication
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdetails.png"></p>
 
@@ -56,7 +56,7 @@ When a user visits the home page, he's presented with the option to login or reg
 
 <p align = "right"><i >[Written by James Yanyuk - 11/14/2014]</em></p>
 
-### Server - Board & Chat Management
+### Server: Board & Chat Management
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
@@ -74,7 +74,7 @@ This shows the interaction between the chat and server. The database ultimately 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
-### Users Database  
+### Database: Users  
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdatabase.png"></p>  
 
 The User Database serves to simplify the amount of traffic that handled with the user base.
@@ -89,7 +89,7 @@ The Database stores current and past connections with four types of Users.
 
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
-### Rooms Database  
+### Database: Rooms  
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
 
