@@ -62,14 +62,14 @@ When a user visits the home page, he's presented with the option to login or reg
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
 
-This is the interaction between the rooms and the server. All data will be ultimately stored in the Database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interaction.
+This is the interaction between the rooms and the server. All data will be ultimately stored in the database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interaction.
 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/chatandserver.png"></p>
 
-This shows the interaction between the chat and server. The data base ultimately stores all resoureses and only interacts with the server. The server broadcasts or emits messages recieved from chat to all chats in a room with the room ID passed by the chat call.
+This shows the interaction between the chat and server. The database ultimately stores all resources and only interacts with the server. The server broadcasts or emits messages received from chat to all chats in a room with the room ID passed by the chat call.
 
 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
@@ -81,7 +81,7 @@ This shows the interaction between the chat and server. The data base ultimately
 The User Database serves to simplify the amount of traffic that handled with the user base.
 The Server will pull information from the database for maintaining connections and keeping track of resources and who they are assigned to.
 The authenticator will frequently reference the database to check for passwords and banned connections.
-We plan to implement this in postgreSQL.
+We plan to implement this in PostgreSQL.
 The Database stores current and past connections with four types of Users.
 * Guest - Can join open rooms and participate in chat, upload and download files but rooms created by them are not permanent.
 * General Users - Can link rooms to their account and the features of a guest user
