@@ -1,6 +1,11 @@
 <p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.png" width="240px" alt="Where your ideas connect to our system."></p>
 
-##Project Overview
+	[Assignment 1] (#a1)  
+	[Assignment 2] (#a2)  
+	[Assignment 3] (#a3)  
+	[Assignment 4] (#a4)  
+
+<h2 ="a1">Project Overview</h2>  
 
 Our project will be composed of two major components. The first and most basic is its chat functionality.
 Users will be able to chat through text, audio, or video calls. The revolutionary portion of the project is the 'board'.
@@ -15,7 +20,7 @@ as if someone had recorded a video of it. But even more, users would be able to 
 
 It offers people an environment to share ideas - to interact in an intuitive and flexible way.
 
-##Original Proposal
+<h2 ="a2">Original Proposal</h2>  
 
 There is currently no platform that facilitates robust, real-time discussion and collaboration.
 Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
@@ -45,7 +50,7 @@ member biographies and roles, the problem statement, a product description, a ti
 ####Sara da Silva
 ######*Front-End Developer and Graphics Designer*
 
-##Documents to be Reviewed for Assignment 2
+Documents to be Reviewed for Assignment 2
 
 [README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
 [/docs/proposal/proposal.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.md)  
@@ -66,7 +71,7 @@ will be created and added to the Completed list. Links to each individual card w
 comments to the milestone card. That way you can still view who was responsible for what,
 but we won't have to clutter the board with a million cards for one single assignment.
 
-##Functional Specifications
+<h2 ="a3">Functional Specifications</h2>  
 
 The fspec.md can be found in /docs/fspec/fspec.md.
 The document has a team overview, project overview, disclaimer, non-goals, wireframes,
@@ -80,3 +85,22 @@ Any links to additional links/ files that need to be reviewed can be found in th
 [/docs/fspec/fspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.pdf)  
 [/notes/10-08-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-08-2014.md)  
 [/notes/10-15-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-15-2014.md)  
+
+<h2 ="a4">Design Specifications</h2>  
+
+The dspec.md can be found in /docs/dspec/dspec.md.
+The document has a project overview, a bird's eye view of the components, and
+a component by component breakdown. Most of the breakdown is in diagram form,
+for ease of viewing, accompanied by a short paragraph explaining the diagram
+in a little more depth. Any links to additional files that need to be reviewed 
+are in the actual dspec.md.  
+
+## Documents to be Reviewed for Assignment 4
+[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
+[/docs/dspec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.md)  
+[/docs/dspec/dspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.pdf)  
+
+[/notes/10-22-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-22-2014.md)  
+[/notes/10-28-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-28-2014.md)  
+[/notes/11-03-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-03-2014.md)  
+[/notes/11-11-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-11-2014.md)  
