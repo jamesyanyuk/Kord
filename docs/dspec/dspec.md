@@ -48,7 +48,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 <p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>  
 
-### Server - Connection Management / User Authentication
+### Server - Connection Management & User Authentication
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/routesandviews.png"></p>
 
@@ -58,11 +58,11 @@ When a user visits the home page, he's presented with the option to login or reg
 
 <p align = "right"><i >[Written by James Yanyuk - 11/14/2014]</em></p>
 
-### Server - Board / Chat Management
+### Server - Board & Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
 
-This is the interaction between the rooms and the server. All data will be ultimately stored in the Database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interatction.
+This is the interaction between the rooms and the server. All data will be ultimately stored in the Database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interaction.
 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
