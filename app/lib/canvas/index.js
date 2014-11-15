@@ -1,4 +1,4 @@
-var db = require('db');
+var query = require('db').query;
 
 function Canvas(boardID, state) {
 	this.boardID = boardID;

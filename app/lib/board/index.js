@@ -1,3 +1,5 @@
+var query = require('db').query;
+
 function Board(boardID, canvas, freeResources, lockedResources) {
 	this.boardID = boardID;
 	this.canvas = canvas;
@@ -26,20 +28,23 @@ function createBoard(callback) {
 			}
 			else {																// if there was no error
 				var boardID = nextval('boards_boardID_seq');
-				var canvas = createCanvas(boardID,								
-					);
-				
-				var freeResources = [];
-				var lockedResources = [];
-				var board = new Board(boardID,
-					canvas, freeResources, lockedResources);					
-				
-				var querystring = 'INSERT INTO boards VALUES ' + '(' +			// create the query string
-					board.boardID + ',' +
-					board.canvas + ',', +
-					');';
-				query(database, done, querystring, callback);			// actually query the database
-				return board;
+				createCanvas(boardID,											// create a canvas
+					function (error, canvas) {
+						var freeResources = [];
+						var lockedResources = [];
+						var board = new Board(boardID,
+							canvas, freeResources, lockedResources);					
+						
+						var querystring = 'INSERT INTO boards VALUES ' + '(' +	// create the query string
+							board.boardID + ',' +
+							board.canvas + ',', +
+							// board.freeResources + ',' +
+							// board.lockedResources + ',' +
+							');';
+						query(database, done, querystring, callback);			// actually query the database
+						return board;
+					}
+				);
 			}
 		}
 	);
