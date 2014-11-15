@@ -60,11 +60,12 @@ When a user visits the home page, he's presented with the option to login or reg
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
-
+**Room and Server Interaction**  
 This is the interaction between the rooms and the server. All data will be ultimately stored in the database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interaction.
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/chatandserver.png"></p>
 
+**Chat and Server Interaction**  
 This shows the interaction between the chat and server. The database ultimately stores all resources and only interacts with the server. The server broadcasts or emits messages received from chat to all chats in a room with the room ID passed by the chat call.
 
 
