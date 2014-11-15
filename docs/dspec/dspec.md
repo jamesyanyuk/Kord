@@ -25,25 +25,25 @@ people to each other, rather than to the ether.
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/clientview.png"></p>
 
-Main:  
+**Main**  
 Users accessing kord.io will be directed to the Main page if they are not logged in. From the main page they will either have the option to sign-up as a new user, or login as an existing users. Users whose sessions has been saved and are currently logged in, will be routed to the Rooms page.
 
-Sign-up:  
+*Sign-up*  
 Users who are currently not registered with kord.io will have the chance to do so by signing-up using their email address and password. The sign-up process will interact with the user’s database and the user class. Upon signing-up a user will be routed to the main page where they will be able to click on “Create a Board” to access our Rooms page.
 
-Login:  
+Login  
 Users who have previously registered with kord.io will be able to login through this page. A user will login with their email and password, and Passport.js will be used to authenticate their session.
 
-Rooms Selection:  
+Rooms Selection  
 The rooms page, accessed only through proper authentication, will hold a list of rooms a user is currently part of. From this page, users will be able to choose a Room which will direct them to another view containing all of the boards pertaining to this room.
 
-Room Selection:  
+Room Selection  
 The room page will hold all the boards this room contains. It will also allow a user to add a new board to this room.
 
-Board View:  
+Board View  
 This is where all things come together. A board will consist of a graphics markup, specifically SVG, where all of our components will be placed. While this markup language for graphics will allow our users to draw on the board, users will also be able to layer different components on top as they wish to select from our menu. A board will also have a chat where users currently on the room will be able to communicate with each other, but only one chat is assigned per room. Our board will initially use the BonsaiJS and Socket.io libraries.
 
-Graphics Design:  
+Graphics Design  
 Our application will, of course, use HTML5, CSS, and Javascript. It will use the Bootstrap framework in order to develop a responsive and aesthetically pleasing web application.
 
 <p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>  
