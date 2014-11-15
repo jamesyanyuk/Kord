@@ -50,6 +50,10 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 ### Server - Connection Management / User Authentication
 
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/routesandviews.png"></p>
+
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdetails.png"></p>
+
 ### Server - Board / Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
