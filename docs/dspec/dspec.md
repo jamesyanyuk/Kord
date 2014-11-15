@@ -54,6 +54,10 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdetails.png"></p>
 
+This is the interac
+
+<p align = "right"><i >[Written by James Yanyuk - 11/14/2014]</em></p>
+
 ### Server - Board / Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
