@@ -1,9 +1,9 @@
 <p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.png" width="240px" alt="Where your ideas connect to our system."></p>
 
-	[Assignment 1] (#a1)  
-	[Assignment 2] (#a2)  
-	[Assignment 3] (#a3)  
-	[Assignment 4] (#a4)  
+[Assignment 1] (#a1)  
+[Assignment 2] (#a2)  
+[Assignment 3] (#a3)  
+[Assignment 4] (#a4)  
 
 <h2 ="a1">Project Overview</h2>  
 
