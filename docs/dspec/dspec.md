@@ -47,6 +47,8 @@ This is where all things come together. A board will consist of a graphics marku
 Graphics Design:  
 Our application will, of course, use HTML5, CSS, and Javascript. It will use the Bootstrap framework in order to develop a responsive and aesthetically pleasing web application.
 
+<p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>  
+
 ### Server - Connection Management / User Authentication
 
 
