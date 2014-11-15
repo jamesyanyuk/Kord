@@ -81,7 +81,6 @@ Any links to additional links/ files that need to be reviewed can be found in th
 
 [/docs/fspec/fspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.md)  
 [/docs/fspec/fspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.pdf)  
-
 [/notes/10-08-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-08-2014.md)  
 [/notes/10-15-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-15-2014.md)  
 
@@ -97,7 +96,6 @@ are in the actual dspec.md.
 ## Documents to be Reviewed for Assignment 4
 [/docs/dspec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.md)  
 [/docs/dspec/dspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.pdf)  
-
 [/notes/10-22-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-22-2014.md)  
 [/notes/10-28-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-28-2014.md)  
 [/notes/11-03-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-03-2014.md)  
