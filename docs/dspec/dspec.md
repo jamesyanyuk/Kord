@@ -54,9 +54,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
 
-
-This is the interaction between the rooms and the server. Rooms with boards and a single chat. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Rooms have boards that have resources that needs to be deemed locked or unlocked for interaction.
-
+This is the interaction between the rooms and the server. All data will be ultimately stored in the Database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interatction.
 
 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
