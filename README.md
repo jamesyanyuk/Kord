@@ -52,7 +52,6 @@ member biographies and roles, the problem statement, a product description, a ti
 
 Documents to be Reviewed for Assignment 2
 
-[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
 [/docs/proposal/proposal.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.md)  
 [/docs/proposal/proposal.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/proposal/proposal.pdf)  
 [/docs/images/kordio.jpg](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.jpg)  
@@ -80,7 +79,6 @@ Any links to additional links/ files that need to be reviewed can be found in th
 
 ##Documents to be Reviewed for Assignment 3
 
-[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
 [/docs/fspec/fspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.md)  
 [/docs/fspec/fspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/fspec/fspec.pdf)  
 [/notes/10-08-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-08-2014.md)  
@@ -92,11 +90,10 @@ The dspec.md can be found in /docs/dspec/dspec.md.
 The document has a project overview, a bird's eye view of the components, and
 a component by component breakdown. Most of the breakdown is in diagram form,
 for ease of viewing, accompanied by a short paragraph explaining the diagram
-in a little more depth. Any links to additional files that need to be reviewed 
+in a little more depth. Any links to additional files that need to be reviewed
 are in the actual dspec.md.  
 
 ## Documents to be Reviewed for Assignment 4
-[README.md](https://github.com/umass-cs-326/team-kord.io/blob/master/README.md)  
 [/docs/dspec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.md)  
 [/docs/dspec/dspec.pdf](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/dspec/dspec.pdf)  
 
