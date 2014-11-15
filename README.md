@@ -1,11 +1,11 @@
-<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.png" width="240px" alt="Where your ideas connect to our system."></p>
+<p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.png" width="240px" alt="Where your ideas connect to our system."></p>  
 
 [Assignment 1] (#a1)  
 [Assignment 2] (#a2)  
 [Assignment 3] (#a3)  
 [Assignment 4] (#a4)  
 
-<h2 ="a1">Project Overview</h2>  
+<h2 id="a1">Project Overview</h2>  
 
 Our project will be composed of two major components. The first and most basic is its chat functionality.
 Users will be able to chat through text, audio, or video calls. The revolutionary portion of the project is the 'board'.
@@ -20,7 +20,7 @@ as if someone had recorded a video of it. But even more, users would be able to 
 
 It offers people an environment to share ideas - to interact in an intuitive and flexible way.
 
-<h2 ="a2">Original Proposal</h2>  
+<h2 id="a2">Original Proposal</h2>  
 
 There is currently no platform that facilitates robust, real-time discussion and collaboration.
 Solutions such as Google Docs, Trello, and Skype do not allow for both simultaneously.
@@ -71,7 +71,7 @@ will be created and added to the Completed list. Links to each individual card w
 comments to the milestone card. That way you can still view who was responsible for what,
 but we won't have to clutter the board with a million cards for one single assignment.
 
-<h2 ="a3">Functional Specifications</h2>  
+<h2 id="a3">Functional Specifications</h2>  
 
 The fspec.md can be found in /docs/fspec/fspec.md.
 The document has a team overview, project overview, disclaimer, non-goals, wireframes,
@@ -86,7 +86,7 @@ Any links to additional links/ files that need to be reviewed can be found in th
 [/notes/10-08-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-08-2014.md)  
 [/notes/10-15-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-15-2014.md)  
 
-<h2 ="a4">Design Specifications</h2>  
+<h2 id="a4">Design Specifications</h2>  
 
 The dspec.md can be found in /docs/dspec/dspec.md.
 The document has a project overview, a bird's eye view of the components, and
