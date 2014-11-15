@@ -90,7 +90,7 @@ Web framework for Node.js.
 EJS  
 Javascript template library to seamlessly integrate the Javascript and HTML of our web application.
 
-jQuery
+jQuery  
 JavaScript library to simplify the client-side scripting of HTML.
 
 Bootstrap  
@@ -100,7 +100,7 @@ Socket.io
 Main engine for the boards. Socket.io simplifies the usage of WebSockets while ensuring compatibility on the users end. This will be the development base for the chat system and routing between rooms.
 
 Bonsai.js  
-Lightweight graphics library for drawing/animating dynamically on a board.Capable of fairly complicated development and preformances while not consuming too many server resources. We prefer svg over canvas because our app is more likely to have data overflow than it is to require complicated grahpics.
+Lightweight graphics library for drawing/animating dynamically on a board.Capable of fairly complicated development and performances while not consuming too many server resources. We prefer svg over canvas because our app is more likely to have data overflow than it is to require complicated graphics.
 
 PostgreSQL  
 Database infrastructure. We chose this to handle wide-scale development with large amounts of data being handled. Very reliable and stable while being compatible with most platforms.
