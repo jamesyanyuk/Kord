@@ -50,15 +50,28 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 ### Server - Connection Management / User Authentication
 
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/routesandviews.png"></p>
+
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdetails.png"></p>
+
+This is the interac
+
+<p align = "right"><i >[Written by James Yanyuk - 11/14/2014]</em></p>
+
 ### Server - Board / Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
 
-This is the interaction between the rooms and the server. Rooms with boards and a single chat. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Rooms have boards that have resources that needs to be deemed locked or unlocked for interaction.
+
+This is the interaction between the rooms and the server. All data will be ultimately stored in the Database which only interacts with the server. The server handles calls from Room and Board. All Rooms have Boards and a single chat. Rooms can assign or unassign admins, authenticate users, create and delete boards. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Boards have resources that needs to be deemed locked or unlocked for interatction.
 
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/chatandserver.png"></p>
+
+This shows the interaction between the chat and server. The data base ultimately stores all resoureses and only interacts with the server. The server broadcasts or emits messages recieved from chat to all chats in a room with the room ID passed by the chat call.
+
+
 <p align = "right"><i >[Written by Nam Phan - 11/14/2014]</em></p>
 
 
