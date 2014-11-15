@@ -56,7 +56,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 ### Server - Board / Chat Management
 
 ### Database - Users
-<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdatabase.png"></p>
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>
 
 ### Database - Rooms
