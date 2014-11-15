@@ -28,22 +28,22 @@ people to each other, rather than to the ether.
 **Main**  
 Users accessing kord.io will be directed to the Main page if they are not logged in. From the main page they will either have the option to sign-up as a new user, or login as an existing users. Users whose sessions has been saved and are currently logged in, will be routed to the Rooms page.
 
-*Sign-up*  
+**Sign-up**  
 Users who are currently not registered with kord.io will have the chance to do so by signing-up using their email address and password. The sign-up process will interact with the user’s database and the user class. Upon signing-up a user will be routed to the main page where they will be able to click on “Create a Board” to access our Rooms page.
 
-Login  
+**Login**  
 Users who have previously registered with kord.io will be able to login through this page. A user will login with their email and password, and Passport.js will be used to authenticate their session.
 
-Rooms Selection  
+**Room Selection**  
 The rooms page, accessed only through proper authentication, will hold a list of rooms a user is currently part of. From this page, users will be able to choose a Room which will direct them to another view containing all of the boards pertaining to this room.
 
-Room Selection  
+**Board Selection**  
 The room page will hold all the boards this room contains. It will also allow a user to add a new board to this room.
 
-Board View  
+**Board View**  
 This is where all things come together. A board will consist of a graphics markup, specifically SVG, where all of our components will be placed. While this markup language for graphics will allow our users to draw on the board, users will also be able to layer different components on top as they wish to select from our menu. A board will also have a chat where users currently on the room will be able to communicate with each other, but only one chat is assigned per room. Our board will initially use the BonsaiJS and Socket.io libraries.
 
-Graphics Design  
+**Graphics Design**  
 Our application will, of course, use HTML5, CSS, and Javascript. It will use the Bootstrap framework in order to develop a responsive and aesthetically pleasing web application.
 
 <p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>  
@@ -81,37 +81,37 @@ an audio file).
 
 ## External Libraries
 
-Node.js  
+**Node.js**  
 Serverside JavaScript environment.
 
-Express  
+**Express**  
 Web framework for Node.js.
 
-EJS  
+**EJS**  
 Javascript template library to seamlessly integrate the Javascript and HTML of our web application.
 
-jQuery  
+**jQuery**  
 JavaScript library to simplify the client-side scripting of HTML.
 
-Bootstrap  
+**Bootstrap**  
 Our web application will use the tools provided by Bootstrap in order to create the front-end design of kord.io.
 
-Socket.io  
+**Socket.io**  
 Main engine for the boards. Socket.io simplifies the usage of WebSockets while ensuring compatibility on the users end. This will be the development base for the chat system and routing between rooms.
 
-Bonsai.js  
+**Bonsai.js**  
 Lightweight graphics library for drawing/animating dynamically on a board.Capable of fairly complicated development and performances while not consuming too many server resources. We prefer SVG over canvas because our app is more likely to have data overflow than it is to require complicated graphics.
 
-PostgreSQL  
+**PostgreSQL**  
 Database infrastructure. We chose this to handle wide-scale development with large amounts of data being handled. Very reliable and stable while being compatible with most platforms.
 
-Sunlight.js  
+**Sunlight.js**  
 Used for automatic syntax highlighting within html. Low weight and parallel resources.
 
-Less.js  
+**Less.js**  
 Client-side CSS pre-processor. Adds more functionality to extend maintainability and creative freedom. Less.js allows for the defining of variables and mix-ins to make full use of Nested syntax. It also has some useful Operational Functions and Mathematical operations that make it more appealing than Sass.
 
-Passport.js  
+**Passport.js**  
 Sweet and simple Node.js authenticator. It supports persistent sessions, and has a dynamic scope. Handles large amounts of users with easy handling of success/failure and has a lightweight code base.
 
 <p align = "right"><i >[Written by  Matthaus Wolff, Sara da Silva - 11/14/2014]</em></p>  
