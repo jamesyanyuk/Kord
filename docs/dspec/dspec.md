@@ -84,10 +84,9 @@ The authenticator will frequently reference the database to check for passwords 
 We plan to implement this in postgreSQL.
 The Database stores current and past connections with four types of Users.
 * Guest - Can join open rooms and participate in chat, upload and download files but rooms created by them are not permanent.
-* General Users - Can link rooms to their account,  add friends to their account and the features of a guest user
+* General Users - Can link rooms to their account and the features of a guest user
 * Moderators - Power to restrict access and move users in rooms, as well as the features of a regular user.
 * Admin - Total control over the the websites implementation, User Accounts, Server uptime and all the features of a moderator.
-
 
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
