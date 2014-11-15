@@ -54,7 +54,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdetails.png"></p>
 
-This is the interac
+When a user visits the home page, he's presented with the option to login or register for an account. When registered, the user's credentials are stored in the database (password is encrypted), the user's account type is set to unverified, and a verification email is sent to the user. Upon opening the link in the confirmation email, the user's account type is set to verified, and the user is now able to login, bringing them to the user view. From there, they may create a new room, join a room to which they were invited, or enter one they have already joined in the past. From the room or user view, the user may logout, bringing them to the home page.
 
 <p align = "right"><i >[Written by James Yanyuk - 11/14/2014]</em></p>
 
