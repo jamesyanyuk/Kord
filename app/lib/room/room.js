@@ -21,9 +21,15 @@ function createRoom(url, password, creator, callback) {
 				createChat(roomID,												// create a chat object with the room id
 					function (error, chat) {
 						
+						if (error) {
+							return callback(error);
+						}
 						var boards = [];										// create an empty array to store boards
 						createBoard(boards,										// create a board object and store it in the array
 							function (error, board) {
+								if (error) {
+									return callback(error);
+								}
 								
 								var admins = [];												// create an empty array to store the admins
 								var users = [];													// create an empty array to store the users

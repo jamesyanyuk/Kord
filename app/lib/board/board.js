@@ -30,6 +30,9 @@ function createBoard(callback) {
 				var boardID = nextval('boards_boardID_seq');
 				createCanvas(boardID,											// create a canvas
 					function (error, canvas) {
+						if (error) {
+							return callback(error);
+						}
 						var freeResources = [];
 						var lockedResources = [];
 						var board = new Board(boardID,

@@ -4,8 +4,10 @@
  * This file serves primarly as an interface into the database / data structure functions.
  * */
 
+var http = require('http');
 var pg = require('pg');
 var connectionstring = 'postgres://student:student@localhost/student';
+
 var room = require('room');
 var chat = require('chat');
 var board = require('board');
@@ -28,22 +30,16 @@ exports.query = function (database, done, querystring, callback) {
 }
 
 exports.createRoom = room.createRoom;
-exports.updateRoom = room.updateRoom;
+// exports.updateRoom = room.updateRoom;
 
 // exports.createChat = chat.createChat;
 // exports.updateChat = chat.updateChat;
 
-exports.createBoard = board.createBoard;
+// exports.createBoard = board.createBoard;
 // exports.updateBoard = board.updateBoard;
 
 // exports.createCanvas = canvas.createCanvas;
 // exports.updateCanvas = canvas.updateCanvas;
-
-
-var http = requestuire('http');
-var pg = requestuire('pg');
-
-var connectionString = 'postgres://student:student@localhost/student';
 
 var server = http.createServer(
 	function(request, respond) {
