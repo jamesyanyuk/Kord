@@ -60,7 +60,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 
 ### Database - Users  
-<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/usersdatabase.png"></p>  
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
 ### Database - Rooms  
@@ -71,7 +71,7 @@ The room is the locus of interaction for users. Here they can chat,
 draw on the board, or upload resources. The data structures depicted above
 will be how data is stored. The database will have tables for each data structure,
 and store the relevant and necessary fields.
-However, Resources will be stored as serialized objects, because the different 
+However, Resources will be stored as serialized objects, because the different
 resources don't necessarily have the same structure (such as a text file versus
 an audio file).  
 <p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
@@ -106,8 +106,6 @@ Client-side CSS pre-processor. Adds more functionality to extend maintainability
 
 Passport.js  
 Sweet and simple Node.js authenticator. It supports persistent sessions, and has a dynamic scope. Handles large amounts of users with easy handling of success/failure and has a lightweight code base.
-
-
 
 <p align = "right"><i >[Written by  Matthaus Wolff, Sara da Silva - 11/14/2014]</em></p>  
 
