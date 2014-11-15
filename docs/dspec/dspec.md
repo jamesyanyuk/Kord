@@ -52,6 +52,9 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 ### Server - Board / Chat Management
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/roomandserver.png"></p>
+
+This is the interaction between the rooms and the server. Rooms with boards and a single chat. Each room will have a unique ID that they can use to identify themselves from other rooms when interacting with the server and database. Rooms have boards that have resources that needs to be deemed locked or unlocked for interatction.
+
 <p align = "right"><i >[Written by  Nam Phan- 11/14/2014]</em></p>
 
 
@@ -60,7 +63,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 
 ### Database - Users  
-<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/userdatabase.png"></p>  
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/14/2014]</em></p>  
 
 ### Database - Rooms  
@@ -71,7 +74,7 @@ The room is the locus of interaction for users. Here they can chat,
 draw on the board, or upload resources. The data structures depicted above
 will be how data is stored. The database will have tables for each data structure,
 and store the relevant and necessary fields.
-However, Resources will be stored as serialized objects, because the different 
+However, Resources will be stored as serialized objects, because the different
 resources don't necessarily have the same structure (such as a text file versus
 an audio file).  
 <p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
@@ -79,21 +82,25 @@ an audio file).
 ## External Libraries
 
 Node.js  
+Serverside JavaScript environment.
 
 Express  
-Web framework for Node.js
+Web framework for Node.js.
 
 EJS  
 Javascript template library to seamlessly integrate the Javascript and HTML of our web application.
 
-jQuery
+jQuery  
 JavaScript library to simplify the client-side scripting of HTML.
+
+Bootstrap  
+Our web application will use the tools provided by Bootstrap in order to create the front-end design of kord.io.
 
 Socket.io  
 Main engine for the boards. Socket.io simplifies the usage of WebSockets while ensuring compatibility on the users end. This will be the development base for the chat system and routing between rooms.
 
 Bonsai.js  
-Lightweight graphics library for drawing/animating dynamically on a board.Capable of fairly complicated development and preformances while not consuming too many server resources. We prefer svg over canvas because our app is more likely to have data overflow than it is to require complicated grahpics.
+Lightweight graphics library for drawing/animating dynamically on a board.Capable of fairly complicated development and performances while not consuming too many server resources. We prefer SVG over canvas because our app is more likely to have data overflow than it is to require complicated graphics.
 
 PostgreSQL  
 Database infrastructure. We chose this to handle wide-scale development with large amounts of data being handled. Very reliable and stable while being compatible with most platforms.
@@ -106,8 +113,6 @@ Client-side CSS pre-processor. Adds more functionality to extend maintainability
 
 Passport.js  
 Sweet and simple Node.js authenticator. It supports persistent sessions, and has a dynamic scope. Handles large amounts of users with easy handling of success/failure and has a lightweight code base.
-
-
 
 <p align = "right"><i >[Written by  Matthaus Wolff, Sara da Silva - 11/14/2014]</em></p>  
 
