@@ -16,7 +16,7 @@ people to each other, rather than to the ether.
 
 ## Bird's Eye View
 
-<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordoverview.png"></p>  
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordoverview.png"></p>  
 <p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
 
 ## Component-by-Component Breakdown
@@ -24,7 +24,7 @@ people to each other, rather than to the ether.
 
 ### Client
 
-<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/clientview.png"></p>
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/clientview.png"></p>
 
 Main:  
 Users accessing kord.io will be directed to the Main page if they are not logged in. From the main page they will either have the option to sign-up as a new user, or login as an existing users. Users whose sessions has been saved and are currently logged in, will be routed to the Rooms page.
@@ -59,7 +59,7 @@ Our application will, of course, use HTML5, CSS, and Javascript. It will use the
 
 ### Database - Rooms
 
-<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
+<p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
 
 The room is the locus of interaction for users. Here they can chat,
 draw on the board, or upload resources.
