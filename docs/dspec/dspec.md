@@ -1,24 +1,26 @@
 <p align="right"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/images/kordio.png" width="240px" alt="Where your ideas connect to our system."></p>
 
-## Overview (v1.3)  
+## Overview  
 
-Kord is a centralized hub for human interaction over a digital medium,
-whether that be for friends, businesses, working partners, social groups, etc.
+Kord is a centralized hub for communication over a digital medium,
+whether that's between friends, businesses, working partners, social groups, etc.
 Users will be able to chat and communicate in a room with an interactive board.
-Resources such as documents, videos, etc. can be placed onto the board.
-It can be drawn on. It can be used as a space for saving important links,
-brainstorming, making timelines, and more.
+Users will be able to draw on the board or create, manipulate, and interact with
+resources such as documents, videos, etc. It can be used as a space for
+saving important links, brainstorming, making timelines, and more.
 
 It is a space where digital interactions have a sense of continuity and connect
 people to each other, rather than to the ether.
 
-<p align = "right"><i >[Written by  Julian Kuk - 10/16/2014]</em></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
 
 ## Bird's Eye View
 
-<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordoverview.png"></p>
+<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordoverview.png"></p>  
+<p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
 
 ## Component-by-Component Breakdown
+===================================
 
 ### Client
 
@@ -30,7 +32,11 @@ people to each other, rather than to the ether.
 
 ### Database - Rooms
 
-<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>
+<p align="left"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/kordrooms.png"></p>  
+
+The room is the locus of interaction for users. Here they can chat,
+draw on the board, or upload resources.
+<p align = "right"><i >[Written by  Julian Kuk - 11/14/2014]</em></p>  
 
 ## External Libraries
 
@@ -67,3 +73,7 @@ people to each other, rather than to the ether.
 <p align = "right"><i >[Written by  Matthaus Wolff - 11/12/2014]</em></p>  
 
 ### Revision History
+	* 0.1 11/14/2014: Added External Libraries - Matthaus
+	* 0.2 11/14/2014: Added Overview - Julian
+	* 0.3 11/14/2014: Added Bird's Eye View - Julian
+	* 0.4 11/14/2014: Added Database - Rooms - Julian
