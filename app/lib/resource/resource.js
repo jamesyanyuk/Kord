@@ -1,11 +1,30 @@
-var query = require('../db').query;
+// var pg = require('pg');
+// var connectionString = require('../db').connectionString;
+// var db = require('../db');
 
-function Resource(x, y, data) {
-	this.x = x;
-	this.y = y;
-	this.data = data;
+function Resource() {
+	this.x = 0;
+	this.y = 0;
+	this.data = undefined;
 }
 
-function updateResource() {
-	// what to update and how
-}
+// function createResource() {
+
+// }
+
+// function readResource() {
+
+// }
+
+// function updateResource() {
+
+// }
+
+// function destroyResource() {
+
+// }
+
+exports.createResource = createResource;
+exports.readResource = readResource;
+exports.updateResource = updateResource;
+exports.destroyResource = destroyResource;

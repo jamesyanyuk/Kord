@@ -1,34 +1,30 @@
-// var query = require('../db').query;
+// var pg = require('pg');
+// var connectionString = require('../db').connectionString;
+// var db = require('../db');
 
 function Chat() {
 	this.chatlog = undefined;
-	// this.roomID = roomID;
-	// this.log = log;
-	
 }
 
-// function createChat(roomID, callback) {
-// 	pg.connect(connectionString,												// try to connect to the database
-// 		function (error, database, done) {
-// 			if (error) {														// if there was an error
-// 				return callback(error);											// return the error
-// 			}
-// 			else {																// if there was no error
-// 				var chat = new Chat(roomID);									// create a new chat object
-				
-// 				var querystring = 'INSERT INTO chats VALUES ' + '(' +			// create the query string
-// 					chat.roomID + ',' +
-// 					chat.log + ',', +
-// 					');';
-// 				query(database, done, querystring, callback);			// actually query the database
-// 				return chat;
-// 			}
-// 		}
-// 	);
+// function createCaht() {
+
+// }
+
+// function readChat() {
+
+// }
+
+// function updateChat() {
+
+// }
+
+// function destroyChat() {
+
 // }
 
 module.exports = Chat;
 
-function updateChat() {
-	
-}
+// exports.createChat = createChat;
+// exports.readChat = readChat;
+// exports.updateChat = updateChat;
+// exports.destroyChat = destroyChat;

@@ -39,6 +39,35 @@ function createBoard(callback) {
 	);
 }
 
+function readBoard(callback) {
+
+}
+
+function updateBoard(callback) {
+
+}
+
+function destroyBoard(caallback) {
+
+}
+
+
+// function createCanvas() {
+
+// }
+
+function readCanvas() {
+
+}
+
+function updateCanvas() {
+	// what to update and how
+}
+
+// function destroyCanvas() {
+
+// }
+
 function freeResource() {
 	// move from locked resources to free resources
 }
@@ -47,9 +76,15 @@ function lockResource() {
 	// moved from free to locked
 }
 
-function updateCanvas() {
-	// what to update and how
-}
-
-
 exports.createBoard = createBoard;
+exports.readBoard = readBoard;
+exports.updateBoard = updateBoard;
+exports.destroyBoard = destroyBoard;
+
+// exports.createCanvas = createCanvas;
+exports.readCanvas = readCanvas;
+exports.updateCanvas = updateCanvas;
+// exports.destroyCanvas = destroyCanvas;
+
+exports.freeResource = freeResource;
+exports.lockResource = lockResource;

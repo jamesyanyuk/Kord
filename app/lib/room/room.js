@@ -59,7 +59,55 @@ function createRoom(url, password, creator, callback) {
 	);
 }
 
+function readRoom(callback) {
+	pg.connect(connectionString,
+		function (error, database, done) {
+			if (error) { return callback(error); }
+
+			var querystring = db.selectFrom('*', 'rooms', 'roomID', roomID);
+			db.query(database, done, querystring, false,
+				function (error, roomJSON) {
+					if (error) { return callback(error); }
+
+					var room = JSON.parse(roomJSON);
+
+					db.query(database, done, querystring, false,
+						function(error, boardsJSON) {
+
+							db.query(database, done, querystring, false,
+								function (error, moderatorsJSON) {
+
+									db.query(database, done, querystring, false,
+										function (error, membersJSON) {
+
+										}
+									);
+
+								}
+							);
+
+						}
+
+					return callback(undefined, room);
+					);
+				}
+			);
+		}
+	);
+}
+
+function updateRoom() {
+
+}
+
+function destroyRoom() {
+
+}
+
 exports.createRoom = createRoom;
+exports.readRoom = readRoom;
+exports.updateRoom = updateRoom;
+exports.destroyRoom = destroyRoom;
 // 
 // 
 // function updateRoom(room, callback) {
