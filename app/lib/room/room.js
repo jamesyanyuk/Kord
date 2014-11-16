@@ -1,63 +1,65 @@
-var query = require('db').query;
+var pg = require('pg');
+var connectionString = require('../db').connectionString;
+var db = require('../db');
+var Chat = require('../chat');
 
-function Room(roomID, url, password, chat, boards, admins, members) {
+function Room(roomID, url, password, chat, boards, moderators, members) {
 	this.roomID = roomID;
 	this.url = url;
 	this.password = password;
 	this.chat = chat;
 	this.boards = boards;
-	this.admins = admins;
+	this.moderators = moderators;
 	this.members = members;
 }
 
 function createRoom(url, password, creator, callback) {
 	pg.connect(connectionString,												// try to connect to the database
 		function (error, database, done) {
-			if (error) {														// if there was an error
-				return callback(error);											// return the error
-			}
-			else {																// if there was no error
-				var roomID = nextval('rooms_roomID_seq');						// get the next valid room id				
-				createChat(roomID,												// create a chat object with the room id
-					function (error, chat) {
-						
-						if (error) {
-							return callback(error);
+			if (error) { return callback(error); }								// if there was an error, return it
+
+			db.createBoard(														// try to create a board
+				function (error, board) {
+					if (error) { return callback(error); }						// if there was an error, return it
+					
+					console.log('board created: ' + board);
+
+					var chat = new Chat();										// create a new chat
+					var data = [];												// create an empty array to store the query parameters
+					data[data.length] = db.nextID('rooms', 'roomID');			// get the next id
+					data[data.length] = url;									// use the url
+					data[data.length] = password;								// use the password
+					data[data.length] = chat;									// use the chat
+					var querystring = db.insertInto('rooms', data, 'roomID');	// generate the query string
+
+					db.query(database, done, querystring, true,					// query the database
+						function (error, roomID) {
+							if (error) { return callback(error); }				// if there was an error, return it
+
+							var boards = [];									// create an empty array to store boards
+							var moderators = [];								// create an empty array to store the moderators
+							var members = [];									// create an empty array to store the users
+
+							boards[boards.length] = board;						// add the board to the list of boards
+							moderators[moderators.length] = creator;			// add the creator to the list of moderators
+							members[members.length] = creator;					// add the creator to the list of members
+
+							var room = new Room(roomID, url, password, chat,	// create a new room
+								boards, moderators, members);
+							return callback(undefined, room);					// return the room
+
+							// INSERT INTO rooms_boards
+							// INSERT INTO rooms_members
+							// INSERT INTO rooms_moderators
 						}
-						var boards = [];										// create an empty array to store boards
-						createBoard(boards,										// create a board object and store it in the array
-							function (error, board) {
-								if (error) {
-									return callback(error);
-								}
-								
-								var admins = [];												// create an empty array to store the admins
-								var users = [];													// create an empty array to store the users
-								
-								admins[admins.length] = creator;								// add the creator to the list of admins
-								members[members.length] = creator;								// add the creator to the list of members
-								
-								var room = new Room(roomID,										// create a room object
-										url, password, chat, board, admins, users);
-								
-								var querystring = 'INSERT INTO rooms VALUES ' + '(' +			// create the query string
-									room.roomID + ',' +
-									room.url + ',' +
-									room.password + ',' +
-									room.boards + ',' +
-									room.admins + ',' +
-									room.members +
-									');';
-								query(database, done, querystring, callback);			// actually query the database
-								return room;
-							}
-						);
-					}
-				);
-			}
+					);
+				}
+			);
 		}
 	);
 }
+
+exports.createRoom = createRoom;
 // 
 // 
 // function updateRoom(room, callback) {

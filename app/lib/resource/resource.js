@@ -1,4 +1,4 @@
-var query = require('db').query;
+var query = require('../db').query;
 
 function Resource(x, y, data) {
 	this.x = x;
