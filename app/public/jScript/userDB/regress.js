@@ -11,23 +11,44 @@ var resource = require('resource');
 function userCheck(username, callback) {
   pg.connect(connString, function (err, user, done){
     if(err){callback('Connection error: '+err);
-    done();
+      done();
     }
     else{
       var query = 'SELECT * FROM users WHERE username' = user.name;
-      client.query(query, function(err, result) {
+      user.query(query, function(err, result) {
 
         if(err){callback('Search error: '+err); 
-        done();
+          done();
         }
         else{callback(undefined);
-        done();
+          done();
         }
     });
   });
 });
 
-
+function userAdd(username, callback) {
+  pg.connect(connString, function (err, user, done){
+    if(err){callback('Connection error: '+err);
+      done();
+    }
+    else{
+      userCheck(username, function(err, userCheck){
+         if(err){callback(undefined, 'Username already in use.');
+          done();
+         }
+         else{
+          user.query('INSERT INTO users')
+          done();
+            if(err){callback('Couldnt add: '+err);}
+              done();
+            else{
+              callback(undefined, 'Username avaliable.');}
+         }
+      });
+    }
+  });
+}
 //Testing
 //ar server = http.createServer(function(req, res) {
 //
@@ -46,7 +67,8 @@ function userCheck(username, callback) {
 
     // record the visit
 
-
+exports.userCheck = userCheck;
+exports.userAdd = userAdd;
       
       client.query('INSERT INTO visit (date) VALUES ($1)', [new Date()], function(err, result) {
         if(handleError(err)) return;
@@ -59,4 +81,4 @@ function userCheck(username, callback) {
   });
 })
 
-server.listen(1000);
+//server.listen(1000);
