@@ -5,8 +5,7 @@ var pg = require('pg');
 
 var conString = "postgres://cordio:password@localhost/postgres";
 
-var authen = require('authen');
-var resource = require('resource');
+var resource = require('../resource');
 
 function userCheck(username, callback) {
   pg.connect(connString, function (err, user, done){
@@ -45,8 +44,21 @@ function userAdd(username, callback) {
         });
       }
     });
-  }
+
+exports.insertInto = function (table, data, id) {
+  return 'INSERT INTO ' + table + ' ' + values(data, id);           
+}
+
+exports.selectFrom = function (columns, table, attribute, id) { 
+  return 'SELECT ' + columns + ' FROM ' + table + ' ' + 'WHERE ' + attribute + ' = ' + id + ';';
+}
+
+exports.nextID = function(table, id) {                      
+  return "nextval('" + table + "_" + id + "_seq')";            
+}
 //Testing
+
+
 //ar server = http.createServer(function(req, res) {
 //
   // get a pg client from the connection pool
@@ -63,19 +75,15 @@ function userAdd(username, callback) {
 //    };
 
     // record the visit
+    //      client.query('INSERT INTO visit (date) VALUES ($1)', [new Date()], function(err, result) {
+  //      if(handleError(err)) return;
+ //     client.query('SELECT COUNT(date) AS count FROM visit', function(err, result) {
+//        if(handleError(err)) return;
+//       done();
+ //       res.writeHead(200, {'content-type': 'text/plain'});
+
+//server.listen(1000);
 
 exports.userCheck = userCheck;
 exports.userAdd = userAdd;
       
-      client.query('INSERT INTO visit (date) VALUES ($1)', [new Date()], function(err, result) {
-        if(handleError(err)) return;
-      client.query('SELECT COUNT(date) AS count FROM visit', function(err, result) {
-        if(handleError(err)) return;
-        done();
-        res.writeHead(200, {'content-type': 'text/plain'});
-      });
-    });
-  });
-})
-
-//server.listen(1000);
