@@ -1,1 +1,0 @@
-psql --file=starter.sql
