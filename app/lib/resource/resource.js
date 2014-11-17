@@ -2,6 +2,13 @@
 // var connectionString = require('../db').connectionString;
 // var db = require('../db');
 
+module.exports = Resource;
+
+// exports.createResource = createResource;
+// exports.readResource = readResource;
+// exports.updateResource = updateResource;
+// exports.destroyResource = destroyResource;
+
 function Resource() {
 	this.x = 0;
 	this.y = 0;
@@ -23,8 +30,3 @@ function Resource() {
 // function destroyResource() {
 
 // }
-
-exports.createResource = createResource;
-exports.readResource = readResource;
-exports.updateResource = updateResource;
-exports.destroyResource = destroyResource;
