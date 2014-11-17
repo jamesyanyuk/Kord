@@ -13,7 +13,7 @@ function Chat() {
 	this.chatlog = undefined;
 }
 
-// function createCaht() {
+// function createChat() {
 
 // }
 
