@@ -1,0 +1,1 @@
+psql --file=init-user.sql
