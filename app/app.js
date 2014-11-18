@@ -35,7 +35,32 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-user.initialize(passport);
+/* Will be isolating this portion later */
+var LocalStrategy = require('passport-local').Strategy;
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
+// passport local strategy
+passport.use('local-signin', new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password'
+    },
+    function(username, password, done) {
+        User.findOne({ username: username }, function(err, user) {
+            if(err) { return done(err); }
+            if(!user) { return done(null, false, { message: 'User doesn\'t exist.' }); }
+            if(!user.validPassword()) { return done(null, false, { message: 'Incorrect password.' }); }
+        });
+    }
+));
 
 // routes
 app.use('/', index);
