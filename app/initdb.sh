@@ -1,3 +1,3 @@
 #! /bin/bash
 
-psql --file=roomdb.sql
+psql --file=initdb.sql

@@ -9,6 +9,7 @@ var pg = require('pg');
 var connectionString = 'postgres://student:student@localhost/student';
 exports.connectionString = connectionString;
 
+var user = require('./userdb');
 var room = require('./roomdb');
 var chat = require('./chatdb');
 var board = require('./boarddb');
@@ -23,11 +24,21 @@ exports.deleteFrom = deleteFrom;
 
 exports.nextID = nextID;
 
+exports.createObject = createObject;
+exports.joinObjects = joinObjects;
 exports.readObject = readObject;
 exports.readObjects = readObjects;
 exports.readObjectsFor = readObjectsFor;
 exports.updateObject = updateObject;
 exports.destroyObject = destroyObject;
+
+exports.createUser = user.createUser;
+exports.readUser = user.readUser;
+exports.readModeratorsFor = user.readModeratorsFor;
+exports.readMembersFor = user.readMembersFor;
+exports.updateUser = user.updateUser;
+exports.destroyUser = user.destroyUser;
+exports.authenticateUser = user.authenticateUser;
 
 exports.createRoom = room.createRoom;
 exports.readRoom = room.readRoom;
@@ -41,9 +52,25 @@ exports.destroyRoom = room.destroyRoom;
 exports.createBoard = board.createBoard;
 exports.readBoard = board.readBoard;
 // exports.updateBoard = board.updateBoard;
+// exports.destroyBoard = board.destroyBoard;
 
 // exports.createCanvas = canvas.createCanvas;
+// exports.readCanvas = canvas.readCanvas;
 // exports.updateCanvas = canvas.updateCanvas;
+// exports.destroyCanvas = canvas.destroyCanvas;
+
+// exports.createResource = resource.createResource;
+// exports.readResource = resource.readResource;
+// exports.updateResource = resource.updateResource;
+// exports.destroyResource = resource.destroyResource;
+
+var ALL_COLUMNS = ['*'];
+var ID = 'id';
+var DOES_NOT_EXIST = 'does not exist';
+var SUCCESS = undefined;
+exports.ALL_COLUMNS = ALL_COLUMNS;
+exports.DOES_NOT_EXIST = DOES_NOT_EXIST;
+exports.SUCCESS = SUCCESS;
 
 /*
  * actual query function
@@ -55,7 +82,7 @@ function query(database, done, querystring, callback) {
 			console.log(querystring);
 			done();																// signal that the query is done
 			if (error) return callback(error);									// if there was an error, return it
-			return callback(undefined, result.rows);							// return the result
+			return callback(SUCCESS, result.rows);							// return the result
 		}
 	);
 }
@@ -64,12 +91,12 @@ function query(database, done, querystring, callback) {
  * basic CRUD queries
  * */
 
-function insertInto(table, fields, returnValue) {
+function insertInto(table, fields, returnField) {
 	return 'INSERT INTO ' + table + ' ' + values(fields) +
-		returning(returnValue) + ';';
+		returning(returnField) + ';';
 }
 
-function selectFrom(columns, table, condition) {
+function selectFrom(table, columns, condition) {
 	return 'SELECT ' + list(columns) + ' FROM ' + table + ' ' +
 		'WHERE ' + condition + ';';
 }
@@ -109,9 +136,9 @@ function format(value) {
 	return value;																// if the value is anything, just return it
 }
 
-function returning(returnValue) {
-	if (returnValue) {
-		return ' RETURNING ' + returnValue;
+function returning(returnField) {
+	if (returnField) {
+		return ' RETURNING ' + returnField + ' AS id';
 	}
 	return '';
 }
@@ -136,82 +163,117 @@ function map(column, field) {
 	return column + ' = ' + format(field);
 }
 
+function joinTables(first, second) {
+	return first + '_' + second;
+}
+
 /*
  * object CRUD functions
  * */
 
-function readObject(table, objectid, id, callback) {
+function createObject(table, fields, returnField, callback) {
 	pg.connect(connectionString,												// try to connect to the database
 		function (error, database, done) {
 			if (error) return callback(error);									// if there was an error, return it
 
-			var columns = [];
-			columns[columns.length] = '*';
-			var querystring = selectFrom(columns,							// select all columns from rooms where roomid = roomid
-				table, map(objectid, id));
-
+			var querystring = insertInto(table, fields, returnField);				// generate the query string
 			query(database, done, querystring,								// query the database
 				function (error, result) {
 					if (error) return callback(error);							// if there was an error, return it
-					if (!result.length) return callback('does not exist');		// if there were no matches, return the error
-					return callback(undefined, result[0]);							// return the new room
+					return callback(SUCCESS, result[0][ID]);
 				}
 			);
 		}
 	);
 }
 
-function readObjects(read, column, objects, ids, callback) {
-	readObjectsRecursive(read, column, objects, ids, 0,
-		function (error, result) {
+function joinObjects(firstTable, secondTable, firstid, secondid, callback) {
+	pg.connect(connectionString,
+		function (error, database, done) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+
+			var fields = [];
+			fields[fields.length] = firstid;
+			fields[fields.length] = secondid;
+
+			var querystring = insertInto(
+				joinTables(firstTable, secondTable), fields
+			);
+			query(database, done, querystring,
+				function (error, result) {
+					if (error) return callback(error);
+					return callback(SUCCESS, result);
+				}
+			);
 		}
 	);
 }
 
-function readObjectsRecursive(read, column, objects, ids, i, callback) {
+function readObject(table, column, field, callback) {
+	pg.connect(connectionString,												// try to connect to the database
+		function (error, database, done) {
+			if (error) return callback(error);									// if there was an error, return it
+
+			var querystring = selectFrom(
+				table, ALL_COLUMNS, map(column, field)
+			);																	// select all columns from rooms where roomid = roomid
+			query(database, done, querystring,								// query the database
+				function (error, result) {
+					if (error) return callback(error);							// if there was an error, return it
+					if (!result.length) return callback(DOES_NOT_EXIST);		// if there were no matches, return the error
+					return callback(SUCCESS, result[0]);							// return the new room
+				}
+			);
+		}
+	);
+}
+
+function readObjects(column, objects, ids, read, callback) {
+	readObjectsRecursive(column, objects, ids, 0, read,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(SUCCESS, result);
+		}
+	);
+}
+
+function readObjectsRecursive(column, objects, ids, i, read, callback) {
 	read(ids[i][column],														// get the object by its id
 		function (error, object) {
 			if (error) return callback(error);									// if there was an error, return it
 
 			objects[objects.length] = object;									// store the object in the array
 			if (i == ids.length - 1) {
-				return callback(undefined, objects);							// return the objects
+				return callback(SUCCESS, objects);								// return the objects
 			}
 			else {																// otherwise
-				readObjectsRecursive(read, column,								// continue filling the array recursively
-					objects, ids, i + 1, callback);
+				readObjectsRecursive(
+					column, objects, ids, i + 1, read, callback
+				);				// continue filling the array recursively
 			}
 		}
 	);
 }
 
-function readObjectsFor(read, table, column, objectid, id, callback) {
+function readObjectsFor(table, column, id, objectid, read, callback) {
 	pg.connect(connectionString,												// try to connect to the database
 		function (error, database, done) {
 			if (error) return callback(error);
 
-			var querystring = selectFrom([column],
-				table, map(objectid, id));	
+			var querystring = selectFrom(
+				table, [column], map(id, objectid)
+			);	
 
 			query(database, done, querystring,
-				function (error, ids) {
+				function (error, result) {
 					if (error) return callback(error);
-
-					for (var prop in ids) {
-
-						console.log(prop + ': ' + ids[prop]);
-						for (var property in ids[prop]) {
-							console.log(property + ': '+ ids[prop][property]);
-						}
-					}
-
+					if (!result.length) return callback(DOES_NOT_EXIST);
+					var ids = result;
 					var objects = [];
-					readObjects(read, column, objects, ids,
+					readObjects(column, objects, ids, read,
 						function (error, result) {
 							if (error) return callback(error);
-							return callback(undefined, result);
+							return callback(SUCCESS, result);
 						}
 					);
 				}
@@ -220,43 +282,61 @@ function readObjectsFor(read, table, column, objectid, id, callback) {
 	);
 }
 
-function updateObject(object, table, id, callback) {
+function updateObject(table, id, object, callback) {
 	pg.connect(connectionString,
 		function (error, database, done) {
 			if (error) return callback(error);
 
 			var columns = [];
 			var fields = [];
-
 			for (var property in object) {
 				columns[columns.length] = property;			
 				fields[fields.length] = object[property];
 			}
-			var querystring = updateWhere(table,
-				columns, fields, map(id, object[id])
-			);
 
+			var querystring = updateWhere(
+				table, columns, fields, map(id, object[id])
+			);
 			query(database, done, querystring,
 				function (error, result) {
 					if (error) return callback(error);
 
-					return callback(undefined, object);
+					return callback(SUCCESS, object);
 				}
 			);
 		}
 	);
 }
 
-function destroyObject(table, objectid, id, callback) {
+function updateField(table, column, field, id, objectid, callback) {
 	pg.connect(connectionString,
 		function (error, database, done) {
 			if (error) return callback(error);
 
-			var querystring = deleteFrom(table, map(objectid, id));
+			var querystring = updateWhere(
+				table, [column], [field], map(id, objectid)
+			);
 			query(database, done, querystring,
 				function (error, result) {
 					if (error) return callback(error);
-					return callback(undefined, id);
+
+					return callback(SUCCESS, object);
+				}
+			);
+		}
+	);
+}
+
+function destroyObject(table, id, objectid, callback) {
+	pg.connect(connectionString,
+		function (error, database, done) {
+			if (error) return callback(error);
+
+			var querystring = deleteFrom(table, map(id, objectid));
+			query(database, done, querystring,
+				function (error, result) {
+					if (error) return callback(error);
+					return callback(SUCCESS, objectid);
 				}
 			);
 		}

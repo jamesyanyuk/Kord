@@ -1,5 +1,3 @@
-var pg = require('pg');
-var connectionString = require('../db').connectionString;
 var db = require('../db');
 
 exports.create = function () {
@@ -8,7 +6,7 @@ exports.create = function () {
 
 // exports.createCanvas = createCanvas;
 // exports.readCanvas = readCanvas;
-// exports.updateCanvas = updateCanvas;
+exports.updateCanvas = updateCanvas;
 // exports.destroyCanvas = destroyCanvas;
 
 function Canvas() {
@@ -23,9 +21,14 @@ function Canvas() {
 
 // }
 
-// function updateCanvas() {
-
-// }
+function updateCanvas(canvas, callback) {
+	// db.updateField(canvas, TABLE,  ID,
+	// 	function (error, result) {
+	// 		if (error) return callback(error);
+	// 		return callback(undefined, result);
+	// 	}
+	// );
+}
 
 // function destroyCanvas() {
 
