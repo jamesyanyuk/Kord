@@ -9,7 +9,7 @@ router.get('/login', function(req, res) {
     res.render('login', { message: req.flash('login') || '' });
 });
 
-router.post('/login', passport.authenticate);
+//router.post('/login', passport.authenticate);
 
 //router.post('/logout', ...);
 
