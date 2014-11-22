@@ -6,15 +6,15 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-    res.render('login', { message: flash('login') });
+    res.render('login', { message: req.flash('login') || '' });
 });
 
-//router.post('/login', ...);
+router.post('/login', passport.authenticate);
 
 //router.post('/logout', ...);
 
 router.get('/register', function(req, res) {
-    res.render('register', { message: flash('register') });
+    res.render('register', { message: req.flash('register') || '' });
 });
 
 router.get('/register', function(req, res) {
