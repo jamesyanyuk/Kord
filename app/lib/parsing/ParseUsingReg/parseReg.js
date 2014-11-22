@@ -1,3 +1,5 @@
+//Takes a string and checks it
+
 //Flags:
 //0 means not a url
 //1 means url
