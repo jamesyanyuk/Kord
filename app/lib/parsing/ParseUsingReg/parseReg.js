@@ -29,3 +29,6 @@ function fileCheck(url) {
 			console.log("This is a url");
 			return 1;
 	}
+
+exports.urlCheck = urlCheck;
+exports.fileCheck = fileCheck;

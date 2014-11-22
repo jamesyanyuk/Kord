@@ -20,5 +20,6 @@ function downloadFile(FileUrl){
 			console.log('Completed upload.');
 		});
 
-
 }
+
+exports.downloadFile = downloadFile;
