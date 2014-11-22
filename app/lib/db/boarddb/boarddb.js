@@ -1,8 +1,8 @@
 var db = require('../db');
 var canvasdb = require('../canvasdb');
 
-exports.create = function (boardid, canvas, freeresources, lockedresources) {
-	return new Board(boardid, canvas, freeresources, lockedresources);
+exports.create = function (boardid, canvas) {
+	return new Board(boardid, canvas);
 };
 
 exports.createBoard = createBoard;
@@ -14,11 +14,9 @@ exports.destroyBoard = destroyBoard;
 var TABLE = 'boards';
 var ID = 'boardid';
 
-function Board(boardid, canvas, freeresources, lockedresources) {
+function Board(boardid, canvas) {
 	this.boardid = boardid;
 	this.canvas = canvas;
-	this.freeresources = freeresources;
-	this.lockedresources = lockedresources;
 }
 
 /*
@@ -26,16 +24,12 @@ function Board(boardid, canvas, freeresources, lockedresources) {
  * */
 
 function createBoard(roomid, callback) {
-	var canvas = canvasdb.create();											// create a new canvas
-	var freeresources = [];												// create an empty array to store free resources
-	var lockedresources = [];											// create an empty array to store locked resourced
+	var canvas = canvasdb.create();												// create a new canvas
 
-	var data = [];														// create an empty array to store the query parameters
-	data[data.length] = db.nextID(TABLE, ID);					// get the next id
-	data[data.length] = canvas;											// use the canvas
-	data[data.length] = freeresources;									// use the free resources
-	data[data.length] = lockedresources;								// use the locked resources
-	db.createObject(TABLE, data, ID,
+	var fields = [];															// create an empty array to store the query parameters
+	fields[fields.length] = db.nextID(TABLE, ID);								// get the next id
+	fields[fields.length] = canvas;												// use the canvas
+	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);
 			
@@ -49,8 +43,8 @@ function createBoard(roomid, callback) {
 							}
 						);
 					}
-					var board = new Board(boardid, canvas, freeresources, lockedresources);
-					return callback(undefined, board);
+					var board = new Board(boardid, canvas);
+					return callback(db.SUCCESS, board);
 				}
 			);			
 		}
@@ -61,7 +55,7 @@ function joinRoomBoard(roomid, boardid, callback) {
 	db.joinObjects('rooms', TABLE, roomid, boardid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -76,10 +70,8 @@ function readBoard(boardid, callback) {
 			if (error) return callback(error);
 
 			var canvas = result['canvas'];
-			var freeresources = result['freeresources'];
-			var lockedresources = result['lockedresources'];
-			var board = new Board(boardid, canvas, freeresources, lockedresources);
-			return callback(undefined, board);
+			var board = new Board(boardid, canvas);
+			return callback(db.SUCCESS, board);
 		}
 	);
 }
@@ -88,7 +80,7 @@ function readBoardsFor(roomid, callback) {
 	db.readObjectsFor(readBoard, 'rooms_boards', ID, 'roomid', roomid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -102,7 +94,7 @@ function updateBoard(board, callback) {
 	db.updateObject(board, TABLE, ID,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -115,7 +107,7 @@ function destroyBoard(boardid, callback) {
 	db.destroyObject(TABLE, ID, boardid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }

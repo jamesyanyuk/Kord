@@ -6,11 +6,14 @@ exports.create = function () {
 
 // exports.createChat = createChat;
 // exports.readChat = readChat;
-exports.updateChat = updateChat;
+exports.updateChatFor = updateChatFor;
 // exports.destroyChat = destroyChat;
 
+var TABLE = 'rooms';
+var ID = 'chat';
+
 function Chat() {
-	this.chatlog = undefined;
+	this.chatlog = '';
 }
 
 // function createChat() {
@@ -21,13 +24,13 @@ function Chat() {
 
 // }
 
-function updateChat(roomid, chat, callback) {
-	// db.updateField('chat', chat, 'rooms', 'roomid',
-	// 	function (error, result) {
-	// 		if (error) return callback(error);
-	// 		return callback(undefined, result);
-	// 	}
-	// );
+function updateChatFor(roomid, chat, callback) {
+	db.updateField(TABLE, ID, chat, 'roomid', roomid,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
+		}
+	);
 }
 
 // function destroyChat() {

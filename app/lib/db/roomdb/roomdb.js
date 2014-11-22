@@ -14,6 +14,8 @@ exports.readEntireRoom = readEntireRoom;
 exports.updateRoom = updateRoom;
 exports.destroyRoom = destroyRoom;
 
+exports.authenticateMember = authenticateMember;
+
 var TABLE = 'rooms';
 var ID = 'roomid';
 
@@ -33,12 +35,12 @@ function Room(roomid, url, roompass, chat) {
  * */
 
 function createRoom(url, roompass, userid, callback) {
-	var chat = chatdb.create();												// create a new chat
-	var data = [];														// create an empty array to store the query parameters
-	data[data.length] = db.nextID(TABLE, ID);					// the next id
-	data[data.length] = url;											// the url
-	data[data.length] = roompass;										// the roompass
-	data[data.length] = chat;											// the chat
+	var chat = chatdb.create();
+	var data = [];
+	data[data.length] = db.nextID(TABLE, ID);
+	data[data.length] = url;
+	data[data.length] = roompass;
+	data[data.length] = chat;
 	db.createObject(TABLE, data, ID,
 		function (error, result) {
 			if (error) return callback(error);
@@ -68,7 +70,7 @@ function createRoom(url, roompass, userid, callback) {
 										);
 									}
 									var room = new Room(roomid, url, roompass, chat);
-									return callback(undefined, room);
+									return callback(db.SUCCESS, room);
 								}
 							);
 						}
@@ -83,7 +85,7 @@ function joinRoomModerator(roomid, userid, callback) {
 	db.joinObjects(TABLE, 'moderators', roomid, userid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -92,7 +94,7 @@ function joinRoomMember(roomid, userid, callback) {
 	db.joinObjects(TABLE, 'members', roomid, userid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -110,7 +112,7 @@ function readRoom(roomid, callback) {
 			var roompass = result['roompass'];
 			var chat = result['chat'];
 			var room = new Room(roomid, url, roompass, chat);
-			return callback(undefined, room);
+			return callback(db.SUCCESS, room);
 		}
 	);
 }
@@ -119,16 +121,41 @@ function readRoomsFor(userid, callback) {
 	db.readObjectsFor('rooms_members', ID, 'userid', userid, readRoom,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
 
 function readEntireRoom(roomid, callback) {
-	// readRoom
-	// readModerators
-	// readMembers
-	// readBoards
+	readRoom(roomid,
+		function (error, result) {
+			if (error) return callback(error);
+
+			var room = result;
+			readModeratorsFor(roomid,
+				function (error, result) {
+					if (error) return callback(error);
+
+					room['moderators'] = result;
+					readMembersFor(roomid,
+						function (error, result) {
+							if (error) return callback(error);
+
+							room['members'] = result;
+							readBoardsFor(roomid,
+								function (error, result) {
+									if (error) return callback(error);
+
+									room['boards'] = result;
+									return room;
+								}
+							);
+						}
+					);
+				}
+			);
+		}
+	);
 }
 
 /*
@@ -139,7 +166,7 @@ function updateRoom(room, callback) {
 	db.updateObject(TABLE, ID, room,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }
@@ -152,7 +179,7 @@ function destroyRoom(roomid, callback) {
 	db.destroyObject(TABLE, ID, roomid,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(undefined, result);
+			return callback(db.SUCCESS, result);
 		}					
 	);
 }
@@ -162,6 +189,15 @@ function uncreateRoom(roomid, uncreate, callback) {
 		function (error, result) {
 			if (error) return callback(uncreate + '; ' + error);
 			return callback(uncreate);
+		}
+	);
+}
+
+function authenticateMember(roomid, roompass, callback) {
+	db.authenticate(TABLE, ID, 'roomid', roomid, 'roompass', roompass,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
 		}
 	);
 }

@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS rooms_members CASCADE;
 DROP TABLE IF EXISTS rooms_moderators CASCADE;
 DROP TABLE IF EXISTS boards CASCADE;
 DROP TABLE IF EXISTS rooms_boards CASCADE;
+DROP TABLE IF EXISTS resources CASCADE;
+DROP TABLE IF EXISTS boards_resources CASCADE;
 
 CREATE TABLE users (
 	userid serial,
@@ -40,8 +42,6 @@ CREATE TABLE rooms_moderators (
 CREATE TABLE boards (
 	boardid serial,
 	canvas json,
-	freeResources json,
-	lockedResources json,
 	
 	PRIMARY KEY (boardid)
 );
@@ -51,4 +51,22 @@ CREATE TABLE rooms_boards (
 	boardid integer REFERENCES boards ON DELETE CASCADE,
 
 	PRIMARY KEY (roomid, boardid)
+);
+
+CREATE TABLE resources (
+	resourceid serial,
+	x integer,
+	y integer,
+	width integer,
+	height integer,
+	path varchar(50),
+
+	PRIMARY KEY (resourceid)
+);
+
+CREATE TABLE boards_resources (
+	boardid integer REFERENCES boards on DELETE CASCADE,
+	resourceid integer REFERENCES resources on DELETE CASCADE,
+
+	PRIMARY KEY (boardid, resourceid)
 );
