@@ -12,7 +12,7 @@ var passport = require('passport');
 // route locations
 var index = require('./routes/index');
 var user = require('./routes/user');
-var board = require('./routes/board');
+var room = require('./routes/room');
 
 var app = express();
 
@@ -65,7 +65,7 @@ passport.use('local-signin', new LocalStrategy({
 // routes
 app.use('/', index);
 app.use('/user', user);
-app.use('/b', board);
+app.use('/r', room);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,18 +6,16 @@ router.get('/', function(req, res) {
     res.render('index', { title: 'Kord' });
 });
 
-router.get('/about', function(req, res) {
-    //res.render('about', { title: 'Express' });
-    res.redirect('/');
+router.post('/login', function(req, res) {
+    res.render('login', { message: req.flash('login') || '' });
 });
 
-router.get('/help', function(req, res) {
-    //res.render('help', { title: 'Express' });
-    res.redirect('/');
+router.post('/register', function(req, res) {
+    res.render('register', { message: req.flash('register') || '' });
 });
 
-router.get('/contact', function(req, res) {
-    //res.render('contact', { title: 'Express' });
+router.post('/logout', function(req, res) {
+    req.logout();
     res.redirect('/');
 });
 
