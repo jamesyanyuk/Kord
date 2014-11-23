@@ -284,8 +284,8 @@ function authenticate(table, id, idcolumn, idfield, passcolumn, passfield, callb
 			query(database, done, querystring,									// query the database
 				function (error, result) {
 					if (error) return callback(error);							// if there was an error, return it
-					if (!result.length) return callback('invalid');				// if no matches were found, return an error
-					return callback(SUCCESS, result[0][id]);							// otherwise, return a success message
+					if (!result.length) return callback(SUCCESS, undefined);	// if no matches were found, return an error
+					return callback(SUCCESS, result[0][id]);					// otherwise, return a success message
 				}
 			);
 		}
