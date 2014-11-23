@@ -54,7 +54,10 @@ passport.use('login', new LocalStrategy({
             } else if(!user) {
                 console.log('Bad email/password during logon');
                 return done(undefined, false, req.flash('loginmessage', 'Bad email/password'));
-            } else return done(undefined, user);
+            } else {
+                console.log(user);
+                return done(undefined, user);
+            }
         });
     })
 );
