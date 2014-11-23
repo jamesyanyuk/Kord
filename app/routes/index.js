@@ -20,7 +20,7 @@ router.get('/login', isAuth, function(req, res) {
 
 router.post('/login', isAuth, passport.authenticate('login', {
     successRedirect: '/user',
-    failureRedirect: '/login',
+    failureRedirect: '/',
     failureFlash: false
 }));
 
@@ -29,8 +29,8 @@ router.get('/register', isAuth, function(req, res) {
 });
 
 router.post('/register', isAuth, passport.authenticate('register', {
-    successRedirect: '/login',
-    failureRedirect: '/register',
+    successRedirect: '/',
+    failureRedirect: '/',
     failureFlash: false
 }));
 

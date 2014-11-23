@@ -4,7 +4,7 @@ var router = express.Router();
 var isAuth = function(req, res, next) {
     if(req.isAuthenticated())
         return next(); // or just next();
-    res.redirect('/login');
+    res.redirect('/');
 }
 
 router.get('/', isAuth, function(req, res) {

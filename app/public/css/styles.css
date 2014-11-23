@@ -247,6 +247,10 @@ h5 {
 	font-weight: 600;
 }
 
+.signup-button {
+	font-weight: 600;
+}
+
 /* OTHER TEXTS */
 strong,
 .strong {
@@ -304,6 +308,20 @@ strong,
 	line-height: 1.6;
 	border: none;
 	padding: 18px 40px 18px 40px;
+	color: #ffffff;
+	-webkit-transition: none;
+	transition: none;
+}
+
+.signup-button {
+	height: 35px;
+	border-radius: 3px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 1.6;
+	border: none;
+	padding: 8px 40px 8px 40px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;

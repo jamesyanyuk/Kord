@@ -113,8 +113,8 @@
 
                             <!-- BUTTON -->
                             <div class="button">
-                                <a href="#section11" class="btn btn-primary blue-button inpage-scroll">Login</a>
-                                <a href="#section11" class="btn btn-primary white-button inpage-scroll">Create a Board</a>
+                                <a class="btn btn-primary blue-button" data-toggle="modal" data-target="#login-modal">Login</a>
+                                <a href="/user" class="btn btn-primary white-button">Create a Board</a>
                             </div>
                             <!-- /END BUTTON -->
 
@@ -296,35 +296,42 @@
         </div>
     </section>
 
-
-
-
-    <!-- REGISTRATION FORM FOR POPUP BOX -->
-    <div class="modal fade bs-example-modal-sm" id="stamp-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="vertical-registration-form">
-                    <h4 class="dark-text form-heading">Get 1 Month FREE Trial Now</h4>
-                    <form class="registration-form" id="contact-form">
-                        <input type="text" id="cf-name" name="name" class="form-control input-box" placeholder="Name">
-                        <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
-                        <input type="text" id="cf-subject" name="subject" class="form-control input-box" placeholder="Subject">
-                        <textarea name="message" id="cf-message" class="form-control textarea-box" rows="4" placeholder="Message"></textarea>
-                        <button class="btn btn-primary standard-button">Get Started</button>
-                    </form>
-                    <p class="email-success dark-text">
-                        <span class="icon-check-alt2 colored-text"></span>Email sent seuccessfully
-                    </p>
-                    <p class="email-error dark-text">
-                        <span class="icon-close-alt2"></span>Error! Please check all fields filled correctly
-                    </p>
-                    <!-- MAILCHIMP ALERTS
-                    <p class="mailchimp-success dark-text"><span class="icon-check-alt2 colored-text"></span>We sent the confirmation to your email</p>
-                    <p class="mailchimp-error dark-text"><span class="icon-close-alt2"></span>Error! Please check all fields filled correctly</p>
-                    -->
-                </div>
-            </div>
+    <!-- LOGIN FORM FOR POPUP BOX -->
+    <div class="modal fade bs-example-modal-sm" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="vertical-registration-form">
+            <h4 class="dark-text form-heading">Login</h4>
+            <form class="login-form" id="login-form" method="post" action="/login">
+              <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+              <input type="text" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+              <button class="btn btn-primary standard-button">Login</button>
+            </form>
+            <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+            <p class="email-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Login successful </p>
+            <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Error! Please check all fields are filled correctly. </p>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- SIGNUP FORM FOR POPUP BOX -->
+    <div class="modal fade bs-example-modal-sm" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+          <div class="vertical-registration-form">
+            <h4 class="dark-text form-heading">Sign Up</h4>
+            <form class="signup-form" id="signup-form" method="post" action="/register">
+              <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+              <input type="text" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+              <input type="text" id="cf-password" name="password-conf" class="form-control input-box" placeholder="Confirm Password">
+              <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
+            </form>
+            <p class="email-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Thank you for signing-up! </p>
+            <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Error! Please check all fields are filled correctly. </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->
