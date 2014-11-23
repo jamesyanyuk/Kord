@@ -183,7 +183,7 @@ function readObjectsFor(table, column, id, objectid, read, callback) {
 
 			var querystring = selectFrom(										// generate the read query string
 				table, [column], map(id, objectid)
-			);	
+			);
 
 			query(database, done, querystring,									// query the database
 				function (error, result) {
@@ -334,7 +334,7 @@ function deleteFrom(table, condition) {
  * query helper functions
  * */
 
-function nextID(table, id) {											
+function nextID(table, id) {
 	return "nextval('" + table + "_" + id + "_seq')";
 }
 
