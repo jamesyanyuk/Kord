@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS boards_resources CASCADE;
 
 CREATE TABLE users (
 	userid serial,
-	username varchar(50),
+	username varchar(50) UNIQUE,
 	userpass varchar(50),
 	access integer,
 
@@ -21,7 +21,7 @@ CREATE TABLE rooms (
 	url varchar(50) UNIQUE,
 	roompass varchar(50),
 	chat json,
-	
+
 	PRIMARY KEY (roomid)
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE rooms_moderators (
 CREATE TABLE boards (
 	boardid serial,
 	canvas json,
-	
+
 	PRIMARY KEY (boardid)
 );
 

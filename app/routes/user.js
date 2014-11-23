@@ -8,7 +8,7 @@ var isAuth = function(req, res, next) {
 }
 
 router.get('/', isAuth, function(req, res) {
-    res.send("Rooms here - " + req.user + " - " + req.user.uid);
+    res.send("Rooms here - " + req.user.userid);
 });
 
 module.exports = router;
