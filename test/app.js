@@ -101,89 +101,89 @@ function printresults(error, objects) {
 	}
 }
 
-db.createUser('joe', 'userpass', 1,
+db.createUser('joe@placebetter', 'userpass', 1,
 	function (error, user) {
 		console.log('create user:');
 		printresult(error, user);
 	}
 );
 
-db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
-	function (error, user) {
-		console.log('create user:');
-		printresult(error, user);
-	}
-);
+// db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
+// 	function (error, user) {
+// 		console.log('create user:');
+// 		printresult(error, user);
+// 	}
+// );
 
-db.readUser(1,
-	function (error, user) {
-		console.log('read user:');
-		printresult(error, user);
+// db.readUser(1,
+// 	function (error, user) {
+// 		console.log('read user:');
+// 		printresult(error, user);
 
-		user.userpass = 'betterpass';
+// 		user.userpass = 'betterpass';
 
-		db.updateUser(user,
-			function (error, user) {
-				console.log('update user:');
-				printresult(error, user);
-			}
-		);
-	}
-);
+// 		db.updateUser(user,
+// 			function (error, user) {
+// 				console.log('update user:');
+// 				printresult(error, user);
+// 			}
+// 		);
+// 	}
+// );
 
-db.readModeratorsFor(1,
-	function (error, users) {
-		console.log('read moderators for:');
-		printresults(error, users);
-	}
-);
+// db.readModeratorsFor(1,
+// 	function (error, users) {
+// 		console.log('read moderators for:');
+// 		printresults(error, users);
+// 	}
+// );
 
-db.readMembersFor(2,
-	function (error, users) {
-		console.log('read members for:');
-		printresults(error, users);
-	}
-);
+// db.readMembersFor(2,
+// 	function (error, users) {
+// 		console.log('read members for:');
+// 		printresults(error, users);
+// 	}
+// );
 
-db.destroyUser(4,
-	function (error, user) {
-		console.log('destroy user:');
-		printresult(error, user);
-	}
-);
+// db.destroyUser(4,
+// 	function (error, user) {
+// 		console.log('destroy user:');
+// 		printresult(error, user);
+// 	}
+// );
 
 
-var joe = db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
-	function (error, user) {
-		console.log('create user:');
-		printresult(error, user);
+// var joe = db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
+// 	function (error, user) {
+// 		console.log('create user:');
+// 		printresult(error, user);
 
-		db.createRoom('http://' + Math.random(), 'bestpass' + Math.random(), user.userid,
-			function (error, room) {
-				console.log('create room:');
-				printresult(error, room);
-			}
-		);
-	}
-);
+// 		db.createRoom('http://' + Math.random(), 'bestpass' + Math.random(), user.userid,
+// 			function (error, room) {
+// 				console.log('create room:');
+// 				printresult(error, room);
+// 			}
+// 		);
+// 	}
+// );
 
-db.readRoom(1,
-	function (error, room) {
-		console.log('read room:');
-		printresult(error, room);
-	}
-);
+// db.readRoom(1,
+// 	function (error, room) {
+// 		console.log('read room:');
+// 		printresult(error, room);
+// 	}
+// );
 
-db.readRoomsFor(7,
-	function (error, rooms) {
-		console.log('read rooms for:');
-		printresults(error, rooms);
-	}
-);
+// db.readRoomsFor(7,
+// 	function (error, rooms) {
+// 		console.log('read rooms for:');
+// 		printresults(error, rooms);
+// 	}
+// );
 
-db.authenticateUser('joe', 'userpass',
-	function (error, result) {
-		console.log('authenticate user:');
-		printresults(error, result);
-	}
-);
+// db.authenticateUser('user1@place.com', 'pass1',
+// 	function (error, result) {
+// 		console.log('authenticate user:');
+// 		printresult(error, result);
+// 	}
+// );
