@@ -22,7 +22,7 @@ CREATE TABLE rooms (
 	url varchar(50) UNIQUE,
 	roompass varchar(50),
 	chat json,
-	
+
 	PRIMARY KEY (roomid)
 );
 
@@ -43,7 +43,7 @@ CREATE TABLE rooms_moderators (
 CREATE TABLE boards (
 	boardid serial,
 	canvas json,
-	
+
 	PRIMARY KEY (boardid)
 );
 

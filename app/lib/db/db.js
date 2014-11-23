@@ -76,10 +76,19 @@ var ID = 'id';
 var SUCCESS = undefined;
 var DOES_NOT_EXIST = 'does not exist';
 var INVALID = 'invalid';
+var GRP_UNVERIFIED = '0';
+var GRP_MEMBER = '1';
+var GRP_PREMIUM = '2';
+var GRP_ADMIN = '3';
+
 exports.ALL_COLUMNS = ALL_COLUMNS;
 exports.SUCCESS = SUCCESS;
 exports.DOES_NOT_EXIST = DOES_NOT_EXIST;
 exports.INVALID = INVALID;
+exports.GRP_UNVERIFIED = GRP_UNVERIFIED;
+exports.GRP_MEMBER = GRP_MEMBER;
+exports.GRP_PREMIUM = GRP_PREMIUM;
+exports.GRP_ADMIN = GRP_ADMIN;
 
 /*
  * object CRUD functions

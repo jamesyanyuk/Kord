@@ -14,6 +14,7 @@ var index = require('./routes/index');
 var user = require('./routes/user');
 var room = require('./routes/room');
 
+var db = require('./lib/db');
 var userdb = require('./lib/db/userdb');
 
 var app = express();
@@ -54,6 +55,27 @@ passport.use('login', new LocalStrategy({
             } else if(!user) {
                 console.log('Bad email/password during logon');
                 return done(undefined, false, req.flash('loginmessage', 'Bad email/password'));
+            } else return done(undefined, user);
+        });
+    })
+);
+
+passport.use('register', new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
+    },
+    function(req, email, password, done) {
+        // check for proper email and password input
+        var RFC822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        if(email.search(RFC822) === -1 || password.length < 6 || password.length > 18)
+            return done(undefined, false, req.flash('registermessage', 'Fix issues below.'));
+
+        // check if user exists in userdb
+        userdb.createUser(email, password, db.GRP_UNVERIFIED, function(err, user) {
+            if(err) {
+                console.log('Email already taken.');
+                return done(undefined, false, req.flash('registermessage', 'Email already taken.'));
             } else {
                 console.log(user);
                 return done(undefined, user);

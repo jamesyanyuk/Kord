@@ -24,9 +24,15 @@ router.post('/login', isAuth, passport.authenticate('login', {
     failureFlash: false
 }));
 
-router.post('/register', function(req, res) {
-    res.render('register', { message: req.flash('message') || '' });
+router.get('/register', isAuth, function(req, res) {
+    res.render('register', { message: req.flash('registermessage') || '' });
 });
+
+router.post('/register', isAuth, passport.authenticate('register', {
+    successRedirect: '/login',
+    failureRedirect: '/register',
+    failureFlash: false
+}));
 
 // temp
 router.get('/logout', function(req, res) {
