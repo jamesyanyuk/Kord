@@ -90,5 +90,10 @@ function destroyUser(userid, callback) {
 }
 
 function authenticateUser(username, userpass, callback) {
-	callback(undefined, 'fdfdf');
+	db.authenticate(TABLE, ID, 'username', username, 'userpass', userpass,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
+		}
+	);
 }
