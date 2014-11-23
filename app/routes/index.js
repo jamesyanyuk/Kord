@@ -3,8 +3,10 @@ var router = express.Router();
 var passport = require('passport');
 
 var isAuth = function(req, res, next) {
-    if(req.isAuthenticated())
+    if(req.isAuthenticated()){
+        console.log('Already logged in, redirecting to users...');
         return res.redirect('/user'); // or just next();
+    }
     next();
 }
 
