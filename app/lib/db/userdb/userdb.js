@@ -93,7 +93,11 @@ function authenticateUser(username, userpass, callback) {
 	db.authenticate(TABLE, ID, 'username', username, 'userpass', userpass,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(db.SUCCESS, result);
+			readUser(result,
+				function (error, result) {
+					return callback(db.SUCCESS, result);
+				}
+			);
 		}
 	);
 }
