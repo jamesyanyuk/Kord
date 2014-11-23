@@ -9,8 +9,9 @@ DROP TABLE IF EXISTS boards_resources CASCADE;
 
 CREATE TABLE users (
 	userid serial,
-	username varchar(50),
+	email varchar(50) UNIQUE,
 	userpass varchar(50),
+	nickname varchar(50),
 	access integer,
 
 	PRIMARY KEY (userid)
@@ -70,3 +71,7 @@ CREATE TABLE boards_resources (
 
 	PRIMARY KEY (boardid, resourceid)
 );
+
+INSERT INTO users VALUES
+	(-1, 'user1@place.com', 'pass1', 'user1', 0),
+	(-2, 'user2@place.com', 'pass2', 'user2', 1);

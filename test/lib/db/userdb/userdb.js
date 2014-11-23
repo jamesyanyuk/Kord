@@ -15,25 +15,34 @@ exports.authenticateUser = authenticateUser;
 var TABLE = 'users';
 var ID = 'userid';
 
-function User(userid, username, userpass, access) {
+function User(userid, email, userpass, nickname, access) {
 	this.userid = userid;
-	this.username = username;
+	this.email = email;
 	this.userpass = userpass;
+	this.nickname = nickname;
 	this.access = access;
 }
 
-function createUser(username, userpass, access, callback) {
+function defaultname(email) {
+	var index = email.indexOf("@");
+	if (index < 0) return email;
+	return email.slice(0, index);
+}
+
+function createUser(email, userpass, access, callback) {
 	var fields = [];
 	fields[fields.length] = db.nextID(TABLE, ID);
-	fields[fields.length] = username;
+	fields[fields.length] = email;
 	fields[fields.length] = userpass;
+	var nickname = defaultname(email);
+	fields[fields.length] = nickname;
 	fields[fields.length] = access;
 	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);
 
 			var userid = result;
-			var user = new User(userid, username, userpass, access);
+			var user = new User(userid, email, userpass, nickname, access);
 			return callback(db.SUCCESS, user);
 		}
 	);
@@ -44,10 +53,12 @@ function readUser(userid, callback) {
 		function (error, result) {
 			if (error) return callback(error);
 
-			var username = result['username'];
+			var email = result['email'];
 			var userpass = result['userpass'];
+			var nickname = result['nickname'];
 			var access = result['access'];
-			var user = new User(userid, username, userpass, access);
+			console.log(access);
+			var user = new User(userid, email, userpass, nickname, access);
 			return callback(db.SUCCESS, user);
 		}
 	);
@@ -89,11 +100,15 @@ function destroyUser(userid, callback) {
 	);
 }
 
-function authenticateUser(username, userpass, callback) {
-	db.authenticate(TABLE, ID, 'username', username, 'userpass', userpass,
+function authenticateUser(email, userpass, callback) {
+	db.authenticate(TABLE, ID, 'email', email, 'userpass', userpass,
 		function (error, result) {
 			if (error) return callback(error);
-			return callback(db.SUCCESS, result);
+			readUser(result,
+				function (error, result) {
+					return callback(db.SUCCESS, result);
+				}
+			);
 		}
 	);
 }
