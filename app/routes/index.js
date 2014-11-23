@@ -1,17 +1,37 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
+
+var isAuth = function(req, res, next) {
+    if(req.isAuthenticated())
+        return res.redirect('/user'); // or just next();
+    next();
+}
 
 /* GET home page. */
 router.get('/', function(req, res) {
     res.render('index', { title: 'Kord' });
 });
 
-router.post('/login', function(req, res) {
-    res.render('login', { message: req.flash('login') || '' });
+// temp
+router.get('/login', isAuth, function(req, res) {
+    res.render('login', { message: req.flash('loginmessage') || '' });
 });
 
+router.post('/login', isAuth, passport.authenticate('login', {
+    successRedirect: '/user',
+    failureRedirect: '/login',
+    failureFlash: false
+}));
+
 router.post('/register', function(req, res) {
-    res.render('register', { message: req.flash('register') || '' });
+    res.render('register', { message: req.flash('message') || '' });
+});
+
+// temp
+router.get('/logout', function(req, res) {
+    req.logout();
+    res.redirect('/');
 });
 
 router.post('/logout', function(req, res) {

@@ -14,6 +14,8 @@ var index = require('./routes/index');
 var user = require('./routes/user');
 var room = require('./routes/room');
 
+var userdb = require('./lib/db/userdb');
+
 var app = express();
 
 // view engine setup
@@ -38,29 +40,30 @@ app.use(flash());
 /* Will be isolating this portion later */
 var LocalStrategy = require('passport-local').Strategy;
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-        done(err, user);
-    });
-});
-
-// passport local strategy
-passport.use('local-signin', new LocalStrategy({
+passport.use('login', new LocalStrategy({
         usernameField: 'email',
-        passwordField: 'password'
+        passwordField: 'password',
+        passReqToCallback: true
     },
-    function(username, password, done) {
-        User.findOne({ username: username }, function(err, user) {
-            if(err) { return done(err); }
-            if(!user) { return done(null, false, { message: 'User doesn\'t exist.' }); }
-            if(!user.validPassword()) { return done(null, false, { message: 'Incorrect password.' }); }
+    function(req, email, password, done) {
+        // check if user exists in userdb
+        userdb.authenticateUser(email, password, function(err, res) {
+            if(err) {
+                console.log('Bad email/password during logon');
+                req.flash('loginmessage', 'Bad email/password')
+                return done(err);
+            } else return done(undefined, res);
         });
-    }
-));
+    })
+);
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+});
+
+passport.deserializeUser(function(obj, done) {
+    done(null, obj);
+});
 
 // routes
 app.use('/', index);
