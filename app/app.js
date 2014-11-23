@@ -47,12 +47,14 @@ passport.use('login', new LocalStrategy({
     },
     function(req, email, password, done) {
         // check if user exists in userdb
-        userdb.authenticateUser(email, password, function(err, res) {
+        userdb.authenticateUser(email, password, function(err, user) {
             if(err) {
-                console.log('Bad email/password during logon');
-                req.flash('loginmessage', 'Bad email/password')
+                console.log('Error during login (potentially due to database error)');
                 return done(err);
-            } else return done(undefined, res);
+            } else if(!user) {
+                console.log('Bad email/password during logon');
+                return done(undefined, false, req.flash('loginmessage', 'Bad email/password'));
+            } else return done(undefined, user);
         });
     })
 );

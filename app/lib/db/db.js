@@ -6,7 +6,7 @@
 
 var http = require('http');
 var pg = require('pg');
-var connectionString = 'postgres://student:student@localhost/student';
+var connectionString = 'postgres://cnlgnxpqpwvnss:7RWorNu7vA6VtCNH1d_B7Cip_A@ec2-184-73-229-220.compute-1.amazonaws.com:5432/d882b9an2oglco';
 exports.connectionString = connectionString;
 
 var user = require('./userdb');
@@ -183,7 +183,7 @@ function readObjectsFor(table, column, id, objectid, read, callback) {
 
 			var querystring = selectFrom(										// generate the read query string
 				table, [column], map(id, objectid)
-			);	
+			);
 
 			query(database, done, querystring,									// query the database
 				function (error, result) {
@@ -334,7 +334,7 @@ function deleteFrom(table, condition) {
  * query helper functions
  * */
 
-function nextID(table, id) {											
+function nextID(table, id) {
 	return "nextval('" + table + "_" + id + "_seq')";
 }
 
