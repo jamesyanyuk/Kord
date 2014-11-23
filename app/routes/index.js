@@ -14,11 +14,11 @@ router.get('/', function(req, res) {
 });
 
 // temp
-router.get('/login', function(req, res) {
+router.get('/login', isAuth, function(req, res) {
     res.render('login', { message: req.flash('loginmessage') || '' });
 });
 
-router.post('/login', passport.authenticate('login', {
+router.post('/login', isAuth, passport.authenticate('login', {
     successRedirect: '/user',
     failureRedirect: '/login',
     failureFlash: false
