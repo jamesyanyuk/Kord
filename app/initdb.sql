@@ -70,3 +70,7 @@ CREATE TABLE boards_resources (
 
 	PRIMARY KEY (boardid, resourceid)
 );
+
+INSERT INTO users VALUES
+	(1, 'user1', 'pass1', 0),
+	(2, 'user2', 'pass2', 1);
