@@ -5,7 +5,7 @@
  * */
 
 var http = require('http');
-var pg = require('pg');
+var pg = require('pg.js');
 var connectionString = 'postgres://cnlgnxpqpwvnss:7RWorNu7vA6VtCNH1d_B7Cip_A@ec2-184-73-229-220.compute-1.amazonaws.com:5432/d882b9an2oglco?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory';
 exports.connectionString = connectionString;
 
