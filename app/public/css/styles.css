@@ -644,7 +644,8 @@ a.white-text:hover {
 }
 
 .only-logo .navbar-header img {
-	max-width: 80px;
+	/* Was 80 */
+	max-width: 175px;
 }
 
 /* INTRO */
