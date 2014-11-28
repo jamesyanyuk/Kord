@@ -198,7 +198,17 @@ db.authenticateUsername('user2place.com', 'pass2',
 	}
 );
 
-db.authenticatePassword('user3@place.com', 'pass3_+*&?"|><>~~`)sdwtoolongoffpassword',
+db.authenticatePasswordLong('user3@place.com', 'pass3toolongoffpasswordtoolongoffpasswordtoolongoffpassword',
+	function (error, result) {
+	if (error) console.log('didnt authenticate too long password');
+		else{
+			console.log('authenticated too long password :');
+			printresult(error,result):
+		}
+	}
+);
+
+db.authenticatePasswordWrong('user4@place.com', 'pass4_+*&?"|><>~~`)',
 	function (error, result) {
 	if (error) console.log('didnt authenticate invalid password');
 		else{
@@ -207,5 +217,3 @@ db.authenticatePassword('user3@place.com', 'pass3_+*&?"|><>~~`)sdwtoolongoffpass
 		}
 	}
 );
-
-db.
