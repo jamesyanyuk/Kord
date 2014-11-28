@@ -79,13 +79,7 @@ router.post('/register', function(req, res, next) {
     })(req, res, next);
 });
 
-// Temporary
 router.get('/logout', function(req, res) {
-    req.logout();
-    res.redirect('/');
-});
-
-router.post('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
 });
