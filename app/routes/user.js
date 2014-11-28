@@ -22,7 +22,6 @@ var isAuth = function(req, res, next) {
 
 router.get('/', isAuth, function(req, res) {
     roomdb.readRoomsFor(req.user.userid, function(err, result) {
-        console.log(result);
         res.render('user', {
             nickname: req.user.nickname,
             rooms: function(error){
@@ -35,13 +34,13 @@ router.get('/', isAuth, function(req, res) {
 });
 
 router.post('/newroom', isAuth, function(req, res) {
-    roomdb.createRoom(genRID(), req.body.roompass, req,user.userid, function(err, result) {
-        if(!err)
-            req.flash('usermessage', 'Room could not be created (internal error).');
-        else
-            req.flash('usermessage', 'Room successfully created!');
+    genRID(function(rid) {
+        roomdb.createRoom(rid, req.body.roompass, req.user.userid, function(err, result) {
+            if(!err) req.flash('usermessage', 'Room could not be created (internal error).');
+            else req.flash('usermessage', 'Room successfully created!');
 
-        res.redirect('/user');
+            res.redirect('/user');
+        });
     });
 });
 
