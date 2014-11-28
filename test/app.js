@@ -190,7 +190,7 @@ db.authenticateUser('user1@place.com', 'pass1',
 
 db.authenticateUsername('user2place.com', 'pass2',
 	function (error, result) {
-	if (error) console.log('didnt authenticate invalid user');
+	if (error) console.log('didnt authenticate invalid username');
 		else{
 			console.log('authenticated invalid username :');
 			printresult(error,result):
@@ -198,11 +198,11 @@ db.authenticateUsername('user2place.com', 'pass2',
 	}
 );
 
-db.authenticatePassword('user2place.com', 'pass2',
+db.authenticatePassword('user3@place.com', 'pass3_+*&?"|><>~~`)sdwtoolongoffpassword',
 	function (error, result) {
-	if (error) console.log('didnt authenticate invalid user');
+	if (error) console.log('didnt authenticate invalid password');
 		else{
-			console.log('authenticated invalid username :');
+			console.log('authenticated invalid password :');
 			printresult(error,result):
 		}
 	}
