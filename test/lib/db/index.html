@@ -1,128 +1,121 @@
 <!doctype html>
 
-<html lang="en">
-	<head>
-		<title>Tests - Hiro</title>
+hiro.module("MySuite", {
 
-		<link rel="stylesheet" href="bootstrap.css">
-		<link rel="stylesheet" href="webui.css">
+db.createUser('joe@placebetter', 'userpass', 1,
+	function (error, user) {
+		console.log('create user:');
+		printresult(error, user);
+	}
+);
 
-		<script src="underscore.js"></script>
-		<script src="jquery.js"></script>
-		<script src="hiro.js"></script>
-		<script src="webui.js"></script>
-		<script src="phantom.js"></script>
-	</head>
+db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
+	function (error, user) {
+		console.log('create user:');
+		printresult(error, user);
+	}
+);
 
-	<body onload="main();">
-		<div class="container">
-			<div class="row-fluid">
-				<div class="span9">
-					<h2><img src="icon.jpg"> Hiro</h2>
-				</div>
+db.readUser(1,
+	function (error, user) {
+		console.log('read user:');
+		printresult(error, user);
 
-				<div class="span3 runall">
-					<button class="btn btn-success">
-						<i class="icon-play icon-white"></i> Run all tests.
-					</button>
-				</div>
-			</div>
+		user.userpass = 'betterpass';
 
-			<div class="progress progress-success">
-				<div class="bar" style="width: 0%;"></div>
-			</div>
+		db.updateUser(user,
+			function (error, user) {
+				console.log('update user:');
+				printresult(error, user);
+			}
+		);
+	}
+);
 
-			<div id="suite-views">
-			</div>
+db.readModeratorsFor(1,
+	function (error, users) {
+		console.log('read moderators for:');
+		printresults(error, users);
+	}
+);
 
-			<div class="footer">
-				<i class="icon-barcode"></i>
-			</div>
-		</div>
+db.readMembersFor(2,
+	function (error, users) {
+		console.log('read members for:');
+		printresults(error, users);
+	}
+);
 
-		<script id="template-suite" type="hiro/template">
-			<table class="table table-bordered suite" id="suite-<%= suiteName %>">
-				<thead>
-					<tr>
-						<th colspan="2"><%= suiteName %></th>
-					</tr>
-				</thead>
+db.destroyUser(4,
+	function (error, user) {
+		console.log('destroy user:');
+		printresult(error, user);
+	}
+);
 
-				<tbody>
-					<% _.each(tests, function (name) { %>
-					<tr class="test-<%= name %>">
-						<td><%= name %></td>
-						<td class="status">
-							<span data-state="ready" class="label">READY</span>
-						</td>
-					</tr>
 
-					<tr class="report report-<%= name %>" style="display:none;">
-						<td colspan="2"></td>
-					</tr>
-					<% }); %>
-				</tbody>
-			</table>
-		</script>
+var joe = db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
+	function (error, user) {
+		console.log('create user:');
+		printresult(error, user);
 
-		<script id="template-report" type="hiro/template">
-			<table>
-				<tr>
-					<td>Assertion:</td>
-					<td><code><%= assertion %></code></td>
-				</tr>
+		db.createRoom('http://' + Math.random(), 'bestpass' + Math.random(), user.userid,
+			function (error, room) {
+				console.log('create room:');
+				printresult(error, room);
+			}
+		);
+	}
+);
 
-				<tr>
-					<td>Expected:</td>
-					<td><code><%= expected %></code></td>
-				</tr>
+db.readRoom(1,
+	function (error, room) {
+		console.log('read room:');
+		printresult(error, room);
+	}
+);
 
-				<tr>
-					<td>Actual:</td>
-					<td><code><%= actual %></code></td>
-				</tr>
+db.readRoomsFor(7,
+	function (error, rooms) {
+		console.log('read rooms for:');
+		printresults(error, rooms);
+	}
+);
 
-				<% if (location) { %>
-				<tr>
-					<td>Location:</td>
-					<td><code><%= location %></code></td>
-				</tr>
-				<% } %>
-			</table>
-		</script>
+db.authenticateUser('user1@place.com', 'pass1',
+	function (error, result) {
+		console.log('authenticate user:');
+		printresult(error, result);
+	}
+);
 
-		<script id="template-report-error" type="hiro/template">
-			<table>
-				<tr>
-					<td><%= source %>:</td>
-					<td><code><%= message %></code></td>
-				</tr>
+db.authenticateUser('user2place.com', 'pass2',
+	function (error, result) {
+	if (error) console.log('didnt authenticate invalid username');
+		else{
+			console.log('authenticated invalid username :');
+			printresult(error,result):
+		}
+	}
+);
 
-				<% if (location) { %>
-				<tr>
-					<td>Location:</td>
-					<td><code><%= location %></code></td>
-				</tr>
-				<% } %>
-			</table>
-		</script>
+db.authenticateUser('user3@place.com', 'pass3toolongoffpasswordtoolongoffpasswordtoolongoffpassword',
+	function (error, result) {
+	if (error) console.log('didnt authenticate too long password');
+		else{
+			console.log('authenticated too long password :');
+			printresult(error,result):
+		}
+	}
+);
 
-		<!--
-			REPLACE these examples with your own test suites and
-			tests. Docs: http://hirojs.com/
-		-->
-
-		<script type="hiro/fixture" data-name="example">
-			<html>
-				<body>
-					<h1>Snow Crash</h1>
-					<h2>by Neal Stephenson</h2>
-
-					<p>Characters: Hiro Protagonist, Y.T., Raven, etc.</p>
-				</body>
-			</html>
-		</script>
-
-		<script src="example.js"></script>
-	</body>
-</html>
+db.authenticateUser('user4@place.com', 'pass4_+*&?"|><>~~`)',
+	function (error, result) {
+	if (error) console.log('didnt authenticate invalid password');
+		else{
+			console.log('authenticated invalid password :');
+			printresult(error,result):
+		}
+	}
+);
+});
