@@ -16,6 +16,8 @@ exports.destroyRoom = destroyRoom;
 
 exports.authenticateMember = authenticateMember;
 
+exports.MAX_ROOMS = 5;
+
 var TABLE = 'rooms';
 var ID = 'roomid';
 
@@ -180,7 +182,7 @@ function destroyRoom(roomid, callback) {
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);
-		}					
+		}
 	);
 }
 

@@ -34,9 +34,21 @@ router.get('/', isAuth, function(req, res) {
 });
 
 router.post('/newroom', isAuth, function(req, res) {
+    /* roomdb.readRoomsFor(req.user.userid, function(err, result) {
+        if(err) {
+            req.flash('usermessage', 'Room could not be created (internal error).');
+            res.redirect('/user');
+        } else {
+            if(result.length >= roomdb.MAX_ROOMS){
+                req.flash('usermessage',
+                    'You\'ve already created the max number of rooms (' + roomdb.MAX_ROOMS + ')!');
+                res.redirect('/user');
+            }
+        }
+    } */
     genRID(function(rid) {
         roomdb.createRoom(rid, req.body.roompass, req.user.userid, function(err, result) {
-            if(!err) req.flash('usermessage', 'Room could not be created (internal error).');
+            if(err) req.flash('usermessage', 'Room could not be created (internal error).');
             else req.flash('usermessage', 'Room successfully created!');
 
             res.redirect('/user');
