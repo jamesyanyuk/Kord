@@ -4,9 +4,14 @@ var router = express.Router();
 var roomdb = require('../lib/db/roomdb');
 
 function genRID(cb) {
-    var uid = Math.random().toString().substr(2, 6);
+    var rid = Math.random().toString().substr(2, 8);
     // Check to see that RID doesn't already exist
-    
+    roomdb.readRoom(rid, function(err, obj) {
+        if(!obj || err)
+            cb(rid);
+        else
+            genRID();
+    });
 }
 
 var isAuth = function(req, res, next) {
@@ -23,14 +28,21 @@ router.get('/', isAuth, function(req, res) {
             rooms: function(error){
                 if(error) return undefined
                 else return result
-            }(err)
+            }(err),
+            message: req.flash('usermessage')
         });
     });
 });
 
-router.post('/newroom', function(req, res) {
-    roomdb.createRoom(genRID(), )
-    res.redirect('/user');
+router.post('/newroom', isAuth, function(req, res) {
+    roomdb.createRoom(genRID(), req.body.roompass, req,user.userid, function(err, result) {
+        if(!err)
+            req.flash('usermessage', 'Room could not be created (internal error).');
+        else
+            req.flash('usermessage', 'Room successfully created!');
+
+        res.redirect('/user');
+    });
 });
 
 module.exports = router;
