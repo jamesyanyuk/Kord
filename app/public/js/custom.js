@@ -58,7 +58,7 @@ $(window).resize(function() {
 
     $('.mailchimp').ajaxChimp({
         callback: mailchimpCallback,
-        url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
+        url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
     });
 
     function mailchimpCallback(resp) {
@@ -73,8 +73,8 @@ $(window).resize(function() {
 
 
     /*---------------------------------------*/
-    /*	CONTACT FORM
-	/*---------------------------------------*/
+    /*	FORMS
+    /*---------------------------------------*/
 
     $("#contact-form").submit(function(e) {
         e.preventDefault();
@@ -150,15 +150,15 @@ $(window).resize(function() {
         }
         else {
         $('.js-login').fadeIn(200);
-            
+
         }
-        
+
         if (top > 200) {
         $('.js-register').fadeIn(200);
         }
         else {
         $('.js-register').fadeOut(200);
-            
+
         } */
     }
 
@@ -286,7 +286,7 @@ jQuery(document).ready(function($) {
     }
     //inizialize the map
     var map = new google.maps.Map(document.getElementById('google-container'), map_options);
-    //add a custom marker to the map				
+    //add a custom marker to the map
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng($latitude, $longitude),
         map: map,
@@ -294,7 +294,7 @@ jQuery(document).ready(function($) {
         icon: $marker_url,
     });
 
-  
+
 });
 
 
@@ -304,7 +304,7 @@ jQuery(document).ready(function($) {
 jQuery(window).load(function() {
 
     'use strict';
-    
+
     var x = 0,
         init,
         container = $('.timeline-section'),

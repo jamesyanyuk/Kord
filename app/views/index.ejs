@@ -107,6 +107,7 @@
                                 <a class="btn btn-primary blue-button" data-toggle="modal" data-target="#login-modal">Login</a>
                                 <a href="/user" class="btn btn-primary white-button">Create a Board</a>
                             </div>
+
                             <!-- /END BUTTON -->
 
                         </div>
@@ -295,12 +296,13 @@
             <h4 class="dark-text form-heading">Login</h4>
             <form class="login-form" id="login-form" method="post" action="/login">
               <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
-              <input type="text" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+              <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
               <button class="btn btn-primary standard-button">Login</button>
             </form>
             <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
-            <p class="email-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Login successful </p>
-            <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Error! Please check all fields are filled correctly. </p>
+            <p class="login-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Login successful </p>
+            <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Make sure you entered a valid email. </p>
+            <p class="login-error dark-text"> <span class="icon-close-alt2"></span>Invalid email or password. </p>
           </div>
         </div>
       </div>
@@ -314,8 +316,8 @@
             <h4 class="dark-text form-heading">Sign Up</h4>
             <form class="signup-form" id="signup-form" method="post" action="/register">
               <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
-              <input type="text" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
-              <input type="text" id="cf-password" name="password-conf" class="form-control input-box" placeholder="Confirm Password">
+              <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+              <input type="password" id="cf-passwordconf" name="password_conf" class="form-control input-box" placeholder="Confirm Password">
               <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</a>
             </form>
             <p class="email-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Thank you for signing-up! </p>

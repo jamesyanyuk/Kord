@@ -58,7 +58,7 @@ $(window).resize(function() {
 
     $('.mailchimp').ajaxChimp({
         callback: mailchimpCallback,
-        url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
+        url: "http://webdesign7.us6.list-manage.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
     });
 
     function mailchimpCallback(resp) {
@@ -73,8 +73,42 @@ $(window).resize(function() {
 
 
     /*---------------------------------------*/
-    /*	CONTACT FORM
+    /*	FORMS
 	/*---------------------------------------*/
+
+    $("#login-form").submit(function(e) {
+        e.preventDefault();
+        var email = $("#cf-email").val();
+        var password = $("#cf-password").val();
+        var dataString = 'email=' + email + '&password=' + password;
+
+        function isValidEmail(emailAddress) {
+            var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+            return pattern.test(emailAddress);
+        };
+        if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
+            $.ajax({
+                type: "POST",
+                url: "sendmail.php",
+                data: dataString, // or $(this).serialize()
+                success: function() {
+                    $('.login-success').fadeIn(1000);
+                    $('.login-error').fadeOut(500);
+                    $('.email-error').fadeOut(500);
+                }
+                error: function() {
+                    $('.login-error').fadeIn(1000);
+                    $('.login-success').fadeOut(500);
+                    $('.email-error').fadeOut(500);
+                }
+            });
+        } else {
+            $('.email-error').fadeIn(1000);
+            $('.login-success').fadeOut(500);
+            $('.login-error').fadeOut(500);
+        }
+        return false;
+    });
 
     $("#contact-form").submit(function(e) {
         e.preventDefault();
@@ -150,15 +184,15 @@ $(window).resize(function() {
         }
         else {
         $('.js-login').fadeIn(200);
-            
+
         }
-        
+
         if (top > 200) {
         $('.js-register').fadeIn(200);
         }
         else {
         $('.js-register').fadeOut(200);
-            
+
         } */
     }
 
@@ -286,7 +320,7 @@ jQuery(document).ready(function($) {
     }
     //inizialize the map
     var map = new google.maps.Map(document.getElementById('google-container'), map_options);
-    //add a custom marker to the map				
+    //add a custom marker to the map
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng($latitude, $longitude),
         map: map,
@@ -303,7 +337,7 @@ jQuery(document).ready(function($) {
 jQuery(window).load(function() {
 
     'use strict';
-    
+
     var x = 0,
         init,
         container = $('.timeline-section'),
