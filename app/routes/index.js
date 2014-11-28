@@ -10,7 +10,7 @@ var isAuth = function(req, res, next) {
 }
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', isAuth, function(req, res) {
     res.render('index', { title: 'Kord' });
 });
 
