@@ -49,10 +49,10 @@ exports.updateRoom = room.updateRoom;
 exports.destroyRoom = room.destroyRoom;
 exports.authenticateMember = room.authenticateMember;
 
-exports.createChat = chat.createChat;
-exports.readChat = chat.readChat;
+// exports.createChat = chat.createChat;
+// exports.readChat = chat.readChat;
 exports.updateChatFor = chat.updateChatFor;
-exports.destroyChat = chat.destroyChat;
+// exports.destroyChat = chat.destroyChat;
 
 exports.createBoard = board.createBoard;
 exports.readBoard = board.readBoard;
@@ -60,10 +60,10 @@ exports.readBoardsFor = board.readBoardsFor;
 exports.updateBoard = board.updateBoard;
 exports.destroyBoard = board.destroyBoard;
 
-exports.createCanvas = canvas.createCanvas;
-exports.readCanvas = canvas.readCanvas;
+// exports.createCanvas = canvas.createCanvas;
+// exports.readCanvas = canvas.readCanvas;
 exports.updateCanvasFor = canvas.updateCanvasFor;
-exports.destroyCanvas = canvas.destroyCanvas;
+// exports.destroyCanvas = canvas.destroyCanvas;
 
 exports.createResource = resource.createResource;
 exports.readResource = resource.readResource;
