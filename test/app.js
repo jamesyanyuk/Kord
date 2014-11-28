@@ -188,9 +188,22 @@ db.authenticateUser('user1@place.com', 'pass1',
 	}
 );
 
-d,authenticateUser('user2place.com', 'pass2',
+db.authenticateUsername('user2place.com', 'pass2',
 	function (error, result) {
-		console.log('authenticate user:');
-		printresult(error,result):
+	if (error) console.log('didnt authenticate invalid user');
+		else{
+			console.log('authenticated invalid username :');
+			printresult(error,result):
+		}
+	}
+);
+
+db.authenticatePassword('user2place.com', 'pass2',
+	function (error, result) {
+	if (error) console.log('didnt authenticate invalid user');
+		else{
+			console.log('authenticated invalid username :');
+			printresult(error,result):
+		}
 	}
 );
