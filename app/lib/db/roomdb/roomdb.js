@@ -99,6 +99,9 @@ function joinRoomMember(roomid, userid, callback) {
 	);
 }
 
+function unjoinRoomModerator(roomid, userid, callback) {
+	db.
+
 /*
  * read functions
  * */
@@ -107,6 +110,11 @@ function readRoom(roomid, callback) {
 	db.readObject(TABLE, ID, roomid,
 		function (error, result) {
 			if (error) return callback(error);
+			
+			// var room = new Room(undefined, undefined, undefined, undefined);
+			// for (var prop in result) {
+			// 	room[prop] = result[prop];
+			// }
 
 			var url = result['url'];
 			var roompass = result['roompass'];
