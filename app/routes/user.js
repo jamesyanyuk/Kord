@@ -62,7 +62,7 @@ router.post('/newroom', isAuth, function(req, res) {
  * Leave room with specified rid in query string
  * If only moderator of the room, destroy room
  */
-router.get('/leave', function(req, res) {
+router.get('/leave', isAuth, function(req, res) {
     var rid = req.query.rid;
     if(!rid) res.redirect('/user');
 

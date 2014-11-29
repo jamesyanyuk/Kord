@@ -6,11 +6,12 @@ exports.create = function (userid) {
 
 exports.createUser = createUser;
 exports.readUser = readUser;
-exports.readModeratorsFor = readModeratorsFor;
-exports.readMembersFor = readMembersFor;
 exports.updateUser = updateUser;
 exports.destroyUser = destroyUser;
 exports.authenticateUser = authenticateUser;
+
+exports.TABLE = TABLE;
+exports.ID = ID;
 
 var TABLE = 'users';
 var ID = 'userid';
@@ -60,24 +61,6 @@ function readUser(userid, callback) {
 			console.log(access);
 			var user = new User(userid, email, userpass, nickname, access);
 			return callback(db.SUCCESS, user);
-		}
-	);
-}
-
-function readModeratorsFor(roomid, callback) {
-	db.readObjectsFor('rooms_moderators', ID, 'roomid', roomid, readUser,
-		function (error, result) {
-			if (error) return callback(error);
-			return callback(db.SUCCESS, result);
-		}
-	);
-}
-
-function readMembersFor(roomid, callback) {
-	db.readObjectsFor('rooms_members', ID, 'roomid', roomid, readUser,
-		function (error, result) {
-			if (error) return callback(error);
-			return callback(db.SUCCESS, result);
 		}
 	);
 }

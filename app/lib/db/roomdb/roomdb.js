@@ -1,5 +1,6 @@
 var db = require('../db');
 var chatdb = require('../chatdb');
+var userdb = require('../userdb');
 
 exports.create = function (roomid, url, roompass, chat) {
 	return new Room(roomid, url, roompass, chat);
@@ -10,6 +11,8 @@ exports.joinRoomModerator = joinRoomModerator;
 exports.joinRoomMember = joinRoomMember;
 exports.readRoom = readRoom;
 exports.readRoomsFor = readRoomsFor;
+exports.readModeratorsFor = readModeratorsFor;
+exports.readMembersFor = readMembersFor;
 exports.readEntireRoom = readEntireRoom;
 exports.updateRoom = updateRoom;
 exports.destroyRoom = destroyRoom;
@@ -153,6 +156,24 @@ function readRoom(roomid, callback) {
 
 function readRoomsFor(userid, callback) {
 	db.readObjectsFor('rooms_members', ID, 'userid', userid, readRoom,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
+		}
+	);
+}
+
+function readModeratorsFor(roomid, callback) {
+	db.readObjectsFor('rooms_moderators', userdb.ID, 'roomid', roomid, userdb.readUser,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
+		}
+	);
+}
+
+function readMembersFor(roomid, callback) {
+	db.readObjectsFor('rooms_members', userdb.ID, 'roomid', roomid, userdb.readUser,
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);
