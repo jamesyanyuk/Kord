@@ -135,17 +135,31 @@ function unjoinRoomMember(roomid, userid, callback) {
  * read functions
  * */
 
-function readRoom(roomid, callback) {
-	db.readObject(TABLE, ID, roomid,
+// function readRoom(roomid, callback) {
+// 	db.readObject(TABLE, ID, roomid,
+// 		function (error, result) {
+// 			if (error) return callback(error);
+// 
+// 			// var room = new Room(undefined, undefined, undefined, undefined);
+// 			// for (var prop in result) {
+// 			// 	room[prop] = result[prop];
+// 			// }
+// 
+// 			var url = result['url'];
+// 			var roompass = result['roompass'];
+// 			var chat = result['chat'];
+// 			var room = new Room(roomid, url, roompass, chat);
+// 			return callback(db.SUCCESS, room);
+// 		}
+// 	);
+// }
+
+function readRoom(url, callback) {
+	db.readObject(TABLE, 'url', url,
 		function (error, result) {
 			if (error) return callback(error);
-
-			// var room = new Room(undefined, undefined, undefined, undefined);
-			// for (var prop in result) {
-			// 	room[prop] = result[prop];
-			// }
-
-			var url = result['url'];
+		
+			var roomid = result['roomid'];
 			var roompass = result['roompass'];
 			var chat = result['chat'];
 			var room = new Room(roomid, url, roompass, chat);
