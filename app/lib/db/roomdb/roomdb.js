@@ -114,7 +114,7 @@ function unjoinRoomModerator(roomid, userid, callback) {
 
 // should also remove from moderators
 function unjoinRoomMember(roomid, userid, callback) {
-	db.unjoinObject('rooms_members', 'roomid' roomid, 'userid', userid,
+	db.unjoinObject('rooms_members', 'roomid', roomid, 'userid', userid,
 		function (error, result) {
 			if (error) return callback(error);
 
@@ -181,7 +181,7 @@ function readEntireRoom(roomid, callback) {
 									if (error) return callback(error);
 
 									room['boards'] = result;
-									return room;
+									return callback(undefined, room);
 								}
 							);
 						}

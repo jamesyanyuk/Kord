@@ -13,7 +13,7 @@
         <b>Current Rooms</b>
         <ul>
             <% for(i = 0; i < rooms.length; i++) { %>
-                <li><a href="../r/<%= rooms[i].url %>"><%= rooms[i].url %></a> - <a href="/leave?rid=<%= rooms[i].roomid %>">Leave Room</a></li>
+                <li><a href="../r/<%= rooms[i].url %>"><%= rooms[i].url %></a> - <a href="../user/leave?rid=<%= rooms[i].roomid %>">Leave Room</a></li>
             <% } %>
         </ul>
     </p>
