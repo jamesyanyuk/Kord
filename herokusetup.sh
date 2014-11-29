@@ -1,5 +1,6 @@
 git fetch --all
 git reset --hard origin/live
+rm -rf views
 rm -rf public
 mv app/* .
 npm install

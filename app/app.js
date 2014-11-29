@@ -47,7 +47,7 @@ passport.use('login', new LocalStrategy({
         passReqToCallback: true
     },
     function(req, email, password, done) {
-        // check if user exists in userdb
+        // Check whether or not user exists in userdb
         userdb.authenticateUser(email, password, function(err, user) {
             if(err) {
                 console.log('Error during login (potentially due to database error)');
@@ -66,12 +66,12 @@ passport.use('register', new LocalStrategy({
         passReqToCallback: true
     },
     function(req, email, password, done) {
-        // check for proper email and password input
+        // Check for proper email and password input
         var RFC822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
         if(email.search(RFC822) === -1 || password.length < 6 || password.length > 18)
             return done(undefined, false, req.flash('registermessage', 'Fix issues below.'));
 
-        // check if user exists in userdb
+        // Check whether or not user exists in userdb
         userdb.createUser(email, password, db.GRP_UNVERIFIED, function(err, user) {
             if(err) {
                 console.log('Email already taken.');

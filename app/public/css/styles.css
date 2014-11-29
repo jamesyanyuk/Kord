@@ -185,6 +185,8 @@ li {
 
 .mailchimp-success,
 .mailchimp-error,
+.login-success,
+.login-error,
 .email-success,
 .email-error {
 	display: none;
@@ -193,6 +195,8 @@ li {
 
 .mailchimp-success span,
 .mailchimp-error span,
+.login-success span,
+.login-error span,
 .email-success span,
 .email-error span {
 	margin-right: 10px;
@@ -644,7 +648,8 @@ a.white-text:hover {
 }
 
 .only-logo .navbar-header img {
-	max-width: 80px;
+	/* Was 80 */
+	max-width: 175px;
 }
 
 /* INTRO */
