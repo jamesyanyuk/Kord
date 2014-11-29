@@ -26,7 +26,7 @@ router.get('/', isAuth, function(req, res) {
         res.render('user', {
             nickname: req.user.nickname,
             rooms: function(error){
-                if(error) return undefined;
+                if(error) return [];
                 else return result;
             }(err),
             message: req.flash('usermessage')
@@ -37,24 +37,27 @@ router.get('/', isAuth, function(req, res) {
 // Create a new room
 router.post('/newroom', isAuth, function(req, res) {
     roomdb.readRoomsFor(req.user.userid, function(err, result) {
+        console.log('\n' + err);
+        console.log(req.user + ' - ' + req.user.userid + '\n');
         if(err) {
-            req.flash('usermessage', 'Room could not be created (internal error).');
+            req.flash('usermessage', 'Room could not be created (internal error 1).');
             res.redirect('/user');
         } else {
             if(result.length >= roomdb.MAX_ROOMS) {
                 req.flash('usermessage',
                     'You\'ve already joined the max number of rooms (' + roomdb.MAX_ROOMS + ')!');
                 res.redirect('/user');
+            } else {
+                genRID(function(rid) {
+                    roomdb.createRoom(rid, req.body.roompass, req.user.userid, function(err, result) {
+                        if(err) req.flash('usermessage', 'Room could not be created (internal error 2).');
+                        else req.flash('usermessage', 'Room successfully created!');
+
+                        res.redirect('/user');
+                    });
+                });
             }
         }
-    });
-    genRID(function(rid) {
-        roomdb.createRoom(rid, req.body.roompass, req.user.userid, function(err, result) {
-            if(err) req.flash('usermessage', 'Room could not be created (internal error).');
-            else req.flash('usermessage', 'Room successfully created!');
-
-            res.redirect('/user');
-        });
     });
 });
 
