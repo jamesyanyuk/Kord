@@ -66,6 +66,29 @@ router.get('/leave', function(req, res) {
     var rid = req.query.rid;
     if(!rid) res.redirect('/user');
 
+    roomdb.readModeratorsFor(rid, function(err, result) {
+        if(err) {
+            req.flash('usermessage', 'Could not leave room (internal error).');
+            res.redirect('/user');
+        } else {
+            if(result.length == 0){
+                roomdb.destroyRoom(rid, function(destroyErr, destroyResult) {
+                    if(err) req.flash('usermessage', 'Could not leave room (internal error).');
+                    else req.flash('usermessage', 'Successfully left (and destroyed) room.');
+
+                    res.redirect('/user');
+                });
+            } else {
+                roomdb.unjoinRoomMember(rid, req.user.userid, function(unjoinErr, unjoinResult) {
+                    if(err) req.flash('usermessage', 'Could not leave room (internal error).');
+                    else req.flash('usermessage', 'Successfully left room.');
+
+                    res.redirect('/user');
+                });
+            }
+        }
+    });
+
     roomdb.unjoinRoomMember(rid, req.user.userid, function(err, result) {
         if(err) req.flash('usermessage', 'Could not leave room (internal error).');
         else req.flash('usermessage', 'Successfully left room.');
