@@ -1,6 +1,7 @@
 var db = require('../db');
 var chatdb = require('../chatdb');
 var userdb = require('../userdb');
+var boarddb = require('../boarddb');
 
 exports.create = function (roomid, url, roompass, chat) {
 	return new Room(roomid, url, roompass, chat);
@@ -10,6 +11,7 @@ exports.createRoom = createRoom;
 exports.joinRoomModerator = joinRoomModerator;
 exports.joinRoomMember = joinRoomMember;
 exports.readRoom = readRoom;
+exports.readRoomByUrl = readRoomByUrl;
 exports.readRoomsFor = readRoomsFor;
 exports.readModeratorsFor = readModeratorsFor;
 exports.readMembersFor = readMembersFor;
@@ -135,26 +137,26 @@ function unjoinRoomMember(roomid, userid, callback) {
  * read functions
  * */
 
-// function readRoom(roomid, callback) {
-// 	db.readObject(TABLE, ID, roomid,
-// 		function (error, result) {
-// 			if (error) return callback(error);
-//
-// 			// var room = new Room(undefined, undefined, undefined, undefined);
-// 			// for (var prop in result) {
-// 			// 	room[prop] = result[prop];
-// 			// }
-//
-// 			var url = result['url'];
-// 			var roompass = result['roompass'];
-// 			var chat = result['chat'];
-// 			var room = new Room(roomid, url, roompass, chat);
-// 			return callback(db.SUCCESS, room);
-// 		}
-// 	);
-// }
+function readRoom(roomid, callback) {
+	db.readObject(TABLE, ID, roomid,
+		function (error, result) {
+			if (error) return callback(error);
 
-function readRoom(url, callback) {
+			// var room = new Room(undefined, undefined, undefined, undefined);
+			// for (var prop in result) {
+			// 	room[prop] = result[prop];
+			// }
+
+			var url = result['url'];
+			var roompass = result['roompass'];
+			var chat = result['chat'];
+			var room = new Room(roomid, url, roompass, chat);
+			return callback(db.SUCCESS, room);
+		}
+	);
+}
+
+function readRoomByUrl(url, callback) {
 	db.readObject(TABLE, 'url', url,
 		function (error, result) {
 			if (error) return callback(error);
@@ -211,7 +213,7 @@ function readEntireRoom(roomid, callback) {
 							if (error) return callback(error);
 
 							room['members'] = result;
-							readBoardsFor(roomid,
+							boarddb.readBoardsFor(roomid,
 								function (error, result) {
 									if (error) return callback(error);
 
