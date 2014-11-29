@@ -56,4 +56,11 @@ router.post('/newroom', isAuth, function(req, res) {
     });
 });
 
+router.get('/leave', function(req, res) {
+    var rid = req.query.rid;
+    if(!rid) res.redirect('/user');
+
+    
+});
+
 module.exports = router;
