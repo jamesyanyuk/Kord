@@ -20,6 +20,7 @@ var isAuth = function(req, res, next) {
     res.redirect('/');
 }
 
+// GET user/room view
 router.get('/', isAuth, function(req, res) {
     roomdb.readRoomsFor(req.user.userid, function(err, result) {
         res.render('user', {
@@ -33,6 +34,7 @@ router.get('/', isAuth, function(req, res) {
     });
 });
 
+// Create a new room
 router.post('/newroom', isAuth, function(req, res) {
     /* roomdb.readRoomsFor(req.user.userid, function(err, result) {
         if(err) {
@@ -56,11 +58,15 @@ router.post('/newroom', isAuth, function(req, res) {
     });
 });
 
+/*
+ * Leave room with specified rid query string
+ * If only moderator of the room, destroy room
+ */
 router.get('/leave', function(req, res) {
     var rid = req.query.rid;
     if(!rid) res.redirect('/user');
 
-    
+    // Waiting on room deletion functionality
 });
 
 module.exports = router;
