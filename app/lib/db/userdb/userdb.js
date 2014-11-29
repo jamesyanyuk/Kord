@@ -10,11 +10,11 @@ exports.updateUser = updateUser;
 exports.destroyUser = destroyUser;
 exports.authenticateUser = authenticateUser;
 
-exports.TABLE = TABLE;
-exports.ID = ID;
-
 var TABLE = 'users';
 var ID = 'userid';
+
+exports.TABLE = TABLE;
+exports.ID = ID;
 
 function User(userid, email, userpass, nickname, access) {
 	this.userid = userid;

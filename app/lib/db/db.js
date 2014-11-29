@@ -287,7 +287,7 @@ function unjoinObject(table, primaryid, primaryobjectid, secondaryid, secondaryo
 			query(database, done, querystring,
 				function (error, result) {
 					if (error) return callback(error);
-					return callback(SUCCESS, result);
+					return callback(SUCCESS, secondaryobjectid);
 				}
 			);
 		}
