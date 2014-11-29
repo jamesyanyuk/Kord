@@ -97,6 +97,28 @@ app.use('/', index);
 app.use('/user', user);
 app.use('/r', room);
 
+// Socket.io
+io.on('connection', function(socket) {
+    socket.on('request_memberlist', function(data) {
+        
+    });
+
+    socket.on('adduser', function(data) {
+        // Join client to specified roomid channel
+        socket.join(data.roomid);
+        socket.broadcast.to(data.roomid).emit('newconnection', data.user);
+    });
+
+    socket.on('removeuser', function(data) {
+        // Join client to specified roomid channel
+        socket.leave(data.roomid);
+        userdb.destroyUser(data.user.userid, function(err, result) {
+            if(err) console.log('Could not remove guest user ' + data.user.userid);
+        });
+        socket.broadcast.to(data.roomid).emit('disconnection', data.user);
+    });
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

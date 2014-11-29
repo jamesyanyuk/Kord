@@ -9,7 +9,7 @@
     <p><%= message %></p>
     <hr>
     <p>
-        Nickname: <%= nickname %> <br>
+        Nickname: <%= user.nickname %> <br>
         Board URL: <%+ url %> <br>
         Board Count: <%= bcount %> <br><br>
         <b>Members</b>
@@ -27,5 +27,39 @@
     </p>
 
     <p><a href="/logout">Logout</a></p>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:3000');
+
+        // run once
+        socket.on('connect', function() {
+            socket.emit('request_memberlist', { roomid: <%= roomid %> });
+            socket.emit('adduser', {
+                roomid: <%= rid %>,
+                user: <%= user %>
+            });
+        });
+
+        socket.on('receive_memberlist', function(data) {
+            
+        });
+
+        socket.on('newconnection', function(user) {
+            //
+        });
+
+        socket.on('disconnection', function(user) {
+            //
+        });
+
+        // run once
+        socket.on('disconnect', function() {
+            socket.emit('removeuser', {
+                roomid: <%= rid %>,
+                user: <%= user %>
+            });
+        });
+    </script>
   </body>
 </html>
