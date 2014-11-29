@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var socket
 
 var roomdb = require('../lib/db/roomdb');
 
@@ -8,17 +9,16 @@ router.get('/404', function(req, res) {
 });
 
 router.get('/:rurl', function(req, res) {
-    roomdb.readRoomByUrl(req.params.rurl, function(err, result) {
+    roomdb.readRoomByUrl(req.params.rurl, function(err, roomidResult) {
         if(err) return res.redirect('/r/404');
 
-        roomdb.readEntireRoom(result.roomid, function(err, result) {
-            console.log(err);
+        roomdb.readEntireRoom(roomidResult.roomid, function(err, result) {
             if(err) return res.redirect('/r/404');
             var room = result;
             res.render('room', {
                 nickname: function(auth) {
-                    if(auth) req.user.nickname
-                    else 'Guest'
+                    if(auth) return req.user.nickname;
+                    else return 'Guest';
                 }(req.isAuthenticated()),
                 url: room.url,
                 message: 'Welcome',

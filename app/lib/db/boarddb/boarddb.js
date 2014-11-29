@@ -32,7 +32,7 @@ function createBoard(roomid, callback) {
 	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);
-			
+
 			var boardid = result;
 			joinRoomBoard(roomid, boardid,
 				function (error, result) {
@@ -46,7 +46,7 @@ function createBoard(roomid, callback) {
 					var board = new Board(boardid, canvas);
 					return callback(db.SUCCESS, board);
 				}
-			);			
+			);
 		}
 	);
 }
@@ -77,7 +77,7 @@ function readBoard(boardid, callback) {
 }
 
 function readBoardsFor(roomid, callback) {
-	db.readObjectsFor(readBoard, 'rooms_boards', ID, 'roomid', roomid,
+	db.readObjectsFor('rooms_boards', ID, 'roomid', roomid, readBoard,
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);
