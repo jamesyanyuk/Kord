@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Room <%= url %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Room <%= url %></h1>
+    <p><%= message %></p>
+    <hr>
+    <p>
+        Nickname: <%= nickname %> <br>
+        Board URL: <%+ url %> <br>
+        Board Count: <%= bcount %> <br><br>
+        <b>Members</b>
+        <ul>
+            <% for(i = 0; i < members.length; i++) { %>
+                <li><%= members[i].nickname %></li>
+            <% } %>
+        </ul>
+        <b>Moderators</b>
+        <ul>
+            <% for(i = 0; i < moderators.length; i++) { %>
+                <li><%= moderators[i].nickname %></li>
+            <% } %>
+        </ul>
+    </p>
+
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>
