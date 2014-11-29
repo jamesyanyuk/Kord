@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/:rid', function(req, res) {
-    res.send("Room id: " + req.params.rid);
+var roomdb = require('../lib/db/roomdb');
+
+router.get('/:rurl', function(req, res) {
+    //roomdb.readMembersFor()
 });
 
 module.exports = router;

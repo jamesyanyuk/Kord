@@ -71,7 +71,6 @@ router.get('/leave', isAuth, function(req, res) {
             req.flash('usermessage', 'Could not leave room (internal error 1).');
             res.redirect('/user');
         } else {
-            console.log(result.length);
             if(result.length === 1 && result[0].userid === req.user.userid){
                 roomdb.destroyRoom(rid, function(destroyErr, destroyResult) {
                     if(err) req.flash('usermessage', 'Could not leave room (internal error 2).');
