@@ -47,7 +47,7 @@ router.post('/newroom', isAuth, function(req, res) {
                 res.redirect('/user');
             }
         }
-    }
+    });
     genRID(function(rid) {
         roomdb.createRoom(rid, req.body.roompass, req.user.userid, function(err, result) {
             if(err) req.flash('usermessage', 'Room could not be created (internal error).');
