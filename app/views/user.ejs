@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User View</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>User View</h1>
+    <p><%= message %></p>
+    <hr>
+    <p>Nickname: <%= nickname %></p>
+    <p>
+        <b>Current Rooms</b>
+        <ul>
+            <% for(i = 0; i < rooms.length; i++) { %>
+                <li><a href="../r/<%= rooms[i].url %>"><%= rooms[i].url %></a> - <a href="/leave?rid=<%= rooms[i].roomid %>">Leave Room</a></li>
+            <% } %>
+        </ul>
+    </p>
+
+    <form method="post" action="/user/newroom">
+        <b>Create a New Room</b> <br>
+        Password (optional):  <input type="password" name="roompass"> <br>
+        <button>Create</button>
+    </form>
+
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>

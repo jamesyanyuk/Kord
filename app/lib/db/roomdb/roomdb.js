@@ -117,7 +117,7 @@ function unjoinRoomMember(roomid, userid, callback) {
 	db.unjoinObject('rooms_members', 'roomid' roomid, 'userid', userid,
 		function (error, result) {
 			if (error) return callback(error);
-			
+
 			unjoinRoomModerator(roomid, userid,
 				function (error, result) {
 					if (error) return callback(error);
@@ -136,7 +136,7 @@ function readRoom(roomid, callback) {
 	db.readObject(TABLE, ID, roomid,
 		function (error, result) {
 			if (error) return callback(error);
-			
+
 			// var room = new Room(undefined, undefined, undefined, undefined);
 			// for (var prop in result) {
 			// 	room[prop] = result[prop];
