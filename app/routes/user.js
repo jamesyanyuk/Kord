@@ -26,8 +26,8 @@ router.get('/', isAuth, function(req, res) {
         res.render('user', {
             nickname: req.user.nickname,
             rooms: function(error){
-                if(error) return undefined
-                else return result
+                if(error) return undefined;
+                else return result;
             }(err),
             message: req.flash('usermessage')
         });
