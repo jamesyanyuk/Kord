@@ -13,6 +13,8 @@ exports.readRoomsFor = readRoomsFor;
 exports.readEntireRoom = readEntireRoom;
 exports.updateRoom = updateRoom;
 exports.destroyRoom = destroyRoom;
+exports.unjoinRoomModerator = unjoinRoomModerator;
+exports.unjoinRoomMember = unjoinRoomMember;
 
 exports.authenticateMember = authenticateMember;
 
@@ -102,7 +104,29 @@ function joinRoomMember(roomid, userid, callback) {
 }
 
 function unjoinRoomModerator(roomid, userid, callback) {
-	db.
+	db.unjoinObject('rooms_moderators', 'roomid', roomid, 'userid', userid,
+		function (error, result) {
+			if (error) return callback(error);
+			return callback(db.SUCCESS, result);
+		}
+	);
+}
+
+// should also remove from moderators
+function unjoinRoomMember(roomid, userid, callback) {
+	db.unjoinObject('rooms_members', 'roomid' roomid, 'userid', userid,
+		function (error, result) {
+			if (error) return callback(error);
+			
+			unjoinRoomModerator(roomid, userid,
+				function (error, result) {
+					if (error) return callback(error);
+					return callback(db.SUCCESS, userid);
+				}
+			);
+		}
+	);
+}
 
 /*
  * read functions

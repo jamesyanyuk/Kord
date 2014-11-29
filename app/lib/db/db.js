@@ -31,6 +31,7 @@ exports.readObjects = readObjects;
 exports.readObjectsFor = readObjectsFor;
 exports.updateObject = updateObject;
 exports.destroyObject = destroyObject;
+exports.unjoinObject = unjoinObject;
 
 exports.authenticate = authenticate;
 
@@ -275,10 +276,22 @@ function destroyObject(table, id, objectid, callback) {
 	);
 }
 
-
-function selectFrom(table, columns, condition) {
-	return 'SELECT ' + list(columns) + ' FROM ' + table + ' ' +
-		'WHERE ' + condition + ';';
+// unjoins two rows in the database
+function unjoinObject(table, primaryid, primaryobjectid, secondaryid, secondaryobjectid, callback) {
+	pg.connect(connectionString,
+		function (error, database, done) {
+			if (error) return callback(error);
+			var condition = map(primaryid, primaryobjectid) + ' AND ' +
+				map(secondaryid, secondaryobjectid);
+			var querystring = deleteFrom(table, condition);
+			query(database, done, querystring,
+				function (error, result) {
+					if (error) return callback(error);
+					return callback(SUCCESS, objectid);
+				}
+			);
+		}
+	);
 }
 
 // authenticate a user
