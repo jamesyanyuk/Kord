@@ -50,6 +50,7 @@ module.exports = function(io) {
             console.log(userid + ' left.');
 
             userdb.readUser(userid, function(err, res) {
+                if(err) console.log('Error 76: ' + err);
                 if(!err) {
                     if(res.access === -1) {
                         // Detroy the guest account
