@@ -47,10 +47,17 @@ module.exports = function(io) {
 
             console.log(userid + ' left.');
 
-            // userdb.destroyUser(data.userid, function(err, result) {
-            //     if(err) console.log('Could not remove guest user ' + data.userid);
-            // });
-            
+            userdb.readUser(userid, function(err, res) {
+                if(!err) {
+                    if(res.access === -1) {
+                        //console.log('Would delete guest here...');
+                        userdb.destroyUser(userid, function(destroyerr, result) {
+                            if(destroyerr) console.log('Could not remove guest user ' + data.userid);
+                        });
+                    }
+                }
+            })
+
             socket.broadcast.to(roomid).emit('disconnection', {
                 nickname: nickname,
                 userid: userid

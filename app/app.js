@@ -99,33 +99,6 @@ app.use('/r', room);
 
 var rooms = [];
 
-// Socket.io
-// io.on('connection', function(socket) {
-//     socket.on('request_memberlist', function(data) {
-//         socket.emit('receive_memberlist', rooms[data.roomid]['online']);
-//     });
-//
-//     socket.on('adduser', function(data) {
-//         // Join client to specified roomid channel
-//         socket.join(data.roomid);
-//         var usrid = data.user.userid;
-//         rooms[data.roomid]['online'][usrid] = data.user;
-//         socket.broadcast.to(data.roomid).emit('newconnection', data.user);
-//         for (var prop in rooms[data.roomid]['online']) {
-//             console.log(rooms[data.roomid]['online'].prop.nickname);
-//         }
-//     });
-//
-//     socket.on('removeuser', function(data) {
-//         // Join client to specified roomid channel
-//         socket.leave(data.roomid);
-//         userdb.destroyUser(data.user.userid, function(err, result) {
-//             if(err) console.log('Could not remove guest user ' + data.user.userid);
-//         });
-//         socket.broadcast.to(data.roomid).emit('disconnection', data.user);
-//     });
-// });
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
