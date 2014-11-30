@@ -35,9 +35,9 @@
 
     <p><a href="/logout">Logout</a></p>
 
-    <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script>
-        var socket = io('http://localhost:3000');
+        var socket = io.connect('http://' + window.location.host);
 
         // run once
         socket.on('connect', function() {
@@ -52,28 +52,19 @@
         socket.on('receive_memberlist', function(data) {
             for(var prop in data) {
                 console.log('---- ' + prop + ' ---- ' + data[prop]);
-                $('#onlineusers').append($('<li>').text(data[prop]));
+                $('#onlineusers').append($('<li id="' + prop + '">').text(data[prop]));
             }
         });
 
         socket.on('newconnection', function(data) {
             console.log('eeeeeee');
-            $('#onlineusers').append($('<li>').text(data.nickname));
+            $('#onlineusers').append($('<li id="' + data.userid + '" %>">').text(data.nickname));
         });
 
         socket.on('disconnection', function(data) {
-            //$('#onlineusers').append($('<li>').text(data.nickname));
+            $('#' + data.userid).remove();
             console.log(data.nickname + ' disconnected.');
         });
-
-        // run once
-        // socket.on('disconnect', function() {
-        //     socket.emit('removeuser', {
-        //         roomid: <%= roomid %>,
-        //         nickname: '<%= nickname %>',
-        //         userid: <%= userid %>
-        //     });
-        // });
     </script>
   </body>
 </html>

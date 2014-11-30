@@ -45,10 +45,12 @@ module.exports = function(io) {
             var userid = idmap[socket.id][1];
             var nickname = rooms[roomid]['online'][userid];
 
-            console.log('LEFT');
+            console.log(userid + ' left.');
+
             // userdb.destroyUser(data.userid, function(err, result) {
             //     if(err) console.log('Could not remove guest user ' + data.userid);
             // });
+            
             socket.broadcast.to(roomid).emit('disconnection', {
                 nickname: nickname,
                 userid: userid
