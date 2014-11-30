@@ -7,6 +7,10 @@ window.onload = function () {
 	var path;
 	var pathString;
 	
+	var cursor = paper.circle(0, 0, 10).attr(
+		{fill: '#9cf', stroke: '#ddd', 'stroke-width': 5}
+	);
+	
 	$(canvas).mousedown(
 		function (event) {
 			mousedown = true;
@@ -38,4 +42,31 @@ window.onload = function () {
 			py = y;
 		}
 	);
+	$(document).mousemove(
+		function (event) {
+			console.log('herererer');
+			px = event.offsetX;
+			py = event.offsetY;
+			
+			cursor.attr(
+				{ 'cx' : px,
+				'cy' : py }
+			);
+			
+		}
+	);
+	
+	function emit() {
+		socket.emit('movemouse',
+			{ userid : 1,
+			roomid : 2,
+			boardid : 3,
+			cx : px,
+			cy : py }
+		);
+	}
+	
+	setInterval(emit, 50);
+	// put socket.emit outside -- called at a set interval
+	// mouse move just builds up the buffer
 }

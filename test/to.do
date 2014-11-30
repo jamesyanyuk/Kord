@@ -30,3 +30,10 @@
 -- change all queries to be consistent and handle multiple columns?
 
 -- anything with a condition, the condition should be built up one layer, so it can be created as a prepared statement
+
+
+-- guest accounts who create a board - boards won't have any moderators
+-- guest accounts are set as members
+
+
+-- boards with no moderators will eventually be deleted

@@ -120,6 +120,12 @@ module.exports = function(io) {
                 //
             }
         );
-
+        
+        socket.on('mousemove',
+            function (data) {
+                // data is user id, and new mouse coordinates
+                // 
+            }
+        );
     });
 }

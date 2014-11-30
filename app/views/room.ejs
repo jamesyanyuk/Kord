@@ -36,8 +36,9 @@
     <p><a href="/logout">Logout</a></p>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io.connect('http://' + window.location.host);
+    <script src="../js/room.js"></script>
+    <!-- // <script> -->
+        <!-- var socket = io.connect('http://' + window.location.host);
 
         // run once
         socket.on('connect', function() {
@@ -64,7 +65,7 @@
         socket.on('disconnection', function(data) {
             $('#' + data.userid).remove();
             console.log(data.nickname + ' disconnected.');
-        });
-    </script>
+        }); -->
+    <!-- </script> -->
   </body>
 </html>
