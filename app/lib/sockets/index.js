@@ -58,11 +58,4 @@ module.exports = function(io) {
             delete rooms[roomid]['online'][userid];
         });
     });
-
-    // io.on('room_first_connected+to',
-    //     function (data) {
-    //         rooms[data.roomid] = {};
-    //         rooms[data.roomid]['online'] = {data.userid};
-    //     }
-    // );
 }
