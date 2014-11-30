@@ -23,7 +23,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script src="http://cloud.github.com/downloads/uxebu/bonsai/bonsai-0.4.0.min.js"></script>
+<!--<script src="http://cloud.github.com/downloads/uxebu/bonsai/bonsai-0.4.0.min.js"></script>
 <style>
 #content {
 	padding: 0;
@@ -37,7 +37,26 @@
 	height: 800px;
 	z-index: 1000;
 }
-</style>
+</style>-->
+
+<script type="text/javascript" src="../../../public/js/jquery-2.1.1.min.js"></script>
+
+		<script type="text/javascript" src="../../../public/js/raphael-min.js"></script>
+		<script type="text/javascript" src="../../../public/js/raphaeldemo.js"></script>
+		<style type="text/css">
+			#canvas svg {
+				background-size: cover;
+				background: fixed;
+				position: absolute;
+				z-index: 1000;
+				
+				height: 500px;
+				width: 700px;
+				margin: 0 auto;
+				margin-top: 50px;
+				border: 1px black solid;
+			}
+		</style>
 
 </head>
 
@@ -61,7 +80,8 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
   
-  <!--Drawing--><div id="content">
+  <!--Drawing-->
+  <!--<div id="content">
   <div id="player"></div>
   <script>
 			console.log("WORKING");
@@ -71,7 +91,11 @@
 				framerate: 1000 }
 			);
 		</script> 
-  </div>
+  </div>-->
+  
+  
+  		
+        
   <!--/drawing-->
 
 
@@ -84,8 +108,13 @@
           <p>Page content widgets will be displayed here. Drawing will draw over the content, but not over the chat window or menu bar.</p>
       </div>
     </div>
-  </div>
   
+  
+  <div id="canvas"></div>
+		<script>
+		</script>
+        
+        
   <!--chat-->
   <div class="container">
     <div class="chat-window" id="chat_window_1">
