@@ -37,3 +37,5 @@
 
 
 -- boards with no moderators will eventually be deleted
+
+-- change wording on leave room

@@ -1,3 +1,5 @@
+var socket = io.connect('http://' + window.location.host);
+
 window.onload = function () {
 	var canvas = document.getElementById('canvas');
 	var paper = new Raphael(canvas, 500, 700);
@@ -67,6 +69,11 @@ window.onload = function () {
 	}
 	
 	setInterval(emit, 50);
+	
+	socket.on('cursorupdate',
+		function (data) {
+		}
+	);
 	// put socket.emit outside -- called at a set interval
 	// mouse move just builds up the buffer
 }

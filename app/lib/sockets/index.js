@@ -123,6 +123,8 @@ module.exports = function(io) {
         
         socket.on('mousemove',
             function (data) {
+                
+                io.to(data.roomid + '').emit('cursorupdate', data);
                 // data is user id, and new mouse coordinates
                 // 
             }

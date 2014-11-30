@@ -1,5 +1,5 @@
 var socket = io.connect('http://' + window.location.host);
-exports.socket = socket;
+
 // run once
 socket.on('connect', function() {
     socket.emit('request_memberlist', { roomid: <%= roomid %> });
