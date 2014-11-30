@@ -1,0 +1,7 @@
+{
+	"name" : "online",
+	"verstion" : "0.0.1",
+	"author" : "julian kuk <jkuk@umass.edu>",
+	"description" : "a library for tracking online users",
+	"main" : "./online.js"
+}
