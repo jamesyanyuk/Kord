@@ -3,14 +3,15 @@
   <head>
     <title>Room <%= url %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/js/jquery-2.1.1.min.js"></script>
   </head>
   <body>
     <h1>Room <%= url %></h1>
     <p><%= message %></p>
     <hr>
     <p>
-        Nickname: <%= user.nickname %> <br>
-        Board URL: <%+ url %> <br>
+        Nickname: <%= nickname %> <br>
+        Board URL: <%= url %> <br>
         Board Count: <%= bcount %> <br><br>
         <b>Members</b>
         <ul>
@@ -18,11 +19,17 @@
                 <li><%= members[i].nickname %></li>
             <% } %>
         </ul>
+
         <b>Moderators</b>
         <ul>
             <% for(i = 0; i < moderators.length; i++) { %>
                 <li><%= moderators[i].nickname %></li>
             <% } %>
+        </ul>
+
+        <b>Online</b>
+        <ul id="onlineusers">
+
         </ul>
     </p>
 
@@ -30,36 +37,43 @@
 
     <script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
     <script>
-        var socket = io.connect('http://localhost:3000');
+        var socket = io('http://localhost:3000');
 
         // run once
         socket.on('connect', function() {
             socket.emit('request_memberlist', { roomid: <%= roomid %> });
             socket.emit('adduser', {
-                roomid: <%= rid %>,
-                user: <%= user %>
+                roomid: <%= roomid %>,
+                nickname: '<%= nickname %>',
+                userid: <%= userid %>
             });
         });
 
         socket.on('receive_memberlist', function(data) {
-            
+            for(var prop in data) {
+                console.log('---- ' + prop + ' ---- ' + data[prop]);
+                $('#onlineusers').append($('<li>').text(data[prop]));
+            }
         });
 
-        socket.on('newconnection', function(user) {
-            //
+        socket.on('newconnection', function(data) {
+            console.log('eeeeeee');
+            $('#onlineusers').append($('<li>').text(data.nickname));
         });
 
-        socket.on('disconnection', function(user) {
-            //
+        socket.on('disconnection', function(data) {
+            //$('#onlineusers').append($('<li>').text(data.nickname));
+            console.log(data.nickname + ' disconnected.');
         });
 
         // run once
-        socket.on('disconnect', function() {
-            socket.emit('removeuser', {
-                roomid: <%= rid %>,
-                user: <%= user %>
-            });
-        });
+        // socket.on('disconnect', function() {
+        //     socket.emit('removeuser', {
+        //         roomid: <%= roomid %>,
+        //         nickname: '<%= nickname %>',
+        //         userid: <%= userid %>
+        //     });
+        // });
     </script>
   </body>
 </html>

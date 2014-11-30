@@ -15,27 +15,39 @@ router.get('/:rurl', function(req, res) {
         roomdb.readEntireRoom(roomidResult.roomid, function(err, result) {
             if(err) return res.redirect('/r/404');
             var room = result;
-            res.render('room', {
-                user: function(auth) {
-                    if(auth) return req.user;
-                    else {
-                        userdb.createUser('Guest' + Math.random().toString().substr(2, 4) + '@' + Math.random().toString().substr(2, 12),
-                            Math.random().toString().substr(2, 12), // password
-                            -1, // access
-                            function(err, guestresult) {
-                                if(err) return res.redirect('/r/404');
-                                else return guestresult; // return guest user
-                            }
-                        );
+
+            if(req.isAuthenticated()) {
+                res.render('room', {
+                    nickname: req.user.nickname,
+                    userid: req.user.userid,
+                    url: room.url,
+                    roomid: room.roomid,
+                    message: 'Welcome',
+                    members: room.members,
+                    moderators: room.moderators,
+                    bcount: room.boards.length
+                });
+            } else {
+                userdb.createUser('Guest' + Math.random().toString().substr(2, 4) + '@' + Math.random().toString().substr(2, 12),
+                    Math.random().toString().substr(2, 12), // password
+                    -1, // access
+                    function(err, guestresult) {
+                        if(err) return res.redirect('/r/404');
+                        else {
+                            res.render('room', {
+                                nickname: guestresult.nickname,
+                                userid: guestresult.userid,
+                                url: room.url,
+                                roomid: room.roomid,
+                                message: 'Welcome',
+                                members: room.members,
+                                moderators: room.moderators,
+                                bcount: room.boards.length
+                            });
+                        }
                     }
-                }(req.isAuthenticated()),
-                url: room.url,
-                rid: room.roomid,
-                message: 'Welcome',
-                members: room.members,
-                moderators: room.moderators,
-                bcount: room.boards.length
-            });
+                );
+            }
         });
     });
 });

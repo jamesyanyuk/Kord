@@ -198,7 +198,7 @@ function readObjectsFor(table, column, id, objectid, read, callback) {
 			query(database, done, querystring,									// query the database
 				function (error, result) {
 					if (error) return callback(error);							// if there was an error, return it
-					if (!result.length) return callback(DOES_NOT_EXIST);		// if no matches were found, return an error
+					if (!result.length) return callback(SUCCESS, []);		// if no matches were found, return an error
 
 					var ids = result;
 					var objects = [];											// create an empty array to store objects
