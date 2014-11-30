@@ -30,7 +30,19 @@
 <body>
 <div id="wrapper"> 
   
-  
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper"> <a href="index.html" id="sidebar_logo"></a>
+    <ul class="sidebar-nav">
+      <li><a href="#"><img src="images/draw.png">draw</a></li>
+      <li> <a href="#"><img src="images/code.png">code</a> </li>
+      <li> <a href="#"><img src="images/video.png">video</a> </li>
+      <li> <a href="#"><img src="images/image.png">image</a> </li>
+      <li> <a href="#"><img src="images/pdf.png">pdf</a> </li>
+      <li> <a href="#"><img src="images/text.png">text</a> </li>
+      <li> <a href="#"><img src="images/tools.png">tools</a> </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper --> 
   
   <!-- Page Content -->
   <div id="page-content-wrapper">
@@ -62,6 +74,13 @@
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script> 
 
+<!-- Menu Toggle Script --> 
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script> 
 
 
 
