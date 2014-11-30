@@ -28,22 +28,41 @@ router.get('/:rurl', function(req, res) {
                     bcount: room.boards.length
                 });
             } else {
+                // Should clean this up
                 userdb.createUser('Guest' + Math.random().toString().substr(2, 4) + '@' + Math.random().toString().substr(2, 12),
                     Math.random().toString().substr(2, 12), // password
                     -1, // access
                     function(err, guestresult) {
                         if(err) return res.redirect('/r/404');
                         else {
-                            res.render('room', {
-                                nickname: guestresult.nickname,
-                                userid: guestresult.userid,
-                                url: room.url,
-                                roomid: room.roomid,
-                                message: 'Welcome',
-                                members: room.members,
-                                moderators: room.moderators,
-                                bcount: room.boards.length
-                            });
+                            if(room['moderators'].length === 0){
+                                roomdb.joinRoomModerator(room.roomid, guestresult.userid, function(err, joinresult) {
+                                    if(err) return res.redirect('/r/404');
+                                    room['moderators'] = [guestresult];
+
+                                    res.render('room', {
+                                        nickname: guestresult.nickname,
+                                        userid: guestresult.userid,
+                                        url: room.url,
+                                        roomid: room.roomid,
+                                        message: 'Welcome',
+                                        members: room.members,
+                                        moderators: room.moderators,
+                                        bcount: room.boards.length
+                                    });
+                                });
+                            } else {
+                                res.render('room', {
+                                    nickname: guestresult.nickname,
+                                    userid: guestresult.userid,
+                                    url: room.url,
+                                    roomid: room.roomid,
+                                    message: 'Welcome',
+                                    members: room.members,
+                                    moderators: room.moderators,
+                                    bcount: room.boards.length
+                                });
+                            }
                         }
                     }
                 );

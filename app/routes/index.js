@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
+
 var passport = require('passport');
+
+var user = require('./user.js');
+var roomdb = require('../lib/db/roomdb');
 
 // If user's logged in, then redirect to user view
 var isAuth = function(req, res, next) {
@@ -25,6 +29,17 @@ router.get('/register', isAuth, function(req, res) {
     res.render('register', {
         title: 'Kord',
         message: req.flash('registermessage')
+    });
+});
+
+router.get('/newroom', isAuth, function(req, res) {
+    user.genRID(function(rid) {
+        roomdb.createRoom(rid, '', undefined, function(err, result) {
+            if(err) req.flash('usermessage', 'Room could not be created (internal error 2).');
+            else req.flash('usermessage', 'Room successfully created!');
+
+            res.redirect('/r/' + rid);
+        });
     });
 });
 

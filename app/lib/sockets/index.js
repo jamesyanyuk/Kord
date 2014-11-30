@@ -1,4 +1,5 @@
 var userdb = require('../db/userdb');
+var roomdb = require('../db/roomdb');
 
 var rooms = require('../../app.js');
 var idmap = [];
@@ -51,13 +52,31 @@ module.exports = function(io) {
             userdb.readUser(userid, function(err, res) {
                 if(!err) {
                     if(res.access === -1) {
-                        //console.log('Would delete guest here...');
+                        // Detroy the guest account
                         userdb.destroyUser(userid, function(destroyerr, result) {
-                            if(destroyerr) console.log('Could not remove guest user ' + data.userid);
+                            if(destroyerr) console.log('Could not remove guest user ' + userid);
+                        });
+
+                        // If only moderator was said guest, destroy room
+                        roomdb.readModeratorsFor(roomid, function(readmoderr, readmodresult) {
+                            if(err) {
+                                console.log('Error reading moderators for room (internal error 1) ' + roomid + ' - ' + readmoderr);
+                            } else {
+                                //console.log('readmodresult.length: ' + readmodresult.length + ' - ' + 'readmodresult[0].userid: ' + readmodresult[0].userid);
+                                if(!readmodresult || (readmodresult.length === 1 && readmodresult[0].userid === userid)){
+                                    roomdb.destroyRoom(roomid, function(roomdestroyerr, roomdestroyresult) {
+                                        if(err) console.log('Could not leave room (internal error 2).');
+                                    });
+                                } else {
+                                    roomdb.unjoinRoomMember(roomid, userid, function(unjoinerr, unjoinresult) {
+                                        if(err) console.log('Could not leave room (internal error 3).');
+                                    });
+                                }
+                            }
                         });
                     }
                 }
-            })
+            });
 
             socket.broadcast.to(roomid).emit('disconnection', {
                 nickname: nickname,
@@ -67,39 +86,39 @@ module.exports = function(io) {
             delete idmap[socket.id];
             delete rooms[roomid]['online'][userid];
         });
-        
+
         socket.on('draw',
             function (data) {
                 // this will send actual objects
                 // need to send room id, board id, actual drawing object
                 // tell all clients that a new things need to be added and drawn
-                // 
+                //
             }
         );
-        
+
         socket.on('erase',
             function (data) {
                 // rooms[data.roomid]['locked']
             }
         );
-        
+
         socket.on('lock',
             function (data) {
                 //
             }
         );
-        
+
         socket.on('move',
             function (data) {
-                
+
             }
         );
-        
+
         socket.on('unlock',
             function (data) {
                 //
             }
         );
-        
+
     });
 }

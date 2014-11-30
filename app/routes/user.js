@@ -94,3 +94,4 @@ router.get('/leave', isAuth, function(req, res) {
 });
 
 module.exports = router;
+module.exports.genRID = genRID;

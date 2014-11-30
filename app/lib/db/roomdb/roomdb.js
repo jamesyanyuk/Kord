@@ -59,31 +59,36 @@ function createRoom(url, roompass, userid, callback) {
 				function (error, result) {
 					if (error) return callback(error);
 
-					joinRoomModerator(roomid, userid,
-						function (error, result) {
-							if (error) {
-								uncreateRoom(roomid, error,
+					if(userid) {
+						joinRoomModerator(roomid, userid,
+							function (error, result) {
+								if (error) {
+									uncreateRoom(roomid, error,
+										function (error, result) {
+											return callback(error);
+										}
+									);
+								}
+
+								joinRoomMember(roomid, userid,
 									function (error, result) {
-										return callback(error);
+										if (error) {
+											uncreateRoom(roomid, error,
+												function (error, result) {
+													return callback(error);
+												}
+											);
+										}
+										var room = new Room(roomid, url, roompass, chat);
+										return callback(db.SUCCESS, room);
 									}
 								);
 							}
-
-							joinRoomMember(roomid, userid,
-								function (error, result) {
-									if (error) {
-										uncreateRoom(roomid, error,
-											function (error, result) {
-												return callback(error);
-											}
-										);
-									}
-									var room = new Room(roomid, url, roompass, chat);
-									return callback(db.SUCCESS, room);
-								}
-							);
-						}
-					);
+						);
+					} else {
+						var room = new Room(roomid, url, roompass, chat);
+						return callback(db.SUCCESS, room);
+					}
 				}
 			);
 		}
