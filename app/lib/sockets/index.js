@@ -10,6 +10,7 @@ module.exports = function(io) {
             if (rooms[data.roomid + ''] === undefined) {
                 rooms[data.roomid + ''] = {};
                 rooms[data.roomid + '']['online'] = {};
+                rooms[data.roomid + '']['locked'] = {};
             }
             // rooms[data.roomid + '']['online'][data.userid + ''] = data;
 
@@ -66,5 +67,39 @@ module.exports = function(io) {
             delete idmap[socket.id];
             delete rooms[roomid]['online'][userid];
         });
+        
+        socket.on('draw',
+            function (data) {
+                // this will send actual objects
+                // need to send room id, board id, actual drawing object
+                // tell all clients that a new things need to be added and drawn
+                // 
+            }
+        );
+        
+        socket.on('erase',
+            function (data) {
+                // rooms[data.roomid]['locked']
+            }
+        );
+        
+        socket.on('lock',
+            function (data) {
+                //
+            }
+        );
+        
+        socket.on('move',
+            function (data) {
+                
+            }
+        );
+        
+        socket.on('unlock',
+            function (data) {
+                //
+            }
+        );
+        
     });
 }
