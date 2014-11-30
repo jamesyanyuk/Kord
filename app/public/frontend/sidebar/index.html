@@ -23,7 +23,21 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
+<script src="http://cloud.github.com/downloads/uxebu/bonsai/bonsai-0.4.0.min.js"></script>
+<style>
+#content {
+	padding: 0;
+}
+#player {
+	background-size: cover;
+	background: #fff;
+	background: fixed;
+	position: absolute;
+	width: 1100px;
+	height: 800px;
+	z-index: 1000;
+}
+</style>
 
 </head>
 
@@ -47,7 +61,18 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
   
-  
+  <!--Drawing--><div id="content">
+  <div id="player"></div>
+  <script>
+			console.log("WORKING");
+			var player = document.getElementById('player');
+			var b = bonsai.run(player,
+				{ url: './drawing.js',
+				framerate: 1000 }
+			);
+		</script> 
+  </div>
+  <!--/drawing-->
 
 
 
