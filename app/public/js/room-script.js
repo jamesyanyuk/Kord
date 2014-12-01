@@ -8,8 +8,8 @@ socket.on('connect', function(data) {
     });
 });
 
-socket.on('members', function(data) {
-    print_data('members', data);
+socket.on('onlineusers', function(data) {
+    print_data('onlineusers', data);
     for(var prop in data) {
         $('#onlineusers').append($('<li id="' + prop + '">').text(data[prop]));
     }

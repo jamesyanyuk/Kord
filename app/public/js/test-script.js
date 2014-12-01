@@ -37,6 +37,12 @@ window.onload = function () {
 			path = paper.path(path_string).attr(
 				{ 'stroke-width' : 5 }
 			);
+			
+			paper.forEach(
+				function(element) {
+					console.log(element);
+				}
+			);
 		}
 	);
 	$(document).mousemove(
@@ -74,6 +80,8 @@ window.onload = function () {
 					userid: userid,
 					path: path_string }
 				);
+				
+				// need to set stroke width and color and any other useful details with it
 			}
 			mousedown = false;			
 		}

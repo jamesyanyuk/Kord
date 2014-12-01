@@ -27,7 +27,7 @@ module.exports = function(io) {
                 idmap[socket.id] = [data.roomid, data.userid];
                 
                 // send the socket that joined the members list
-                socket.emit('members', rooms[data.roomid]);
+                socket.emit('onlineusers', rooms[data.roomid]);
                 // tell all other sockets that a new connection was made
                 socket.broadcast.to(data.roomid).emit('newconnection', {
                     nickname: data.nickname,
