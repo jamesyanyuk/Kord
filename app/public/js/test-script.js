@@ -21,11 +21,10 @@ window.onload = function () {
 			var x = event.offsetX;
 			var y = event.offsetY;
 			
+			paper.setStart();
+			
 			pathString = 'M' + x + ' ' + y + 'l0 0';
 			path = paper.path(pathString);
-			
-			px = x;
-			py = y;
 		}
 	);
 	$(document).mouseup(
@@ -41,25 +40,25 @@ window.onload = function () {
 			
 			pathString += 'l' + (x - px) + ' ' + (y - py);
 			path.attr('path', pathString);
-			
-			px = x;
-			py = y;
 		}
 	);
+	
 	$(document).mousemove(
 		function (event) {
 			px = event.offsetX;
 			py = event.offsetY;
 			
-			// cursor.attr(
-			// 	{ 'cx' : px,
-			// 	'cy' : py }
-			// );
-			
+			if (mousedown) {
+				var x = event.offsetX;
+				var y = event.offsetY;
+				pathString += 'l' + (x - px) + ' ' + (y - py);
+				path.attr('path', pathString);
+				// paper.
+			}
 		}
 	);
 	
-	setInterval(emit, 500);
+	setInterval(emit, 20);
 	
 	function emit() {
 		socket.emit('mousemove',
@@ -73,27 +72,22 @@ window.onload = function () {
 
 	socket.on('cursorupdate',
 			function (data) {
-				print_data('cursorupdate', data);
+				// print_data('cursorupdate', data);
 				if(cursors[data.userid]) {
 					cursors[data.userid].attr(
-						{ cx : data.cx,
-						cy : data.cy }
+						{ 'cx' : data.cx,
+						'cy' : data.cy }
 					);
 				}
 				else {
-					function random(min, max) {
-						return Math.floor(Math.random() * (max - min)) + min;
-					}
 					var f = Raphael.getColor();
 					var s = Raphael.getColor();
-					var w = random(1, 10);
-					cursors[data.userid] = paper.circle(data.cx, data.cy, 10).attr(
-						{ fill : f,
-						stroke : s,
-						'stroke-width' : w }
+					var circle = paper.circle(data.cx, data.cy, 10).attr(
+						{ 'fill' : f,
+						'stroke' : s,
+						'stroke-width' : 5 }
 					);
-					
-					
+					cursors[data.userid] = circle;
 				}
 			}
 		);

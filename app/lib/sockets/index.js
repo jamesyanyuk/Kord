@@ -73,10 +73,11 @@ module.exports = function(io) {
 
         socket.on('disconnect', function(data) {
             print_data('disconnect', data);
+            if (!idmap[socket.id]) return;
+            
             var roomid = idmap[socket.id][0];
             var userid = idmap[socket.id][1];
             
-            if (!roomid || !userid) return;
             var nickname = rooms[roomid][userid];
             
             console.log(userid + ' left.');
@@ -150,12 +151,10 @@ module.exports = function(io) {
         
         socket.on('mousemove',
             function (data) {
-                console.log('mousemove' + data.userid);
-                io.to(data.boardid).emit('cursorupdate', data);
-                io.to(data.boardid).broadcast.emit('cursorupdate', data);
+                // print_data('mousemove', data);
+                socket.broadcast.to('b' + data.boardid).emit('cursorupdate', data);
             }
         );
-        
         
         socket.on('draw',
             function (data) {
