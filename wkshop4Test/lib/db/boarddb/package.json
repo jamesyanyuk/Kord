@@ -1,0 +1,4 @@
+{
+	"name"	: "boarddb",
+	"main"	: "boarddb.js"
+}

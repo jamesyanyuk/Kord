@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+		<body>
+		<h1><%= title %></h1>
+		<div><%= error %></div><br>
+
+		<form method='post' action='/user/auth'>
+			username: <input type='text' name='username'><br>
+			password: <input type='password' name='password'><br>
+			<button>log in</button>
+		</form>
+	</body>
+</html>
