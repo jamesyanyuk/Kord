@@ -9,16 +9,34 @@
 //   })
 // })
 
+//use npm get -g mocha
+//or mocha.js, mocha.css
 
 //Db testing
 var db = require("../lib/db/db.js");
+var Mocha = require('mocha'),
+    fs = require('fs'),
+    path = require('path');
+
+
+//Setup required for
+var mocha = new Mocha;
+
+fs.readdirSync('../lib').filter(function(file){
+    return file.substr(-3) === '.js';
+}).forEach(function(file){
+    mocha.addFile(
+        path.join('../lib', file)
+    );
+});
+
 
 describe('')
 
-//Chat testing
+///////Chat testing
 
 //placeholder for future
 
-//Other testing
+///////Other testing
 
 //placeholder for future
