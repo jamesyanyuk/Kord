@@ -158,14 +158,22 @@ module.exports = function(io) {
         
         socket.on('draw',
             function (data) {
+                print_data('draw', data);
+                socket.broadcast.to('b' + data.boardid).emit('add', data);
                 // this will send actual objects
                 // need to send room id, board id, actual drawing object
                 // tell all clients that a new things need to be added and drawn
                 //
             }
         );
+        
+        socket.on('move',
+            function (data) {
 
-        socket.on('erase',
+            }
+        );
+
+        socket.on('remove',
             function (data) {
                 // rooms[data.roomid]['locked']
             }
@@ -182,13 +190,15 @@ module.exports = function(io) {
                 //
             }
         );
-
-        socket.on('drag',
-            function (data) {
-
-            }
-        );
     });
+}
+
+function room(data) {
+    return 'r' + data.roomid;
+}
+
+function board(data) {
+    return 'b' + data.boardid;    
 }
 
 function print_data(message, data) {
