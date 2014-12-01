@@ -14,6 +14,9 @@ var index = require('./routes/index');
 var user = require('./routes/user');
 var room = require('./routes/room');
 
+// route used for testing only
+var test = require('./routes/test');
+
 var db = require('./lib/db');
 var userdb = require('./lib/db/userdb');
 
@@ -96,6 +99,9 @@ passport.deserializeUser(function(obj, done) {
 app.use('/', index);
 app.use('/user', user);
 app.use('/r', room);
+
+// test route
+app.use('/test', test);
 
 var rooms = [];
 

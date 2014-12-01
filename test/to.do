@@ -9,6 +9,7 @@
 * how to make generic create function
 * make read read from a generic object,
 
+* separation of boards into individual socket rooms
 
 
 * drawing - color toggle
@@ -39,3 +40,7 @@
 -- boards with no moderators will eventually be deleted
 
 -- change wording on leave room
+
+-- separate rooms from boards socket side
+
+-- make sure ===
