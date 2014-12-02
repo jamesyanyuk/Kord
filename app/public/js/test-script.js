@@ -10,11 +10,11 @@ window.onload = function () {
 	var path_string;
 	var cursors = {};
 	var selection;
-	
+
 	////
 	// client
 	////
-	
+
 	socket.on('connect',
 		function(data) {
 		    print_data('connect', data);
@@ -24,20 +24,20 @@ window.onload = function () {
 			);
 		}
 	);
-	
+
 	$(canvas).mousedown(
 		function(event) {
 			mousedown = true;
 			var x = event.offsetX;
 			var y = event.offsetY;
-			
+
 			// paper.setStart();
-			
+
 			path_string = 'M' + x + ' ' + y + 'l0 0';
 			path = paper.path(path_string).attr(
 				{ 'stroke-width' : 5 }
 			);
-			
+
 			paper.forEach(
 				function(element) {
 					console.log(element);
@@ -54,7 +54,7 @@ window.onload = function () {
 				path.attr('path', path_string);
 				// paper.
 			}
-			
+
 			px = event.offsetX;
 			py = event.offsetY;
 		}
@@ -73,21 +73,21 @@ window.onload = function () {
 		function(event) {
 			if (mousedown) {
 				// selection = paper.setFinish();
-				// var json = JSON.stringify(path_string);		
+				// var json = JSON.stringify(path_string);
 				socket.emit('draw',
 					{ boardid: boardid,
 					roomid: roomid,
 					userid: userid,
 					path: path_string }
 				);
-				
+
 				// need to set stroke width and color and any other useful details with it
 			}
-			mousedown = false;			
+			mousedown = false;
 		}
 	);
-	
-	
+
+
 	////
 	// server
 	////
@@ -113,42 +113,42 @@ window.onload = function () {
 			}
 		}
 	);
-	
+
 	socket.on('add',
 		function(data) {
 			print_data('add', data);
-			
-			paper.path(data.path);	
+
+			paper.path(data.path);
 		}
 	);
-	
+
 	socket.on('move',
 		function(data) {
-			
+
 		}
 	);
-	
+
 	socket.on('remove',
 		function(data) {
-			
+
 		}
 	);
-	
+
 	socket.on('hover',
 		function(data) {
-			
+
 		}
 	);
-	
+
 	socket.on('double click',
 		function(data) {
-			
+
 		}
 	);
-	
+
 	socket.on('transform',
 		function(data) {
-			
+
 		}
 	);
 

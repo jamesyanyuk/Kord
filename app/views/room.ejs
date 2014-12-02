@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Room <%= url %></title>
+    <title>Room</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/js/jquery-2.1.1.min.js"></script>
   </head>
   <body>
-    <h1>Room <%= url %></h1>
+    <h1>Room <span id="urlHeader"></span></h1>
     <p><%= message %></p>
     <hr>
     <p>
         Nickname: <%= nickname %> <br>
-        Board URL: <%= url %> <br>
-        Board Count: <%= bcount %> <br><br>
+        Board URL: <span id="url"></span> <br>
+        Board Count: <span id="bcount"></span> <br><br>
         <b>Members</b>
-        <ul>
-            <% for(i = 0; i < members.length; i++) { %>
-                <li><%= members[i].nickname %></li>
-            <% } %>
+        <ul id="members">
+
         </ul>
 
         <b>Moderators</b>
-        <ul>
-            <% for(i = 0; i < moderators.length; i++) { %>
-                <li><%= moderators[i].nickname %></li>
-            <% } %>
+        <ul id="moderators">
+
         </ul>
 
         <b>Online</b>

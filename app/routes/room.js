@@ -15,6 +15,7 @@ router.get('/:rurl', function(req, res) {
         roomdb.readEntireRoom(roomidResult.roomid, function(err, result) {
             if(err) return res.redirect('/r/404');
             var room = result;
+            //console.log('Another --->>> ' + result.members.length + ' , ' + room.members.length);
 
             if(req.isAuthenticated()) {
                 res.render('room', {
@@ -22,10 +23,7 @@ router.get('/:rurl', function(req, res) {
                     userid: req.user.userid,
                     url: room.url,
                     roomid: room.roomid,
-                    message: 'Welcome',
-                    members: room.members,
-                    moderators: room.moderators,
-                    bcount: room.boards.length
+                    message: 'Welcome'
                 });
             } else {
                 // Should clean this up
@@ -36,31 +34,23 @@ router.get('/:rurl', function(req, res) {
                         if(err) return res.redirect('/r/404');
                         else {
                             if(room['moderators'].length === 0){
-                                roomdb.joinRoomModerator(room.roomid, guestresult.userid, function(err, joinresult) {
+                                roomdb.joinRoomMember(room.roomid, guestresult.userid, function(err, joinresult) {
                                     if(err) return res.redirect('/r/404');
-                                    room['moderators'] = [guestresult];
+                                    //room['members'].push(guestresult);
 
                                     res.render('room', {
                                         nickname: guestresult.nickname,
                                         userid: guestresult.userid,
-                                        url: room.url,
-                                        roomid: room.roomid,
-                                        message: 'Welcome',
-                                        members: room.members,
-                                        moderators: room.moderators,
-                                        bcount: room.boards.length
+                                        roomid: roomidResult.roomid,
+                                        message: 'Welcome'
                                     });
                                 });
                             } else {
                                 res.render('room', {
                                     nickname: guestresult.nickname,
                                     userid: guestresult.userid,
-                                    url: room.url,
-                                    roomid: room.roomid,
-                                    message: 'Welcome',
-                                    members: room.members,
-                                    moderators: room.moderators,
-                                    bcount: room.boards.length
+                                    roomid: roomidResult.roomid,
+                                    message: 'Welcome'
                                 });
                             }
                         }

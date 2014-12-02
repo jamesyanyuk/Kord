@@ -7,16 +7,20 @@ var idmap = [];
 // server
 module.exports = function(io) {
     io.on('connection', function(socket) {
-        
+
         ////
         // room
         ////
-        
+
         // when a user joins a room
         socket.on('join_room',
             function (data) {
                 print_data('join_room', data);
-                
+
+                roomdb.readMembersFor(data.roomid, function(err, res) {
+                    console.log('Members ----->>>> ' + res.length);
+                })
+
                 socket.join('r' + data.roomid);
                 // if the room doesn't exist
                 if (!rooms[data.roomid]) {
@@ -25,110 +29,121 @@ module.exports = function(io) {
                 // update the mappings
                 rooms[data.roomid][data.userid] = data.nickname;
                 idmap[socket.id] = [data.roomid, data.userid];
-                
-                // send the socket that joined the members list
-                socket.emit('onlineusers', rooms[data.roomid]);
+
+
+
+                roomdb.readEntireRoom(data.roomid, function(err, room) {
+                    if(err) return console.log('Error 34');
+
+                    socket.emit('users', {
+                        online : rooms[data.roomid],
+                        members : room.members,
+                        moderators : room.moderators,
+                        bcount : room.boards.length,
+                        url : room.url
+                    });
+                });
+
                 // tell all other sockets that a new connection was made
-                socket.broadcast.to(data.roomid).emit('newconnection', {
+                socket.broadcast.to('r' + data.roomid).emit('newconnection', {
                     nickname: data.nickname,
                     userid: data.userid
                 });
             }
         );
-        // 
-        // socket.on('request_memberlist', function(data) {
-        //     if (rooms[data.roomid + ''] === undefined) {
-        //         rooms[data.roomid + ''] = {};
-        //         rooms[data.roomid + '']['online'] = {};
-        //         rooms[data.roomid + '']['locked'] = {};
-        //     }
-        //     // rooms[data.roomid + '']['online'][data.userid + ''] = data;
-        // 
-        //     for (var prop in data) {
-        //         console.log('request: ' + prop + ': ' + data[prop]);
-        //     }
-        // 
-        //     socket.emit('receive_memberlist', rooms[data.roomid + '']['online']);
-        // });
 
-        // socket.on('adduser', function(data) {
-        //     // Join client to specified roomid channel
-        //     socket.join('' + data.roomid);
-        //     var usrid = data.userid;
-        //     rooms[data.roomid + '']['online'][usrid + ''] = data.nickname;
-        //     idmap[socket.id] = [data.roomid + '', data.userid + ''];
-        //     io.to('' + data.roomid).emit('newconnection', {
-        //         nickname: data.nickname,
-        //         userid: data.userid
-        //     });
-        //     for (var prop in rooms[data.roomid + '']['online']) {
-        //         // for (var prop2 in data) {
-        //         //     console.log('add user: ' + prop2 + ': ' + data[prop2]);
-        //         // }
-        //         console.log(prop + ': ' + rooms[data.roomid + '']['online'][prop]);
-        //         // console.log('.');
-        //         // console.log('add user: ' + rooms[data.roomid + '']['online']['user']);
-        //     }
-        // });
+        socket.on('request_memberlist', function(data) {
+            if (rooms[data.roomid + ''] === undefined) {
+                rooms[data.roomid + ''] = {};
+                rooms[data.roomid + '']['online'] = {};
+                rooms[data.roomid + '']['locked'] = {};
+            }
+            // rooms[data.roomid + '']['online'][data.userid + ''] = data;
+
+            for (var prop in data) {
+                console.log('request: ' + prop + ': ' + data[prop]);
+            }
+
+            socket.emit('receive_memberlist', rooms[data.roomid + '']['online']);
+        });
+
+        socket.on('adduser', function(data) {
+            // Join client to specified roomid channel
+            socket.join('' + data.roomid);
+            var usrid = data.userid;
+            rooms[data.roomid + '']['online'][usrid + ''] = data.nickname;
+            idmap[socket.id] = [data.roomid + '', data.userid + ''];
+            io.to('r' + data.roomid).emit('newconnection', {
+                nickname: data.nickname,
+                userid: data.userid
+            });
+            for (var prop in rooms[data.roomid + '']['online']) {
+                // for (var prop2 in data) {
+                //     console.log('add user: ' + prop2 + ': ' + data[prop2]);
+                // }
+                console.log(prop + ': ' + rooms[data.roomid + '']['online'][prop]);
+                // console.log('.');
+                // console.log('add user: ' + rooms[data.roomid + '']['online']['user']);
+            }
+        });
 
         socket.on('disconnect', function(data) {
             print_data('disconnect', data);
             if (!idmap[socket.id]) return;
-            
+
             var roomid = idmap[socket.id][0];
             var userid = idmap[socket.id][1];
-            
+
             var nickname = rooms[roomid][userid];
-            
+
             console.log(userid + ' left.');
-            
+
             userdb.readUser(+userid, function(err, res) {
                 if(err) console.log('Error 76: ' + err);
-                if(!err) {
+                else {
                     if(res.access === -1) {
-                        // Detroy the guest account
-                        userdb.destroyUser(+userid, function(destroyerr, result) {
-                            if(destroyerr) console.log('Could not remove guest user ' + userid);
-                        });
-            
-                        // If only moderator was said guest, destroy room
-                        roomdb.readModeratorsFor(+roomid, function(readmoderr, readmodresult) {
+                        // If only member was said guest, destroy room
+                        roomdb.readMembersFor(+roomid, function(readmemerr, readmemresult) {
                             if(err) {
-                                console.log('Error reading moderators for room (internal error 1) ' + roomid + ' - ' + readmoderr);
+                                console.log('Error reading moderators for room (internal error 1) ' + roomid + ' - ' + readmemerr);
                             } else {
-                                //console.log('readmodresult.length: ' + readmodresult.length + ' - ' + 'readmodresult[0].userid: ' + readmodresult[0].userid);
-                                if(!readmodresult || (readmodresult.length === 1 && readmodresult[0].userid === +userid)){
-                                    roomdb.destroyRoom(+roomid, function(roomdestroyerr, roomdestroyresult) {
-                                        if(err) console.log('Could not leave room (internal error 2).');
+                                roomdb.unjoinRoomMember(+roomid, +userid, function(unjoinerr, unjoinresult) {
+                                    if(err) console.log('Could not leave room (internal error 3).');
+
+                                    // Detroy the guest account
+                                    userdb.destroyUser(+userid, function(destroyerr, result) {
+                                        if(destroyerr) console.log('Could not remove guest user ' + userid);
                                     });
-                                } else {
-                                    roomdb.unjoinRoomMember(+roomid, +userid, function(unjoinerr, unjoinresult) {
-                                        if(err) console.log('Could not leave room (internal error 3).');
-                                    });
-                                }
+
+                                    if(readmemresult.length === 1 && readmemresult[0].userid === +userid){
+                                        roomdb.destroyRoom(+roomid, function(roomdestroyerr, roomdestroyresult) {
+                                            if(err) console.log('Could not leave room (internal error 2).');
+                                        });
+                                    }
+                                });
                             }
                         });
                     }
                 }
             });
-            
-            socket.broadcast.to(roomid).emit('disconnection', {
+
+            io.to('r' + roomid).emit('disconnection', {
                 nickname: nickname,
                 userid: userid
             });
-            
+
             delete idmap[socket.id];
             delete rooms[roomid][userid];
         });
-        
+
         ////
         // board
         ////
-        
+
         socket.on('join_board',
             function (data) {
                 print_data('join_board', data);
-                
+
                 socket.join('b' + data.boardid);
                 // // if the room doesn't exist
                 // if (!boards[data.boardid]) {
@@ -138,7 +153,7 @@ module.exports = function(io) {
                 // boards[data.boardid][data.userid] = data.nickname;
                 // // this should have an array of board ids?
                 // idmap[socket.id] = [data.boardid, data.userid];
-                // 
+                //
                 // // send the socket that joined the members list
                 // socket.emit('members', rooms[data.roomid]);
                 // // tell all other sockets that a new connection was made
@@ -148,14 +163,14 @@ module.exports = function(io) {
                 // });
             }
         );
-        
+
         socket.on('mousemove',
             function (data) {
                 // print_data('mousemove', data);
                 socket.broadcast.to('b' + data.boardid).emit('cursorupdate', data);
             }
         );
-        
+
         socket.on('draw',
             function (data) {
                 print_data('draw', data);
@@ -166,7 +181,7 @@ module.exports = function(io) {
                 //
             }
         );
-        
+
         socket.on('move',
             function (data) {
 
@@ -184,7 +199,7 @@ module.exports = function(io) {
                 //
             }
         );
-        
+
         socket.on('unlock',
             function (data) {
                 //
@@ -198,7 +213,7 @@ function room(data) {
 }
 
 function board(data) {
-    return 'b' + data.boardid;    
+    return 'b' + data.boardid;
 }
 
 function print_data(message, data) {
