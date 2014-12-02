@@ -16,8 +16,8 @@ router.get('/:rurl', function(req, res) {
             res.render('room', {
                 nickname: req.user.nickname,
                 userid: req.user.userid,
-                url: room.url,
-                roomid: room.roomid,
+                url: req.params.rurl,
+                roomid: roomidResult.roomid,
                 message: 'Welcome'
             });
         } else {
