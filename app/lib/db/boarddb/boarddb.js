@@ -13,6 +13,9 @@ exports.destroyBoard = destroyBoard;
 var TABLE = 'boards';
 var ID = 'boardid';
 
+exports.TABLE = TABLE;
+exports.ID = ID;
+
 function Board(boardid) {
 	this.boardid = boardid;
 }

@@ -8,7 +8,6 @@ window.onload = function () {
 	var path_string;
 	var cursors = {};
 	var selection;
-
 	////
 	// client
 	////
@@ -22,6 +21,19 @@ window.onload = function () {
 			);
 		}
 	);
+	
+	socket.on('elements',
+		function(data) {
+			print_data('elements', data);
+			
+			for (var i in data) {
+				var attrs = data[i]['attrs'];
+				if (attrs['type'] === 'path') {
+					paper.path(attrs['path']);
+				}
+			}
+		}
+	)
 
 	$(canvas).mousedown(
 		function(event) {
@@ -34,12 +46,6 @@ window.onload = function () {
 			path_string = 'M' + x + ' ' + y + 'l0 0';
 			path = paper.path(path_string).attr(
 				{ 'stroke-width' : 5 }
-			);
-
-			paper.forEach(
-				function(element) {
-					console.log(element);
-				}
 			);
 		}
 	);
@@ -73,13 +79,15 @@ window.onload = function () {
 				// selection = paper.setFinish();
 				// var json = JSON.stringify(path_string);
 
-
+				var attrs =
+					{ 'type': 'path',
+					'path' : path_string };
 
 				socket.emit('draw',
-					{ boardid: boardid,
-					roomid: roomid,
+					{ roomid: roomid,
+					boardid: boardid,
 					userid: userid,
-					path: path_string }
+					'attrs': attrs }
 				);
 
 				// need to set stroke width and color and any other useful details with it
