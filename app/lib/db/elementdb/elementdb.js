@@ -1,8 +1,17 @@
 var db = require('../db');
+var boarddb = require('../boarddb');
 
-exports.create = function (elementid, attr) {
-	return new Element(elementid, attr);
+exports.create = function (elementid, attrs) {
+	return new Element(elementid, attrs);
 };
+
+exports.createElement = createElement;
+exports.joinBoardElement = joinBoardElement;
+exports.readElement = readElement;
+exports.readElementsFor = readElementsFor;
+exports.updateElement = updateElement;
+exports.destroyElement = destroyElement;
+exports.uncreateElement = uncreateElement;
 
 var TABLE = 'elements';
 var ID = 'elementid';
@@ -11,19 +20,19 @@ var ID = 'elementid';
  * constructor
  * */
 
-function Element(elementid, attr) {
+function Element(elementid, attrs) {
 	this.elementid = elementid;
-	this.attr = attr;
+	this.attrs = attrs;
 }
 
 /*
  * create functions
  * */
 
-function createElement(elementid, attr, boardid) {
+function createElement(elementid, attrs, boardid, callback) {
 	var data = [];
 	data[data.length] = elementid;
-	data[data.length] = attr;
+	data[data.length] = attrs;
 	db.createObject(TABLE, data, ID,
 		function (error, result) {
 			if (error) return callback(error);
@@ -36,7 +45,7 @@ function createElement(elementid, attr, boardid) {
 								return callback(error);
 							}
 						);
-						var element = new Element(elementid, attr);
+						var element = new Element(elementid, attrs);
 						return callback(db.SUCCESS, element);
 					}
 				}
@@ -46,7 +55,7 @@ function createElement(elementid, attr, boardid) {
 }
 
 function joinBoardElement(boardid, elementid, callback) {
-	db.joinObjects(TABLE, boarddb.TABLE, elementid, boardid,
+	db.joinObjects(boarddb.TABLE, TABLE, boardid, elementid,
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);
@@ -63,15 +72,15 @@ function readElement(elementid, callback) {
 		function (error, result) {
 			if (error) return callback(error);
 			
-			var attr = result['attr'];
-			var element = new Element(elementid, attr);
+			var attrs = result['attr'];
+			var element = new Element(elementid, attrs);
 			return callback(db.SUCCESS, element);
 		}
 	);
 }
 
 function readElementsFor(boardid, callback) {
-	db.readObjectsFor('boards_elements', ID, 'userid', userid, readElement,
+	db.readObjectsFor('boards_elements', ID, 'boardid', boardid, readElement,
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);

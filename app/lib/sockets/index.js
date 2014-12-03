@@ -1,5 +1,6 @@
 var userdb = require('../db/userdb');
 var roomdb = require('../db/roomdb');
+var elementdb = require('../db/elementdb');
 
 var rooms = require('../../app.js');
 var idmap = [];
@@ -143,6 +144,14 @@ module.exports = function(io) {
                 print_data('join_board', data);
 
                 socket.join('b' + data.boardid);
+                elementdb.readElementsFor(data.boardid,
+                    function (error, result) {
+                        if (error) return callback(error);
+                        
+                        var elements = result;
+                        socket.emit('elements', elements);
+                    }
+                );
                 // // if the room doesn't exist
                 // if (!boards[data.boardid]) {
                 //     boards[data.boardid] = {};
@@ -155,7 +164,7 @@ module.exports = function(io) {
                 // // send the socket that joined the members list
                 // socket.emit('members', rooms[data.roomid]);
                 // // tell all other sockets that a new connection was made
-                // io.to(data.roomid).emit('newconnection', {
+                // io.to(data.roomid).emit('newcursor', {
                 //     nickname: data.nickname,
                 //     userid: data.userid
                 // });
@@ -173,10 +182,21 @@ module.exports = function(io) {
             function (data) {
                 print_data('draw', data);
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
-                // this will send actual objects
-                // need to send room id, board id, actual drawing object
-                // tell all clients that a new things need to be added and drawn
-                //
+                var elementid = 'b' + data.boardid + 'u' + data.userid + Math.random();
+                elementdb.createElement(
+                    elementid,
+                    data.attrs, data.boardid,
+                    function (error, result) {
+                        if (error) return callback(error);
+                        
+                        elementdb.readElement(elementid,
+                            function (error, result) {
+                                if (error) return callback(error);
+                                print_data('read element', result);
+                            }
+                        );
+                    }
+                );
             }
         );
 
