@@ -60,7 +60,7 @@ CREATE TABLE resources (
 	y integer,
 	width integer,
 	height integer,
-	
+
 	PRIMARY KEY (resourceid)
 );
 
@@ -74,16 +74,16 @@ CREATE TABLE boards_resources (
 CREATE TABLE elements (
 	elementid varchar(50) UNIQUE, -- concatenation of 'b'boardid'u'userid'e'elementid -> client generated, client keeps a list of available ids
 	attr json,
-	
+
 	PRIMARY KEY (elementid)
 );
 
 CREATE TABLE boards_elements (
 	boardid integer REFERENCES boards ON DELETE CASCADE,
 	elementid varchar(50) REFERENCES elements ON DELETE CASCADE,
-	
+
 	PRIMARY KEY (boardid, elementid)
-);	
+);
 
 INSERT INTO users VALUES
 	(-1, 'user1@place.com', 'pass1', 'user1', 0),

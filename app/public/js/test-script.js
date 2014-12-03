@@ -1,5 +1,3 @@
-
-
 window.onload = function () {
 	var canvas = document.getElementById('canvas');
 	var paper = new Raphael(canvas, 800, 800);
@@ -74,9 +72,9 @@ window.onload = function () {
 			if (mousedown) {
 				// selection = paper.setFinish();
 				// var json = JSON.stringify(path_string);
-				
-				
-				
+
+
+
 				socket.emit('draw',
 					{ boardid: boardid,
 					roomid: roomid,
