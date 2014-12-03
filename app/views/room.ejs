@@ -23,7 +23,7 @@
         <hr>
         <p>
             Nickname: <%= nickname %> <br>
-            Board URL: <span id="url"></span> <br>
+            Room URL: <span id="url"></span> <br>
             Board Count: <span id="bcount"></span> <br><br>
             <b>Members</b>
             <ul id="members">
@@ -49,9 +49,10 @@
         <script>
         var socket = io.connect('http://' + window.location.host);
         var roomid = <%= roomid %>;
-        var nickname = <%= nickname %>;
+        var nickname = '<%= nickname %>';
+        var boardid = <%= boardid %>;
         var userid = <%= userid %>;
         </script>
-        <script src="../js/room-script.js"></script>
+        <script src="../js/client.js"></script>
     </body>
 </html>

@@ -17,6 +17,7 @@ router.get('/:rurl', function(req, res) {
                 nickname: req.user.nickname,
                 userid: req.user.userid,
                 roomid: roomidResult.roomid,
+                roomurl: req.params.url,
                 boardid: '1',
                 message: 'Welcome'
             });
@@ -39,6 +40,7 @@ router.get('/:rurl', function(req, res) {
                                         nickname: guestresult.nickname,
                                         userid: guestresult.userid,
                                         roomid: roomidResult.roomid,
+                                        roomurl: req.params.url,
                                         boardid: '1',
                                         message: 'Welcome'
                                     });
@@ -48,6 +50,7 @@ router.get('/:rurl', function(req, res) {
                                     nickname: guestresult.nickname,
                                     userid: guestresult.userid,
                                     roomid: roomidResult.roomid,
+                                    roomurl: req.params.url,
                                     boardid: '1',
                                     message: 'Welcome'
                                 });
