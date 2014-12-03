@@ -3,8 +3,8 @@ var chatdb = require('../chatdb');
 var userdb = require('../userdb');
 var boarddb = require('../boarddb');
 
-exports.create = function (roomid, url, roompass, chat) {
-	return new Room(roomid, url, roompass, chat);
+exports.create = function (roomid, roomurl, roompass, chat) {
+	return new Room(roomid, roomurl, roompass, chat);
 };
 
 exports.createRoom = createRoom;
@@ -32,9 +32,9 @@ var ID = 'roomid';
  * constructor
  * */
 
-function Room(roomid, url, roompass, chat) {
+function Room(roomid, roomurl, roompass, chat) {
 	this.roomid = roomid;
-	this.url = url;
+	this.roomurl = roomurl;
 	this.roompass = roompass;
 	this.chat = chat;
 }
@@ -43,11 +43,11 @@ function Room(roomid, url, roompass, chat) {
  * create functions
  * */
 
-function createRoom(url, roompass, userid, callback) {
+function createRoom(roomurl, roompass, userid, callback) {
 	var chat = chatdb.create();
 	var data = [];
 	data[data.length] = db.nextID(TABLE, ID);
-	data[data.length] = url;
+	data[data.length] = roomurl;
 	data[data.length] = roompass;
 	data[data.length] = chat;
 	db.createObject(TABLE, data, ID,
@@ -79,14 +79,14 @@ function createRoom(url, roompass, userid, callback) {
 												}
 											);
 										}
-										var room = new Room(roomid, url, roompass, chat);
+										var room = new Room(roomid, roomurl, roompass, chat);
 										return callback(db.SUCCESS, room);
 									}
 								);
 							}
 						);
 					} else {
-						var room = new Room(roomid, url, roompass, chat);
+						var room = new Room(roomid, roomurl, roompass, chat);
 						return callback(db.SUCCESS, room);
 					}
 				}
@@ -152,24 +152,24 @@ function readRoom(roomid, callback) {
 			// 	room[prop] = result[prop];
 			// }
 
-			var url = result['url'];
+			var roomurl = result['roomurl'];
 			var roompass = result['roompass'];
 			var chat = result['chat'];
-			var room = new Room(roomid, url, roompass, chat);
+			var room = new Room(roomid, roomurl, roompass, chat);
 			return callback(db.SUCCESS, room);
 		}
 	);
 }
 
-function readRoomByUrl(url, callback) {
-	db.readObject(TABLE, 'url', url,
+function readRoomByUrl(roomurl, callback) {
+	db.readObject(TABLE, 'roomurl', roomurl,
 		function (error, result) {
 			if (error) return callback(error);
 
 			var roomid = result['roomid'];
 			var roompass = result['roompass'];
 			var chat = result['chat'];
-			var room = new Room(roomid, url, roompass, chat);
+			var room = new Room(roomid, roomurl, roompass, chat);
 			return callback(db.SUCCESS, room);
 		}
 	);

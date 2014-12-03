@@ -13,27 +13,27 @@ exports.destroyResource = destroyResource;
 var TABLE = 'resources';
 var ID = ['resourceid'];
 
-function Resource(resourceid, x, y, width, height, path) {
+function Resource(resourceid, resourceurl, x, y, width, height) {
 	this.resourceid = resourceid;
+	this.resourceurl = resourceurl;
 	this.x = x;
 	this.y = y;
 	this.width = width | 100;
 	this.height = height | 100;
-	this.path = path;
 }
 
 /*
  * create functions
  * */
 
-function createResource(resourceid, x, y, width, height, path, callback) {
+function createResource(resourceid, resourceurl, x, y, width, height, callback) {
 	var fields = [];
 	fields[fields.length] = db.nextID(TABLE, ID);
+	fields[fields.length] = resourceurl;
 	fields[fields.length] = x;
 	fields[fields.length] = y;
 	fields[fields.length] = width | 100;
 	fields[fields.length] = height | 100;
-	fields[fields.length] = path;
 	db.createObject(TABLE, data, ID,
 		function (error, result) {
 			if (error) return callback(error);
@@ -49,7 +49,7 @@ function createResource(resourceid, x, y, width, height, path, callback) {
 						);
 					}
 					var resource = new Resource(
-						resourceid, x, y, width, height, path);
+						resourceid, x, y, width, height, resourceurl);
 					return callback(db.SUCCESS, resource);
 				}
 			);
@@ -74,13 +74,13 @@ function readResource(resourceid, callback) {
 	db.readObject(TABLE, ID, resourceid,
 		function (error, result) {
 			if (error) return callback(error);
-
+			
+			var resourceurl = result['resourceurl'];
 			var x = result['x'];
 			var y = result['y'];
 			var width = result['width'];
 			var height = result['height'];
-			var path = result['path'];
-			var resource = new Resource(resourceid, x, y, width, height, path);
+			var resource = new Resource(resourceid, resourceurl, x, y, width, height);
 			return callback(db.SUCCESS, resource);
 		}
 	);

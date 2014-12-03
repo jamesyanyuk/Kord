@@ -19,9 +19,9 @@ CREATE TABLE users (
 
 CREATE TABLE rooms (
 	roomid serial,
-	url varchar(50) UNIQUE,
+	roomurl varchar(50) UNIQUE,
 	roompass varchar(50),
-	chat json,
+	chat json[],
 
 	PRIMARY KEY (roomid)
 );
@@ -42,7 +42,6 @@ CREATE TABLE rooms_moderators (
 
 CREATE TABLE boards (
 	boardid serial,
-	canvas json,
 
 	PRIMARY KEY (boardid)
 );
@@ -55,22 +54,36 @@ CREATE TABLE rooms_boards (
 );
 
 CREATE TABLE resources (
-	resourceid serial,
+	resourceid varchar(50) UNIQUE, -- concatenation of 'b'boardid'u'userid'r'elementid -> client generated, client keeps a list of available ids
+	resourceurl varchar(50),
 	x integer,
 	y integer,
 	width integer,
 	height integer,
-	path varchar(50),
-
+	
 	PRIMARY KEY (resourceid)
 );
 
 CREATE TABLE boards_resources (
 	boardid integer REFERENCES boards on DELETE CASCADE,
-	resourceid integer REFERENCES resources on DELETE CASCADE,
+	resourceid varchar(50) REFERENCES resources on DELETE CASCADE,
 
 	PRIMARY KEY (boardid, resourceid)
 );
+
+CREATE TABLE elements (
+	elementid varchar(50) UNIQUE, -- concatenation of 'b'boardid'u'userid'e'elementid -> client generated, client keeps a list of available ids
+	attr json,
+	
+	PRIMARY KEY (elementid)
+);
+
+CREATE TABLE boards_elements (
+	boardid integer REFERENCES boards ON DELETE CASCADE,
+	elementid varchar(50) REFERENCES elements ON DELETE CASCADE,
+	
+	PRIMARY KEY (boardid, elementid)
+);	
 
 INSERT INTO users VALUES
 	(-1, 'user1@place.com', 'pass1', 'user1', 0),

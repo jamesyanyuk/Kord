@@ -74,6 +74,9 @@ window.onload = function () {
 			if (mousedown) {
 				// selection = paper.setFinish();
 				// var json = JSON.stringify(path_string);
+				
+				
+				
 				socket.emit('draw',
 					{ boardid: boardid,
 					roomid: roomid,

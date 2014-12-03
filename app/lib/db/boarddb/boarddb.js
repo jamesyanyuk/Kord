@@ -1,8 +1,7 @@
 var db = require('../db');
-var canvasdb = require('../canvasdb');
 
-exports.create = function (boardid, canvas) {
-	return new Board(boardid, canvas);
+exports.create = function (boardid) {
+	return new Board(boardid);
 };
 
 exports.createBoard = createBoard;
@@ -14,9 +13,8 @@ exports.destroyBoard = destroyBoard;
 var TABLE = 'boards';
 var ID = 'boardid';
 
-function Board(boardid, canvas) {
+function Board(boardid) {
 	this.boardid = boardid;
-	this.canvas = canvas;
 }
 
 /*
@@ -24,11 +22,8 @@ function Board(boardid, canvas) {
  * */
 
 function createBoard(roomid, callback) {
-	var canvas = canvasdb.create();												// create a new canvas
-
 	var fields = [];															// create an empty array to store the query parameters
 	fields[fields.length] = db.nextID(TABLE, ID);								// get the next id
-	fields[fields.length] = canvas;												// use the canvas
 	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);
@@ -43,7 +38,7 @@ function createBoard(roomid, callback) {
 							}
 						);
 					}
-					var board = new Board(boardid, canvas);
+					var board = new Board(boardid);
 					return callback(db.SUCCESS, board);
 				}
 			);
@@ -69,8 +64,7 @@ function readBoard(boardid, callback) {
 		function (error, result) {
 			if (error) return callback(error);
 
-			var canvas = result['canvas'];
-			var board = new Board(boardid, canvas);
+			var board = new Board(boardid);
 			return callback(db.SUCCESS, board);
 		}
 	);
