@@ -11,7 +11,7 @@ socket.on('connect', function(data) {
 socket.on('users', function(data) {
     print_data('users', data);
 
-    document.title = 'Room ' + data.url;
+    document.title = 'Room ' + data.roomurl;
 
     for(var prop in data.online) {
         //$('#onlineusers').append($('<li id="on' + prop + '">').text(data.online[prop]));
@@ -30,8 +30,8 @@ socket.on('users', function(data) {
 
     $('#bcount').text(data.bcount).hide().fadeIn();
 
-    $('#urlHeader').text(data.url).hide().fadeIn();
-    $('#url').text(data.url).hide().fadeIn();
+    $('#urlHeader').text(data.roomurl).hide().fadeIn();
+    $('#url').text(data.roomurl).hide().fadeIn();
 });
 
 socket.on('newconnection', function(data) {

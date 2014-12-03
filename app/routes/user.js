@@ -6,7 +6,7 @@ var roomdb = require('../lib/db/roomdb');
 function genRID(cb) {
     var rid = Math.random().toString().substr(2, 8);
     // Check to see that RID doesn't already exist
-    roomdb.readRoom(rid, function(err, obj) {
+    roomdb.readRoomByUrl(rid, function(err, obj) {
         if(!obj || err)
             cb(rid);
         else

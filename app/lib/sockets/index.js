@@ -38,7 +38,7 @@ module.exports = function(io) {
                         members : room.members,
                         moderators : room.moderators,
                         bcount : room.boards.length,
-                        url : room.url
+                        roomurl : room.roomurl
                     });
                 });
 

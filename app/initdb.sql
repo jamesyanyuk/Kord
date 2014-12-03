@@ -21,7 +21,7 @@ CREATE TABLE rooms (
 	roomid serial,
 	roomurl varchar(50) UNIQUE,
 	roompass varchar(50),
-	chat json[],
+	chat json,
 
 	PRIMARY KEY (roomid)
 );
