@@ -19,7 +19,7 @@ module.exports = function(io) {
                 print_data('join_room', data);
 
                 roomdb.readMembersFor(data.roomid, function(err, res) {
-                    console.log('Members ----->>>> ' + res.length);
+                    if(!err) console.log('Members ----->>>> ' + res.length);
                 })
 
                 socket.join('r' + data.roomid);
