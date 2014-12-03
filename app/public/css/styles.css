@@ -218,7 +218,7 @@ h2 {
 }
 
 h1 {
-	font-size: 3.75rem;
+	font-size: 3.25rem;
 	line-height: 5rem;
 }
 
@@ -242,7 +242,7 @@ h4 {
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 28px;
 }
 
@@ -582,8 +582,8 @@ a.white-text:hover {
 }
 
 .header .overlay-layer {
-	padding-top: 80px;
-	padding-bottom: 175px;
+	padding-top: 70px;
+	padding-bottom: 140px;
 	height: auto;
 }
 
