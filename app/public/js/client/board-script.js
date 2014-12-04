@@ -183,10 +183,10 @@ socket.on('add',
     function(data) {
         // print_data('add', data['attrs']);
 
-        add_element(data['elementid'], paper.path(data['attrs']['path']));
-        for (var i in elements) {
-            console.log(i + ': ' + elements[i]);
-        }
+        // add_element(data['elementid'], paper.path(data['attrs']['path']));
+        // for (var i in elements) {
+        //     console.log(i + ': ' + elements[i]);
+        // }
     }
 );
 
@@ -225,14 +225,14 @@ function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
     
-    if (attrs['type'] === 'path') {
-		path = paper.path(attrs['path']).attr(
-            { 'stroke-width': attrs['stroke-width'],
-             'stroke': attrs['stroke'] }
-        );
-        interactable(data[i]['elementid'], path);
-        // need to reattach listeners when loading elements
-	}
+    // if (attrs['type'] === 'path') {
+	// 	path = paper.path(attrs['path']).attr(
+    //         { 'stroke-width': attrs['stroke-width'],
+    //          'stroke': attrs['stroke'] }
+    //     );
+    //     interactable(data[i]['elementid'], path);
+    //     // need to reattach listeners when loading elements
+	// }
 }
 
 function interactable(elementid, element) {
