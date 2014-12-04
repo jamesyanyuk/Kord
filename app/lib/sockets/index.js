@@ -152,6 +152,8 @@ module.exports = function(io) {
                     data.elementid,
                     data.attrs, data.boardid,
                     function (error, result) {
+                        console.log(error);
+                        console.log(result);
                         // if (error) return callback(error);
                     }
                 );
