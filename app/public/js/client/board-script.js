@@ -7,6 +7,7 @@ var path;
 var path_string;
 var cursors = {};
 var selection;
+var counter;
 
 ////
 // client
@@ -25,8 +26,9 @@ socket.on('connect',
 $(canvas).mousedown(
     function(event) {
         mousedown = true;
-        var x = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
-        var y = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
+        counter = 0;
+        var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+        var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
 
         // paper.setStart();
 
@@ -34,42 +36,33 @@ $(canvas).mousedown(
         path = paper.path(path_string).attr(
             { 'stroke-width' : 5 }
         );
-
-        paper.forEach(
-            function(element) {
-                //console.log(element);
-            }
-        );
+        px = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+        py = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
     }
 );
 
 $(document).mousemove(
     function(event) {
-        if (mousedown) {
-            var x = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
-            var y = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
-            path_string = path_string.concat('l' + (x - px) + ' ' + (y - py));
-            path.attr('path', path_string);
-            // paper.
+        if (!(counter % 10)) {
+            if (mousedown) {
+                var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+                var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+                path_string = path_string.concat('l' + (x - px) + ' ' + (y - py));
+                path.attr('path', path_string);
+                px = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+                py = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+            }
+            socket.emit('mousemove',
+                { userid : userid,
+                roomid : roomid,
+                boardid : boardid,
+                cx : (!event.offsetX) ? event.originalEvent.layerX : event.offsetX,
+                cy : (!event.offsetY) ? event.originalEvent.layerY : event.offsetY }
+            );
         }
-
-        console.log('test ' + Math.random().toString().substr(2, 5));
-        //console.log((event.pageX - $(canvas).offset().left) + ', ' + (event.pageY - $(canvas).offset().top));
-
-        px = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
-        py = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
+        counter++;
     }
 );
-function emit() {
-    socket.emit('mousemove',
-        { userid : userid,
-        roomid : roomid,
-        boardid : boardid,
-        cx : px,
-        cy : py }
-    );
-}
-setInterval(emit, 20);
 $(document).mouseup(
     function(event) {
         if (mousedown) {
@@ -90,6 +83,16 @@ $(document).mouseup(
         mousedown = false;
     }
 );
+// function emit() {
+//     socket.emit('mousemove',
+//         { userid : userid,
+//         roomid : roomid,
+//         boardid : boardid,
+//         cx : px,
+//         cy : py }
+//     );
+// }
+// setInterval(emit, 20);
 
 
 ////
