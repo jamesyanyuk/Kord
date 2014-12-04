@@ -88,15 +88,10 @@ $(canvas).mousemove(
             if (ctrldown || mousedown) {
                 var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
-<<<<<<< HEAD
-                path_string.push('l' + (x - bufferx) + ' ' + (y - buffery));
-                path.attr('path', path_string);
 
-=======
-                // path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
+                path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
                 path.attr('path', path.attr('path') + 'l' + (x - bufferx) + ' ' + (y - buffery));
 
->>>>>>> 5a952fcda847451ed416771901003161e199c487
                 bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
             }
