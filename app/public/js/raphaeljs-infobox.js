@@ -16,11 +16,11 @@
     var container_id = this.container.node.parentNode.parentNode.id;
     container_id = container_id || this.container.node.parentNode.parentNode.parentNode.id;
     this.raph_container = jQuery('#' + container_id);
-    
+
     if (!this.show_border) { this.container.hide(); }
-    
+
     this.div = jQuery('<div style="position: absolute; overflow: auto; width: 0; height: 0;"></div>').insertAfter(this.raph_container);
-    jQuery(document).bind('ready', this, function(event) { event.data.update(); });
+    this.update();
     jQuery(window).bind('resize', this, function(event) { event.data.update(); });
   }
 
@@ -33,7 +33,7 @@
       'width': (this.width - (this.rounding*2) + 'px')
     });
   }
-  
+
   // Note that the fadein/outs for the content div are at double speed. With frequent animations, it gives the best behavior
   Infobox.prototype.show = function() {
     this.container.animate({opacity: 1}, 400, ">");

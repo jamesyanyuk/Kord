@@ -22,6 +22,8 @@ var selection;
 var selectionx;
 var selectiony;
 
+var mode;
+
 var path;
 var path_string;
 var stroke_width = 5;
@@ -31,22 +33,18 @@ var text = undefined;
 var string = '';
 
 var elements = {};
+var resources = {};
+
 var freeids = {};
 var idcounter = 0; // how to retrieve id counter when reloading board
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 
+var infobox;
+
 ////
 // drawing
 ////
-
-$(document).ready(
-    function() {
-        console.log('Loading video on ready');
-        var infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
-        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
-    }
-);
 
 $(canvas).mousedown(
     function(event) {
@@ -134,7 +132,10 @@ $(document).keyup(
 $('#addvideo').click(
     function(event) {
         event.preventDefault();
-        console.log('Adding video...');
+        mode = 'res_video';
+
+        infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
+        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
     }
 )
 
