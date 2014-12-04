@@ -56,6 +56,8 @@ socket.on('elements',
                     { 'stroke-width': attrs['stroke-width'],
                      'stroke': attrs['stroke'] }
                 );
+                
+                // need to reattach listeners when loading elements
 			}
             idcounter++;
             // need to find max id
