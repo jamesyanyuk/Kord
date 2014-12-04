@@ -6,6 +6,11 @@ var mousedown = false;
 var path;
 var path_string;
 var cursors = {};
+
+var stroke_width = 5;
+var stroke_color = Raphael.getColor();
+
+
 var selection;
 var counter;
 
@@ -36,7 +41,10 @@ socket.on('elements',
 		for (var i in data) {
 			var attrs = data[i]['attrs'];
 			if (attrs['type'] === 'path') {
-				paper.path(attrs['path']);
+				paper.path(attrs['path']).attr(
+                    { 'stroke-width': attrs['stroke-width'],
+                     'stroke': attrs['stroke'] }
+                );
 			}
             idcounter++;
             // need to find max id
@@ -57,7 +65,8 @@ $(canvas).mousedown(
 
         path_string = 'M' + x + ' ' + y + 'l0 0';
         path = paper.path(path_string).attr(
-            { 'stroke-width' : 5 }
+            { 'stroke-width' : stroke_width,
+            'stroke' : stroke_color }
         );
         px = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
         py = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
@@ -96,7 +105,9 @@ $(document).mouseup(
 
             var attrs =
 				{ 'type': 'path',
-				'path' : path_string };
+				'path' : path_string,
+                'stroke-width': stroke_width,
+                'stroke': stroke_color };
             var elementid = elementidprefix + idcounter++;
 			socket.emit('draw',
 				{ roomid: roomid,
@@ -111,17 +122,6 @@ $(document).mouseup(
         mousedown = false;
     }
 );
-// function emit() {
-//     socket.emit('mousemove',
-//         { userid : userid,
-//         roomid : roomid,
-//         boardid : boardid,
-//         cx : px,
-//         cy : py }
-//     );
-// }
-// setInterval(emit, 20);
-
 
 ////
 // server
