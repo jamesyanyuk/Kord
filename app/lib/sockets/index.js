@@ -20,7 +20,7 @@ module.exports = function(io) {
 
                 roomdb.readMembersFor(data.roomid, function(err, res) {
                     if(!err) console.log('Members ----->>>> ' + res.length);
-                })
+                });
 
                 socket.join('r' + data.roomid);
                 // if the room doesn't exist

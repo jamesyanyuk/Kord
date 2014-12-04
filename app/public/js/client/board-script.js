@@ -51,6 +51,7 @@ $(document).ready(
 $(canvas).mousedown(
     function(event) {
         // selection = paper.getElementByPoint();
+        // console.log(selection);
         selectionx = previousx;
         selectiony = previousy;
         text = undefined;
@@ -137,6 +138,21 @@ $('#addvideo').click(
         console.log('Adding video...');
     }
 )
+$(canvas).mouseup(
+    function(event) {
+        console.log('mouse up');
+        if (selection) {
+            var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+            var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+            var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
+            selection.transform(transformstring);
+            console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
+            console.log('mouseup');
+            selection = undefined;
+            // socket.emit('drag', transformstring
+        }    
+    }
+);
 
 // key up - add element
 // server receives create message - creates in database
@@ -221,9 +237,9 @@ socket.on('add',
     }
 );
 
-socket.on('move',
+socket.on('transform',
     function(data) {
-
+        elements[data['elementid']].transform(data['transform']);
     }
 );
 
@@ -234,46 +250,37 @@ socket.on('remove',
     }
 );
 
-socket.on('hover',
-    function(data) {
-
-    }
-);
-
-socket.on('double click',
-    function(data) {
-
-    }
-);
-
-socket.on('transform',
-    function(data) {
-
-    }
-);
+// socket.on('hover',
+//     function(data) {
+// 
+//     }
+// );
+// 
+// socket.on('double click',
+//     function(data) {
+// 
+//     }
+// );
+// 
+// socket.on('transform',
+//     function(data) {
+// 
+//     }
+// );
 
 function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
-
-    // if (attrs['type'] === 'path') {
-	// 	path = paper.path(attrs['path']).attr(
-    //         { 'stroke-width': attrs['stroke-width'],
-    //          'stroke': attrs['stroke'] }
-    //     );
-    //     interactable(data[i]['elementid'], path);
-    //     // need to reattach listeners when loading elements
-	// }
 }
-
 function interactable(elementid, element) {
     return selectable(elementid, destroyable(elementid, element));
 }
-
 function selectable(elementid, element) {
     element.mousedown(
         function (event) {
             selection = element;
+            selectionx = previousx;
+            selectiony = previousy;
             console.log('select');
         }
     );
