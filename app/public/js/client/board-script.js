@@ -76,7 +76,7 @@ $(canvas).mousemove(
             if (ctrldown || mousedown) {
                 var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
-                path_string = path_string.concat('l' + (x - bufferx) + ' ' + (y - buffery));
+                path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
                 path.attr('path', path_string);
                 
                 bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
@@ -198,6 +198,7 @@ socket.on('move',
 
 socket.on('remove',
     function(data) {
+        console.log(data['elementid']);
         elements[data['elementid']].remove();
     }
 );
@@ -223,6 +224,15 @@ socket.on('transform',
 function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
+    
+    if (attrs['type'] === 'path') {
+		path = paper.path(attrs['path']).attr(
+            { 'stroke-width': attrs['stroke-width'],
+             'stroke': attrs['stroke'] }
+        );
+        interactable(data[i]['elementid'], path);
+        // need to reattach listeners when loading elements
+	}
 }
 
 function interactable(elementid, element) {
