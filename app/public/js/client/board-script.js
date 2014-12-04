@@ -104,12 +104,7 @@ $(document).keyup(
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
             var elementid = generate_element_id();
-            
             add_element(elementid, path);
-            // interactable(elementid, path);
-            // elements[elementid] = path;
-            // selectable(elementid, path);
-            // destroyable(elementid, path);
             
 			socket.emit('create',
 				{ roomid: roomid,
@@ -122,6 +117,11 @@ $(document).keyup(
         ctrldown = false;
     }
 );
+
+// key up - add element
+// server receives create message - creates in database
+// emits to other clients add message
+// clients receive add message
 
 ////
 // socket
@@ -149,7 +149,7 @@ socket.on('elements',
                     { 'stroke-width': attrs['stroke-width'],
                      'stroke': attrs['stroke'] }
                 );
-                interactable(data[i]['elementid'], path);
+                add_element(data[i]['elementid'], path);
                 // need to reattach listeners when loading elements
 			}
             idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
@@ -181,8 +181,20 @@ socket.on('cursorupdate',
 
 socket.on('add',
     function(data) {
-        // print_data('add', data['attrs']);
-
+        print_data('add', data['attrs']);
+        
+        var attrs = data['attrs'];
+		if (attrs['type'] === 'path') {
+			path = paper.path(attrs['path']).attr(
+                { 'stroke-width': attrs['stroke-width'],
+                 'stroke': attrs['stroke'] }
+            );
+            add_element(data['elementid'], path);
+            // need to reattach listeners when loading elements
+		}
+            
+        
+        // path = paper.path
         // add_element(data['elementid'], paper.path(data['attrs']['path']));
         // for (var i in elements) {
         //     console.log(i + ': ' + elements[i]);
