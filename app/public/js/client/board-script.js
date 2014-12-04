@@ -25,8 +25,8 @@ socket.on('connect',
 $(canvas).mousedown(
     function(event) {
         mousedown = true;
-        var x = event.pageX - $(canvas).offset().left;
-        var y = event.pageY - $(canvas).offset().top;
+        var x = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
+        var y = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
 
         // paper.setStart();
 
@@ -43,15 +43,11 @@ $(canvas).mousedown(
     }
 );
 
-function concat(stuff) {
-    path_string += stuff;
-}
-
 $(document).mousemove(
     function(event) {
         if (mousedown) {
-            var x = event.pageX - $(canvas).offset().left;
-            var y = event.pageY - $(canvas).offset().top;
+            var x = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
+            var y = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
             path_string = path_string.concat('l' + (x - px) + ' ' + (y - py));
             path.attr('path', path_string);
             // paper.
@@ -60,8 +56,8 @@ $(document).mousemove(
         console.log('test ' + Math.random().toString().substr(2, 5));
         //console.log((event.pageX - $(canvas).offset().left) + ', ' + (event.pageY - $(canvas).offset().top));
 
-        px = event.pageX - $(canvas).offset().left;
-        py = event.pageY - $(canvas).offset().top;
+        px = (event.offsetX === undefined) ? event.originalEvent.layerX : event.offsetX;
+        py = (event.offsetY === undefined) ? event.originalEvent.layerY : event.offsetY;
     }
 );
 function emit() {
