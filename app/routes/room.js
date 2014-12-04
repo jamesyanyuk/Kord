@@ -14,7 +14,7 @@ router.get('/:rurl', function(req, res) {
         if(err) return res.redirect('/r/404');
 
         if(req.isAuthenticated()) {
-            if(!rooms[roomidResult.roomid][req.user.userid]) {
+            // if(!rooms[roomidResult.roomid][req.user.userid]) {
                 boarddb.readBoardsFor(roomidResult.roomid, function(err, boardres) {
                     res.render('room', {
                         nickname: req.user.nickname,
@@ -25,9 +25,9 @@ router.get('/:rurl', function(req, res) {
                         message: 'Welcome'
                     });
                 });
-            } else {
-                res.send('You\'re already connected to this room!');
-            }
+            // } else {
+            //     res.send('You\'re already connected to this room!');
+            // }
         } else {
             // Should clean this up
             userdb.createUser('Guest' + Math.random().toString().substr(2, 4) + '@' + Math.random().toString().substr(2, 12),

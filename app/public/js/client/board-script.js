@@ -40,6 +40,39 @@ var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 // drawing
 ////
 
+
+////
+// socket
+////
+
+socket.on('connect',
+    function(data) {
+        print_data('connect', data);
+        socket.emit('join_board', {
+            boardid: boardid,
+            userid: userid
+        });
+    }
+);
+
+socket.on('elements',
+	function(data) {
+        print_data('elements', data);
+		
+		for (var i in data) {
+			var attrs = data[i]['attrs'];
+			if (attrs['type'] === 'path') {
+				paper.path(attrs['path']).attr(
+                    { 'stroke-width': attrs['stroke-width'],
+                     'stroke': attrs['stroke'] }
+                );
+                // need to reattach listeners when loading elements
+			}
+            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
+		}
+	}
+);
+
 $(canvas).mousedown(
     function(event) {
         // selection = paper.getElementByPoint();
@@ -119,38 +152,6 @@ $(document).keyup(
     }
 );
 
-////
-// socket
-////
-
-socket.on('connect',
-    function(data) {
-        print_data('connect', data);
-        socket.emit('join_board', {
-            boardid: boardid,
-            userid: userid
-        });
-    }
-);
-
-socket.on('elements',
-	function(data) {
-		print_data('elements', data);
-		
-		for (var i in data) {
-			var attrs = data[i]['attrs'];
-			if (attrs['type'] === 'path') {
-				paper.path(attrs['path']).attr(
-                    { 'stroke-width': attrs['stroke-width'],
-                     'stroke': attrs['stroke'] }
-                );
-                // need to reattach listeners when loading elements
-			}
-            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
-		}
-	}
-);
-
 socket.on('cursorupdate',
     function(data) {
         // print_data('cursorupdate', data);
@@ -221,7 +222,8 @@ function selectable(element) {
 }
 
 function generate_element_id() {
-    return elementidprefix + ++idcounter;
+    idcounter++;
+    return elementidprefix + idcounter;
 }
 
 function print_data(message, data) {

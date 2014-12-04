@@ -51,41 +51,6 @@ module.exports = function(io) {
             }
         );
 
-        // socket.on('request_memberlist', function(data) {
-        //     if (rooms[data.roomid + ''] === undefined) {
-        //         rooms[data.roomid + ''] = {};
-        //         rooms[data.roomid + '']['online'] = {};
-        //         rooms[data.roomid + '']['locked'] = {};
-        //     }
-        //     // rooms[data.roomid + '']['online'][data.userid + ''] = data;
-        //
-        //     for (var prop in data) {
-        //         console.log('request: ' + prop + ': ' + data[prop]);
-        //     }
-        //
-        //     socket.emit('receive_memberlist', rooms[data.roomid + '']['online']);
-        // });
-
-        // socket.on('adduser', function(data) {
-        //     // Join client to specified roomid channel
-        //     socket.join('' + data.roomid);
-        //     var usrid = data.userid;
-        //     rooms[data.roomid + '']['online'][usrid + ''] = data.nickname;
-        //     idmap[socket.id] = [data.roomid + '', data.userid + ''];
-        //     io.to('r' + data.roomid).emit('newconnection', {
-        //         nickname: data.nickname,
-        //         userid: data.userid
-        //     });
-        //     for (var prop in rooms[data.roomid + '']['online']) {
-        //         // for (var prop2 in data) {
-        //         //     console.log('add user: ' + prop2 + ': ' + data[prop2]);
-        //         // }
-        //         console.log(prop + ': ' + rooms[data.roomid + '']['online'][prop]);
-        //         // console.log('.');
-        //         // console.log('add user: ' + rooms[data.roomid + '']['online']['user']);
-        //     }
-        // });
-
         socket.on('disconnect', function(data) {
             print_data('disconnect', data);
             if (!idmap[socket.id]) return;
@@ -184,7 +149,7 @@ module.exports = function(io) {
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
                 // var elementid = 'b' + data.boardid + 'u' + data.userid + 'e' +
                 //     data.eleme;
-                /*
+                
                 elementdb.createElement(
                     data.elementid,
                     data.attrs, data.boardid,
@@ -199,7 +164,7 @@ module.exports = function(io) {
                         // );
                     }
                 );
-            */
+            
             }
         );
 
