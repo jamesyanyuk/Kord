@@ -82,7 +82,7 @@ $(document).keydown(
         }
     }
 );
-$(canvas).mousemove(
+$(document).mousemove(
     function(event) {
         if (!(buffercounter % 1)) {
             if (ctrldown || mousedown) {
@@ -204,11 +204,11 @@ socket.on('add',
 
         var attrs = data['attrs'];
 		if (attrs['type'] === 'path') {
-			path = paper.path(attrs['path']).attr(
+			var foreignpath = paper.path(attrs['path']).attr(
                 { 'stroke-width': attrs['stroke-width'],
                  'stroke': attrs['stroke'] }
             );
-            add_element(data['elementid'], path);
+            add_element(data['elementid'], foreignpath);
             // need to reattach listeners when loading elements
 		}
 
