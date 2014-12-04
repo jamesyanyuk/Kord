@@ -3,6 +3,11 @@ var paper = new Raphael(canvas, 800, 800);
 
 var cursors = {};
 
+// store elements created in an array, indexed by elementid
+// send that id and actual object to all classes
+// store array
+// when updating, send id, so receiving client can pull the actual object from map, and update
+
 var mousedown = false;
 var ctrldown = false;
 
@@ -27,45 +32,9 @@ var string = '';
 
 var elements = {};
 var freeids = {};
-var idcounter = 0;
+var idcounter = 0; // how to retrieve id counter when reloading board
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
-
-////
-// client
-////
-
-socket.on('connect',
-    function(data) {
-        print_data('connect', data);
-        socket.emit('join_board', {
-            boardid: boardid,
-            userid: userid
-        });
-    }
-);
-
-socket.on('elements',
-	function(data) {
-		print_data('elements', data);
-		
-		for (var i in data) {
-			var attrs = data[i]['attrs'];
-			if (attrs['type'] === 'path') {
-				paper.path(attrs['path']).attr(
-                    { 'stroke-width': attrs['stroke-width'],
-                     'stroke': attrs['stroke'] }
-                );
-                
-                // need to reattach listeners when loading elements
-			}
-            idcounter++;
-            // need to find max id
-            // need to find any id holes
-		}
-        idcounter++;
-	}
-);
 
 ////
 // drawing
@@ -134,7 +103,7 @@ $(document).keyup(
 				'path' : path_string,
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
-            var elementid = elementidprefix + idcounter++;
+            var elementid = generate_element_id();
 			socket.emit('draw',
 				{ roomid: roomid,
 				boardid: boardid,
@@ -148,8 +117,36 @@ $(document).keyup(
 );
 
 ////
-// server
+// socket
 ////
+
+socket.on('connect',
+    function(data) {
+        print_data('connect', data);
+        socket.emit('join_board', {
+            boardid: boardid,
+            userid: userid
+        });
+    }
+);
+
+socket.on('elements',
+	function(data) {
+		print_data('elements', data);
+		
+		for (var i in data) {
+			var attrs = data[i]['attrs'];
+			if (attrs['type'] === 'path') {
+				paper.path(attrs['path']).attr(
+                    { 'stroke-width': attrs['stroke-width'],
+                     'stroke': attrs['stroke'] }
+                );
+                // need to reattach listeners when loading elements
+			}
+            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
+		}
+	}
+);
 
 socket.on('cursorupdate',
     function(data) {
@@ -218,6 +215,10 @@ function selectable(element) {
             console.log('select');
         }
     );
+}
+
+function generate_element_id() {
+    return elementidprefix + ++idcounter;
 }
 
 function print_data(message, data) {
