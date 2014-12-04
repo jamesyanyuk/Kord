@@ -32,9 +32,17 @@ $(canvas).mousedown(
         // paper.setStart();
 
         path_string = 'M' + x + ' ' + y + 'l0 0';
-        path = paper.path(path_string).attr(
-            { 'stroke-width' : 5 }
-        );
+       
+      
+        path = paper.path(path_string).attr({
+            'stroke-width' : 5 
+        });
+
+        path.dblclick(function(){
+            this.remove();
+        });
+
+
         px = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
         py = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
     }
@@ -67,7 +75,6 @@ $(document).mouseup(
         if (mousedown) {
             // selection = paper.setFinish();
             // var json = JSON.stringify(path_string);
-
             socket.emit('draw',
                 { boardid: boardid,
                 roomid: roomid,

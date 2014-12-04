@@ -60,6 +60,9 @@ $(document).keydown(
                 { 'stroke-width' : stroke_width,
                 'stroke' : stroke_color }
             );
+            path.dblclick(function(){
+                this.remove();
+            });
             selectable(path);
             bufferedx = previousx;
             bufferedy = previousy;

@@ -184,6 +184,7 @@ module.exports = function(io) {
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
                 // var elementid = 'b' + data.boardid + 'u' + data.userid + 'e' +
                 //     data.eleme;
+                /*
                 elementdb.createElement(
                     data.elementid,
                     data.attrs, data.boardid,
@@ -198,6 +199,7 @@ module.exports = function(io) {
                         // );
                     }
                 );
+            */
             }
         );
 
