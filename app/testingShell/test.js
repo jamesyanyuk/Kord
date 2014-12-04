@@ -15,6 +15,8 @@
 //Db testing
 var db = require("../lib/db/db.js");
 var Mocha = require('mocha'),
+var assert = require("assert");
+
     fs = require('fs'),
     path = require('path');
 
@@ -31,21 +33,33 @@ fs.readdirSync('../lib').filter(function(file){
 });
 
 
-describe('')
+describe('createUser', function()){
+	if('should create user correctly', function(){
+		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
+	}
+}
+describe('createUser2', function()){
+	if('should create user correctly', function(){
+		assert(db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1, function (error, user)))
+	}
+}
+describe('readUser', function()){
+	if('should find a user correctly', function(){
+		assert(db.readUser('joe@placebetter', 'userpass', 1, function (error, user)))
+	}
+}
+describe('updateUser', function()){
+	if('should change a password correctly', function(){
+		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
+	}
+}
+describe('createUser', function()){
+	if('should create user correctly', function(){
+		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
+	}
+}
 
 
-// db.createUser('joe@placebetter', 'userpass', 1,
-// 	function (error, user) {
-// 		console.log('create user:');
-// 		printresult(error, user);
-// 	}
-// );
-
-// db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
-// 	function (error, user) {
-// 		console.log('create user:');
-// 		printresult(error, user);
-// 	}
 // );
 
 // db.readUser(1,
