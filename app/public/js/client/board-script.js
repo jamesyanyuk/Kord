@@ -64,7 +64,7 @@ $(canvas).mousedown(
     }
 );
 
-$(document).mousemove(
+$(canvas).mousemove(
     function(event) {
         if (!(counter % 10)) {
             if (mousedown) {
