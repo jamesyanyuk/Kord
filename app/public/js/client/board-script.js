@@ -40,6 +40,14 @@ var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 // drawing
 ////
 
+$(document).ready(
+    function() {
+        console.log('Loading video on ready');
+        var infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
+        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
+    }
+);
+
 $(canvas).mousedown(
     function(event) {
         // selection = paper.getElementByPoint();
@@ -55,11 +63,15 @@ $(document).keydown(
         if (!ctrldown && event.ctrlKey) {
             ctrldown = true;
             buffercounter = 0;
-            path_string = 'M' + previousx + ' ' + previousy + 'l0 0';
+            path_string = ['M' + previousx + ' ' + previousy + 'l0 0'];
             path = paper.path(path_string).attr(
                 { 'stroke-width' : stroke_width,
                 'stroke' : stroke_color }
             );
+
+            path.dblclick(function(){
+                this.remove();
+            });
             bufferx = previousx;
             buffery = previousy;
         }
@@ -72,13 +84,19 @@ $(document).keydown(
 );
 $(canvas).mousemove(
     function(event) {
-        if (!(buffercounter % 10)) {
+        if (!(buffercounter % 1)) {
             if (ctrldown || mousedown) {
                 var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
-                path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
+<<<<<<< HEAD
+                path_string.push('l' + (x - bufferx) + ' ' + (y - buffery));
                 path.attr('path', path_string);
-                
+
+=======
+                // path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
+                path.attr('path', path.attr('path') + 'l' + (x - bufferx) + ' ' + (y - buffery));
+
+>>>>>>> 5a952fcda847451ed416771901003161e199c487
                 bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
             }
@@ -104,8 +122,9 @@ $(document).keyup(
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
             var elementid = generate_element_id();
+
             add_element(elementid, path);
-            
+
 			socket.emit('create',
 				{ roomid: roomid,
 				boardid: boardid,
@@ -117,6 +136,12 @@ $(document).keyup(
         ctrldown = false;
     }
 );
+$('#addvideo').click(
+    function(event) {
+        event.preventDefault();
+        console.log('Adding video...');
+    }
+)
 
 // key up - add element
 // server receives create message - creates in database
@@ -140,9 +165,8 @@ socket.on('connect',
 socket.on('elements',
 	function(data) {
         print_data('elements', data);
-		
+
 		for (var i in data) {
-            print_data('e', data[i]);
 			var attrs = data[i]['attrs'];
 			if (attrs['type'] === 'path') {
 				path = paper.path(attrs['path']).attr(
@@ -181,8 +205,8 @@ socket.on('cursorupdate',
 
 socket.on('add',
     function(data) {
-        print_data('add', data['attrs']);
-        
+        // print_data('add', data['attrs']);
+
         var attrs = data['attrs'];
 		if (attrs['type'] === 'path') {
 			path = paper.path(attrs['path']).attr(
@@ -192,8 +216,8 @@ socket.on('add',
             add_element(data['elementid'], path);
             // need to reattach listeners when loading elements
 		}
-            
-        
+
+
         // path = paper.path
         // add_element(data['elementid'], paper.path(data['attrs']['path']));
         // for (var i in elements) {
@@ -236,7 +260,7 @@ socket.on('transform',
 function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
-    
+
     // if (attrs['type'] === 'path') {
 	// 	path = paper.path(attrs['path']).attr(
     //         { 'stroke-width': attrs['stroke-width'],
@@ -266,7 +290,7 @@ function destroyable(elementid, element) {
         function(event) {
             element.remove();
             delete elements[elementid];
-            socket.emit('destroy', 
+            socket.emit('destroy',
                 { roomid: roomid,
                 boardid: boardid,
                 userid: userid,
