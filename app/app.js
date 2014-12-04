@@ -70,7 +70,7 @@ passport.use('register', new LocalStrategy({
     },
     function(req, email, password, done) {
         // Check for proper email and password input
-        var RFC822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        var RFC822 = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/';
         if(email.search(RFC822) === -1 || password.length < 6 || password.length > 18)
             return done(undefined, false, req.flash('registermessage', 'Fix issues below.'));
 
