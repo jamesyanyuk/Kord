@@ -82,7 +82,7 @@ $(document).keydown(
         }
     }
 );
-$(canvas).mousemove(
+$(document).mousemove(
     function(event) {
         if (!(buffercounter % 1)) {
             if (ctrldown || mousedown) {
