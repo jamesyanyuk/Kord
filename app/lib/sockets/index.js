@@ -143,25 +143,16 @@ module.exports = function(io) {
             }
         );
 
-        socket.on('draw',
+        socket.on('create',
             function (data) {
-                print_data('draw', data);
+                print_data('create', data);
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
-                // var elementid = 'b' + data.boardid + 'u' + data.userid + 'e' +
-                //     data.eleme;
                 
                 elementdb.createElement(
                     data.elementid,
                     data.attrs, data.boardid,
                     function (error, result) {
-                        if (error) return callback(error);
-                
-                        // elementdb.readElement(elementid,
-                        //     function (error, result) {
-                        //         if (error) return callback(error);
-                        //         print_data('read element', result);
-                        //     }
-                        // );
+                        // if (error) return callback(error);
                     }
                 );
             
@@ -174,9 +165,16 @@ module.exports = function(io) {
             }
         );
 
-        socket.on('remove',
+        socket.on('destroy',
             function (data) {
-                // rooms[data.roomid]['locked']
+                print_data('destroy', data);
+                socket.broadcast.to('b' + data.boardid).emit('remove', data);
+                elementdb.destroyElement(data.elementid,
+                    function (error, result) {
+                        // if (error) return callback(error);
+                    }
+                );
+                // delete boards[data.boardid][elementid]
             }
         );
 

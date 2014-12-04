@@ -15,8 +15,8 @@ var previousx;
 var previousy;
 
 var buffercounter;
-var bufferedx;
-var bufferedy;
+var bufferx;
+var buffery;
 
 var selection;
 var selectionx;
@@ -40,39 +40,6 @@ var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 // drawing
 ////
 
-
-////
-// socket
-////
-
-socket.on('connect',
-    function(data) {
-        print_data('connect', data);
-        socket.emit('join_board', {
-            boardid: boardid,
-            userid: userid
-        });
-    }
-);
-
-socket.on('elements',
-	function(data) {
-        print_data('elements', data);
-		
-		for (var i in data) {
-			var attrs = data[i]['attrs'];
-			if (attrs['type'] === 'path') {
-				paper.path(attrs['path']).attr(
-                    { 'stroke-width': attrs['stroke-width'],
-                     'stroke': attrs['stroke'] }
-                );
-                // need to reattach listeners when loading elements
-			}
-            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
-		}
-	}
-);
-
 $(canvas).mousedown(
     function(event) {
         // selection = paper.getElementByPoint();
@@ -93,12 +60,8 @@ $(document).keydown(
                 { 'stroke-width' : stroke_width,
                 'stroke' : stroke_color }
             );
-            path.dblclick(function(){
-                this.remove();
-            });
-            selectable(path);
-            bufferedx = previousx;
-            bufferedy = previousy;
+            bufferx = previousx;
+            buffery = previousy;
         }
         else if (!event.ctrlKey) {
             string += String.fromCharCode(event.keyCode);
@@ -113,10 +76,11 @@ $(canvas).mousemove(
             if (ctrldown || mousedown) {
                 var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
-                path_string = path_string.concat('l' + (x - bufferedx) + ' ' + (y - bufferedy));
+                path_string = path_string.concat('l' + (x - bufferx) + ' ' + (y - buffery));
                 path.attr('path', path_string);
-                bufferedx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
-                bufferedy = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+                
+                bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+                buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
             }
             socket.emit('mousemove',
                 { userid : userid,
@@ -140,7 +104,14 @@ $(document).keyup(
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
             var elementid = generate_element_id();
-			socket.emit('draw',
+            
+            add_element(elementid, path);
+            // interactable(elementid, path);
+            // elements[elementid] = path;
+            // selectable(elementid, path);
+            // destroyable(elementid, path);
+            
+			socket.emit('create',
 				{ roomid: roomid,
 				boardid: boardid,
 				userid: userid,
@@ -150,6 +121,40 @@ $(document).keyup(
         }
         ctrldown = false;
     }
+);
+
+////
+// socket
+////
+
+socket.on('connect',
+    function(data) {
+        print_data('connect', data);
+        socket.emit('join_board', {
+            boardid: boardid,
+            userid: userid
+        });
+    }
+);
+
+socket.on('elements',
+	function(data) {
+        print_data('elements', data);
+		
+		for (var i in data) {
+            print_data('e', data[i]);
+			var attrs = data[i]['attrs'];
+			if (attrs['type'] === 'path') {
+				path = paper.path(attrs['path']).attr(
+                    { 'stroke-width': attrs['stroke-width'],
+                     'stroke': attrs['stroke'] }
+                );
+                interactable(data[i]['elementid'], path);
+                // need to reattach listeners when loading elements
+			}
+            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
+		}
+	}
 );
 
 socket.on('cursorupdate',
@@ -176,9 +181,12 @@ socket.on('cursorupdate',
 
 socket.on('add',
     function(data) {
-        print_data('add', data);
+        // print_data('add', data['attrs']);
 
-        paper.path(data.path);
+        add_element(data['elementid'], paper.path(data['attrs']['path']));
+        for (var i in elements) {
+            console.log(i + ': ' + elements[i]);
+        }
     }
 );
 
@@ -190,7 +198,7 @@ socket.on('move',
 
 socket.on('remove',
     function(data) {
-
+        elements[data['elementid']].remove();
     }
 );
 
@@ -212,13 +220,40 @@ socket.on('transform',
     }
 );
 
-function selectable(element) {
+function add_element(elementid, element) {
+    elements[elementid] = element;
+    interactable(elementid, element);
+}
+
+function interactable(elementid, element) {
+    return selectable(elementid, destroyable(elementid, element));
+}
+
+function selectable(elementid, element) {
     element.mousedown(
         function (event) {
             selection = element;
             console.log('select');
         }
     );
+    return element;
+}
+
+function destroyable(elementid, element) {
+    element.dblclick(
+        function(event) {
+            element.remove();
+            delete elements[elementid];
+            socket.emit('destroy', 
+                { roomid: roomid,
+                boardid: boardid,
+                userid: userid,
+                elementid: elementid }
+            );
+            console.log(elementid);
+        }
+    );
+    return element;
 }
 
 function generate_element_id() {
