@@ -9,6 +9,12 @@ var cursors = {};
 var selection;
 var counter;
 
+var elements = {};
+var freeids = {};
+var idcounter = 0;
+
+var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
+
 ////
 // client
 ////
@@ -21,6 +27,23 @@ socket.on('connect',
             userid: userid
         });
     }
+);
+
+socket.on('elements',
+	function(data) {
+		print_data('elements', data);
+		
+		for (var i in data) {
+			var attrs = data[i]['attrs'];
+			if (attrs['type'] === 'path') {
+				paper.path(attrs['path']);
+			}
+            idcounter++;
+            // need to find max id
+            // need to find any id holes
+		}
+        idcounter++;
+	}
 );
 
 $(canvas).mousedown(
@@ -68,15 +91,20 @@ $(document).mouseup(
         if (mousedown) {
             // selection = paper.setFinish();
             // var json = JSON.stringify(path_string);
+            
+            idcounter++;
 
-
-
-            socket.emit('draw',
-                { boardid: boardid,
-                roomid: roomid,
-                userid: userid,
-                path: path_string }
-            );
+            var attrs =
+				{ 'type': 'path',
+				'path' : path_string };
+            var elementid = elementidprefix + idcounter++;
+			socket.emit('draw',
+				{ roomid: roomid,
+				boardid: boardid,
+				userid: userid,
+                elementid: elementid,
+				attrs: attrs }
+			);
 
             // need to set stroke width and color and any other useful details with it
         }

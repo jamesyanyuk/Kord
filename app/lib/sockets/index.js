@@ -182,21 +182,22 @@ module.exports = function(io) {
             function (data) {
                 print_data('draw', data);
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
-                // var elementid = 'b' + data.boardid + 'u' + data.userid + Math.random();
-                // elementdb.createElement(
-                //     elementid,
-                //     data.attrs, data.boardid,
-                //     function (error, result) {
-                //         if (error) return callback(error);
-                //
-                //         elementdb.readElement(elementid,
-                //             function (error, result) {
-                //                 if (error) return callback(error);
-                //                 print_data('read element', result);
-                //             }
-                //         );
-                //     }
-                // );
+                // var elementid = 'b' + data.boardid + 'u' + data.userid + 'e' +
+                //     data.eleme;
+                elementdb.createElement(
+                    data.elementid,
+                    data.attrs, data.boardid,
+                    function (error, result) {
+                        if (error) return callback(error);
+                
+                        // elementdb.readElement(elementid,
+                        //     function (error, result) {
+                        //         if (error) return callback(error);
+                        //         print_data('read element', result);
+                        //     }
+                        // );
+                    }
+                );
             }
         );
 

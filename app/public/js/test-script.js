@@ -33,7 +33,7 @@ window.onload = function () {
 				}
 			}
 		}
-	)
+	);
 
 	$(canvas).mousedown(
 		function(event) {
