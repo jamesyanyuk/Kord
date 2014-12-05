@@ -41,6 +41,7 @@ describe('createUser', function()){
 describe('createUser2', function()){
 	if('should create user correctly', function(){
 		assert(db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readUser', function()){
@@ -51,11 +52,13 @@ describe('readUser', function()){
 describe('updateUser', function()){
 	if('should change a password correctly', function(){
 		assert(db.updateUser(user, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readModeratorsFor', function()){
 	if('should return an array of user objects', function(){
 		assert(db.readModeratorsFor(1, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readMembersFor', function()){
@@ -64,48 +67,32 @@ describe('readMembersFor', function()){
 	}
 }
 describe('destroyUser', function()){
-	if('should destory ', function(){
-		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
+	if('should destory a user', function(){
+		assert(db.destroyUser(3, function (error, user)))
+	}
+}
+describe('readRoom', function()){
+	if('should find', function(){
+		assert(db.readRoom(4, function (error, user)))
+	}
+}
+describe('readRoomsFor', function()){
+	if('should destory a user', function(){
+		assert(db.readRoomsFor(5, function (error, user)))
+	}
+}
+describe('readRoomsFor', function()){
+	if('should destory a user', function(){
+		assert(db.readRoomsFor(5, function (error, user)))
+	//needs to be complicated
 	}
 }
 
-
-// db.destroyUser(4,
-// 	function (error, user) {
-// 		console.log('destroy user:');
-// 		printresult(error, user);
-// 	}
-// );
-
-
-// var joe = db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1,
-// 	function (error, user) {
-// 		console.log('create user:');
-// 		printresult(error, user);
-
-// 		db.createRoom('http://' + Math.random(), 'bestpass' + Math.random(), user.userid,
-// 			function (error, room) {
-// 				console.log('create room:');
-// 				printresult(error, room);
-// 			}
-// 		);
-// 	}
-// );
-
-// db.readRoom(1,
-// 	function (error, room) {
-// 		console.log('read room:');
-// 		printresult(error, room);
-// 	}
-// );
-
-// db.readRoomsFor(7,
-// 	function (error, rooms) {
-// 		console.log('read rooms for:');
-// 		printresults(error, rooms);
-// 	}
-// );
-
+describe('authenticateUser', function()){
+	if('should correctly authenticateUser', function(){
+		assert(db.authenticateUser(6 , function (error, user)))
+	}
+}
 // db.authenticateUser('user1@place.com', 'pass1',
 // 	function (error, result) {
 // 		console.log('authenticate user:');
