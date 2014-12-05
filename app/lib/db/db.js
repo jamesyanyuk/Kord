@@ -321,6 +321,7 @@ function authenticate(table, id, idcolumn, idfield, passcolumn, passfield, callb
 function query(database, done, querystring, callback) {
 	database.query(querystring,													// query the database
 		function (error, result) {
+			console.log(querystring);
 			done();																// signal that the query is done
 			if (error) return callback(error);									// if there was an error, return it
 			return callback(SUCCESS, result.rows);								// return the result

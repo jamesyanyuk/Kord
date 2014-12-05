@@ -74,7 +74,7 @@ function readResource(resourceid, callback) {
 	db.readObject(TABLE, ID, resourceid,
 		function (error, result) {
 			if (error) return callback(error);
-			
+
 			var resourceurl = result['resourceurl'];
 			var x = result['x'];
 			var y = result['y'];
@@ -87,7 +87,7 @@ function readResource(resourceid, callback) {
 }
 
 function readResourcesFor(boardid, callback) {
-	db.readObjectsFor(readResource, 'boards_resources', ID, 'boardid', boardid,
+	db.readObjectsFor('boards_resources', ID, 'boardid', boardid, readResource,
 		function (error, result) {
 			if (error) return callback(error);
 			return callback(db.SUCCESS, result);

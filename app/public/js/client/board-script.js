@@ -115,11 +115,11 @@ $(document).keyup(
 				'path' : path_string,
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
-            var elementid = generate_element_id();
+            var elementid = generate_object_id(elementidprefix);
 
             add_element(elementid, path);
 
-			socket.emit('create',
+			socket.emit('create_element',
 				{ roomid: roomid,
 				boardid: boardid,
 				userid: userid,
@@ -163,14 +163,25 @@ $(canvas).mouseup(
             console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
             console.log('mouseup');
 
-            socket.emit('drag',
-                { roomid: roomid,
-                boardid: boardid,
-                userid: userid,
-                elementid: selection['elementid'],
-                transformstring: transformstring,
-                pathstring: selection['attrs']['path'] }
-            );
+            if(selection.elementid) {
+                socket.emit('drag_element',
+                    { roomid: roomid,
+                    boardid: boardid,
+                    userid: userid,
+                    elementid: selection['objectid'],
+                    transformstring: transformstring,
+                    pathstring: selection['attrs']['path'] }
+                );
+            } else {
+                socket.emit('drag_resource',
+                    { roomid: roomid,
+                    boardid: boardid,
+                    userid: userid,
+                    resourceid: selection['objectid'],
+                    transformstring: transformstring,
+                    pathstring: selection['attrs']['path'] }
+                );
+            }
             selection = undefined;
             // socket.emit('drag', transformstring
         }
@@ -178,9 +189,15 @@ $(canvas).mouseup(
     }
 );
 
-socket.on('transform',
+socket.on('transform_element',
     function(data) {
         elements[data['elementid']].transform(data['transformstring']);
+    }
+);
+
+socket.on('transform_resource',
+    function(data) {
+        resources[data['resourceid']].transform(data['transformstring']);
     }
 );
 
@@ -222,6 +239,27 @@ socket.on('elements',
 	}
 );
 
+socket.on('resources',
+    function(data) {
+        print_data('resources', data);
+
+        for (var i in data) {
+
+
+            var attrs = data[i]['attrs'];
+            if (attrs['type'] === 'path') {
+                path = paper.path(attrs['path']).attr(
+                    { 'stroke-width': attrs['stroke-width'],
+                     'stroke': attrs['stroke'] }
+                );
+                add_resource(data[i]['resourceid'], path);
+                // need to reattach listeners when loading elements
+            }
+            idcounter = Math.max(idcounter, data[i]['resourceid'].split('e')[1]);
+        }
+    }
+);
+
 socket.on('cursorupdate',
     function(data) {
         // print_data('cursorupdate', data);
@@ -244,7 +282,7 @@ socket.on('cursorupdate',
     }
 );
 
-socket.on('add',
+socket.on('add_element',
     function(data) {
         // print_data('add', data['attrs']);
 
@@ -267,11 +305,36 @@ socket.on('add',
     }
 );
 
+socket.on('add_resource',
+    function(data) {
+        // print_data('add', data['attrs']);
 
-socket.on('remove',
+        var foreignpath = paper.path(attrs['path']).attr(
+            { 'stroke-width': attrs['stroke-width'],
+             'stroke': attrs['stroke'] }
+        );
+        add_resource(data['resourceid'], foreignpath);
+
+        // path = paper.path
+        // add_element(data['elementid'], paper.path(data['attrs']['path']));
+        // for (var i in elements) {
+        //     console.log(i + ': ' + elements[i]);
+        // }
+    }
+);
+
+
+socket.on('remove_element',
     function(data) {
         console.log(data['elementid']);
         elements[data['elementid']].remove();
+    }
+);
+
+socket.on('remove_resource',
+    function(data) {
+        console.log(data['resourceid']);
+        elements[data['resourceid']].remove();
     }
 );
 
@@ -297,43 +360,56 @@ function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
 }
-function interactable(elementid, element) {
-    return selectable(elementid, destroyable(elementid, element));
+function add_resource(resourceid, resource) {
+    resources[resourceid] = resource;
+    interactable(resourceid, resource);
 }
-function selectable(elementid, element) {
-    element.mousedown(
+function interactable(objectid, element) {
+    return selectable(objectid, destroyable(objectid, element));
+}
+function selectable(objectid, object) {
+    object.mousedown(
         function (event) {
-            selection = element;
+            selection = object;
             selectionx = previousx;
             selectiony = previousy;
-            selection['elementid'] = elementid;
-            console.log('select');
-            console.log(elementid);
+            selection['objectid'] = objectid;
+            console.log('select ' + objectid);
         }
     );
-    return element;
+    return object;
 }
 
-function destroyable(elementid, element) {
-    element.dblclick(
+function destroyable(objectid, object, type) {
+    object.dblclick(
         function(event) {
-            element.remove();
-            delete elements[elementid];
-            socket.emit('destroy',
-                { roomid: roomid,
-                boardid: boardid,
-                userid: userid,
-                elementid: elementid }
-            );
-            console.log(elementid);
+            object.remove();
+            if(type === 'element') {
+                delete elements[objectid];
+                socket.emit('destroy_element',
+                    { roomid: roomid,
+                    boardid: boardid,
+                    userid: userid,
+                    objectid: objectid }
+                );
+            } else {
+                delete resources[objectid];
+                socket.emit('destroy_resource',
+                    { roomid: roomid,
+                    boardid: boardid,
+                    userid: userid,
+                    objectid: objectid }
+                );
+            }
+            console.log(objectid);
         }
     );
-    return element;
+    return object;
 }
 
-function generate_element_id() {
+function generate_object_id(idprefix) {
     idcounter++;
-    return elementidprefix + idcounter;
+    return idprefix + idcounter;
 }
 
 function print_data(message, data) {

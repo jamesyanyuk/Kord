@@ -1,6 +1,7 @@
 var userdb = require('../db/userdb');
 var roomdb = require('../db/roomdb');
 var elementdb = require('../db/elementdb');
+var resourcedb = require('../db/resourcedb');
 
 var rooms = require('../../app.js');
 var idmap = [];
@@ -31,8 +32,8 @@ module.exports = function(io) {
                 rooms[data.roomid][data.userid] = data.nickname;
                 idmap[socket.id] = [data.roomid, data.userid];
 
-                roomdb.readEntireRoom(data.roomid, function(err, room) {
-                    if(err) return console.log('Error 34');
+                roomdb.readEntireRoom(+data.roomid, function(err, room) {
+                    if(err) return console.log(err);
 
                     socket.emit('users', {
                         online : rooms[data.roomid],
@@ -109,14 +110,21 @@ module.exports = function(io) {
                 print_data('join_board', data);
 
                 socket.join('b' + data.boardid);
-                elementdb.readElementsFor(data.boardid,
-                    function (error, result) {
-                        if (error) return callback(error);
 
-                        var elements = result;
-                        socket.emit('elements', elements);
+                elementdb.readElementsFor(+data.boardid,
+                    function (error, result) {
+                        if (error) return console.log(error);
+                        socket.emit('elements', result);
                     }
                 );
+
+                resourcedb.readResourcesFor(+data.boardid,
+                    function (error, result) {
+                        if (error) return console.log(error);
+                        socket.emit('resources', result);
+                    }
+                );
+
                 // // if the room doesn't exist
                 // if (!boards[data.boardid]) {
                 //     boards[data.boardid] = {};
@@ -143,11 +151,11 @@ module.exports = function(io) {
             }
         );
 
-        socket.on('create',
+        socket.on('create_element',
             function (data) {
-                print_data('create', data);
-                socket.broadcast.to('b' + data.boardid).emit('add', data);
-                
+                print_data('create_element', data);
+                socket.broadcast.to('b' + data.boardid).emit('add_element', data);
+
                 elementdb.createElement(
                     data.elementid, data.attrs, data.boardid,
                     function (error, result) {
@@ -159,7 +167,23 @@ module.exports = function(io) {
             }
         );
 
-        socket.on('drag',
+        socket.on('create_resource',
+            function (data) {
+                print_data('create_resource', data);
+                socket.broadcast.to('b' + data.boardid).emit('add_resource', data);
+
+                resourcedb.createResource(
+                    data.resourceid, data.attrs, data.boardid,
+                    function (error, result) {
+                        console.log(error);
+                        console.log(result);
+                        // if (error) return callback(error);
+                    }
+                );
+            }
+        );
+
+        socket.on('drag_element',
             function (data) {
                 // print_data('drag', data);
                 var element = elementdb.create(data.elementid, data.pathstring)
@@ -169,22 +193,51 @@ module.exports = function(io) {
                         console.log(error);
                         console.log(result);
                         // console.log(data.pathstring);
-                        socket.broadcast.to('b' + data.boardid).emit('transform', data);
+                        socket.broadcast.to('b' + data.boardid).emit('transform_element', data);
                     }
                 );
             }
         );
 
-        socket.on('destroy',
+        socket.on('drag_resource',
             function (data) {
-                print_data('destroy', data);
-                socket.broadcast.to('b' + data.boardid).emit('remove', data);
-                elementdb.destroyElement(data.elementid,
+                // print_data('drag', data);
+                var resource = resourcedb.create(data.resourceid, data.pathstring)
+                print_data('resource', resource);
+                resourcedb.updateResource(resource,
+                    function (error, result) {
+                        console.log(error);
+                        console.log(result);
+                        // console.log(data.pathstring);
+                        socket.broadcast.to('b' + data.boardid).emit('transform_resource', data);
+                    }
+                );
+            }
+        );
+
+        socket.on('destroy_element',
+            function (data) {
+                print_data('destroy_element', data);
+                socket.broadcast.to('b' + data.boardid).emit('remove_element', data);
+                elementdb.destroyElement(data.objectid,
                     function (error, result) {
                         // if (error) return callback(error);
                     }
                 );
-                // delete boards[data.boardid][elementid]
+                // delete boards[data.boardid][objectid]
+            }
+        );
+
+        socket.on('destroy_resource',
+            function (data) {
+                print_data('destroy_resource', data);
+                socket.broadcast.to('b' + data.boardid).emit('remove_resource', data);
+                resourcedb.destroyResource(data.objectid,
+                    function (error, result) {
+                        // if (error) return callback(error);
+                    }
+                );
+                // delete boards[data.boardid][objectid]
             }
         );
 

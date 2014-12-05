@@ -118,41 +118,41 @@
 
 <body>
 
-<div id="wrapper"> 
-  
+<div id="wrapper">
+
   <!-- Sidebar -->
-  <div id="sidebar-wrapper"> <a href="index.html" id="sidebar_logo"></a>
+  <div id="sidebar-wrapper"> <a href="/" id="sidebar_logo"></a>
     <ul class="sidebar-nav">
       <li><a href="" title = "draw"><span class="icon-software-pencil"></span></a></li>
-      <li><a href="" title = "video"><span class="icon-social-youtube-square"></span></a></li>
+      <li><a title = "video" id="addvideo"><span class="icon-social-youtube-square"></span></a></li>
       <li><a href="" title = "image"><span class="icon-basic-picture"></span></a></li>
       <li><a href="" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
       <li><a href="" title = "pdf"><span class="icon-easel transparent-text-dark"></span></a></li>
       <li><a href="" title = "text"><span class="icon-ecommerce-receipt transparent-text-dark"></span></a></li>
       <li class="footer"><a href="" title = "tools"><span class="icon-settings-streamline-1 transparent-text-dark"></span></a></li>
-      
+
      <!--<li><a href="#"><img src="images/draw.png">draw</a></li>
       <li> <a href="#"><img src="images/code.png">code</a> </li>
-      <li> <a href="#"><img src="images/video.png">video</a> </li> 
+      <li> <a href="#"><img src="images/video.png">video</a> </li>
       <li> <a href="#"><img src="images/image.png">image</a> </li>
       <li> <a href="#"><img src="images/pdf.png">pdf</a> </li>
       <li> <a href="#"><img src="images/text.png">text</a> </li>
       <li> <a href="#"><img src="images/tools.png">tools</a> </li>-->
-      
-      
+
+
     </ul>
   </div>
-  <!-- /#sidebar-wrapper --> 
-  
+  <!-- /#sidebar-wrapper -->
+
   <!-- Page Content -->
   <div id="page-content-wrapper">
-  
+
   <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-        
+
         <div id="canvas"></div>
-        
+
         <h1>Room <span id="urlHeader"></span></h1>
 <p><%= message %></p>
 <hr>
@@ -173,14 +173,14 @@
 
 <button id="addvideo">Add Video</button>
 <p><a href="/logout">Logout</a></p>
-<script src="/socket.io/socket.io.js"></script> 
+<script src="/socket.io/socket.io.js"></script>
 <script>
         var socket = io.connect('http://' + window.location.host);
         var roomid = '<%= roomid %>';
         var nickname = '<%= nickname %>';
         var boardid = '<%= boardid %>';
         var userid = '<%= userid %>';
-        </script> 
+        </script>
 <script src="../js/client.js"></script>
 
 
@@ -200,83 +200,83 @@
           <div class="col-md-4 col-xs-4" style="text-align: right;"> <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a> </div>
         </div>
         <div class="panel-body msg_container_base">
-        <div id="conversation"></div>  
+        <div id="conversation"></div>
         </div>
         <div class="panel-footer">
-        
+
           <!--<div class="input-group">
             <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Message" />
             <span class="input-group-btn">
             <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
-            </span> 
+            </span>
             </div>-->
-            
+
             <!--original chat-->
 <div class="input group">
   <input id="data" placeholder="Message"/>
   <input type="button" id="datasend" value="send" />
 </div>
 <!--original chat-->
-            
-            
+
+
         </div>
       </div>
     </div>
   </div>
-  <!--/chat--> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- /#page-content-wrapper --> 
-  
+  <!--/chat-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- /#page-content-wrapper -->
+
 </div>
-<!-- /#wrapper --> 
+<!-- /#wrapper -->
 
-<!-- jQuery --> 
-<script src="js/jquery.js"></script> 
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript --> 
-<script src="js/bootstrap.min.js"></script> 
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-<!-- Menu Toggle Script --> 
+<!-- Menu Toggle Script -->
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-    </script> 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
+    </script>
 
-<!--chat script--> 
+
+
+
+
+
+
+
+
+
+
+
+<!--chat script-->
 <script>
 	$(document).on('click', '.panel-heading span.icon_minim', function (e) {
     var $this = $(this);
@@ -311,7 +311,7 @@ $(document).on('click', '.icon_close', function (e) {
 });
 
 
-	</script> 
+	</script>
 <!--/chat-->
 
 
