@@ -45,12 +45,12 @@ describe('createUser2', function()){
 }
 describe('readUser', function()){
 	if('should find a user correctly', function(){
-		assert(db.readUser('joe@placebetter', 'userpass', 1, function (error, user)))
+		assert(db.readUser(1, function (error, user)))
 	}
 }
 describe('updateUser', function()){
 	if('should change a password correctly', function(){
-		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
+		assert(db.updateUser(user, function (error, user)))
 	}
 }
 describe('createUser', function()){
