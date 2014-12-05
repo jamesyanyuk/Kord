@@ -151,8 +151,8 @@ $(canvas).mouseup(
             var resourceurl = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
 
             var newResource = new Infobox(paper, {
-                x: currentx - (width/2),
-                y: currenty - (height/2),
+                x: currentx,
+                y: currenty,
                 width: width,
                 height: height
             });
@@ -281,8 +281,8 @@ socket.on('resources',
             print_data('data', data[i]);
 
             var newResource = new Infobox(paper, {
-                x: data[i].x - (data[i].width/2),
-                y: data[i].y - (data[i].height/2),
+                x: data[i].x,
+                y: data[i].y,
                 width: data[i].width,
                 height: data[i].height
             });

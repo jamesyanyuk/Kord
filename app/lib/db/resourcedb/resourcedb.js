@@ -18,8 +18,8 @@ function Resource(resourceid, resourceurl, x, y, width, height) {
 	this.resourceurl = resourceurl;
 	this.x = x;
 	this.y = y;
-	this.width = width || 100;
-	this.height = height || 100;
+	this.width = width;
+	this.height = height;
 }
 
 /*
@@ -32,8 +32,8 @@ function createResource(resourceid, resourceurl, x, y, width, height, boardid, c
 	fields[fields.length] = resourceurl;
 	fields[fields.length] = x;
 	fields[fields.length] = y;
-	fields[fields.length] = width || 100;
-	fields[fields.length] = height || 100;
+	fields[fields.length] = width;
+	fields[fields.length] = height;
 	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);

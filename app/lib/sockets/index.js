@@ -176,7 +176,6 @@ module.exports = function(io) {
                 resourcedb.createResource(
                     data.resourceid, data.resourceurl, data.x, data.y, data.width, data.height, data.boardid,
                     function (error, result) {
-                        console.log('CREATED :D');
                         console.log(error);
                         console.log(result);
                         // if (error) return callback(error);
