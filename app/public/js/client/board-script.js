@@ -26,7 +26,7 @@ var mode;
 
 var path;
 var path_string;
-var stroke_width = 5;
+var stroke_width = '4';
 var stroke_color = Raphael.getColor();
 
 var text = undefined;
@@ -36,7 +36,8 @@ var elements = {};
 var resources = {};
 
 var freeids = {};
-var idcounter = 0; // how to retrieve id counter when reloading board
+var eidcounter = 0; // how to retrieve id counter when reloading board
+var ridcounter = 0;
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 var resourceidprefix = 'b' + boardid + 'u' + userid + 'r';
@@ -69,10 +70,6 @@ $(document).keydown(
                 'stroke' : stroke_color }
             );
 
-            path.dblclick(function(){
-                this.remove();
-            });
-
             bufferx = previousx;
             buffery = previousy;
         }
@@ -85,25 +82,24 @@ $(document).keydown(
 );
 $(document).mousemove(
     function(event) {
-        if (!(buffercounter % 1)) {
-            if (ctrldown || mousedown) {
-                var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
-                var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+        // if (!(buffercounter % 1)) {
+        if (ctrldown || mousedown) {
+            var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+            var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
 
-                path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
-                path.attr('path', path.attr('path') + 'l' + (x - bufferx) + ' ' + (y - buffery));
+            path.attr('path', path.attr('path') + 'l' + (x - bufferx) + ' ' + (y - buffery));
 
-                bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
-                buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
-            }
-            socket.emit('mousemove',
-                { userid : userid,
-                roomid : roomid,
-                boardid : boardid,
-                cx : (!event.offsetX) ? event.originalEvent.layerX : event.offsetX,
-                cy : (!event.offsetY) ? event.originalEvent.layerY : event.offsetY }
-            );
+            bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+            buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
         }
+        socket.emit('mousemove',
+            { userid : userid,
+            roomid : roomid,
+            boardid : boardid,
+            cx : (!event.offsetX) ? event.originalEvent.layerX : event.offsetX,
+            cy : (!event.offsetY) ? event.originalEvent.layerY : event.offsetY }
+        );
+        // }
         previousx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
         previousy = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
         buffercounter++;
@@ -114,7 +110,7 @@ $(document).keyup(
         if (ctrldown) {
             var attrs =
 				{ 'type': 'path',
-				'path' : path_string,
+				'path' : path.attr('path'),
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
             var elementid = generate_object_id(elementidprefix);
@@ -191,29 +187,32 @@ $(canvas).mouseup(
             // resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
             //     height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
         } else if (selection) {
+
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
+            var transformedpath = selection.attr('path', Raphael.transformPath(selection['attrs']['path'], transformstring));
+            // selection.transform(transformstring);
+            // console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
+            // console.log('mouseup');
 
-            selection.transform(transformstring);
-            console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
-            console.log('mouseup');
-
-            if(selection.elementid) {
+            if(selection['objectid'].indexOf('e') > -1) {
                 socket.emit('drag_element',
                     { roomid: roomid,
                     boardid: boardid,
                     userid: userid,
                     elementid: selection['objectid'],
                     transformstring: transformstring,
-                    pathstring: selection['attrs']['path'] }
+                    pathstring: transformedpath.attr('path'),
+                    'stroke-width': selection['attrs']['stroke-width'],
+                    'stroke': selection['attrs']['stroke'] }
                 );
             } else {
                 socket.emit('drag_resource',
                     { roomid: roomid,
                     boardid: boardid,
                     userid: userid,
-                    resourceid: selection['objectid'],
+                    resourceid: selection['objectid']/*,
                     transformstring: transformstring,
-                    pathstring: selection['attrs']['path'] }
+                    pathstring: selection['attrs']['path'] */ }
                 );
             }
             selection = undefined;
@@ -231,7 +230,7 @@ socket.on('transform_element',
 
 socket.on('transform_resource',
     function(data) {
-        resources[data['resourceid']].transform(data['transformstring']);
+        // resources[data['resourceid']].transform(data['transformstring']);
     }
 );
 
@@ -268,7 +267,7 @@ socket.on('elements',
                 add_element(data[i]['elementid'], path);
                 // need to reattach listeners when loading elements
 			}
-            idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
+            eidcounter = Math.max(eidcounter, data[i]['elementid'].split('e')[1]);
 		}
 	}
 );
@@ -278,7 +277,7 @@ socket.on('resources',
         print_data('resources', data);
 
         for (var i in data) {
-            print_data('data', data[i]);
+            // print_data('data', data[i]);
 
             var newResource = new Infobox(paper, {
                 x: data[i].x,
@@ -294,7 +293,7 @@ socket.on('resources',
 
             add_resource(data[i]['resourceid'], newResource);
             // need to reattach listeners when loading elements
-            idcounter = Math.max(idcounter, data[i]['resourceid'].split('e')[1]);
+            ridcounter = Math.max(ridcounter, data[i]['resourceid'].split('r')[1]);
         }
     }
 );
@@ -314,7 +313,7 @@ socket.on('cursorupdate',
             var circle = paper.circle(data.cx, data.cy, 10).attr(
                 { 'fill' : f,
                 'stroke' : s,
-                'stroke-width' : 5 }
+                'stroke-width' : stroke_width }
             );
             cursors[data.userid] = circle;
         }
@@ -323,24 +322,18 @@ socket.on('cursorupdate',
 
 socket.on('add_element',
     function(data) {
-        // print_data('add', data['attrs']);
+        print_data('add', data);
 
         var attrs = data['attrs'];
+        print_data('stuff here', attrs);
 		if (attrs['type'] === 'path') {
 			var foreignpath = paper.path(attrs['path']).attr(
                 { 'stroke-width': attrs['stroke-width'],
                  'stroke': attrs['stroke'] }
             );
+            console.log('HERE :D');
             add_element(data['elementid'], foreignpath);
-            // need to reattach listeners when loading elements
 		}
-
-
-        // path = paper.path
-        // add_element(data['elementid'], paper.path(data['attrs']['path']));
-        // for (var i in elements) {
-        //     console.log(i + ': ' + elements[i]);
-        // }
     }
 );
 
@@ -361,60 +354,39 @@ socket.on('add_resource',
             data.height + 'px" src="' + data.resourceurl + '"></iframe>');
 
         add_resource(data['resourceid'], newResource);
-
-        // path = paper.path
-        // add_element(data['elementid'], paper.path(data['attrs']['path']));
-        // for (var i in elements) {
-        //     console.log(i + ': ' + elements[i]);
-        // }
     }
 );
 
 
 socket.on('remove_element',
     function(data) {
-        console.log(data['elementid']);
-        elements[data['elementid']].remove();
+        console.log('Removing ' + data['objectid']);
+        elements[data['objectid']].remove();
+        delete elements[data['objectid']];
     }
 );
 
 socket.on('remove_resource',
     function(data) {
-        console.log(data['resourceid']);
-        elements[data['resourceid']].remove();
+        console.log(data['objectid']);
+        $(resources[data['objectid']].div).remove();
+        resources[data['objectid']].remove();
+        delete resources[data['objectid']];
     }
 );
 
-// socket.on('hover',
-//     function(data) {
-//
-//     }
-// );
-//
-// socket.on('double click',
-//     function(data) {
-//
-//     }
-// );
-//
-// socket.on('transform',
-//     function(data) {
-//
-//     }
-// );
-
 function add_element(elementid, element) {
     elements[elementid] = element;
-    interactable(elementid, element);
+    interactable(elementid, element, 'element');
 }
 function add_resource(resourceid, resource) {
     resources[resourceid] = resource;
-    interactable(resourceid, $(resource.div));
+    interactable(resourceid, $(resource.div), 'resource');
 }
-function interactable(objectid, object) {
-    return selectable(objectid, destroyable(objectid, object));
+function interactable(objectid, object, type) {
+    return selectable(objectid, destroyable(objectid, object, type), type);
 }
-function selectable(objectid, object) {
+function selectable(objectid, object, type) {
     object.mousedown(
         function (event) {
             selection = object;
@@ -455,8 +427,10 @@ function destroyable(objectid, object, type) {
 }
 
 function generate_object_id(idprefix) {
-    idcounter++;
-    return idprefix + idcounter;
+    if (idprefix.indexOf('e') > -1)
+        return idprefix + ++eidcounter;
+    else
+        return idprefix + ++ridcounter;
 }
 
 function print_data(message, data) {

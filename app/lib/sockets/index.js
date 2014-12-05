@@ -156,6 +156,10 @@ module.exports = function(io) {
                 print_data('create_element', data);
                 socket.broadcast.to('b' + data.boardid).emit('add_element', data);
 
+                for(var prop in data) {
+                    print_data('whatever', data[prop]);
+                }
+
                 elementdb.createElement(
                     data.elementid, data.attrs, data.boardid,
                     function (error, result) {
@@ -186,13 +190,22 @@ module.exports = function(io) {
 
         socket.on('drag_element',
             function (data) {
-                // print_data('drag', data);
-                var element = elementdb.create(data.elementid, data.pathstring)
-                print_data('element', element);
+
+                var attrs = {
+                    type: 'path',
+                    path: data.pathstring,
+                    'stroke-width': data['stroke-width'],
+                    'stroke': data['stroke']
+                };
+
+                print_data('attributes:', attrs);
+                var element = elementdb.create(data.elementid, attrs);
+
                 elementdb.updateElement(element,
                     function (error, result) {
                         console.log(error);
                         console.log(result);
+                        console.log(['attrs']['path']);
                         // console.log(data.pathstring);
                         socket.broadcast.to('b' + data.boardid).emit('transform_element', data);
                     }
