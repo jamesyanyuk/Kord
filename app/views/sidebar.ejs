@@ -23,6 +23,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<!-- CANVAS -->
+<link rel='stylesheet' href='/stylesheets/style.css' />
+        <style type="text/css">
+            #canvas {
+				width: 100%;
+				height: 100%;
+                position: fixed;
+				top: 0;
+				left: 0;
+                border: 1px black solid;
+				z-index: 1000;
+            }
+        </style>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/raphael-min.js"></script>
+        
 
 <!--chat style-->
 <style>
@@ -139,12 +155,15 @@
   <!-- Page Content -->
   <div id="page-content-wrapper">
   
- 
-
-
+    
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
+        
+        <div id="canvas"></div>
+        
+        
+        
           <h1>Sidebar</h1>
           <p>Page content widgets will be displayed here. Drawing will draw over the content, but not over the chat window or menu bar.</p>
       </div>
@@ -158,7 +177,7 @@
       <div class="panel panel-default">
         <div class="panel-heading top-bar">
           <div class="col-md-8 col-xs-8">
-            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span><!--Chat--></h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span></h3>
           </div>
           <div class="col-md-4 col-xs-4" style="text-align: right;"> <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a> </div>
         </div>
@@ -282,7 +301,7 @@ $(document).on('click', '.icon_close', function (e) {
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script>
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect('http://localhost:3000');
 
 // on connection to server, ask for user's name with an anonymous callback
 socket.on('connect', function(){
