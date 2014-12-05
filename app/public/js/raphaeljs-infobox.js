@@ -18,7 +18,7 @@ function Infobox(r, options, attrs) {
     this.raph_container = jQuery('#' + container_id);
 
     if (!this.show_border) { this.container.hide(); }
-        this.div = jQuery('<div style="position: absolute; overflow: auto; width: 0; height: 0;"></div>').insertAfter(this.raph_container);
+        this.div = jQuery('<div style="position: fixed; overflow: auto; width: 0; height: 0;"></div>').insertAfter(this.raph_container);
         this.update();
         jQuery(window).bind('resize', this, function(event) { event.data.update(); });
     }
