@@ -134,24 +134,37 @@ $('#addvideo').click(
     function(event) {
         event.preventDefault();
         mode = 'res_video';
-
-        infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
-        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
     }
 )
 $(canvas).mouseup(
     function(event) {
-        console.log('mouse up');
-        if (selection) {
-            var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
-            var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+        var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+        var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+
+        if (mode === 'res_video') {
+            var width = 420;
+            var height = 315;
+
+            resources[mode + '_0001'] = new Infobox(paper, {
+                x: currentx - (width/2),
+                y: currenty - (height/2),
+                width: width,
+                height: height
+            });
+
+            //$(resources[mode + '_0001'].div).css('position', 'fixed');
+            $(resources[mode + '_0001'].div).css('overflow', 'hidden');
+            resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
+                height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
+        } else if (selection) {
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
             selection.transform(transformstring);
             console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
             console.log('mouseup');
             selection = undefined;
             // socket.emit('drag', transformstring
-        }    
+        }
+        mode = undefined;
     }
 );
 
@@ -253,19 +266,19 @@ socket.on('remove',
 
 // socket.on('hover',
 //     function(data) {
-// 
+//
 //     }
 // );
-// 
+//
 // socket.on('double click',
 //     function(data) {
-// 
+//
 //     }
 // );
-// 
+//
 // socket.on('transform',
 //     function(data) {
-// 
+//
 //     }
 // );
 
