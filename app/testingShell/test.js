@@ -41,6 +41,7 @@ describe('createUser', function()){
 describe('createUser2', function()){
 	if('should create user correctly', function(){
 		assert(db.createUser('joe' + Math.random(), 'userpass' + Math.random(), 1, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readUser', function()){
@@ -51,11 +52,13 @@ describe('readUser', function()){
 describe('updateUser', function()){
 	if('should change a password correctly', function(){
 		assert(db.updateUser(user, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readModeratorsFor', function()){
 	if('should return an array of user objects', function(){
 		assert(db.readModeratorsFor(1, function (error, user)))
+	//needs to be complicated
 	}
 }
 describe('readMembersFor', function()){
@@ -78,13 +81,18 @@ describe('readRoomsFor', function()){
 		assert(db.readRoomsFor(5, function (error, user)))
 	}
 }
-// db.readRoomsFor(7,
-// 	function (error, rooms) {
-// 		console.log('read rooms for:');
-// 		printresults(error, rooms);
-// 	}
-// );
+describe('readRoomsFor', function()){
+	if('should destory a user', function(){
+		assert(db.readRoomsFor(5, function (error, user)))
+	//needs to be complicated
+	}
+}
 
+describe('authenticateUser', function()){
+	if('should correctly authenticateUser', function(){
+		assert(db.authenticateUser(6 , function (error, user)))
+	}
+}
 // db.authenticateUser('user1@place.com', 'pass1',
 // 	function (error, result) {
 // 		console.log('authenticate user:');
