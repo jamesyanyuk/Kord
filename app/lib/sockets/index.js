@@ -161,9 +161,14 @@ module.exports = function(io) {
             }
         );
 
-        socket.on('move',
+        socket.on('drag',
             function (data) {
-
+                print_data('drag', data);
+                elementdb.updateElement(elementdb.create(data.elementid, data.transformationstring),
+                    function (error, result) {
+                        socket.broadcast.to('b' + data.boardid).emit('transform', data);
+                    }
+                );
             }
         );
 

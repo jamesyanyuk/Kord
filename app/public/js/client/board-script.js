@@ -140,17 +140,25 @@ $('#addvideo').click(
 )
 $(canvas).mouseup(
     function(event) {
-        console.log('mouse up');
+        console.log('drag');
         if (selection) {
             var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
             var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
+            
             selection.transform(transformstring);
             console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
             console.log('mouseup');
+            
+            socket.emit('drag',
+                { roomid: roomid,
+                boardid: boardid,
+                userid: userid,
+                elementid: selection['elementid'],
+                transformstring: transformstring }
+            );
             selection = undefined;
-            // socket.emit('drag', transformstring
-        }    
+        }
     }
 );
 
@@ -239,7 +247,7 @@ socket.on('add',
 
 socket.on('transform',
     function(data) {
-        elements[data['elementid']].transform(data['transform']);
+        elements[data['elementid']].transform(data['transformstring']);
     }
 );
 
@@ -281,7 +289,9 @@ function selectable(elementid, element) {
             selection = element;
             selectionx = previousx;
             selectiony = previousy;
+            selection['elementid'] = elementid;
             console.log('select');
+            console.log(elementid);
         }
     );
     return element;
