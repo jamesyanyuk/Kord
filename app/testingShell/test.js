@@ -93,6 +93,18 @@ describe('authenticateUser', function()){
 		assert(db.authenticateUser(6 , function (error, user)))
 	}
 }
+
+describe('authenticateUser', function()){
+	if('should correctly authenticateUser', function(){
+		assert(db.authenticateUser(6 , function (error, user)))
+	}
+}
+
+describe('authenticateUser', function()){
+	if('should correctly authenticateUser', function(){
+		assert(db.authenticateUser(6 , function (error, user)))
+	}
+}
 // db.authenticateUser('user1@place.com', 'pass1',
 // 	function (error, result) {
 // 		console.log('authenticate user:');
