@@ -23,27 +23,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<!--<script src="http://cloud.github.com/downloads/uxebu/bonsai/bonsai-0.4.0.min.js"></script>
-<style>
-#content {
-	padding: 0;
-}
-#player {
-	background-size: cover;
-	background: #fff;
-	background: fixed;
-	position: absolute;
-	width: 1100px;
-	height: 800px;
-	z-index: 1000;
-}
-</style>-->
-
-
-
-
-
-
 
 <!--chat style-->
 <style>
@@ -54,7 +33,7 @@
     margin-bottom: 0px;
 }
 .chat-window{
-	width: 180px;
+	width: 240px;
     bottom:0;
 	right: 0;
     position:fixed;
@@ -66,7 +45,7 @@
     border-radius: 5px 5px 0 0;
 }
 .icon_minim{
-    padding:2px 10px;
+	float: right;
 }
 .msg_container_base{
   background: #e5e5e5;
@@ -78,7 +57,6 @@
 .top-bar {
   background: #666;
   color: white;
-  padding: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -101,59 +79,11 @@
     font-size: 13px;
     margin: 0 0 0.2rem 0;
   }
-.messages > time {
-    font-size: 11px;
-    color: #ccc;
-}
 .msg_container {
     padding: 10px;
     overflow: hidden;
     display: flex;
 }
-img {
-    display: block;
-    width: 100%;
-}
-.avatar {
-    position: relative;
-}
-.base_receive > .avatar:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border: 5px solid #FFF;
-    border-left-color: rgba(0, 0, 0, 0);
-    border-bottom-color: rgba(0, 0, 0, 0);
-}
-
-.base_sent {
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.base_sent > .avatar:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border: 5px solid white;
-    border-right-color: transparent;
-    border-top-color: transparent;
-}
-
-.msg_sent > time{
-    float: right;
-}
-.msg_container_base::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
-
 .msg_container_base::-webkit-scrollbar
 {
     width: 12px;
@@ -176,25 +106,6 @@ img {
 
 
 
-
-<script type="text/javascript" src="../../../public/js/jquery-2.1.1.min.js"></script>
-
-		<script type="text/javascript" src="../../../public/js/raphael-min.js"></script>
-		<script type="text/javascript" src="../../../public/js/raphaeldemo.js"></script>
-		<style type="text/css">
-			#canvas svg {
-				background-size: cover;
-				background: fixed;
-				position: absolute;
-				z-index: 1000;
-				
-				height: 500px;
-				width: 700px;
-				margin: 0 auto;
-				margin-top: 50px;
-				border: 1px black solid;
-			}
-		</style>
 
 </head>
 
@@ -228,25 +139,7 @@ img {
   <!-- Page Content -->
   <div id="page-content-wrapper">
   
-  <!--Drawing-->
-  <!--<div id="content">
-  <div id="player"></div>
-  <script>
-			console.log("WORKING");
-			var player = document.getElementById('player');
-			var b = bonsai.run(player,
-				{ url: 'js/drawing.js',
-				framerate: 1000 }
-			);
-		</script> 
-  </div>-->
-  
-  
-  		
-        
-  <!--/drawing-->
-
-
+ 
 
 
     <div class="container-fluid">
@@ -257,24 +150,6 @@ img {
       </div>
     </div>
   
-  
-  <div id="canvas"></div>
-		<script>
-		</script>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
   <!--chat-->
@@ -283,7 +158,7 @@ img {
       <div class="panel panel-default">
         <div class="panel-heading top-bar">
           <div class="col-md-8 col-xs-8">
-            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Chat</h3>
+            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span><!--Chat--></h3>
           </div>
           <div class="col-md-4 col-xs-4" style="text-align: right;"> <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a> </div>
         </div>
@@ -301,8 +176,7 @@ img {
             
             <!--original chat-->
 <div class="input group">
-  
-  <input id="data"/>
+  <input id="data" placeholder="Message"/>
   <input type="button" id="datasend" value="send" />
 </div>
 <!--original chat-->

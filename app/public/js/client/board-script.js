@@ -158,9 +158,18 @@ $(canvas).mouseup(
                 height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
         } else if (selection) {
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
+
             selection.transform(transformstring);
             console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
             console.log('mouseup');
+
+            socket.emit('drag',
+                { roomid: roomid,
+                boardid: boardid,
+                userid: userid,
+                elementid: selection['elementid'],
+                transformstring: transformstring }
+            );
             selection = undefined;
             // socket.emit('drag', transformstring
         }
@@ -253,7 +262,7 @@ socket.on('add',
 
 socket.on('transform',
     function(data) {
-        elements[data['elementid']].transform(data['transform']);
+        elements[data['elementid']].transform(data['transformstring']);
     }
 );
 
@@ -295,7 +304,9 @@ function selectable(elementid, element) {
             selection = element;
             selectionx = previousx;
             selectiony = previousy;
+            selection['elementid'] = elementid;
             console.log('select');
+            console.log(elementid);
         }
     );
     return element;

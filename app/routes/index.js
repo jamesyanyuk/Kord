@@ -99,4 +99,8 @@ router.get('/logout', function(req, res) {
     res.redirect('/');
 });
 
+router.get('/sidebar', function(req, res) {
+	res.render('sidebar', { title: 'Kord Sidebar' });
+});
+
 module.exports = router;
