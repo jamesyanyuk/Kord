@@ -73,7 +73,7 @@ function readElement(elementid, callback) {
 		function (error, result) {
 			if (error) return callback(error);
 
-			var attrs = result['attr'];
+			var attrs = result['attrs'];
 			var element = new Element(elementid, attrs);
 			return callback(db.SUCCESS, element);
 		}
