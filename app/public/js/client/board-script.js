@@ -40,9 +40,18 @@ var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 // drawing
 ////
 
+$(document).ready(
+    function() {
+        console.log('Loading video on ready');
+        var infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
+        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
+    }
+);
+
 $(canvas).mousedown(
     function(event) {
         // selection = paper.getElementByPoint();
+        // console.log(selection);
         selectionx = previousx;
         selectiony = previousy;
         text = undefined;
@@ -55,11 +64,15 @@ $(document).keydown(
         if (!ctrldown && event.ctrlKey) {
             ctrldown = true;
             buffercounter = 0;
-            path_string = 'M' + previousx + ' ' + previousy + 'l0 0';
+            path_string = ['M' + previousx + ' ' + previousy + 'l0 0'];
             path = paper.path(path_string).attr(
                 { 'stroke-width' : stroke_width,
                 'stroke' : stroke_color }
             );
+
+            path.dblclick(function(){
+                this.remove();
+            });
             bufferx = previousx;
             buffery = previousy;
         }
@@ -70,15 +83,16 @@ $(document).keydown(
         }
     }
 );
-$(canvas).mousemove(
+$(document).mousemove(
     function(event) {
-        if (!(buffercounter % 10)) {
+        if (!(buffercounter % 1)) {
             if (ctrldown || mousedown) {
                 var x = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 var y = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+
                 path_string += 'l' + (x - bufferx) + ' ' + (y - buffery);
-                path.attr('path', path_string);
-                
+                path.attr('path', path.attr('path') + 'l' + (x - bufferx) + ' ' + (y - buffery));
+
                 bufferx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
                 buffery = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
             }
@@ -104,13 +118,9 @@ $(document).keyup(
                 'stroke-width': stroke_width,
                 'stroke': stroke_color };
             var elementid = generate_element_id();
-            
+
             add_element(elementid, path);
-            // interactable(elementid, path);
-            // elements[elementid] = path;
-            // selectable(elementid, path);
-            // destroyable(elementid, path);
-            
+
 			socket.emit('create',
 				{ roomid: roomid,
 				boardid: boardid,
@@ -122,6 +132,32 @@ $(document).keyup(
         ctrldown = false;
     }
 );
+$('#addvideo').click(
+    function(event) {
+        event.preventDefault();
+        console.log('Adding video...');
+    }
+)
+$(canvas).mouseup(
+    function(event) {
+        console.log('mouse up');
+        if (selection) {
+            var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+            var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+            var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
+            selection.transform(transformstring);
+            console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
+            console.log('mouseup');
+            selection = undefined;
+            // socket.emit('drag', transformstring
+        }    
+    }
+);
+
+// key up - add element
+// server receives create message - creates in database
+// emits to other clients add message
+// clients receive add message
 
 ////
 // socket
@@ -140,16 +176,15 @@ socket.on('connect',
 socket.on('elements',
 	function(data) {
         print_data('elements', data);
-		
+
 		for (var i in data) {
-            print_data('e', data[i]);
 			var attrs = data[i]['attrs'];
 			if (attrs['type'] === 'path') {
 				path = paper.path(attrs['path']).attr(
                     { 'stroke-width': attrs['stroke-width'],
                      'stroke': attrs['stroke'] }
                 );
-                interactable(data[i]['elementid'], path);
+                add_element(data[i]['elementid'], path);
                 // need to reattach listeners when loading elements
 			}
             idcounter = Math.max(idcounter, data[i]['elementid'].split('e')[1]);
@@ -183,6 +218,18 @@ socket.on('add',
     function(data) {
         // print_data('add', data['attrs']);
 
+        var attrs = data['attrs'];
+		if (attrs['type'] === 'path') {
+			var foreignpath = paper.path(attrs['path']).attr(
+                { 'stroke-width': attrs['stroke-width'],
+                 'stroke': attrs['stroke'] }
+            );
+            add_element(data['elementid'], foreignpath);
+            // need to reattach listeners when loading elements
+		}
+
+
+        // path = paper.path
         // add_element(data['elementid'], paper.path(data['attrs']['path']));
         // for (var i in elements) {
         //     console.log(i + ': ' + elements[i]);
@@ -190,9 +237,9 @@ socket.on('add',
     }
 );
 
-socket.on('move',
+socket.on('transform',
     function(data) {
-
+        elements[data['elementid']].transform(data['transform']);
     }
 );
 
@@ -203,46 +250,37 @@ socket.on('remove',
     }
 );
 
-socket.on('hover',
-    function(data) {
-
-    }
-);
-
-socket.on('double click',
-    function(data) {
-
-    }
-);
-
-socket.on('transform',
-    function(data) {
-
-    }
-);
+// socket.on('hover',
+//     function(data) {
+// 
+//     }
+// );
+// 
+// socket.on('double click',
+//     function(data) {
+// 
+//     }
+// );
+// 
+// socket.on('transform',
+//     function(data) {
+// 
+//     }
+// );
 
 function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element);
-    
-    // if (attrs['type'] === 'path') {
-	// 	path = paper.path(attrs['path']).attr(
-    //         { 'stroke-width': attrs['stroke-width'],
-    //          'stroke': attrs['stroke'] }
-    //     );
-    //     interactable(data[i]['elementid'], path);
-    //     // need to reattach listeners when loading elements
-	// }
 }
-
 function interactable(elementid, element) {
     return selectable(elementid, destroyable(elementid, element));
 }
-
 function selectable(elementid, element) {
     element.mousedown(
         function (event) {
             selection = element;
+            selectionx = previousx;
+            selectiony = previousy;
             console.log('select');
         }
     );
@@ -254,7 +292,7 @@ function destroyable(elementid, element) {
         function(event) {
             element.remove();
             delete elements[elementid];
-            socket.emit('destroy', 
+            socket.emit('destroy',
                 { roomid: roomid,
                 boardid: boardid,
                 userid: userid,
