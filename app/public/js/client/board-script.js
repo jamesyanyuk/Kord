@@ -121,7 +121,7 @@ $(document).keyup(
 				{ roomid: roomid,
 				boardid: boardid,
 				userid: userid,
-                objectid: elementid,
+                elementid: elementid,
 				attrs: attrs }
 			);
         }
@@ -164,7 +164,7 @@ $(canvas).mouseup(
                 { roomid: roomid,
                 boardid: boardid,
                 userid: userid,
-                objectid: resourceid,
+                resourceid: resourceid,
                 resourceurl: resourceurl,
                 x: currentx,
                 y: currenty,
@@ -199,7 +199,7 @@ $(canvas).mouseup(
                     { roomid: roomid,
                     boardid: boardid,
                     userid: userid,
-                    objectid: selection['objectid'],
+                    elementid: selection['objectid'],
                     transformstring: transformstring,
                     pathstring: transformedpath.attr('path'),
                     'stroke-width': selection['attrs']['stroke-width'],
@@ -210,7 +210,7 @@ $(canvas).mouseup(
                     { roomid: roomid,
                     boardid: boardid,
                     userid: userid,
-                    objectid: selection['objectid']/*,
+                    resourceid: selection['objectid']/*,
                     transformstring: transformstring,
                     pathstring: selection['attrs']['path'] */ }
                 );
@@ -224,7 +224,7 @@ $(canvas).mouseup(
 
 socket.on('transform_element',
     function(data) {
-        elements[data['objectid']].transform(data['transformstring']);
+        elements[data['elementid']].transform(data['transformstring']);
     }
 );
 
@@ -264,10 +264,10 @@ socket.on('elements',
                     { 'stroke-width': attrs['stroke-width'],
                      'stroke': attrs['stroke'] }
                 );
-                add_element(data[i]['objectid'], path);
+                add_element(data[i]['elementid'], path);
                 // need to reattach listeners when loading elements
 			}
-            eidcounter = Math.max(eidcounter, data[i]['objectid'].split('e')[1]);
+            eidcounter = Math.max(eidcounter, data[i]['elementid'].split('e')[1]);
 		}
 	}
 );
@@ -291,9 +291,9 @@ socket.on('resources',
             newResource.div.html('<iframe scrolling=frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
                 'px" src="' + data[i].resourceurl + '"></iframe>');
 
-            add_resource(data[i]['objectid'], newResource);
+            add_resource(data[i]['resourceid'], newResource);
             // need to reattach listeners when loading elements
-            ridcounter = Math.max(ridcounter, data[i]['objectid'].split('r')[1]);
+            ridcounter = Math.max(ridcounter, data[i]['resourceid'].split('r')[1]);
         }
     }
 );
@@ -332,7 +332,7 @@ socket.on('add_element',
                  'stroke': attrs['stroke'] }
             );
             console.log('HERE :D');
-            add_element(data['objectid'], foreignpath);
+            add_element(data['elementid'], foreignpath);
 		}
     }
 );
