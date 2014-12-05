@@ -78,9 +78,6 @@ router.post('/register', function(req, res, next) {
     } else if(req.body.password != req.body.password_conf) {
         req.flash('registermessage', 'Passwords don\'t match.');
         return res.redirect('/register')
-    } else if(req.body.password.length < 6 || req.body.password_conf.length < 6) {
-        req.flash('registermessage', 'Password must have 6 or more characters.');
-        return res.redirect('/register')
     }
 
     passport.authenticate('register', function(err, user, info) {
