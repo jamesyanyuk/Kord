@@ -1,5 +1,5 @@
 var canvas = document.getElementById('canvas');
-var paper = new Raphael(canvas, 800, 800);
+var paper = new Raphael(canvas);
 
 var cursors = {};
 
