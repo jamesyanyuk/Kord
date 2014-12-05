@@ -18,23 +18,23 @@ function Resource(resourceid, resourceurl, x, y, width, height) {
 	this.resourceurl = resourceurl;
 	this.x = x;
 	this.y = y;
-	this.width = width | 100;
-	this.height = height | 100;
+	this.width = width || 100;
+	this.height = height || 100;
 }
 
 /*
  * create functions
  * */
 
-function createResource(resourceid, resourceurl, x, y, width, height, callback) {
+function createResource(resourceid, resourceurl, x, y, width, height, boardid, callback) {
 	var fields = [];
-	fields[fields.length] = db.nextID(TABLE, ID);
+	fields[fields.length] = resourceid;
 	fields[fields.length] = resourceurl;
 	fields[fields.length] = x;
 	fields[fields.length] = y;
-	fields[fields.length] = width | 100;
-	fields[fields.length] = height | 100;
-	db.createObject(TABLE, data, ID,
+	fields[fields.length] = width || 100;
+	fields[fields.length] = height || 100;
+	db.createObject(TABLE, fields, ID,
 		function (error, result) {
 			if (error) return callback(error);
 
@@ -49,7 +49,7 @@ function createResource(resourceid, resourceurl, x, y, width, height, callback) 
 						);
 					}
 					var resource = new Resource(
-						resourceid, x, y, width, height, resourceurl);
+						resourceid, resourceurl, x, y, width, height);
 					return callback(db.SUCCESS, resource);
 				}
 			);

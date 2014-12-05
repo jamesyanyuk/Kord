@@ -172,9 +172,11 @@ module.exports = function(io) {
                 print_data('create_resource', data);
                 socket.broadcast.to('b' + data.boardid).emit('add_resource', data);
 
+                // resourceid, resourceurl, x, y, width, height, callback
                 resourcedb.createResource(
-                    data.resourceid, data.attrs, data.boardid,
+                    data.resourceid, data.resourceurl, data.x, data.y, data.width, data.height, data.boardid,
                     function (error, result) {
+                        console.log('CREATED :D');
                         console.log(error);
                         console.log(result);
                         // if (error) return callback(error);

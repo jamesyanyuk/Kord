@@ -39,6 +39,7 @@ var freeids = {};
 var idcounter = 0; // how to retrieve id counter when reloading board
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
+var resourceidprefix = 'b' + boardid + 'u' + userid + 'r';
 
 var infobox;
 
@@ -71,6 +72,7 @@ $(document).keydown(
             path.dblclick(function(){
                 this.remove();
             });
+
             bufferx = previousx;
             buffery = previousy;
         }
@@ -142,10 +144,13 @@ $(canvas).mouseup(
         var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
 
         if (mode === 'res_video') {
-            var width = 420;
-            var height = 315;
+            var resourceid = generate_object_id(resourceidprefix);
 
-            resources[mode + '_0001'] = new Infobox(paper, {
+            var width = 250;
+            var height = 250;
+            var resourceurl = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
+
+            var newResource = new Infobox(paper, {
                 x: currentx - (width/2),
                 y: currenty - (height/2),
                 width: width,
@@ -153,9 +158,38 @@ $(canvas).mouseup(
             });
 
             //$(resources[mode + '_0001'].div).css('position', 'fixed');
-            $(resources[mode + '_0001'].div).css('overflow', 'hidden');
-            resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
-                height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
+            newResource.div.css('overflow', 'hidden');
+            newResource.div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' + height +
+                'px" src="' + resourceurl + '"></iframe>');
+
+            add_resource(resourceid, newResource);
+
+            socket.emit('create_resource',
+                { roomid: roomid,
+                boardid: boardid,
+                userid: userid,
+                resourceid: resourceid,
+                resourceurl: resourceurl,
+                x: currentx,
+                y: currenty,
+                width: width,
+                height: height }
+            );
+
+            // var width = 420;
+            // var height = 315;
+            //
+            // resources[mode + '_0001'] = new Infobox(paper, {
+            //     x: currentx - (width/2),
+            //     y: currenty - (height/2),
+            //     width: width,
+            //     height: height
+            // });
+            //
+            // //$(resources[mode + '_0001'].div).css('position', 'fixed');
+            // $(resources[mode + '_0001'].div).css('overflow', 'hidden');
+            // resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
+            //     height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
         } else if (selection) {
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
 
@@ -244,17 +278,22 @@ socket.on('resources',
         print_data('resources', data);
 
         for (var i in data) {
+            print_data('data', data[i]);
 
+            var newResource = new Infobox(paper, {
+                x: data[i].x - (data[i].width/2),
+                y: data[i].y - (data[i].height/2),
+                width: data[i].width,
+                height: data[i].height
+            });
 
-            var attrs = data[i]['attrs'];
-            if (attrs['type'] === 'path') {
-                path = paper.path(attrs['path']).attr(
-                    { 'stroke-width': attrs['stroke-width'],
-                     'stroke': attrs['stroke'] }
-                );
-                add_resource(data[i]['resourceid'], path);
-                // need to reattach listeners when loading elements
-            }
+            //$(resources[mode + '_0001'].div).css('position', 'fixed');
+            newResource.div.css('overflow', 'hidden');
+            newResource.div.html('<iframe scrolling=frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
+                'px" src="' + data[i].resourceurl + '"></iframe>');
+
+            add_resource(data[i]['resourceid'], newResource);
+            // need to reattach listeners when loading elements
             idcounter = Math.max(idcounter, data[i]['resourceid'].split('e')[1]);
         }
     }
@@ -309,11 +348,19 @@ socket.on('add_resource',
     function(data) {
         // print_data('add', data['attrs']);
 
-        var foreignpath = paper.path(attrs['path']).attr(
-            { 'stroke-width': attrs['stroke-width'],
-             'stroke': attrs['stroke'] }
-        );
-        add_resource(data['resourceid'], foreignpath);
+        var newResource = new Infobox(paper, {
+            x: data.x,
+            y: data.y,
+            width: data.width,
+            height: data.height
+        });
+
+        //$(resources[mode + '_0001'].div).css('position', 'fixed');
+        newResource.div.css('overflow', 'hidden');
+        newResource.div.html('<iframe scrolling=frameborder="0" width="' + data.width + 'px" height="' +
+            data.height + 'px" src="' + data.resourceurl + '"></iframe>');
+
+        add_resource(data['resourceid'], newResource);
 
         // path = paper.path
         // add_element(data['elementid'], paper.path(data['attrs']['path']));
@@ -362,10 +409,10 @@ function add_element(elementid, element) {
 }
 function add_resource(resourceid, resource) {
     resources[resourceid] = resource;
-    interactable(resourceid, resource);
+    interactable(resourceid, $(resource.div));
 }
-function interactable(objectid, element) {
-    return selectable(objectid, destroyable(objectid, element));
+function interactable(objectid, object) {
+    return selectable(objectid, destroyable(objectid, object));
 }
 function selectable(objectid, object) {
     object.mousedown(

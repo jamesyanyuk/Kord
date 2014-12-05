@@ -33,11 +33,11 @@ function createElement(elementid, attrs, boardid, callback) {
 	var data = [];
 	data[data.length] = elementid;
 	data[data.length] = attrs;
-	
+
 	db.createObject(TABLE, data, ID,
 		function (error, result) {
 			if (error) return callback(error);
-						
+
 			joinBoardElement(boardid, elementid,
 				function (error, result) {
 					if (error) {
@@ -71,8 +71,8 @@ function joinBoardElement(boardid, elementid, callback) {
 function readElement(elementid, callback) {
 	db.readObject(TABLE, ID, elementid,
 		function (error, result) {
-			if (error) return callback(error);	
-					
+			if (error) return callback(error);
+
 			var attrs = result['attr'];
 			var element = new Element(elementid, attrs);
 			return callback(db.SUCCESS, element);

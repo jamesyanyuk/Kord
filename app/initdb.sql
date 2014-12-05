@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS elements CASCADE;
-DROP TABLE IF EXISTS boards_elements CASCADE; 
+DROP TABLE IF EXISTS boards_elements CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS rooms CASCADE;
 DROP TABLE IF EXISTS rooms_members CASCADE;
@@ -59,7 +59,7 @@ CREATE TABLE rooms_boards (
 
 CREATE TABLE resources (
 	resourceid varchar(50) UNIQUE, -- concatenation of 'b'boardid'u'userid'r'elementid -> client generated, client keeps a list of available ids
-	resourceurl varchar(50),
+	resourceurl text,
 	x integer,
 	y integer,
 	width integer,
