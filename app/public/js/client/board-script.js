@@ -155,10 +155,17 @@ $(canvas).mouseup(
                 boardid: boardid,
                 userid: userid,
                 elementid: selection['elementid'],
-                transformstring: transformstring }
+                transformstring: transformstring,
+                pathstring: selection['attrs']['path'] }
             );
             selection = undefined;
         }
+    }
+);
+
+socket.on('transform',
+    function(data) {
+        elements[data['elementid']].transform(data['transformstring']);
     }
 );
 
@@ -245,11 +252,6 @@ socket.on('add',
     }
 );
 
-socket.on('transform',
-    function(data) {
-        elements[data['elementid']].transform(data['transformstring']);
-    }
-);
 
 socket.on('remove',
     function(data) {

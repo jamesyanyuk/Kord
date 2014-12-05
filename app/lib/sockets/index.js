@@ -149,23 +149,26 @@ module.exports = function(io) {
                 socket.broadcast.to('b' + data.boardid).emit('add', data);
                 
                 elementdb.createElement(
-                    data.elementid,
-                    data.attrs, data.boardid,
+                    data.elementid, data.attrs, data.boardid,
                     function (error, result) {
                         console.log(error);
                         console.log(result);
                         // if (error) return callback(error);
                     }
                 );
-            
             }
         );
 
         socket.on('drag',
             function (data) {
-                print_data('drag', data);
-                elementdb.updateElement(elementdb.create(data.elementid, data.transformationstring),
+                // print_data('drag', data);
+                var element = elementdb.create(data.elementid, data.pathstring)
+                print_data('element', element);
+                elementdb.updateElement(element,
                     function (error, result) {
+                        console.log(error);
+                        console.log(result);
+                        // console.log(data.pathstring);
                         socket.broadcast.to('b' + data.boardid).emit('transform', data);
                     }
                 );

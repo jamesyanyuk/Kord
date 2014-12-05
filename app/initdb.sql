@@ -77,7 +77,7 @@ CREATE TABLE boards_resources (
 
 CREATE TABLE elements (
 	elementid varchar(50) UNIQUE, -- concatenation of 'b'boardid'u'userid'e'elementid -> client generated, client keeps a list of available ids
-	attr json,
+	attrs json,
 
 	PRIMARY KEY (elementid)
 );
@@ -90,5 +90,4 @@ CREATE TABLE boards_elements (
 );
 
 INSERT INTO users VALUES
-	(-1, 'user1@place.com', 'pass1', 'user1', 0),
-	(-2, 'user2@place.com', 'pass2', 'user2', 1);
+	(-1, 'admin@admin.com', 'admin', 'admin', 2);
