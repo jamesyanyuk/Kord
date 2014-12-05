@@ -30,8 +30,13 @@ function Infobox(r, options, attrs) {
             'left': (this.x + (this.rounding) + (offset.left)) + 'px',
             'height': (this.height - (this.rounding*2) + 'px'),
             'width': (this.width - (this.rounding*2) + 'px'),
-            'background-color': '#555'
+            'background-color': '#555',
+            'z-index': '2',
+            'border-width': '20px 4px 4px 4px',
+            'border-style': 'solid',
+            'border-color': 'rgba(0, 73, 111, 0.43)'
         });
+        $(this.div).draggable();
     }
 
     Infobox.prototype.destroy = function() {
