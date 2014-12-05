@@ -22,6 +22,8 @@ var selection;
 var selectionx;
 var selectiony;
 
+var mode;
+
 var path;
 var path_string;
 var stroke_width = 5;
@@ -31,22 +33,18 @@ var text = undefined;
 var string = '';
 
 var elements = {};
+var resources = {};
+
 var freeids = {};
 var idcounter = 0; // how to retrieve id counter when reloading board
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 
+var infobox;
+
 ////
 // drawing
 ////
-
-$(document).ready(
-    function() {
-        console.log('Loading video on ready');
-        var infobox = new Infobox(paper, {x:10,y:10, width:250, height:250});
-        infobox.div.html('<p>This is some crazy content that goes inside of that box that will wrap around.</p>');
-    }
-);
 
 $(canvas).mousedown(
     function(event) {
@@ -135,30 +133,54 @@ $(document).keyup(
 $('#addvideo').click(
     function(event) {
         event.preventDefault();
-        console.log('Adding video...');
+        mode = 'res_video';
     }
 )
 $(canvas).mouseup(
     function(event) {
-        console.log('drag');
-        if (selection) {
-            var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
-            var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+        var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
+        var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
+
+        if (mode === 'res_video') {
+            var width = 420;
+            var height = 315;
+
+            resources[mode + '_0001'] = new Infobox(paper, {
+                x: currentx - (width/2),
+                y: currenty - (height/2),
+                width: width,
+                height: height
+            });
+
+            //$(resources[mode + '_0001'].div).css('position', 'fixed');
+            $(resources[mode + '_0001'].div).css('overflow', 'hidden');
+            resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
+                height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
+        } else if (selection) {
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
-            
+
             selection.transform(transformstring);
             console.log('t' + (currentx - selectionx) + ',' + (currenty - selectiony));
             console.log('mouseup');
-            
+
             socket.emit('drag',
                 { roomid: roomid,
                 boardid: boardid,
                 userid: userid,
                 elementid: selection['elementid'],
-                transformstring: transformstring }
+                transformstring: transformstring,
+                pathstring: selection['attrs']['path'] }
             );
             selection = undefined;
+            // socket.emit('drag', transformstring
         }
+        mode = undefined;
+    }
+);
+
+socket.on('transform',
+    function(data) {
+        elements[data['elementid']].transform(data['transformstring']);
     }
 );
 
@@ -245,11 +267,6 @@ socket.on('add',
     }
 );
 
-socket.on('transform',
-    function(data) {
-        elements[data['elementid']].transform(data['transformstring']);
-    }
-);
 
 socket.on('remove',
     function(data) {
@@ -260,19 +277,19 @@ socket.on('remove',
 
 // socket.on('hover',
 //     function(data) {
-// 
+//
 //     }
 // );
-// 
+//
 // socket.on('double click',
 //     function(data) {
-// 
+//
 //     }
 // );
-// 
+//
 // socket.on('transform',
 //     function(data) {
-// 
+//
 //     }
 // );
 

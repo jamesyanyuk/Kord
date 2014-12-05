@@ -53,44 +53,22 @@ describe('updateUser', function()){
 		assert(db.updateUser(user, function (error, user)))
 	}
 }
-describe('createUser', function()){
-	if('should create user correctly', function(){
+describe('readModeratorsFor', function()){
+	if('should return an array of user objects', function(){
+		assert(db.readModeratorsFor(1, function (error, user)))
+	}
+}
+describe('readMembersFor', function()){
+	if('should return and array of members', function(){
+		assert(db.readMembersFor(2, function (error, user)))
+	}
+}
+describe('destroyUser', function()){
+	if('should destory ', function(){
 		assert(db.createUser('joe@placebetter', 'userpass', 1, function (error, user)))
 	}
 }
 
-
-// );
-
-// db.readUser(1,
-// 	function (error, user) {
-// 		console.log('read user:');
-// 		printresult(error, user);
-
-// 		user.userpass = 'betterpass';
-
-// 		db.updateUser(user,
-// 			function (error, user) {
-// 				console.log('update user:');
-// 				printresult(error, user);
-// 			}
-// 		);
-// 	}
-// );
-
-// db.readModeratorsFor(1,
-// 	function (error, users) {
-// 		console.log('read moderators for:');
-// 		printresults(error, users);
-// 	}
-// );
-
-// db.readMembersFor(2,
-// 	function (error, users) {
-// 		console.log('read members for:');
-// 		printresults(error, users);
-// 	}
-// );
 
 // db.destroyUser(4,
 // 	function (error, user) {
