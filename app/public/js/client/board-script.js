@@ -375,6 +375,11 @@ socket.on('remove_resource',
     }
 );
 
+socket.on('disconnection', function(data) {
+    cursors[data.userid].remove();
+    delete cursors[data.userid];
+});
+
 function add_element(elementid, element) {
     elements[elementid] = element;
     interactable(elementid, element, 'element');
