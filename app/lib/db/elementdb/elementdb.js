@@ -36,24 +36,19 @@ function createElement(elementid, attrs, boardid, callback) {
 
 	db.createObject(TABLE, data, ID,
 		function (error, result) {
-			if (error) return console.log(error);
+			if (error) return callback(error);
 
 			joinBoardElement(boardid, elementid,
 				function (error, result) {
 					if (error) {
 						uncreateElement(elementid, error,
 							function (error, result) {
-								return console.log(error);
+								return callback(error);
 							}
 						);
+						var element = new Element(elementid, attrs);
+						return callback(db.SUCCESS, element);
 					}
-
-					var element = new Element(elementid, attrs);
-					console.log('test');
-					for (var prop in element) {
-						console.log(prop + ': ' + element[prop]);
-					}
-					return callback(db.SUCCESS, element);
 				}
 			);
 		}
@@ -61,13 +56,9 @@ function createElement(elementid, attrs, boardid, callback) {
 }
 
 function joinBoardElement(boardid, elementid, callback) {
-	console.log('entering joinBoardElem');
 	db.joinObjects(boarddb.TABLE, TABLE, boardid, elementid,
 		function (error, result) {
 			if (error) return callback(error);
-			for(var prop in result) {
-				console.log(prop + ': ' + result[prop]);
-			}
 			return callback(db.SUCCESS, result);
 		}
 	);
