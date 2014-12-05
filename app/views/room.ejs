@@ -1,137 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Room</title>
-
-<!-- Bootstrap Core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="/css/simple-sidebar.css" rel="stylesheet">
-
-<!-- FONT ICONS -->
-<link rel="stylesheet" href="/icons/icons.css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-<!-- CANVAS -->
-<link rel='stylesheet' href='/stylesheets/style.css' />
-<style type="text/css">
-body {
-	overflow: hidden;
-}
-#canvas {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-</style>
-<script src="/js/jquery-2.1.1.min.js"></script>
-<script src="../js/raphael-min.js"></script>
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Room</title>
+	
+	<!-- Bootstrap Core CSS -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Custom CSS -->
+	<link href="/css/simple-sidebar.css" rel="stylesheet">
+	
+	<!-- FONT ICONS -->
+	<link rel="stylesheet" href="/icons/icons.css">
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<!-- CANVAS -->
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<style type="text/css">
+	body {
+		overflow: hidden;
+	}
+	#canvas {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+	</style>
+	<script src="/js/jquery-2.1.1.min.js"></script>
+	<script src="../js/raphael-min.js"></script>
+	
 </head>
 
 <body>
-<div id="wrapper"> 
-  
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-logo">
-      <li> <a href="index.html" id="sidebar_logo"></a> </li>
-    </ul>   
-    
-    <ul class="sidebar-nav">
-      <li><a href="#" title = "draw"><span class="icon-software-pencil"></span></a></li>
-      <li><a href="#" title = "video"><span class="icon-social-youtube-square"></span></a></li>
-      <li><a href="#" title = "image"><span class="icon-basic-picture"></span></a></li>
-      <li><a href="#" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
-      <li><a href="#" title = "pdf"><span class="icon-easel"></span></a></li>
-      <li><a href="#" title = "text"><span class="icon-ecommerce-receipt"></span></a></li>    
-      
-      <!--<li> <a href="javascript:;" data-toggle="collapse" data-target="#demo">
-      <span class="icon-man-people-streamline-user"></span><i class="fa fa-fw fa-caret-down"></i></a>
-        <ul id="demo" class="collapse">
-          <li> <a href="#">Dropdown Item</a> </li>
-          <li> <a href="#">Dropdown Item</a> </li>
-        </ul>
-      </li>-->
-      
-    </ul>
-      
-    <div class="sidebar-footer">
-      <a href="#" title = "user"><span class="icon-man-people-streamline-user"></span></a>
-      <a href="#" title = "tools"><span class="icon-settings-streamline-1"></span></a>  
-    </div>
-    
-  </div>
-  <!-- /#sidebar-wrapper --> 
-  
-  <!-- Page Content -->
- <div id="page-content-wrapper">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12">
-      <div id="canvas"></div>
-      <h1>Room <span id="urlHeader"></span></h1>
-      <p><%= message %></p>
-      <hr>
-      <p> Nickname: <%= nickname %> <br>
-        Room URL: <span id="url"></span> <br>
-        Board Count: <span id="bcount"></span> <br>
-        <br>
-        <b>Members</b>
-      <ul id="members">
-      </ul>
-      <b>Moderators</b>
-      <ul id="moderators">
-      </ul>
-      <b>Online</b>
-      <ul id="onlineusers">
-      </ul>
-      </p>
-      <button id="addvideo">Add Video</button>
-      <p><a href="/logout">Logout</a></p>
-      <script src="/socket.io/socket.io.js"></script> 
-      <script>
-        var socket = io.connect('http://' + window.location.host);
-        var roomid = '<%= roomid %>';
-        var nickname = '<%= nickname %>';
-        var boardid = '<%= boardid %>';
-        var userid = '<%= userid %>';
-        </script> 
-      <script src="../js/client.js"></script> 
-    </div>
-  </div>
-  <!-- /#page-content-wrapper --> 
-  
-</div>
-<!-- /#wrapper --> 
-
-<!-- jQuery --> 
-<script src="/js/jquery.js"></script> 
-
-<!-- Bootstrap Core JavaScript --> 
-<script src="/js/bootstrap.min.js"></script> 
-
-<!-- Menu Toggle Script --> 
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+	<div id="wrapper"> 
+		
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-logo">
+				<li> <a href="index.html" id="sidebar_logo"></a> </li>
+			</ul>   
+			
+			<ul class="sidebar-nav">
+				<li><a href="#" title = "draw"><span class="icon-software-pencil"></span></a></li>
+				<li><a href="#" title = "video"><span class="icon-social-youtube-square"></span></a></li>
+				<li><a href="#" title = "image"><span class="icon-basic-picture"></span></a></li>
+				<li><a href="#" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
+					<li><a href="#" title = "pdf"><span class="icon-easel"></span></a></li>
+					<li><a href="#" title = "text"><span class="icon-ecommerce-receipt"></span></a></li>    
+					
+					<!--<li> <a href="javascript:;" data-toggle="collapse" data-target="#demo">
+					<span class="icon-man-people-streamline-user"></span><i class="fa fa-fw fa-caret-down"></i></a>
+					<ul id="demo" class="collapse">
+					<li> <a href="#">Dropdown Item</a> </li>
+					<li> <a href="#">Dropdown Item</a> </li>
+				</ul>
+			</li>-->
+			
+		</ul>
+		
+		<div class="sidebar-footer">
+			<a href="#" title = "user"><span class="icon-man-people-streamline-user"></span></a>
+			<a href="#" title = "tools"><span class="icon-settings-streamline-1"></span></a>  
+		</div>
+		
+	</div>
+	<!-- /#sidebar-wrapper --> 
+	
+	<!-- Page Content -->
+	<div id="page-content-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="canvas"></div>
+					<h1>Room <span id="urlHeader"></span></h1>
+					<p><%= message %></p>
+					<hr>
+					<p> Nickname: <%= nickname %> <br>
+						Room URL: <span id="url"></span> <br>
+						Board Count: <span id="bcount"></span> <br>
+						<br>
+						<b>Members</b>
+						<ul id="members">
+						</ul>
+						<b>Moderators</b>
+						<ul id="moderators">
+						</ul>
+						<b>Online</b>
+						<ul id="onlineusers">
+						</ul>
+					</p>
+					<button id="addvideo">Add Video</button>
+					<p><a href="/logout">Logout</a></p>
+					<script src="/socket.io/socket.io.js"></script> 
+					<script>
+					var socket;
+					var defaultsocket = io.connect();
+					defaultsocket.on('connect',
+						function() {
+							socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
+						}
+					);
+					// var socket = io.connect('http://' + window.location.host);
+					var roomid = '<%= roomid %>';
+					var nickname = '<%= nickname %>';
+					var boardid = '<%= boardid %>';
+					var userid = '<%= userid %>';
+					</script> 
+				<script src="../js/client.js"></script> 
+			</div>
+		</div>
+		<!-- /#page-content-wrapper --> 
+		
+	</div>
+	<!-- /#wrapper --> 
+	
+	<!-- jQuery --> 
+	<script src="/js/jquery.min.js"></script> 
+	
+	<!-- Bootstrap Core JavaScript --> 
+	<script src="/js/bootstrap.min.js"></script> 
+	
+	<!-- Menu Toggle Script --> 
+	<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+	</script>
 </body>
 </html>
