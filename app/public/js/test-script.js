@@ -8,7 +8,10 @@ var path_string;
 var cursors = {};
 var selection;
 var counter;
-
+var width_select = 0;
+var width_list = [5,10,15,20,25];
+var stroke_color = 0
+var stroke_list = ['blue','red','black','green','pink'];
 
 var start = function () {
   this.odx = 0;
@@ -47,9 +50,10 @@ $(canvas).mousedown(
 
         path_string = 'M' + x + ' ' + y + 'l0 0';
        
-      
+        
         path = paper.path(path_string).attr({
-            'stroke-width' : 5 
+            'stroke-width' : width_list[width_select],
+            'stroke'   : stroke_list[stroke_color]
         });
 
         path.dblclick(function(){
@@ -102,7 +106,40 @@ $(document).mouseup(
     }
 );
 
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode === 17){
+            if(stroke_color === (stroke_list.length - 1)){ // up arrow =38  
+                stroke_color = 0;
+            }
+            else if(event.keyCode === 17){
+                stroke_color +=1;
+            }
+        }
+    }
+);
+/*
+$(document).keyup(function(e) {
 
+  if (e.keyCode == 27) { <DO YOUR WORK HERE> }   // esc
+});
+*/
+
+//toggle path width
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode == 40){
+            if(width_select === (width_list.length - 1)){ // up arrow =38  
+                width_select = 0;
+            }
+            else if(event.keyCode === 40){
+                width_select +=1;
+            }
+        }
+    }
+);
 // function emit() {
 //     socket.emit('mousemove',
 //         { userid : userid,

@@ -1,6 +1,11 @@
 var canvas = document.getElementById('canvas');
 var paper = new Raphael(canvas);
 
+var width_select = 0;
+var width_list = [5,10,15,20,25];
+var stroke_color = 0
+var stroke_list = ['blue','red','black','green','pink'];
+
 var cursors = {};
 
 // store elements created in an array, indexed by elementid
@@ -26,8 +31,6 @@ var mode;
 
 var path;
 var path_string;
-var stroke_width = '3';
-var stroke_color = Raphael.getColor();
 
 var text = undefined;
 var string = '';
@@ -68,8 +71,8 @@ $(document).keydown(
             buffercounter = 0;
             path_string = ['M' + previousx + ' ' + previousy + 'l0 0'];
             path = paper.path(path_string).attr(
-                { 'stroke-width' : stroke_width,
-                'stroke' : stroke_color }
+                {   'stroke-width' : width_list[width_select],
+                    'stroke'   : stroke_list[stroke_color] }
             );
 
             bufferx = previousx;
@@ -110,11 +113,13 @@ $(document).mousemove(
 $(document).keyup(
     function(event) {
         if (ctrldown) {
+
             var attrs =
 				{ 'type': 'path',
 				'path' : path.attr('path'),
-                'stroke-width': stroke_width,
-                'stroke': stroke_color };
+                'stroke-width' : width_list[width_select],
+                'stroke'   : stroke_list[stroke_color]  };
+                
             var elementid = generate_object_id(elementidprefix);
 
             add_element(elementid, path);
@@ -130,6 +135,48 @@ $(document).keyup(
         ctrldown = false;
     }
 );
+
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode === 38){
+            if(stroke_color === (stroke_list.length - 1)){ // up arrow =38  
+                stroke_color = 0;
+            }
+            else if(event.keyCode === 38){
+                stroke_color +=1;
+            }
+        }
+    }
+);
+/*
+$(document).keyup(function(e) {
+
+  if (e.keyCode == 27) { <DO YOUR WORK HERE> }   // esc
+});
+*/
+
+//toggle path width
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode == 40){
+            if(width_select === (width_list.length - 1)){ // down arrow = 40  
+                width_select = 0;
+            }
+            else if(event.keyCode === 40){
+                width_select +=1;
+            }
+        }
+    }
+);
+
+$('#addvideo').click(
+    function(event) {
+        event.preventDefault();
+        mode = 'res_video';
+    }
+)
 
 function setMode(newMode) {
     console.log('set it fine!');
@@ -151,19 +198,19 @@ $(canvas).mouseup(
             var width = 250;
             var height = 250;
             var location = '';
-
+            console.log(mode);
             if(mode === 'res_video') {
                 width = 430;
                 height = 315;
                 location = '//www.youtube.com/embed/' + resourceurl;
-            } else if(mode === 'res_photo') {
-                width = 275;
-                height = 275;
-                location = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
+            } else if(mode === 'res_image') {
+                width = 400;
+                height = 600;
+                location = resourceurl;
             } else if(mode === 'res_code') {
                 width = 500;
                 height = 500;
-                location = 'google.com';
+                location = 'http://google.com';
             }
 
             var newResource = new Infobox(paper, {
@@ -192,6 +239,7 @@ $(canvas).mouseup(
                 height: height }
             );
 
+            mode = '';
             resourceurl = '';
         } else if (selection) {
 
@@ -295,7 +343,7 @@ socket.on('resources',
 
             //$(resources[mode + '_0001'].div).css('position', 'fixed');
             newResource.div.css('overflow', 'hidden');
-            newResource.div.html('<iframe scrolling=frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
+            newResource.div.html('<iframe scrolling="no" frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
                 'px" src="' + data[i].resourceurl + '"></iframe>');
 
             add_resource(data[i]['resourceid'], newResource);
@@ -382,11 +430,6 @@ socket.on('remove_resource',
         delete resources[data['objectid']];
     }
 );
-
-socket.on('disconnection', function(data) {
-    cursors[data.userid].remove();
-    delete cursors[data.userid];
-});
 
 function add_element(elementid, element) {
     elements[elementid] = element;
