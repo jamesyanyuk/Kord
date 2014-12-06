@@ -184,12 +184,10 @@
 				</ul>
 
 				<ul class="sidebar-nav">
-					<li><a href="#" title = "draw"><span class="icon-software-pencil"></span></a></li>
+					<li><a id="draw" title = "draw"><span class="icon-software-pencil"></span></a></li>
 					<li><a id="addvideo" title = "video"><span class="icon-social-youtube-square"></span></a></li>
 					<li><a id="addimage" title = "image"><span class="icon-basic-picture"></span></a></li>
 					<li><a id="addcode" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
-						<li><a href="#" title = "pdf"><span class="icon-easel"></span></a></li>
-						<li><a href="#" title = "text"><span class="icon-ecommerce-receipt"></span></a></li>
 
 						<!--<li> <a href="javascript:;" data-toggle="collapse" data-target="#demo">
 						<span class="icon-man-people-streamline-user"></span><i class="fa fa-fw fa-caret-down"></i></a>
@@ -323,19 +321,12 @@
 
 		$('#addcode').click(function(event) {
 				event.preventDefault();
+				$.prompt('Coming soon!');
+		});
 
-				var codestates = {
-					state0: {
-						html:'Stuff <br><input type="text" id="res_code_data">',
-						buttons: { 'Add to Board': true },
-						submit:function(e,v,m,f){
-							setMode('res_code');
-							setResource($('#res_code_data').val());
-						}
-					}
-				}
-
-				$.prompt(codestates);
+		$('#draw').click(function(event) {
+				event.preventDefault();
+				$.prompt('Hold control to draw!');
 		});
 		</script>
 	</body>
