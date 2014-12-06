@@ -107,6 +107,15 @@ are in the actual dspec.md.
 the dspec.md can be found in /docs/final_spec/dspec.md and 
 fspec.md can be found in /docs/final_spec/fspec.md
 
+Live app: www.kord.io
+Running app locally: 
+	cd app
+	npm install
+	npm start
+
+openup browser and enter localhost:3000
+
+
 ## Documents to be Reviewed for Assignment 5
 [/docs/final_spec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/final_spec/dspec.md)
 [/docs/final_spec/fspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/final_spec/fspec.md)
