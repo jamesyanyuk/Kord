@@ -11,17 +11,17 @@
 
 		<!-- Bootstrap Core CSS -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
-		
+
 		<!-- Custom CSS -->
 		<link href="/css/simple-sidebar.css" rel="stylesheet">
-		
+
 		<!-- Impromptu CSS -->
 		<link href="/css/jquery-impromptu.min.css" rel="stylesheet">
 
 		<!-- FONT ICONS -->
 		<link rel="stylesheet" href="/icons/icons.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css">
-		
+
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -96,7 +96,13 @@
 							var defaultsocket = io.connect();
 							defaultsocket.on('connect',
 								function() {
-									socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
+									if(window.location.host.indexOf('localhost') > -1 ||
+										window.location.host.indexOf('127.0') > -1) {
+										socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
+										console.log('Connected to server running locally');
+									} else {
+										socket = io.connect('http://kord.herokuapp.com:80', { 'forcenewconnection': true } );
+									}
 								}
 							);
 							var roomid = '<%= roomid %>';
@@ -188,8 +194,8 @@
 				$.prompt('Hold control to draw!');
 		});
 		</script>
-		
-		<!--chat script--> 
+
+		<!--chat script-->
 		<script>
 			$(document).on('click', '.panel-heading span.icon_minim', function (e) {
 			var $this = $(this);
@@ -211,8 +217,8 @@
 				$('#minim_chat_window').removeClass('glyphicon-plus').addClass('glyphicon-minus');
 			}
 		});
-		</script> 
+		</script>
 		<!--/chat-->
-		
+
 	</body>
 </html>
