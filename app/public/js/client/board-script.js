@@ -1,6 +1,11 @@
 var canvas = document.getElementById('canvas');
 var paper = new Raphael(canvas);
 
+var width_select = 0;
+var width_list = [5,10,15,20,25];
+var stroke_color = 0
+var stroke_list = ['blue','red','black','green','pink'];
+
 var cursors = {};
 
 // store elements created in an array, indexed by elementid
@@ -26,8 +31,6 @@ var mode;
 
 var path;
 var path_string;
-var stroke_width = '4';
-var stroke_color = Raphael.getColor();
 
 var text = undefined;
 var string = '';
@@ -66,8 +69,8 @@ $(document).keydown(
             buffercounter = 0;
             path_string = ['M' + previousx + ' ' + previousy + 'l0 0'];
             path = paper.path(path_string).attr(
-                { 'stroke-width' : stroke_width,
-                'stroke' : stroke_color }
+                {   'stroke-width' : width_list[width_select],
+                    'stroke'   : stroke_list[stroke_color] }
             );
 
             bufferx = previousx;
@@ -108,11 +111,13 @@ $(document).mousemove(
 $(document).keyup(
     function(event) {
         if (ctrldown) {
+
             var attrs =
 				{ 'type': 'path',
 				'path' : path.attr('path'),
-                'stroke-width': stroke_width,
-                'stroke': stroke_color };
+                'stroke-width' : width_list[width_select],
+                'stroke'   : stroke_list[stroke_color]  };
+                
             var elementid = generate_object_id(elementidprefix);
 
             add_element(elementid, path);
@@ -128,6 +133,42 @@ $(document).keyup(
         ctrldown = false;
     }
 );
+
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode === 38){
+            if(stroke_color === (stroke_list.length - 1)){ // up arrow =38  
+                stroke_color = 0;
+            }
+            else if(event.keyCode === 38){
+                stroke_color +=1;
+            }
+        }
+    }
+);
+/*
+$(document).keyup(function(e) {
+
+  if (e.keyCode == 27) { <DO YOUR WORK HERE> }   // esc
+});
+*/
+
+//toggle path width
+$(document).keydown(
+    function(event){
+        console.log('keydown');
+        if(event.keyCode == 40){
+            if(width_select === (width_list.length - 1)){ // down arrow = 40  
+                width_select = 0;
+            }
+            else if(event.keyCode === 40){
+                width_select +=1;
+            }
+        }
+    }
+);
+
 $('#addvideo').click(
     function(event) {
         event.preventDefault();
@@ -374,11 +415,6 @@ socket.on('remove_resource',
         delete resources[data['objectid']];
     }
 );
-
-socket.on('disconnection', function(data) {
-    cursors[data.userid].remove();
-    delete cursors[data.userid];
-});
 
 function add_element(elementid, element) {
     elements[elementid] = element;
