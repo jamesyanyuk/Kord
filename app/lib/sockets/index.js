@@ -49,6 +49,10 @@ module.exports = function(io) {
                     nickname: data.nickname,
                     userid: data.userid
                 });
+                io.sockets.in('r' + data.roomid).emit('updatechat',
+                    { nickname: 'Server',
+                    message: data.nickname + ' entered.' }
+                );
             }
         );
 
@@ -96,10 +100,29 @@ module.exports = function(io) {
                 nickname: nickname,
                 userid: userid
             });
+            
+            io.to('r' + data.roomid).emit('updatechat',
+                { nickname: 'Server',
+                message: nickname + ' left.' }
+            );
 
             delete idmap[socket.id];
             delete rooms[roomid][userid];
         });
+        
+        
+        ////
+        // chat
+        ////
+
+        socket.on('sendchat',
+            function(data) {
+                print_data('sendchat', data);
+                // socket.broadcast.to(data.roomid).emit('updatechat', data);
+                io.sockets.in('r' + data.roomid).emit('updatechat', data);
+            }
+        );
+        
 
         ////
         // board

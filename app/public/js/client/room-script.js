@@ -50,3 +50,31 @@ function print_data(message, data) {
         console.log(prop + ': ' + data[prop]);
     }
 }
+
+////
+// chat
+////
+
+$('form').submit(
+	function(event) {
+        event.preventDefault();													// when the client clicks SEND
+		var message = $('#data').val();
+		$('#data').val('');                                                    // erases the message after sending
+        print_data('sendchat', message);
+		socket.emit('sendchat',
+            { roomid: roomid,
+            boardid: boardid,
+            userid: userid,
+            nickname: nickname,
+            message: message }                						        	// tell server to execute 'sendchat' and send along one parameter
+        );
+        return false;
+	}
+);
+
+socket.on('updatechat',
+	function (data) {
+        print_data('updatechat', data);
+		$('#conversation').append('<b>'+ data.nickname + ':</b> ' + data.message + '<br>');
+	}
+);
