@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="kord.io makes it easy to connect and collaborate with others over an editable online whiteboard in realtime.">
-    <meta name="keywords" content="kord, kord.io, draw, collaborate, real-time">
-    <meta name="author" content="UMass Amherst CMPSCI 326: Julian, James, Sara, Nam, Mattheaus">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta charset="UTF-8">
+<meta name="description" content="kord.io makes it easy to connect and collaborate with others over an editable online whiteboard in realtime.">
+<meta name="keywords" content="kord, kord.io, draw, collaborate, real-time">
+<meta name="author" content="UMass Amherst CMPSCI 326: Julian, James, Sara, Nam, Mattheaus">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE TITLE -->
 <title><%= title %></title>
@@ -80,52 +80,25 @@
           <div class="navbar-header"> <img src="/images/logokordindex.png" alt=""> </div>
         </div>
       </div>
-      <!-- /END ONLY LOGO ON HEADER -->
+      <!-- /END ONLY LOGO ON HEADER --> 
       
-<!--Original
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Register</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Register</h1>
-    <p><%= message %></p>
-    <p>Create a Kord account below</p>
-
-    <form method="post" action="/register">
-        Email: <input type="text" name="email"> <br>
-        Password:  <input type="password" name="password"> <br>
-        Confirm Password:  <input type="password" name="password_conf"> <br>
-        <button>Register</button>
-        <br><p><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/logout">Logout</a></p>
-    </form>
-  </body>
-</html>
-
--->
-
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
           <div class="horizontal-subscribe-form">
-          <p></p>
-          <h5 class="white-text">Create a Kord account.</h5>
+            <p></p>
+            <h5 class="white-text">Create a Kord account.</h5>
             <form class="signup-form" id="signup-form" method="post" action="/register">
               <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
               <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
               <input type="password" id="cf-passwordconf" name="password_conf" class="form-control input-box" placeholder="Password">
               <button class="btn btn-primary standard-button" style="width:100%">Sign Up</button>
             </form>
-            
             <p>
             <p class="transparent-text"><%= message %></p>
-          <p></p>
-                     
+            <p></p>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </header>
