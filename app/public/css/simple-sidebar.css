@@ -86,7 +86,7 @@
 	min-height:100px;
 	background-position:center;
 	background-repeat:no-repeat;
-	background-image: url(../images/logokordsm.png);	
+	background-image: url(../images/logokordsm.png);
 }
 
 .sidebar-logo li {
@@ -145,7 +145,7 @@
 		        margin-bottom: 0px;
 		    }
 		    .chat-window{
-		        width: 250px;
+		        width: 430px;
 		        bottom:0;
 		        right: 0;
 		        position:fixed;
@@ -239,8 +239,8 @@
 		        left:0px;
 		        bottom:0;
 		    }
-			
-			
+
+
 <!-- CANVAS -->
 		<style type="text/css">
 		body {
