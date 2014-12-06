@@ -22,7 +22,7 @@ router.get('/:rurl', function(req, res) {
                         roomid: roomidResult.roomid,
                         roomurl: req.params.url,
                         boardid: boardres[0].boardid,
-                        message: 'Welcome'
+                        message: 'Welcome to your room!'
                     });
                 });
             // } else {
@@ -50,7 +50,7 @@ router.get('/:rurl', function(req, res) {
                                             roomid: roomidResult.roomid,
                                             roomurl: req.params.url,
                                             boardid: boardres[0].boardid,
-                                            message: 'Welcome'
+                                            message: 'Welcome to your room!'
                                         });
                                     });
                                 } else {
@@ -60,7 +60,7 @@ router.get('/:rurl', function(req, res) {
                                         roomid: roomidResult.roomid,
                                         roomurl: req.params.url,
                                         boardid: boardres[0].boardid,
-                                        message: 'Welcome'
+                                        message: 'Welcome to your room!'
                                     });
                                 }
                             });

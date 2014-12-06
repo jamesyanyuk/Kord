@@ -78,11 +78,11 @@ $(document).keydown(
             bufferx = previousx;
             buffery = previousy;
         }
-        else if (!event.ctrlKey) {
-            string += String.fromCharCode(event.keyCode);
-            if (!text) text = paper.text(selectionx, selectiony, string);
-            else text.attr({ text: string });
-        }
+        // else if (!event.ctrlKey) {
+        //     string += String.fromCharCode(event.keyCode);
+        //     if (!text) text = paper.text(selectionx, selectiony, string);
+        //     else text.attr({ text: string });
+        // }
     }
 );
 $(document).mousemove(
@@ -119,7 +119,7 @@ $(document).keyup(
 				'path' : path.attr('path'),
                 'stroke-width' : width_list[width_select],
                 'stroke'   : stroke_list[stroke_color]  };
-                
+
             var elementid = generate_object_id(elementidprefix);
 
             add_element(elementid, path);
@@ -140,7 +140,7 @@ $(document).keydown(
     function(event){
         console.log('keydown');
         if(event.keyCode === 38){
-            if(stroke_color === (stroke_list.length - 1)){ // up arrow =38  
+            if(stroke_color === (stroke_list.length - 1)){ // up arrow =38
                 stroke_color = 0;
             }
             else if(event.keyCode === 38){
@@ -161,7 +161,7 @@ $(document).keydown(
     function(event){
         console.log('keydown');
         if(event.keyCode == 40){
-            if(width_select === (width_list.length - 1)){ // down arrow = 40  
+            if(width_select === (width_list.length - 1)){ // down arrow = 40
                 width_select = 0;
             }
             else if(event.keyCode === 40){
@@ -198,7 +198,7 @@ $(canvas).mouseup(
             var width = 250;
             var height = 250;
             var location = '';
-            console.log(mode);
+
             if(mode === 'res_video') {
                 width = 430;
                 height = 315;
