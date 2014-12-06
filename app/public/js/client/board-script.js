@@ -196,16 +196,16 @@ $(canvas).mouseup(
                 height = 315;
                 location = '//www.youtube.com/embed/' + resourceurl;
             } else if(mode === 'res_image') {
-                width = 600;
+                width = 400;
                 height = 400;
-                if(location.substr(0, 4) === 'http')
+                if(resourceurl.substr(0, 4) === 'http')
                     location = resourceurl;
                 else
                     location = 'http://' + resourceurl;
             } else if(mode === 'res_code') {
                 width = 500;
                 height = 500;
-                location = 'http://google.com';
+                location = 'http://temp.com';
             }
 
             var newResource = new Infobox(paper, {
