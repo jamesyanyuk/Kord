@@ -11,16 +11,17 @@
 
 		<!-- Bootstrap Core CSS -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
-
+		
 		<!-- Custom CSS -->
 		<link href="/css/simple-sidebar.css" rel="stylesheet">
-
+		
 		<!-- Impromptu CSS -->
 		<link href="/css/jquery-impromptu.min.css" rel="stylesheet">
 
 		<!-- FONT ICONS -->
 		<link rel="stylesheet" href="/icons/icons.css">
-
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css">
+		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -46,16 +47,7 @@
 					<li><a id="addvideo" title = "Add Video"><span class="icon-social-youtube-square"></span></a></li>
 					<li><a id="addimage" title = "Add Image"><span class="icon-basic-picture"></span></a></li>
 					<li><a id="addcode" title = "Add Code"><span class="icon-arrows-glide-horizontal"></a></li>
-
-						<!--<li> <a href="javascript:;" data-toggle="collapse" data-target="#demo">
-						<span class="icon-man-people-streamline-user"></span><i class="fa fa-fw fa-caret-down"></i></a>
-						<ul id="demo" class="collapse">
-						<li> <a href="#">Dropdown Item</a> </li>
-						<li> <a href="#">Dropdown Item</a> </li>
-					</ul>
-				</li>-->
-
-			</ul>
+				</ul>
 
 			<div class="sidebar-footer">
 				<a title = "Board Details" data-toggle="modal" data-target="#users-online"><span class="icon-man-people-streamline-user"></span></a>
@@ -122,17 +114,17 @@
                     <div class="panel panel-default">
                         <div class="panel-heading top-bar">
                             <div class="col-md-8 col-xs-8">
-                                <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Chat</h3>
+                                <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span></h3>
                             </div>
                             <div class="col-md-4 col-xs-4" style="text-align: right;"> <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a> </div>
                         </div>
                         <div class="panel-body msg_container_base">
                             <div id="conversation"></div>
                         </div>
-	                	<div class="panel-footer">
+	                	<div class="panel-footer" width = 100%>
 		                    <div class="input group">
                             	<form action= "">
-            						<input id="data" autocomplete="off" placeholder="Message"/>
+            						<input id="data" autocomplete="off" placeholder="Message"/ style="width:330px">
             						<button>Send</button>
 
             					</form>
@@ -196,5 +188,31 @@
 				$.prompt('Hold control to draw!');
 		});
 		</script>
+		
+		<!--chat script--> 
+		<script>
+			$(document).on('click', '.panel-heading span.icon_minim', function (e) {
+			var $this = $(this);
+			if (!$this.hasClass('panel-collapsed')) {
+				$this.parents('.panel').find('.panel-body').slideUp();
+				$this.addClass('panel-collapsed');
+				$this.removeClass('glyphicon-minus').addClass('glyphicon-plus');
+			} else {
+				$this.parents('.panel').find('.panel-body').slideDown();
+				$this.removeClass('panel-collapsed');
+				$this.removeClass('glyphicon-plus').addClass('glyphicon-minus');
+			}
+		});
+		$(document).on('focus', '.panel-footer input.chat_input', function (e) {
+			var $this = $(this);
+			if ($('#minim_chat_window').hasClass('panel-collapsed')) {
+				$this.parents('.panel').find('.panel-body').slideDown();
+				$('#minim_chat_window').removeClass('panel-collapsed');
+				$('#minim_chat_window').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+			}
+		});
+		</script> 
+		<!--/chat-->
+		
 	</body>
 </html>
