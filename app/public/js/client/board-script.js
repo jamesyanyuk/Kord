@@ -26,7 +26,7 @@ var mode;
 
 var path;
 var path_string;
-var stroke_width = '4';
+var stroke_width = '3';
 var stroke_color = Raphael.getColor();
 
 var text = undefined;
@@ -41,6 +41,8 @@ var ridcounter = 0;
 
 var elementidprefix = 'b' + boardid + 'u' + userid + 'e';
 var resourceidprefix = 'b' + boardid + 'u' + userid + 'r';
+
+var resourceurl;
 
 var infobox;
 
@@ -128,23 +130,41 @@ $(document).keyup(
         ctrldown = false;
     }
 );
-$('#addvideo').click(
-    function(event) {
-        event.preventDefault();
-        mode = 'res_video';
-    }
-)
+
+function setMode(newMode) {
+    console.log('set it fine!');
+    mode = newMode;
+}
+
+function setResource(newUrl) {
+    resourceurl = newUrl;
+}
+
 $(canvas).mouseup(
     function(event) {
         var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
         var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
 
-        if (mode === 'res_video') {
+        if (mode.substr(0, 4) === 'res_') {
             var resourceid = generate_object_id(resourceidprefix);
 
             var width = 250;
             var height = 250;
-            var resourceurl = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
+            var location = '';
+
+            if(mode === 'res_video') {
+                width = 430;
+                height = 315;
+                location = '//www.youtube.com/embed/' + resourceurl;
+            } else if(mode === 'res_photo') {
+                width = 275;
+                height = 275;
+                location = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
+            } else if(mode === 'res_code') {
+                width = 500;
+                height = 500;
+                location = 'google.com';
+            }
 
             var newResource = new Infobox(paper, {
                 x: currentx,
@@ -155,8 +175,8 @@ $(canvas).mouseup(
 
             //$(resources[mode + '_0001'].div).css('position', 'fixed');
             newResource.div.css('overflow', 'hidden');
-            newResource.div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' + height +
-                'px" src="' + resourceurl + '"></iframe>');
+            newResource.div.html('<iframe scrolling="no" frameborder="0" width="' + width + 'px" height="' + height +
+                'px" src="' + location + '"></iframe>');
 
             add_resource(resourceid, newResource);
 
@@ -165,27 +185,14 @@ $(canvas).mouseup(
                 boardid: boardid,
                 userid: userid,
                 resourceid: resourceid,
-                resourceurl: resourceurl,
+                resourceurl: location,
                 x: currentx,
                 y: currenty,
                 width: width,
                 height: height }
             );
 
-            // var width = 420;
-            // var height = 315;
-            //
-            // resources[mode + '_0001'] = new Infobox(paper, {
-            //     x: currentx - (width/2),
-            //     y: currenty - (height/2),
-            //     width: width,
-            //     height: height
-            // });
-            //
-            // //$(resources[mode + '_0001'].div).css('position', 'fixed');
-            // $(resources[mode + '_0001'].div).css('overflow', 'hidden');
-            // resources[mode + '_0001'].div.html('<iframe scrolling=frameborder="0" width="' + width + 'px" height="' +
-            //     height + 'px" src="https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg"></iframe>');
+            resourceurl = '';
         } else if (selection) {
 
             var transformstring = 't' + (currentx - selectionx) + ',' + (currenty - selectiony);
@@ -310,11 +317,12 @@ socket.on('cursorupdate',
         else {
             var f = Raphael.getColor();
             var s = Raphael.getColor();
-            var circle = paper.circle(data.cx, data.cy, 10).attr(
+            var circle = paper.circle(data.cx, data.cy, 7).attr(
                 { 'fill' : f,
                 'stroke' : s,
                 'stroke-width' : stroke_width }
             );
+
             cursors[data.userid] = circle;
         }
     }
