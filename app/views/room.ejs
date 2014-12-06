@@ -14,6 +14,9 @@
 	<!-- Custom CSS -->
 	<link href="/css/simple-sidebar.css" rel="stylesheet">
 
+	<!-- Impromptu library css -->
+	<link href="/css/jquery-impromptu.min.css" rel="stylesheet">
+
 	<!-- FONT ICONS -->
 	<link rel="stylesheet" href="/icons/icons.css">
 
@@ -56,8 +59,8 @@
 			<ul class="sidebar-nav">
 				<li><a href="#" title = "draw"><span class="icon-software-pencil"></span></a></li>
 				<li><a id="addvideo" title = "video"><span class="icon-social-youtube-square"></span></a></li>
-				<li><a href="#" title = "image"><span class="icon-basic-picture"></span></a></li>
-				<li><a href="#" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
+				<li><a id="addimage" title = "image"><span class="icon-basic-picture"></span></a></li>
+				<li><a id="addcode" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
 					<li><a href="#" title = "pdf"><span class="icon-easel"></span></a></li>
 					<li><a href="#" title = "text"><span class="icon-ecommerce-receipt"></span></a></li>
 
@@ -131,16 +134,68 @@
 
 	<!--<script src="/js/external/jquery/jquery.js"></script>-->
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script src="/js/jquery-impromptu.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/js/bootstrap.min.js"></script>
 
-	<!-- Menu Toggle Script -->
 	<script>
-	$("#menu-toggle").click(function(e) {
-		e.preventDefault();
-		$("#wrapper").toggleClass("toggled");
-	});
+		// Menu Toggle Script
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+
+		$('#addvideo').click(function(event) {
+				event.preventDefault();
+
+				var states = {
+					state0: {
+						html:'Enter a Youtube Video ID <br><input style="width:100%" type="text" placeholder="Video ID" id="res_video_data">',
+						buttons: { 'Add to Board': true },
+						submit:function(e,v,m,f){
+							setMode('res_video');
+							setResource($('#res_video_data').val());
+						}
+					}
+				}
+
+				$.prompt(states);
+		});
+
+		$('#addimage').click(function(event) {
+				event.preventDefault();
+
+				var states = {
+					state0: {
+						html:'Enter an Image URL (We recommend imgur.) <br><input style="width:100%" type="text" placeholder="Image URL" id="res_image_data">',
+						buttons: { 'Add to Board': true },
+						submit:function(e,v,m,f){
+							setMode('res_image');
+							setResource($('#res_image_data').val());
+						}
+					}
+				}
+
+				$.prompt(states);
+		});
+
+		$('#addcode').click(function(event) {
+				event.preventDefault();
+
+				var states = {
+					state0: {
+						html:'Enter a video URL <br><input type="text" id="res_code_data">',
+						buttons: { 'Add to Board': true },
+						submit:function(e,v,m,f){
+							setMode('res_code');
+							setResource($('#res_code_data').val());
+						}
+					}
+				}
+
+				$.prompt(states);
+		});
 	</script>
 </body>
 </html>
