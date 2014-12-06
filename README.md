@@ -102,9 +102,18 @@ are in the actual dspec.md.
 [/notes/11-11-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-11-2014.md)  
 
 
-<h2 id="a1">Final Specification</h2>
+
+
+
+
+
+
+<h2 id="a5">Final Specification</h2>
+
 
 ## Documents to be Reviewed for Assignment 5
+[/docs/final_spec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/final_spec/dspec.md)
+[/docs/final_spec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/final_spec/dspec.md)
 [/notes/11-17-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-17-2014.md)
 [/notes/11-22-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-22-2014.md)
 [/notes/11-29-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-29-2014.md)

@@ -78,12 +78,10 @@ $(document).keydown(
 
             bufferx = previousx;
             buffery = previousy;
+        } else if (!event.ctrlKey && !($('#data').is(':focus'))) {
+            $('#data').focus();
+            $('#data').select();
         }
-        // else if (!event.ctrlKey) {
-        //     string += String.fromCharCode(event.keyCode);
-        //     if (!text) text = paper.text(selectionx, selectiony, string);
-        //     else text.attr({ text: string });
-        // }
     }
 );
 $(document).mousemove(
