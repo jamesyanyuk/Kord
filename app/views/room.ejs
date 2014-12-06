@@ -14,6 +14,9 @@
 		<!-- Custom CSS -->
 		<link href="/css/simple-sidebar.css" rel="stylesheet">
 
+		<!-- Impromptu CSS -->
+		<link href="/css/jquery-impromptu.min.css" rel="stylesheet">
+
 		<!-- FONT ICONS -->
 		<link rel="stylesheet" href="/icons/icons.css">
 
@@ -182,8 +185,8 @@
 				<ul class="sidebar-nav">
 					<li><a href="#" title = "draw"><span class="icon-software-pencil"></span></a></li>
 					<li><a id="addvideo" title = "video"><span class="icon-social-youtube-square"></span></a></li>
-					<li><a href="#" title = "image"><span class="icon-basic-picture"></span></a></li>
-					<li><a href="#" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
+					<li><a id="addimage" title = "image"><span class="icon-basic-picture"></span></a></li>
+					<li><a id="addcode" title = "code"><span class="icon-arrows-glide-horizontal"></a></li>
 						<li><a href="#" title = "pdf"><span class="icon-easel"></span></a></li>
 						<li><a href="#" title = "text"><span class="icon-ecommerce-receipt"></span></a></li>
 
@@ -274,6 +277,7 @@
 			</div>
 		</div>
 		<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script src="/js/jquery-impromptu.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 
 		<script>
@@ -285,7 +289,7 @@
 		$('#addvideo').click(function(event) {
 				event.preventDefault();
 
-				var states = {
+				var videostates = {
 					state0: {
 						html:'Enter a Youtube Video ID <br><input style="width:100%" type="text" placeholder="Video ID" id="res_video_data">',
 						buttons: { 'Add to Board': true },
@@ -296,30 +300,31 @@
 					}
 				}
 
-				$.prompt(states);
+				$.prompt(videostates);
 		});
 
 		$('#addimage').click(function(event) {
 				event.preventDefault();
 
-				var states = {
+				var imagestates = {
 					state0: {
 						html:'Enter an Image URL (We recommend imgur.) <br><input style="width:100%" type="text" placeholder="Image URL" id="res_image_data">',
 						buttons: { 'Add to Board': true },
 						submit:function(e,v,m,f){
 							setMode('res_image');
+							console.log($('#res_image_data').val());
 							setResource($('#res_image_data').val());
 						}
 					}
 				}
 
-				$.prompt(states);
+				$.prompt(imagestates);
 		});
 
 		$('#addcode').click(function(event) {
 				event.preventDefault();
 
-				var states = {
+				var codestates = {
 					state0: {
 						html:'Enter a video URL <br><input type="text" id="res_code_data">',
 						buttons: { 'Add to Board': true },
@@ -330,7 +335,7 @@
 					}
 				}
 
-				$.prompt(states);
+				$.prompt(codestates);
 		});
 		</script>
 	</body>
