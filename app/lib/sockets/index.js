@@ -100,6 +100,20 @@ module.exports = function(io) {
             delete idmap[socket.id];
             delete rooms[roomid][userid];
         });
+        
+        
+        ////
+        // chat
+        ////
+        
+        socket.on('sendchat',
+            function(data) {
+                print_data('sendchat', data);
+                // socket.broadcast.to(data.roomid).emit('updatechat', data);
+                io.sockets.in('r' + data.roomid).emit('updatechat', data);
+            }
+        );
+        
 
         ////
         // board

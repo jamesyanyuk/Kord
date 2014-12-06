@@ -50,3 +50,43 @@ function print_data(message, data) {
         console.log(prop + ': ' + data[prop]);
     }
 }
+
+
+////
+// chat
+////
+
+$(
+	function() {																// on load of page
+		$('#datasend').click(
+			function() {														// when the client clicks SEND
+				var message = $('#data').val();
+				// $('#data').val('');
+                print_data('sendchat', message);
+				socket.emit('sendchat',
+                    { roomid: roomid,
+                    boardid: boardid,
+                    userid: userid,
+                    nickname: nickname,
+                    message: message }                							// tell server to execute 'sendchat' and send along one parameter
+                );
+			}
+		);
+		$('#data').keypress(
+			function(e) {										// when the client hits ENTER on their keyboard
+                if(e.which == 13 || e.which == 10) {
+					$(this).blur();
+					$('#datasend').submit();
+                    // e.preventDefault();
+				}
+			}
+		);
+	}
+);
+
+socket.on('updatechat',
+	function (data) {
+        print_data('updatechat', data);
+		$('#conversation').append('<b>'+ data.nickname + ':</b> ' + data.message + '<br>');
+	}
+);
