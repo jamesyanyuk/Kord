@@ -96,7 +96,7 @@
 							var defaultsocket = io.connect();
 							defaultsocket.on('connect',
 								function() {
-									socket = io.connect('http://kord.herokuapp.com:80', { 'forcenewconnection': true } );
+									socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
 								}
 							);
 							var roomid = '<%= roomid %>';
