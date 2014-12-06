@@ -96,7 +96,13 @@
 							var defaultsocket = io.connect();
 							defaultsocket.on('connect',
 								function() {
-									socket = io.connect('http://' + window.location.host + ':80', { 'forcenewconnection': true } );
+									if(window.location.host.indexOf('localhost') > -1 ||
+										window.location.host.indexOf('127.0') > -1) {
+										socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
+										console.log('Connected to server running locally');
+									} else {
+										socket = io.connect('http://kord.herokuapp.app:80', { 'forcenewconnection': true } );
+									}
 								}
 							);
 							var roomid = '<%= roomid %>';
