@@ -170,13 +170,6 @@ $(document).keydown(
     }
 );
 
-$('#addvideo').click(
-    function(event) {
-        event.preventDefault();
-        mode = 'res_video';
-    }
-)
-
 function setMode(newMode) {
     console.log('set it fine!');
     mode = newMode;

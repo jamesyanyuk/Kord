@@ -50,7 +50,7 @@
 </ul>
 <div class="sidebar-footer"> <a title = "Board Details" data-toggle="modal" data-target="#users-online"><span class="icon-man-people-streamline-user"></span></a> <a title = "User View / Settings" data-toggle="modal" data-target="#settings-modal"><span class="icon-settings-streamline-1"></span></a> </div>
 </div>
-<!-- /#sidebar-wrapper --> 
+<!-- /#sidebar-wrapper -->
 
 <!-- Page Content -->
 <div id="page-content-wrapper">
@@ -74,11 +74,11 @@
         Room URL: <span id="url"></span> <br>
         Board Count: <span id="bcount"></span> <br>
       </p>
-	  
+
 	  <div align="right">
 	  <a href="/logout" class="btn btn-primary signup-button">Logout</a>
 	  </div>
-	  
+
     </div>
   </div>
 </div>
@@ -87,7 +87,7 @@
 <div class="row">
   <div class="col-lg-12">
     <div id="canvas"></div>
-    <script src="/socket.io/socket.io.js"></script> 
+    <script src="/socket.io/socket.io.js"></script>
     <script>
                         var socket;
                         var defaultsocket = io.connect();
@@ -106,8 +106,8 @@
                         var nickname = '<%= nickname %>';
                         var boardid = '<%= boardid %>';
                         var userid = '<%= userid %>';
-                    </script> 
-    <script src="../js/client.js"></script> 
+                    </script>
+    <script src="../js/client.js"></script>
   </div>
 </div>
 </div>
@@ -135,9 +135,9 @@
 </div>
 </div>
 </div>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> 
-<script src="/js/jquery-impromptu.min.js"></script> 
-<script src="/js/bootstrap.min.js"></script> 
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="/js/jquery-impromptu.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -147,13 +147,13 @@
     <!--Video Element Window-->
     $('#addvideo').click(function(event) {
             event.preventDefault();
+			setMode('res_video');
 
             var videostates = {
                 state0: {
                     html:'Enter a Youtube Video ID <br><input style="width:100%" type="text" placeholder="Video ID" id="res_video_data">',
                     buttons: { 'Add to Board': true },
                     submit:function(e,v,m,f){
-                        setMode('res_video');
                         setResource($('#res_video_data').val());
                     }
                 }
@@ -165,6 +165,7 @@
     <!--Image Element Window-->
     $('#addimage').click(function(event) {
             event.preventDefault();
+			setMode('res_image');
 
             var imagestates = {
                 state0: {
@@ -187,13 +188,13 @@
             $.prompt('Coming soon!');
     });
 
-    
+
     <!--Draw Element Window-->
     $('#draw').click(function(event) {
             event.preventDefault();
             $.prompt('Hold CTRL to draw! <p> Press the up arrow to toggle between drawing colors. <br> Press down arrow to toggle between stroke width.');
     });
-    
+
     <!--Chat Element Window-->
     $(document).on('click', '.panel-heading span.icon_minim', function (e) {
         var $this = $(this);
