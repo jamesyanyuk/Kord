@@ -207,7 +207,10 @@ $(canvas).mouseup(
             } else if(mode === 'res_image') {
                 width = 600;
                 height = 400;
-                location = resourceurl;
+                if(location.substr(0, 4) === 'http')
+                    location = resourceurl;
+                else
+                    location = 'http://' + resourceurl;
             } else if(mode === 'res_code') {
                 width = 500;
                 height = 500;
