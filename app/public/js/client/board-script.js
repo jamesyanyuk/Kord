@@ -198,19 +198,19 @@ $(canvas).mouseup(
             var width = 250;
             var height = 250;
             var location = '';
-
+            console.log(mode);
             if(mode === 'res_video') {
                 width = 430;
                 height = 315;
                 location = '//www.youtube.com/embed/' + resourceurl;
-            } else if(mode === 'res_photo') {
-                width = 275;
-                height = 275;
-                location = 'https://yt3.ggpht.com/-ZH3a2SHTG-o/AAAAAAAAAAI/AAAAAAAAAAA/Xr0rSQIrJFU/s900-c-k-no/photo.jpg';
+            } else if(mode === 'res_image') {
+                width = 400;
+                height = 600;
+                location = resourceurl;
             } else if(mode === 'res_code') {
                 width = 500;
                 height = 500;
-                location = 'google.com';
+                location = 'http://google.com';
             }
 
             var newResource = new Infobox(paper, {
@@ -239,6 +239,7 @@ $(canvas).mouseup(
                 height: height }
             );
 
+            mode = '';
             resourceurl = '';
         } else if (selection) {
 
@@ -342,7 +343,7 @@ socket.on('resources',
 
             //$(resources[mode + '_0001'].div).css('position', 'fixed');
             newResource.div.css('overflow', 'hidden');
-            newResource.div.html('<iframe scrolling=frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
+            newResource.div.html('<iframe scrolling="no" frameborder="0" width="' + data[i].width + 'px" height="' + data[i].height +
                 'px" src="' + data[i].resourceurl + '"></iframe>');
 
             add_resource(data[i]['resourceid'], newResource);
