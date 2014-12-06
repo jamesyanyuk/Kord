@@ -5,6 +5,7 @@ var width_select = 0;
 var width_list = [5,10,15,20,25];
 var stroke_color = 0
 var stroke_list = ['blue','red','black','green','pink'];
+var stroke_width = 5;
 
 var cursors = {};
 

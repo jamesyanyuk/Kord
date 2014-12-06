@@ -95,15 +95,15 @@ module.exports = function(io) {
                     }
                 }
             });
-
+            
             io.to('r' + roomid).emit('disconnection', {
                 nickname: nickname,
                 userid: userid
             });
             
-            io.to('r' + data.roomid).emit('updatechat',
+            io.to('r' + roomid).emit('updatechat',
                 { nickname: 'Server',
-                message: nickname + ' left.' }
+                message: (nickname + ' left.') }
             );
 
             delete idmap[socket.id];
