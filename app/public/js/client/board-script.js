@@ -78,11 +78,9 @@ $(document).keydown(
 
             bufferx = previousx;
             buffery = previousy;
-        }
-        else if (!event.ctrlKey && !($('#data').is(':focus'))) {
+        } else if (!event.ctrlKey && !($('#data').is(':focus'))) {
             $('#data').focus();
             $('#data').select();
-            //$('#data').val($('#data').val() + String.fromCharCode(event.keyCode));
         }
     }
 );
