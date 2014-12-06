@@ -103,9 +103,9 @@ are in the actual dspec.md.
 
 
 
-
 <h2 id="a5 ">Final Specification</h2>
-
+the dspec.md can be found in /docs/final_spec/dspec.md and 
+fspec.md can be found in /docs/final_spec/fspec.md
 
 ## Documents to be Reviewed for Assignment 5
 [/docs/final_spec/dspec.md](https://github.com/umass-cs-326/team-kord.io/blob/master/docs/final_spec/dspec.md)
