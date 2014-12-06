@@ -55,7 +55,6 @@ we will be experimenting with.
 
 <p align = "right"><i >[Written by  Julian Kuk - 10/16/2014]</em></p>  
 
-##Non-Goals
 
 #####Time Permitting:
 	* Accounts
@@ -234,6 +233,7 @@ Making sure our app is less prone to exploits.
 <p align = "right"><i >[Written by Nam Phan - 10/16/2014]</em></p>
 
 ###Revision History
+	* Verson 2.0
 	* Version 1.0
 		> Formatted and all sections have been completed
 	* Version .2

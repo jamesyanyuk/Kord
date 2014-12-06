@@ -38,7 +38,7 @@ Users who have previously registered with kord.io will be able to login through 
 The rooms page, accessed only through proper authentication, will hold a list of rooms a user is currently part of. It is here, where the user will also be given a nickname. From this page, users will be able to choose a Room which will direct them to another view containing all of the boards pertaining to this room.
 
 **Board Selection**
-The room page will hold all the boards this room contains. It will also allow a user to add a new board to this room.
+The room page will hold all the boards created by or associated with this room. It will also allow a user to add a new board to this room. 
 
 **Board View**
 This is where all things come together. A board will consist of a graphics markup, specifically SVG, where all of our components will be placed. While this markup language for graphics will allow our users to draw on the board, users will also be able to layer different components on top as they wish to select from our menu. A board will have a chat where users currently on the room will be able to communicate with each other, see who is currently online in the board, but only one chat is assigned per room. The board will also allow linking YouTube videos to display for others to watch. Our board uses the RaphaëlJS and Socket.io libraries.
@@ -46,7 +46,7 @@ This is where all things come together. A board will consist of a graphics marku
 **Graphics Design**  
 Our application will, of course, use HTML5, CSS, jQuery, and Javascript. It will use the Bootstrap framework in order to develop a responsive and aesthetically pleasing web application.
 
-<p align = "right"><i >[Written by  Sara da Silva - 11/14/2014]</em></p>
+<p align = "right"><i >[Written by  Nam Phan - 12/05/2014]</em></p>
 
 ### Server: Connection Management & User Authentication
 
@@ -65,7 +65,7 @@ This is the interaction between the rooms and the server. All data will be ultim
 
 <p align="center"><img src="https://github.com/umass-cs-326/team-kord.io/blob/master/docs/diagrams/uml/chatandserver.png"></p>
 
-**Chat and Server Interaction**  
+**Chat and Server Interaction**
 This shows the interaction between the chat and server. The database ultimately stores all resources and only interacts with the server. The server broadcasts or emits messages received from chat to all chats in a room with the room ID passed by the chat call.
 
 
@@ -81,7 +81,7 @@ The authenticator will frequently reference the database to check for passwords 
 We plan to implement this in PostgreSQL.
 The Database stores current and past connections with four types of Users.
 * Guest - Can join open rooms and participate in chat, upload and download files but rooms created by them are not permanent.
-* General Users - Can link rooms to their account and the features of a guest user.
+* General	 Users - Can link rooms to their account and the features of a guest user.
 * Moderators - Power to restrict access and move users in rooms, as well as the features of a regular user.
 * Admin - Total control over the the websites implementation, User Accounts, Server uptime and all the features of a moderator.
 
@@ -117,19 +117,19 @@ JavaScript library to simplify the client-side scripting of HTML.
 **Bootstrap**  
 Our web application will use the tools provided by Bootstrap in order to create the front-end design of kord.io.
 
-**Socket.io**  
+**Socket.io** 
 Main engine for the boards. Socket.io simplifies the usage of WebSockets while ensuring compatibility on the users end. This will be the development base for the chat system and routing between rooms.
 
 **Raphaël.js**  
 Lightweight graphics library for SVG that facilitates drawing/animating dynamically on a board. Capable of fairly complicated development and performances while not consuming too many server resources. We prefer SVG over canvas because our app is more likely to have data overflow than it is to require complicated graphics.
 
-**PostgreSQL**  
+**PostgreSQL** 
 Database infrastructure. We chose this to handle wide-scale development with large amounts of data being handled. Very reliable and stable while being compatible with most platforms.
 
-**Sunlight.js**  
+**Sunlight.js**
 Used for automatic syntax highlighting within html. Low weight and parallel resources.
 
-**Less.js**  
+**Less.js**
 Client-side CSS pre-processor. Adds more functionality to extend maintainability and creative freedom. Less.js allows for the defining of variables and mix-ins to make full use of Nested syntax. It also has some useful Operational Functions and Mathematical operations that make it more appealing than Sass.
 
 **Passport.js**  
@@ -138,9 +138,10 @@ Sweet and simple Node.js authenticator. It supports persistent sessions, and has
 **Mocha**
 Mocha is a javascript framework running on node.js that facilitates asynchronous testing. Mocha was exclusively used to test our application.
 
-<p align = "right"><i >[Written by  Matthaus Wolff, Sara da Silva - 11/14/2014]</em></p>  
+<p align = "right"><i >[Written by  Nam Phan - 12/05/2014]</em></p>  
 
 ### Revision History
+	* 1.0 12/05/2014: Final Design Specification
 	* 0.4 11/14/2014: Design Specification  
 	* 0.3 10/16/2014: Functional Specification  
 	* 0.2 10/02/2014: Proposal  

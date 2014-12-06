@@ -4,7 +4,7 @@
 [Assignment 2] (#a2)  
 [Assignment 3] (#a3)  
 [Assignment 4] (#a4)  
-
+[Assignment 5] (#a5)
 <h2 id="a1">Project Overview</h2>  
 
 Our project will be composed of two major components. The first and most basic is its chat functionality.
@@ -100,3 +100,12 @@ are in the actual dspec.md.
 [/notes/10-28-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/10-28-2014.md)  
 [/notes/11-03-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-03-2014.md)  
 [/notes/11-11-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-11-2014.md)  
+
+
+<h2 id="a1">Final Specification</h2>
+
+## Documents to be Reviewed for Assignment 5
+[/notes/11-17-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-17-2014.md)
+[/notes/11-22-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-22-2014.md)
+[/notes/11-29-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/11-29-2014.md)
+[/notes/12-01-2014.md](https://github.com/umass-cs-326/team-kord.io/blob/master/notes/12-01-2014.md)
