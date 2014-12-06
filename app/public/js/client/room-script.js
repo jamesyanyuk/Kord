@@ -18,15 +18,15 @@ socket.on('users', function(data) {
         $('<li id="on' + prop + '">').text(data.online[prop]).hide().appendTo($('#onlineusers')).fadeIn();
     }
 
-    for(i = 0; i < data.members.length; i++) {
-        //$('#members').append($('<li id="mem' + data.members[i].userid + '">').text(data.members[i].nickname));
-        $('<li id="mem' + data.members[i].userid + '">').text(data.members[i].nickname).hide().appendTo($('#members')).fadeIn();
-    }
-
-    for(i = 0; i < data.moderators.length; i++) {
-        //$('#moderators').append($('<li id="mod' + data.moderators[i].userid + '">').text(data.moderators[i].nickname));
-        $('<li id="mod' + data.moderators[i].userid + '">').text(data.moderators[i].nickname).hide().appendTo($('#moderators')).fadeIn();
-    }
+    // for(i = 0; i < data.members.length; i++) {
+    //     //$('#members').append($('<li id="mem' + data.members[i].userid + '">').text(data.members[i].nickname));
+    //     $('<li id="mem' + data.members[i].userid + '">').text(data.members[i].nickname).hide().appendTo($('#members')).fadeIn();
+    // }
+    //
+    // for(i = 0; i < data.moderators.length; i++) {
+    //     //$('#moderators').append($('<li id="mod' + data.moderators[i].userid + '">').text(data.moderators[i].nickname));
+    //     $('<li id="mod' + data.moderators[i].userid + '">').text(data.moderators[i].nickname).hide().appendTo($('#moderators')).fadeIn();
+    // }
 
     $('#bcount').text(data.bcount).hide().fadeIn();
 
