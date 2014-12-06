@@ -73,8 +73,8 @@
 			</ul>
 
 			<div class="sidebar-footer">
-				<a href="#" title = "Board Details"><span class="icon-man-people-streamline-user"></span></a>
-				<a href="/user" title = "User View / Settings"><span class="icon-settings-streamline-1"></span></a>
+				<a title = "Board Details" data-toggle="modal" data-target="#users-online"><span class="icon-man-people-streamline-user"></span></a>
+				<a title = "User View / Settings" data-toggle="modal" data-target="#settings-modal"><span class="icon-settings-streamline-1"></span></a>
 			</div>
 
 		</div>
@@ -82,20 +82,37 @@
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
+		
+		<div class="modal fade bs-example-modal-sm" id="users-online" tabindex="-1" role="dialog" aria-hidden="true">
+         	<div class="modal-dialog modal-md">
+         		<div class="modal-content">
+         			<div class="vertical-registration-form">
+           				 <h4 class="dark-text form-heading">Users Online</h4>
+							<ul id="onlineusers"></ul>
+         			</div>
+         		</div>
+     		 </div>
+    	</div>
+		
+		<div class="modal fade bs-example-modal-sm" id="settings-modal" tabindex="-1" role="dialog" aria-hidden="true">
+         	<div class="modal-dialog modal-md">
+         		<div class="modal-content">
+         			<div class="vertical-registration-form">
+                   	 <h4 class="dark-text form-heading">Room<span id="urlHeader"></span></h4>
+							<p><%= message %></p>
+							<p> Nickname: <%= nickname %> <br>
+							Room URL: <span id="url"></span> <br>
+							Board Count: <span id="bcount"></span> <br>
+						</p>
+         			</div>
+         		</div>
+     		 </div>
+    	</div>
+	
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
 						<div id="canvas"></div>
-						<h1>Room <span id="urlHeader"></span></h1>
-						<p><%= message %></p>
-						<p> Nickname: <%= nickname %> <br>
-							Room URL: <span id="url"></span> <br>
-							Board Count: <span id="bcount"></span> <br>
-							<br>
-							<b>Online</b>
-							<ul id="onlineusers">
-							</ul>
-						</p>
 						<script src="/socket.io/socket.io.js"></script>
 						<script>
 							var socket;
