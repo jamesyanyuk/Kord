@@ -205,8 +205,8 @@ $(canvas).mouseup(
                 height = 315;
                 location = '//www.youtube.com/embed/' + resourceurl;
             } else if(mode === 'res_image') {
-                width = 400;
-                height = 600;
+                width = 600;
+                height = 400;
                 location = resourceurl;
             } else if(mode === 'res_code') {
                 width = 500;
