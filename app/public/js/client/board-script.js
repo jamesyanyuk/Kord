@@ -78,7 +78,7 @@ $(document).keydown(
 
             bufferx = previousx;
             buffery = previousy;
-        } else if (!event.ctrlKey && !($('#data').is(':focus'))) {
+        } else if (!event.ctrlKey && !($('#data').is(':focus')) && !mode) {
             $('#data').focus();
             $('#data').select();
         }
@@ -241,7 +241,7 @@ $(canvas).mouseup(
                 height: height }
             );
 
-            mode = '';
+            mode = null;
             resourceurl = '';
         } else if (selection) {
 
