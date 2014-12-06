@@ -193,7 +193,7 @@ $(canvas).mouseup(
         var currentx = (!event.offsetX) ? event.originalEvent.layerX : event.offsetX;
         var currenty = (!event.offsetY) ? event.originalEvent.layerY : event.offsetY;
 
-        if (mode.substr(0, 4) === 'res_') {
+        if (mode && mode.substr(0, 4) === 'res_') {
             var resourceid = generate_object_id(resourceidprefix);
 
             var width = 250;
