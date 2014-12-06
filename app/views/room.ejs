@@ -92,13 +92,10 @@
 						<div id="canvas"></div>
 						<script src="/socket.io/socket.io.js"></script>
 						<script>
-							var socket;
-							var defaultsocket = io.connect();
-							defaultsocket.on('connect',
-								function() {
-									socket = io.connect('http://' + window.location.host + ':80', { 'forcenewconnection': true } );
-								}
-							);
+							console.log('room.ejs - ln 96 - ' + window.location.host);
+							var socket = io.connect('http://' + window.location.host + ':80');
+							console.log('room.ejs - ln 96 - ' + window.location.host);
+
 							var roomid = '<%= roomid %>';
 							var nickname = '<%= nickname %>';
 							var boardid = '<%= boardid %>';
