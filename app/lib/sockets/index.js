@@ -8,7 +8,7 @@ var idmap = [];
 
 // server
 module.exports = function(io) {
-    io.on('connection', function(socket) {
+    io.sockets.on('connection', function(socket) {
 
         ////
         // room
@@ -95,12 +95,12 @@ module.exports = function(io) {
                     }
                 }
             });
-            
+
             io.to('r' + roomid).emit('disconnection', {
                 nickname: nickname,
                 userid: userid
             });
-            
+
             io.to('r' + roomid).emit('updatechat',
                 { nickname: 'Server',
                 message: (nickname + ' left.') }
@@ -109,8 +109,8 @@ module.exports = function(io) {
             delete idmap[socket.id];
             delete rooms[roomid][userid];
         });
-        
-        
+
+
         ////
         // chat
         ////
@@ -122,7 +122,7 @@ module.exports = function(io) {
                 io.sockets.in('r' + data.roomid).emit('updatechat', data);
             }
         );
-        
+
 
         ////
         // board

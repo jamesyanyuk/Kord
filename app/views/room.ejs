@@ -104,7 +104,7 @@
 							var defaultsocket = io.connect();
 							defaultsocket.on('connect',
 								function() {
-									socket = io.connect(window.location.host, { 'forcenewconnection': true } );
+									socket = io.connect('http://' + window.location.host, { 'forcenewconnection': true } );
 								}
 							);
 							var roomid = '<%= roomid %>';
