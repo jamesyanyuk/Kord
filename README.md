@@ -1,5 +1,3 @@
-<p align="right"><img src="https://github.com/jyanyuk/Kord/blob/master/docs/images/kordio.png" width="240px"></p>  
-
 <h2 id="a1">Project Overview</h2>  
 
 Our project will be composed of two major components. The first and most basic is its chat functionality.
