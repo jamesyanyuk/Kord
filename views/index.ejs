@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="kord.io makes it easy to connect and collaborate with others over an editable online whiteboard in realtime.">
+<meta name="keywords" content="kord, kord.io, draw, collaborate, real-time">
+<meta name="author" content="UMass Amherst CMPSCI 326: Julian, James, Sara, Nam, Mattheaus">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SITE TITLE -->
+<title><%= title %></title>
+
+<!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+<link rel="icon" href="images/favicons/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicons/favicon-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicons/favicon-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/favicon-72.png">
+<link rel="apple-touch-icon-precomposed" href="images/favicons/favicon-57.png">
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:300,600,400' rel='stylesheet'>
+
+<!-- =========================
+     STYLESHEETS   
+    ============================== -->
+<!-- BOOTSTRAP AND ANIMATION -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+
+<!-- FONT ICONS -->
+<link rel="stylesheet" href="assets/icons/icons.css">
+
+<!-- CAROUSEL AND LIGHTBOX -->
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/nivo-lightbox.css">
+<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+
+<!-- CUSTOM STYLESHEETS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- RESPONSIVE FIXES -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" href="css/colors/blue.css">
+
+<!--[if lt IE 9]>
+			<script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<!--[if gte IE 9]>
+      <style type="text/css">
+        .standard-button,
+        .navbar-register-button {
+       filter: none;
+        }
+      </style>
+    <![endif]-->
+<!-- ****************
+      After neccessary customization/modification, Please minify HTML/CSS according to http://browserdiet.com/en/ for better performance
+     **************** -->
+</head>
+
+<body>
+
+<!-- =========================
+     SECTION: HOME / HEADER
+    ============================== -->
+<header class="header" data-stellar-background-ratio="0.5" id="home"> 
+  
+  <!-- COLOR OVER IMAGE -->
+  <div class="overlay-layer"> 
+    
+    <!-- CONTAINER -->
+    <div class="container"> 
+      
+      <!-- ONLY LOGO ON HEADER -->
+      <div class="only-logo">
+        <div class="navbar">
+          <div class="navbar-header"> <img src="images/logokordindex.png" alt=""> </div>
+        </div>
+      </div>
+      <!-- /END ONLY LOGO ON HEADER -->
+      
+      <div class="row">
+        <div class="col-md-12"> 
+          
+          <!-- HEADING AND BUTTONS -->
+          <div class="intro-section"> 
+            
+            <!-- WELCOME MESSAGE -->
+            <h1 class="intro white-text">Connecting Ideas</h1>
+            <h5 class="white-text">kord.io makes it easy to connect and collaborate <br/>
+              with others over an editable online whiteboard in realtime.</h5>
+            
+            <!-- BUTTON -->
+            <div class="button"> <a class="btn btn-primary blue-button wow fadeInLeft" data-wow-duration="2s" data-wow-offset="40" data-toggle="modal" data-target="#login-modal">Login</a> <a href="/newroom" class="btn btn-primary white-button wow fadeInRight" data-wow-duration="2s" data-wow-offset="40">Create a Board</a> </div>
+            
+            <!-- /END BUTTON --> 
+            
+          </div>
+          <!-- /END HEADNING AND BUTTONS --> 
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =========================
+     SECTION: CLIENTS LOGOs
+    ============================== -->
+<div class="clients white-bg">
+  <ul class="client-logos">
+    <li> <img src="images/companies/1.png" alt=""> </li>
+    <li> <img src="images/companies/2.png" alt=""> </li>
+    <li> <img src="images/companies/3.png" alt=""> </li>
+  </ul>
+</div>
+
+<!-- =========================
+     SECTION: BENEFITS
+    ============================== -->
+<section class="unique-features white-bg" id="section5">
+  <div class="container"> 
+    
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <div class="small-text-medium uppercase colored-text"> FEATURES </div>
+      <h2 class="dark-text"><strong>kord.io</strong></h2>
+      <div class="colored-line"> </div>
+      <div class="sub-heading"> What's so good about it? </div>
+    </div>
+    
+    <!-- FIRST ROW OF FEATURES -->
+    <div class="row">
+      <div class="col-md-4 wow fadeInRight" data-wow-duration="1.75s" data-wow-offset="20"> 
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-ecommerce-dollar colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Free for all users</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> kord.io is 100% free to use for all users. </p>
+          </div>
+        </div>
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-map-alt colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Unlimited amount of users</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> Unlimited amount of users can collaborate at once. </p>
+          </div>
+        </div>
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-cloud-alt colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Registration not needed</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> Create your group drawing session in just one click. </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- IPAD IMAGE -->
+      <div class="col-md-4">
+        <div class="ipad-image wow bounceIn" data-wow-duration="1.75s" data-wow-offset="20"> <img src="images/ipad-air.png" alt=""> </div>
+      </div>
+      <div class="col-md-4 wow fadeInLeft" data-wow-duration="1.75s" data-wow-offset="20"> 
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-basic-sheet-pencil colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Draw with others</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> Draw and watch others draw in real time. </p>
+          </div>
+        </div>
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-star-alt colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Unique interface</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> Unique interface with features and functions never before seen online. </p>
+          </div>
+        </div>
+        
+        <!-- SINGLE FEATURE -->
+        <div class="feature">
+          <div class="icon-container"> <span class="icon-chat-alt colored-text"></span> </div>
+          <div class="description text-left">
+            <h4 class="dark-text">Live text chat</h4>
+            <div class="grey-line-short pull-left"> </div>
+            <p class="text-left"> Get access to a live text chat with lots of smooth functions and trix. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     SECTION: CALL TO ACTION
+    ============================== -->
+<section class="call-to-action" id="section11" data-stellar-background-ratio="0.1">
+  <div class="overlay-layer-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="uppercase white-text strong"> No Set-up Time </div>
+          <h2 class="white-text strong wow fadeInLeft" data-wow-duration="2s" data-wow-offset="40">Start collaborating now!</h2>
+          <div class = "button"> <a href="/newroom" class="btn btn-primary white-button wow fadeInRight" data-wow-duration="2s" data-wow-offset="40">Create a Board</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGIN FORM FOR POPUP BOX -->
+<div class="modal fade bs-example-modal-sm" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="vertical-registration-form">
+        <h4 class="dark-text form-heading">Login</h4>
+        <form class="login-form" id="login-form" method="post" action="/login">
+          <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+          <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+          <button class="btn btn-primary standard-button">Login</button>
+        </form>
+        <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
+        <p class="login-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Login successful </p>
+        <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Make sure you entered a valid email. </p>
+        <p class="login-error dark-text"> <span class="icon-close-alt2"></span>Invalid email or password. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SIGNUP FORM FOR POPUP BOX -->
+<div class="modal fade bs-example-modal-sm" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="vertical-registration-form">
+        <h4 class="dark-text form-heading">Sign Up</h4>
+        <form class="signup-form" id="signup-form" method="post" action="/register">
+          <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+          <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+          <input type="password" id="cf-passwordconf" name="password_conf" class="form-control input-box" placeholder="Confirm Password">
+          <button class="btn btn-primary signup-button" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
+        </form>
+        <p class="email-success dark-text"> <span class="icon-check-alt2 colored-text"></span>Thank you for signing-up! </p>
+        <p class="email-error dark-text"> <span class="icon-close-alt2"></span>Error! Please check all fields are filled correctly. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer grey-bg"> ©2014 Kord. All Rights Reserved 
+  
+  <!-- SOCIAL ICONS -->
+  <ul class="social-icons">
+    <li><a href=""><span class="icon-social-facebook transparent-text-dark"></span></a> </li>
+    <li><a href=""><span class="icon-social-twitter transparent-text-dark"></span></a> </li>
+    <li><a href=""><span class="icon-social-googleplus transparent-text-dark"></span></a> </li>
+  </ul>
+</footer>
+
+<!-- =========================
+     SCRIPTS
+    ============================== --> 
+<script src="js/jquery.min.js"></script> 
+<!-- <script src="js/smoothscroll.js"></script> --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.nav.js"></script> 
+<script src="js/wow.min.js"></script> 
+<script src="js/nivo-lightbox.min.js"></script> 
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/jquery.stellar.min.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/jquery.ajaxchimp.min.js"></script> 
+
+<!-- GOOGLE MAP --> 
+<script src="https://maps.googleapis.com/maps/api/js"></script> 
+
+<!-- CUSTOM JS  --> 
+<script src="js/custom.js"></script>
+</body>
+</html>

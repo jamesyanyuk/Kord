@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="kord.io makes it easy to connect and collaborate with others over an editable online whiteboard in realtime.">
+<meta name="keywords" content="kord, kord.io, draw, collaborate, real-time">
+<meta name="author" content="UMass Amherst CMPSCI 326: Julian, James, Sara, Nam, Mattheaus">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- SITE TITLE -->
+<title><%= title %></title>
+
+<!-- =========================
+     FAV AND TOUCH ICONS AND FONT
+    ============================== -->
+<link rel="icon" href="images/favicons/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicons/favicon-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicons/favicon-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicons/favicon-72.png">
+<link rel="apple-touch-icon-precomposed" href="images/favicons/favicon-57.png">
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:300,600,400' rel='stylesheet'>
+
+<!-- =========================
+     STYLESHEETS
+    ============================== -->
+<!-- BOOTSTRAP AND ANIMATION -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+
+<!-- FONT ICONS -->
+<link rel="stylesheet" href="assets/icons/icons.css">
+
+<!-- CAROUSEL AND LIGHTBOX -->
+<link rel="stylesheet" href="css/owl.theme.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/nivo-lightbox.css">
+<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+
+<!-- CUSTOM STYLESHEETS -->
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- RESPONSIVE FIXES -->
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- COLORS -->
+<link rel="stylesheet" href="css/colors/blue.css">
+
+<!--[if lt IE 9]>
+            <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<!--[if gte IE 9]>
+      <style type="text/css">
+        .standard-button,
+        .navbar-register-button {
+       filter: none;
+        }
+      </style>
+    <![endif]-->
+<!-- ****************
+      After neccessary customization/modification, Please minify HTML/CSS according to http://browserdiet.com/en/ for better performance
+     **************** -->
+</head>
+
+<body>
+
+<!-- =========================
+     SECTION: HOME / HEADER
+    ============================== -->
+<header class="header" data-stellar-background-ratio="0.5" id="home"> 
+  
+  <!-- COLOR OVER IMAGE -->
+  <div class="overlay-layer"> 
+    
+    <!-- CONTAINER -->
+    <div class="container"> 
+      
+      <!-- ONLY LOGO ON HEADER -->
+      <div class="only-logo">
+        <div class="navbar">
+          <div class="navbar-header"> <img src="/images/logokordindex.png" alt=""> </div>
+        </div>
+      </div>
+      <!-- /END ONLY LOGO ON HEADER --> 
+      
+      <!--Original
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <p><%= message %></p>
+    <p>Login to Kord below</p>
+
+    <form method="post" action="/login">
+        Email: <input type="text" name="email"> <br>
+        Password:  <input type="password" name="password"> <br>
+        <button>Login</button>
+        <br><p><a href="/login">Login</a> | <a href="/register">Register</a> | <a href="/logout">Logout</a></p>
+    </form>
+  </body>
+</html>
+-->
+      
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <div class="horizontal-subscribe-form">
+            <p><br>
+            </p>
+            <h5 class="white-text">Enter email and password to login.</h5>
+            <form class="login-form" id="login-form" method="post" action="/login">
+              <input type="email" id="cf-email" name="email" class="form-control input-box" placeholder="Email">
+              <input type="password" id="cf-password" name="password" class="form-control input-box" placeholder="Password">
+              <button class="btn btn-primary standard-button" style="width:100%">Login</button>
+            </form>
+            <p>
+            <p class="transparent-text"><%= message %></p>
+            <p><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =========================
+     SCRIPTS
+    ============================== --> 
+<script src="js/jquery.min.js"></script> 
+<!-- <script src="js/smoothscroll.js"></script> --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.nav.js"></script> 
+<script src="js/wow.min.js"></script> 
+<script src="js/nivo-lightbox.min.js"></script> 
+<script src="js/owl.carousel.min.js"></script> 
+<script src="js/jquery.stellar.min.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/jquery.ajaxchimp.min.js"></script> 
+
+<!-- GOOGLE MAP --> 
+<script src="https://maps.googleapis.com/maps/api/js"></script> 
+
+<!-- CUSTOM JS  --> 
+<script src="js/custom.js"></script>
+</body>
+</html>

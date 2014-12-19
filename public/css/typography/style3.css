@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Raleway:300);
+
+/* 2. STYLES */
+body {
+  font-family: 'Source Sans Pro', Helvetica Neue, Sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #666666;
+}
+/* 3. HEADINGS */
+h1,
+h2 {
+  font-family: 'Raleway', Helvetica Neue, Sans-serif;
+  font-weight: 300;
+}
+h1 {
+  font-size: 3.75rem;
+  line-height: 5rem;
+}
+h2 {
+  font-size: 3.375rem;
+  line-height: 4.063rem;
+}
+h3 {
+  font-size: 24px;
+  line-height: 38px;
+  font-weight: 400;
+}
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+h5 {
+  font-size: 18px;
+  font-weight: 400;
+}
+/* 4. BUTTONS */
+.standard-button {
+  font-weight: 600;
+}
+/* 5. OTHER TEXTS */
+strong,
+.strong {
+  font-weight: 600;
+}
+.dark-text {
+  color: #272727;
+}
+.transparent-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+.transparent-text-dark {
+  color: rgba(49, 49, 49, 0.5);
+}
+.small-text {
+  font-size: 14px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.line-through {
+  text-decoration: line-through;
+}
+.button-text {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.price .month {
+  font-family: 'Source Sans Pro', Helvetica Neue, Sans-serif;
+  color: #666666;
+  font-size: 16px !important;
+}
